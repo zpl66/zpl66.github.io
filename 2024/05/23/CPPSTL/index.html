@@ -13,24 +13,26 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="张沛霖">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="介绍本文用来记录C++中STL的用法，没有感情，全是技巧 1.vector1.1 介绍vector为可变长数组(我比较喜欢叫他动态数组),可以随时添加数值和删除元素 1.2 初始化vector分为一维初始化和二维初始化 一维初始化12345vector&lt;int&gt; t1; &#x2F;&#x2F;一维数组vector&lt;int&gt; t2(n); &#x2F;&#x2F;定义一个长度为n的数组vector&lt;int&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2024/05/23/hello-world/index.html">
+<meta property="og:title" content="C++ STL学习">
+<meta property="og:url" content="http://example.com/2024/05/23/CPPSTL/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="介绍本文用来记录C++中STL的用法，没有感情，全是技巧 1.vector1.1 介绍vector为可变长数组(我比较喜欢叫他动态数组),可以随时添加数值和删除元素 1.2 初始化vector分为一维初始化和二维初始化 一维初始化12345vector&lt;int&gt; t1; &#x2F;&#x2F;一维数组vector&lt;int&gt; t2(n); &#x2F;&#x2F;定义一个长度为n的数组vector&lt;int&amp;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-05-23T08:59:20.857Z">
-<meta property="article:modified_time" content="2024-05-23T08:59:20.863Z">
+<meta property="article:published_time" content="2024-05-23T13:35:45.000Z">
+<meta property="article:modified_time" content="2024-05-23T16:04:28.116Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="STL">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - Hexo</title>
+  <title>C++ STL学习 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="C++ STL学习"></span>
           
         </div>
 
@@ -207,7 +209,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-23 16:59" pubdate>
+        <time datetime="2024-05-23 21:35" pubdate>
           May 23, 2024 pm
         </time>
       </span>
@@ -219,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18 words
+          824 words
         
       </span>
     
@@ -230,7 +232,7 @@
         
         
         
-          1 mins
+          7 mins
         
       </span>
     
@@ -267,25 +269,131 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">C++ STL学习</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+                <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>本文用来记录C++中STL的用法，没有感情，全是技巧</p>
+<h2 id="1-vector"><a href="#1-vector" class="headerlink" title="1.vector"></a>1.vector</h2><h3 id="1-1-介绍"><a href="#1-1-介绍" class="headerlink" title="1.1 介绍"></a>1.1 介绍</h3><p><code>vector</code>为可变长数组(我比较喜欢叫他动态数组),可以随时添加数值和删除元素</p>
+<h3 id="1-2-初始化"><a href="#1-2-初始化" class="headerlink" title="1.2 初始化"></a>1.2 初始化</h3><p><code>vector</code>分为一维初始化和二维初始化</p>
+<h4 id="一维初始化"><a href="#一维初始化" class="headerlink" title="一维初始化"></a>一维初始化</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt; t1; <span class="hljs-comment">//一维数组</span><br><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">t2</span><span class="hljs-params">(n)</span></span>; <span class="hljs-comment">//定义一个长度为n的数组</span><br><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">t3</span><span class="hljs-params">(n, <span class="hljs-number">1</span>)</span></span>; <span class="hljs-comment">//定义一个长度为n的数组，t3[0]~t3[n - 1]均初始化为1</span><br>vector&lt;<span class="hljs-type">int</span>&gt; t4&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;; <span class="hljs-comment">//数组中有五个元素，数组长度就为5</span><br>vector&lt;<span class="hljs-type">int</span>&gt; t5 = t4; <span class="hljs-comment">//拷贝初始化</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<h4 id="二维初始化"><a href="#二维初始化" class="headerlink" title="二维初始化"></a>二维初始化</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; t2;<span class="hljs-comment">//二维数组</span><br>vector&lt;<span class="hljs-type">int</span>&gt; v[<span class="hljs-number">5</span>];<span class="hljs-comment">//定义可变长二维数组</span><br><span class="hljs-comment">//注意：行不可变（只有5行）, 而列可变,可以在指定行添加元素</span><br><span class="hljs-comment">//第一维固定长度为5，第二维长度可以改变</span><br><span class="hljs-comment">//注意：[]是二维数组，()是一维数组！ ！ ！</span><br><span class="hljs-comment">//（有个大聪明因为这个debug了半个小时）</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<h3 id="1-3-方法函数"><a href="#1-3-方法函数" class="headerlink" title="1.3 方法函数"></a>1.3 方法函数</h3><p>话不多说，直接上</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt; c;<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>含义</th>
+<th>时间复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>c.front()</td>
+<td>返回第一个数据</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>c.back()</td>
+<td>返回最后一个数据</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>c.pop_back()</td>
+<td>删除最后一个数据</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>c.push_back(element)</td>
+<td>在尾部加一个数据</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>c.emplace_back(ele)</td>
+<td>类似c.push_back(),但有时更快</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>c.size()</td>
+<td>返回数据个数</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>c.clear()</td>
+<td>清除元素个数</td>
+<td>O(N)</td>
+</tr>
+<tr>
+<td>c.resize(n, v)</td>
+<td>改变数组大小为n并赋值为v，如果没有则默认赋值0</td>
+<td></td>
+</tr>
+<tr>
+<td>c.insert(it, x)</td>
+<td>向迭代器it插入元素x</td>
+<td>O(N)</td>
+</tr>
+<tr>
+<td>c.erase(first,last)</td>
+<td>删除<code>[first, last)</code>所有元素</td>
+<td>O(N)</td>
+</tr>
+<tr>
+<td>c.begin()</td>
+<td>返回首元素迭代器(可以通俗的理解为地址)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>c.end()</td>
+<td>返回最后一个元素后一个位置的迭代器</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>c.empty()</td>
+<td>判断是否为空，空为真</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>c.at(idx)</td>
+<td>返回c[idx]的值（但还是建议用[]）</td>
+<td></td>
+</tr>
+<tr>
+<td>c.reserve(sz)</td>
+<td>改变<code>capacity</code>的大小</td>
+<td></td>
+</tr>
+<tr>
+<td>c.assign(n, val)</td>
+<td>讲<code>n</code>个<code>val</code>值拷贝到<code>c</code>数组中</td>
+<td></td>
+</tr>
+<tr>
+<td>c.assign(beg, end)</td>
+<td>讲另一个容器的<code>[x.begin(), x.end()]</code>里的内容拷贝到c</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="1-4-访问"><a href="#1-4-访问" class="headerlink" title="1.4 访问"></a>1.4 访问</h3><p>总共三种方法：<code>下标法</code>、<code>迭代器法</code>、<code>auto</code></p>
+<h4 id="1-4-1-下标访问"><a href="#1-4-1-下标访问" class="headerlink" title="1.4.1 下标访问"></a>1.4.1 下标访问</h4><p>和普通数组的区别是没有区别</p>
+<h4 id="1-4-2-迭代器访问"><a href="#1-4-2-迭代器访问" class="headerlink" title="1.4.2 迭代器访问"></a>1.4.2 迭代器访问</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt; vi&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;;<br><span class="hljs-comment">//迭代器访问</span><br>vector&lt;<span class="hljs-type">int</span>&gt;::iterator it;   <br><span class="hljs-comment">// 相当于声明了一个迭代器类型的变量it</span><br><span class="hljs-comment">// 通俗来说就是声明了一个指针变量</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<ul>
+<li>方法一</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt;::iterator it = vi.<span class="hljs-built_in">begin</span>(); <br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)<br>	cout &lt;&lt; *(it + i) &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>cout &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br></code></pre></td></tr></table></figure>
 
+<ul>
+<li>方法二</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt;::iterator it; <span class="hljs-keyword">for</span>(it = vi.<span class="hljs-built_in">begin</span>(); it != vi.<span class="hljs-built_in">end</span>();it ++) cout &lt;&lt; *it &lt;&lt; <span class="hljs-string">&quot; &quot;</span>; <br><span class="hljs-comment">//vi.end()指向尾元素地址的下一个地址 </span><br><span class="hljs-comment">// 或者 </span><br><span class="hljs-keyword">auto</span> it = vi.<span class="hljs-built_in">begin</span>();<br><span class="hljs-keyword">while</span>(it != vi.<span class="hljs-built_in">end</span>())<br>&#123;<br>    cout &lt;&lt; *it &lt;&lt; endl;<br>    it++;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="1-4-3-智能指针"><a href="#1-4-3-智能指针" class="headerlink" title="1.4.3 智能指针"></a>1.4.3 智能指针</h4><p>只能遍历完整个数组，如果要遍历指定内容，参考方法一、二</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 1. 输入 </span><br><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(n)</span></span>; <br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;x: a) <br>&#123;<br>     cin &gt;&gt; x; <span class="hljs-comment">// 可以进行输入，注意加引用 </span><br>&#125; <br><br><span class="hljs-comment">// 2. 输出 </span><br>vector&lt;<span class="hljs-type">int</span>&gt; v; <br>v.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">12</span>); <br>v.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">241</span>); <br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> val : v) <br>&#123;<br>     cout &lt;&lt; val &lt;&lt; <span class="hljs-string">&quot; &quot;</span>; <span class="hljs-comment">// 12 241 </span><br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -293,6 +401,15 @@
             <div>
               <div class="post-metas my-3">
   
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/C/" class="print-no-link">#C++</a>
+      
+        <a href="/tags/STL/" class="print-no-link">#STL</a>
+      
+    </div>
   
 </div>
 
@@ -302,14 +419,14 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/2024/05/23/hello-world/</div>
+      <div>C++ STL学习</div>
+      <div>http://example.com/2024/05/23/CPPSTL/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>Author</div>
-          <div>John Doe</div>
+          <div>张沛霖</div>
         </div>
       
       
@@ -347,15 +464,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/05/23/CPPSTL/" title="C++ STL学习">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C++ STL学习</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2024/05/23/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
