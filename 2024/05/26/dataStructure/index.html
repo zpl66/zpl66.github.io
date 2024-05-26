@@ -16,15 +16,15 @@
   <meta name="author" content="饺子">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Document               	window.onload&#x3D;mermaid.initialize({&quot;theme&quot;: &quot;forest&quot;});       数据结构很大，但仅对于本科来说，我们能接触的通常就那么八个      graph TB         DS[数据结构] --&gt; Hash[哈希表]         DS --&gt; Queue[队列]">
+    <meta name="description" content="Document               	window.onload&#x3D;mermaid.initialize({&quot;theme&quot;: &quot;forest&quot;});       数据结构很大，但仅对于本科来说，我们能接触的通常就那么八个              graph TD;     HTML[HTML网页结构] --&gt; CSS[CSS网页样式];     HTML -">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构基础知识">
 <meta property="og:url" content="http://example.com/2024/05/26/dataStructure/index.html">
 <meta property="og:site_name" content="Dumpling">
-<meta property="og:description" content="Document               	window.onload&#x3D;mermaid.initialize({&quot;theme&quot;: &quot;forest&quot;});       数据结构很大，但仅对于本科来说，我们能接触的通常就那么八个      graph TB         DS[数据结构] --&gt; Hash[哈希表]         DS --&gt; Queue[队列]">
+<meta property="og:description" content="Document               	window.onload&#x3D;mermaid.initialize({&quot;theme&quot;: &quot;forest&quot;});       数据结构很大，但仅对于本科来说，我们能接触的通常就那么八个              graph TD;     HTML[HTML网页结构] --&gt; CSS[CSS网页样式];     HTML -">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-25T16:03:41.000Z">
-<meta property="article:modified_time" content="2024-05-26T06:41:46.021Z">
+<meta property="article:modified_time" content="2024-05-26T07:39:50.627Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          82 words
+          84 words
         
       </span>
     
@@ -284,18 +284,15 @@
 </head>
 <p>数据结构很大，但仅对于本科来说，我们能接触的通常就那么八个</p>
 <div class="mermaid">
-    graph TB
-        DS[数据结构] --> Hash[哈希表]
-        DS --> Queue[队列]
-        DS --> Tree[树]
-        DS --> Heap[堆]
-        DS --> Array[数列]
-        DS --> Stack[栈]
-        DS --> LinkedList[链表]
-        DS --> Graph[图]
-<pre><code class="hljs">    classDef default fill:#f9f,stroke:#333,stroke-width:2px;
-    class DS,Hash,Queue,Tree,Heap,Array,Stack,LinkedList,Graph default;
-</code></pre>
+            graph TD;
+    HTML[HTML<br>网页结构] --> CSS[CSS<br>网页样式];
+    HTML --> JS[JavaScript<br>动态交互];
+    JS --> jQuery[jQuery<br>简化JS操作];
+    JS --> Bootstrap[Bootstrap<br>响应式设计];
+    CSS --> Bootstrap;
+    jQuery --> Bootstrap;
+    classDef someclass fill:#f9f,stroke:#333,stroke-width:2px;
+    class HTML,CSS,JS,jQuery,Bootstrap someclass;
 </div>
                 
               </div>
