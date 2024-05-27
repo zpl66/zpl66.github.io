@@ -1,0 +1,10 @@
+.star {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background-color: yellow;
+    border-radius: 50%;
+    pointer-events: none; /* 确保星星不会影响鼠标事件 */
+    z-index: 9999; /* 确保星星显示在其他内容上方 */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* 使星星渐变消失 */
+}
