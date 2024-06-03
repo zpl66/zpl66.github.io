@@ -26,7 +26,7 @@
 <meta property="og:description" content="P3156 询问学号 传送门 P3613 寄包柜 传送门 二维数组秒了 虽然这题的题目是寄包柜，但他真的是考察寄包柜吗？是的 根据问题找答案，显然对于每个问题有三个元素:第i个寄包柜，第j个格子里的物品。如果用二维数组，显然105 * 109会MLE，即使是动态数组也不太妥。 所以呢？最简单的方法当然是STL大法！ 但有个问题，一个map元素只有两个值，比如map&lt;int,int&gt; b">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-06-03T14:10:42.000Z">
-<meta property="article:modified_time" content="2024-06-03T15:46:54.220Z">
+<meta property="article:modified_time" content="2024-06-03T16:01:58.101Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="数据结构， C++">
 <meta name="twitter:card" content="summary_large_image">
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          415 words
+          408 words
         
       </span>
     
@@ -291,17 +291,18 @@
 <p>map&lt;int,int&gt; b[MAX];<br>
 b[i][j] = k;</p>
 <h2 id="P1449-后缀表达式">P1449 后缀表达式</h2>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1449">传送门</a></p>
 <p>单纯做这题其实并不难，但是我想到了一个问题：前缀表达式和前序遍历、中缀表达式和中序遍历、后续表达式和后序遍历之间是否有关系？</p>
 <p>根据我自己的探索，发现其实前、中、后缀表达式可以说是前、中、后序遍历的一种特殊形式</p>
-<p>举个例子，对于<code>(A+B)*C</code>这个表达式，可以转化为树。</p>
-<p>很显然，我们最先算的是<code>*</code>,所以<code>*</code>是根节点。其次算<code>(A+B)</code>和<code>C</code>的乘积，要算<code>(A+B)</code>我们要先做<code>A</code>和<code>B</code>的加法，因此<code>*</code>的子节点是<code>+</code>和<code>C</code>。最后显然<code>+</code>的子节点是<code>A</code>和<code>B</code></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">    *</span><br>   / \<br><span class="hljs-bullet">  +</span>   C<br> / \<br>A   B<br></code></pre></td></tr></table></figure>
+<p>举个例子，对于<code>3*(5-2)+7</code>这个表达式，可以转化为树。</p>
+<p>很显然，我们最先算<code>3*(5-2)</code>与<code>7</code>的和，其次算<code>3</code>和<code>(5-2)</code>的乘积，要算<code>5-2</code>我们要先做<code>5</code>和<code>2</code>的减法，因此<code>*</code>的子节点是<code>3</code>和<code>-</code>。显然<code>-</code>的子节点是<code>5</code>和<code>2</code>。最后计算的是</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">    +</span><br>   / \<br><span class="hljs-bullet">  *</span>   7<br> / \<br>3   -<br>   / \<br>  5   2<br></code></pre></td></tr></table></figure>
 <p>前缀表达式(前序遍历)：<br>
-*+A.B.C@(<code>@</code>为表达式的结束符号，<code>.</code>为操作数的结束符号)</p>
++*3-5.2.7</p>
 <p>中缀表达式(中序遍历)<br>
-A+B*C</p>
+3*5-2+7</p>
 <p>后缀表达式(后序遍历):<br>
-A.B+C*</p>
+3.5.2.-*7+</p>
 
                 
               </div>
