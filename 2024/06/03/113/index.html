@@ -26,7 +26,7 @@
 <meta property="og:description" content="1 P3156 询问学号 传送门 没啥好说的，跳 2 P3613 寄包柜 传送门 二维数组秒了 虽然这题的题目是寄包柜，但他真的是考察寄包柜吗？是的 根据问题找答案，显然对于每个问题有三个元素:第i个寄包柜，第j个格子里的物品。如果用二维数组，显然105 * 109会MLE，即使是动态数组也不太妥。 所以呢？最简单的方法当然是STL大法！ 但有个问题，一个map元素只有两个值，比如map&lt;i">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-06-03T14:10:42.000Z">
-<meta property="article:modified_time" content="2024-06-05T07:07:47.613Z">
+<meta property="article:modified_time" content="2024-06-05T11:09:03.730Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="数据结构， C++">
 <meta name="twitter:card" content="summary_large_image">
@@ -253,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k words
+          2.5k words
         
       </span>
     
@@ -264,7 +264,7 @@
         
         
         
-          16 mins
+          21 mins
         
       </span>
     
@@ -391,6 +391,53 @@ b[i][j] = k;</p>
 <p>正难则反，以退为进。我们不妨先用一个布尔数组标记所有要删除的学号，接着依次输出链表，当遇到要输出的学号被标记时则不输出，时间复杂度O(N)。</p>
 <h3 id="5-3-AC代码">5.3 AC代码</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>;<br><br><span class="hljs-type">int</span> l[N], r[N], res[N];<br><span class="hljs-type">int</span> n;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;n);<br>    <br>    r[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>, l[n + <span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>    r[<span class="hljs-number">1</span>] = n + <span class="hljs-number">1</span>, l[<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;<br>    <br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++)<br>    &#123;<br>        <span class="hljs-type">int</span> k, p;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d%d&quot;</span>, &amp;k, &amp;p);<br>        <br>        <span class="hljs-keyword">if</span>(p == <span class="hljs-number">0</span>)<br>        &#123;<br>            r[i] = k;<br>            l[i] = l[k];<br>            r[l[k]] = i;<br>            l[k] = i;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(p == <span class="hljs-number">1</span>)<br>        &#123;<br>            l[i] = k;<br>            r[i] = r[k];<br>            l[r[k]] = i;<br>            r[k] = i;<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-type">int</span> idx = <span class="hljs-number">1</span>, temp = <span class="hljs-number">0</span>;<br>    <br>    <span class="hljs-keyword">while</span>(r[temp] != n + <span class="hljs-number">1</span>)<br>    &#123;<br>        res[idx++] = r[temp];<br>        temp = r[temp];<br>    &#125;<br>    <br>    <span class="hljs-type">int</span> m;<br>    <span class="hljs-type">bool</span> isDeleted[N] = &#123;<span class="hljs-literal">false</span>&#125;;<br>    <br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;m);<br>    <br>    <span class="hljs-keyword">while</span>(m--)<br>    &#123;<br>        <span class="hljs-type">int</span> x;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;x);<br>        isDeleted[x] = <span class="hljs-literal">true</span>;<br>    &#125;<br>    <br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(!isDeleted[res[i]])<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, res[i]);<br>    &#125;<br>    <br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;&quot;</span>);<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="6-P1540-机器翻译">6 P1540 机器翻译</h2>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1540">传送门</a></p>
+<p>解题思路：</p>
+<ol>
+<li>
+<p>初始化</p>
+<ul>
+<li>使用一个固定大小的队列或列表来模拟内存</li>
+<li>使用一个计算器来记录查词典的次数</li>
+</ul>
+</li>
+<li>
+<p>对于文章中的每个单词</p>
+<ul>
+<li>对于文章中每个单词首先要判断他是否在内存（这里用队列来模拟）中
+<ul>
+<li>如果在，不需要做任何操作</li>
+<li>如果不在
+<ul>
+<li>如果内存未满，直接将单词添加到内存中</li>
+<li>如果队列已满，移除最先进入内存的单词(直接pop())，然后将新单词添加到内存中</li>
+<li>每次将单词加入内存时，增加查词典的计数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>输出结果</p>
+<ul>
+<li>文章处理完成后，输出查词典的总次数</li>
+</ul>
+</li>
+</ol>
+<p>AC代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;deque&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br>deque&lt;<span class="hljs-type">int</span>&gt; words;<br><span class="hljs-type">int</span> m, n;<span class="hljs-comment">//m为内存容量，n为文章长度</span><br><span class="hljs-type">int</span> res;<br><span class="hljs-type">bool</span> isFound;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    cin &gt;&gt; m &gt;&gt; n;<br>    <br>    <span class="hljs-keyword">while</span>(n -- )<br>    &#123;<br>        <span class="hljs-type">int</span> x;<br>        <br>        cin &gt;&gt; x;<br>        <br>        isFound = <span class="hljs-literal">false</span>;<br>        <br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> it = words.<span class="hljs-built_in">begin</span>(); it != words.<span class="hljs-built_in">end</span>(); it ++ )<br>        &#123;<br>            <span class="hljs-keyword">if</span>(x == *it) <br>            &#123;<br>                isFound = <span class="hljs-literal">true</span>;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <br>        <span class="hljs-keyword">if</span>(!isFound)<br>        &#123;<br>            res ++ ;<br>            <br>            <span class="hljs-keyword">if</span>(words.<span class="hljs-built_in">size</span>() &gt;= m)<br>            &#123;<br>                words.<span class="hljs-built_in">pop_front</span>();<br>                words.<span class="hljs-built_in">push_back</span>(x);<br>            &#125;<span class="hljs-keyword">else</span> words.<span class="hljs-built_in">push_back</span>(x);<br>        &#125;<br>    &#125;<br>    <br>    cout &lt;&lt; res &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>以上是本蒟蒻的代码，时间复杂度O(N<sup>2</sup>)。翻看题解，看到一位大佬的代码，居然将时间复杂度做到O(N)</p>
+<p>用内存换时间，这是很划算的做法。</p>
+<ul>
+<li>开辟两个数组a[MAX]、b[MAX]</li>
+<li>用b[MAX]表示依次存入的单词,比如b[1] = 3, b[2] = 5,表示第一个存入的单词是3，第二个存入的单词是5</li>
+<li>a[MAX]表示查询单词是否在区域中，如果在则为1，不在为0</li>
+<li>用左、右指针计算内存的长度</li>
+</ul>
+<p>大佬的代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n,m,x,ans,l,r,a[<span class="hljs-number">1005</span>],b[<span class="hljs-number">1005</span>];<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    cin&gt;&gt;m&gt;&gt;n;<br>    l=<span class="hljs-number">0</span>;r=<span class="hljs-number">0</span>;<span class="hljs-comment">//初始化两个指针</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)<br>    &#123;<br>         <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;x);<span class="hljs-comment">//边读入边做</span><br>         <span class="hljs-keyword">if</span> (a[x]==<span class="hljs-number">0</span>) <br>         &#123;<br>             ans++;<br>            r++;b[r]=x;a[x]=<span class="hljs-number">1</span>;<span class="hljs-comment">//因为每次遇到新单词都要做这些操作，不如搬到判断语句外做，这样程序更简洁</span><br>            <span class="hljs-keyword">if</span> (r&gt;m) &#123;l++;a[b[l]]=<span class="hljs-number">0</span>;&#125;<br>        &#125;<br>    &#125;<br>    cout&lt;&lt;ans;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//千万不能忘记打这句，不然在比赛中会出错</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
