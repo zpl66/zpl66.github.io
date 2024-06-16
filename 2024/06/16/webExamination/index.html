@@ -26,8 +26,9 @@
 <meta property="og:description" content="0. 写在开头 开始之前，我想先说一下html,css,Bootstrap,Javascript,Query之间的关系  HTML(HyperText Markup Language)是网页的基础，它定义了网页的结构和内容。你可以把它想象成建筑的骨架，决定了建筑的基本形状和内部空间的布局。 CSS(Cascading Style Sheet)是用来设置网页的样式的，包括布局、颜色、字体等。它的作用">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/span.png">
+<meta property="og:image" content="http://example.com/images/list.png">
 <meta property="article:published_time" content="2024-06-16T04:59:26.000Z">
-<meta property="article:modified_time" content="2024-06-16T06:49:44.249Z">
+<meta property="article:modified_time" content="2024-06-16T08:02:07.877Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="web前端">
 <meta name="twitter:card" content="summary_large_image">
@@ -255,7 +256,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k words
+          3.7k words
         
       </span>
     
@@ -266,7 +267,7 @@
         
         
         
-          19 mins
+          31 mins
         
       </span>
     
@@ -330,18 +331,18 @@
 <h2 id="1-HTML-Cheatsheet-HTML工作表">1. HTML Cheatsheet(HTML工作表)</h2>
 <h3 id="1-1-Basic-Tags">1.1 Basic Tags</h3>
 <ol>
-<li><code>&lt;html&gt;&lt;/html&gt;</code>:<br>Creates an HTML document<br>创建HTML文档</li>
-<li><code>&lt;head&gt;&lt;/head&gt;</code>:<br>Sets off the title &amp; other info that isn’s displayed<br>用来标记网页标题和其他不会直接显示的内容(<em>这里的<code>set off</code>可以理解为标记或设定</em>)</li>
-<li><code>&lt;body&gt;&lt;/body&gt;</code>:<br>Sets off the visible portion of the document<br>用来标记文档可见部分</li>
-<li><code>&lt;title&gt;&lt;/title&gt;</code>:<br>Puts name of the document in the title bar;when bookmarking pages,this is what bookmarked<br>文档的标题会显示在浏览器的标题栏或标签页上，当用户为页面添加书签时，这个标题也是被保存的内容。(<code>bookmark</code>:书签)</li>
+<li><code>&lt;html&gt;&lt;/html&gt;</code>:Creates an HTML document<br>创建HTML文档</li>
+<li><code>&lt;head&gt;&lt;/head&gt;</code>:Sets off the title &amp; other info that isn’s displayed<br>用来标记网页标题和其他不会直接显示的内容(<em>这里的<code>set off</code>可以理解为标记或设定</em>)</li>
+<li><code>&lt;body&gt;&lt;/body&gt;</code>:Sets off the visible portion of the document<br>用来标记文档可见部分</li>
+<li><code>&lt;title&gt;&lt;/title&gt;</code>:Puts name of the document in the title bar;when bookmarking pages,this is what bookmarked<br>文档的标题会显示在浏览器的标题栏或标签页上，当用户为页面添加书签时，这个标题也是被保存的内容。(<code>bookmark</code>:书签)</li>
 </ol>
 <h3 id="1-2-Body-attributes-Only-used-in-email-newsletters-仅用于电子邮件通讯">1.2 Body attributes[Only used in email newsletters(仅用于电子邮件通讯)]</h3>
 <ol>
-<li><code>&lt;body bgcolor=?&gt;</code>:<br>Sets background color,using name or hex value<br>设置背景颜色，使用名称或十六进制值</li>
-<li><code>&lt;body text=?&gt;</code>:<br>Sets text color,using name or hex value<br>设置文本颜色，使用名称或十六进制值</li>
-<li><code>&lt;body link=?&gt;</code>:<br>Sets color of links,using name or hex value<br>设置链接颜色，使用名称或十六进制值</li>
-<li><code>&lt;body vlink=?&gt;</code>:<br>Sets color of visited links,using name or hex calue<br>设置已访问链接的颜色，使用名称或十六进制值</li>
-<li><code>&lt;body alink=?&gt;</code>:<br>Sets color of active links (while mouse-clicking)<br>设置活动链接的颜色（鼠标点击时）</li>
+<li><code>&lt;body bgcolor=?&gt;</code>:Sets background color,using name or hex value<br>设置背景颜色，使用名称或十六进制值</li>
+<li><code>&lt;body text=?&gt;</code>:Sets text color,using name or hex value<br>设置文本颜色，使用名称或十六进制值</li>
+<li><code>&lt;body link=?&gt;</code>:Sets color of links,using name or hex value<br>设置链接颜色，使用名称或十六进制值</li>
+<li><code>&lt;body vlink=?&gt;</code>:Sets color of visited links,using name or hex calue<br>设置已访问链接的颜色，使用名称或十六进制值</li>
+<li><code>&lt;body alink=?&gt;</code>:Sets color of active links (while mouse-clicking)<br>设置活动链接的颜色（鼠标点击时）</li>
 </ol>
 <blockquote>
 <p><strong>小贴士（不赶时间可以看看）：</strong><br>
@@ -352,26 +353,26 @@
 </blockquote>
 <h3 id="1-3-Text-Tags-文本标签">1.3 Text Tags(文本标签)</h3>
 <ol>
-<li><code>&lt;pre&gt;&lt;/pre&gt;</code>:<br>Creates preformatted text<br>创建预格式化文本<br>大白话：使用<code>&lt;pre&gt;</code>标签可以确保文本的格式不会被浏览器自动调整，非常适合需要保持原始格式的内容</li>
-<li><code>&lt;h1&gt;&lt;/h1&gt;--&gt;&lt;h6&gt;&lt;/h6&gt;</code>:<br>Creates headlines – H1=largest, H6=smallest<br>创建标题，h1最大，h6最小</li>
-<li><code>&lt;b&gt;&lt;/b&gt;</code>:<br>Creates bold text (should use <code>&lt;strong&gt;</code> instead)<br>创建粗体文本(创建粗体文本（应该使用 <code>&lt;strong&gt;</code> 代替）)</li>
-<li><code>&lt;i&gt;&lt;/i&gt;</code>:<br>Creates italicized text (should use <code>&lt;em&gt;</code> instead)<br>创建斜体文本（应该使用 <code>&lt;em&gt;</code> 代替）</li>
-<li><code>&lt;tt&gt;&lt;/tt&gt;</code>:<br>Creates typewriter-style text<br>创建打字机风格的文本</li>
-<li><code>&lt;code&gt;&lt;/code&gt;</code>:<br>Used to define source code, usually monospace<br>用于定义源代码，通常为等宽字体</li>
-<li><code>&lt;cite&gt;&lt;/cite&gt;</code>:<br>Creates a citation, usually processed in italics<br>创建引用，通常为斜体</li>
-<li><code>&lt;address&gt;&lt;/address&gt;</code>:<br>Creates address section, usually processed in italics<br>创建地址部分，通常为斜体</li>
-<li><code>&lt;em&gt;&lt;/em&gt;</code>:<br>Emphasizes a word (usually processed in italics)<br>强调一个词（通常为斜体）</li>
-<li><code>&lt;strong&gt;&lt;/strong&gt;</code>:<br>Emphasizes a word (usually processed in bold)<br>强调一个词（通常为粗体）</li>
-<li><code>&lt;font size=?&gt;&lt;/font&gt;</code>:<br>Sets size of font - 1 to 7 (should use CSS instead)<br>设置字体大小 - 1 到 7（应该使用 CSS 代替）</li>
-<li><code>&lt;font color=?&gt;&lt;/font&gt;</code>:<br>Sets font color (should use CSS instead)<br>设置字体颜色（应该使用 CSS 代替）</li>
-<li><code>&lt;font face=?&gt;&lt;/font&gt;</code>:<br>Defines the font used(should use the CSS instead)<br>定义所使用的字体（应该使用 CSS 代替）</li>
+<li><code>&lt;pre&gt;&lt;/pre&gt;</code>:Creates preformatted text<br>创建预格式化文本<br>大白话：使用<code>&lt;pre&gt;</code>标签可以确保文本的格式不会被浏览器自动调整，非常适合需要保持原始格式的内容</li>
+<li><code>&lt;h1&gt;&lt;/h1&gt;--&gt;&lt;h6&gt;&lt;/h6&gt;</code>:Creates headlines – H1=largest, H6=smallest<br>创建标题，h1最大，h6最小</li>
+<li><code>&lt;b&gt;&lt;/b&gt;</code>:Creates bold text (should use <code>&lt;strong&gt;</code> instead)<br>创建粗体文本(创建粗体文本（应该使用 <code>&lt;strong&gt;</code> 代替）)</li>
+<li><code>&lt;i&gt;&lt;/i&gt;</code>:Creates italicized text (should use <code>&lt;em&gt;</code> instead)<br>创建斜体文本（应该使用 <code>&lt;em&gt;</code> 代替）</li>
+<li><code>&lt;tt&gt;&lt;/tt&gt;</code>:Creates typewriter-style text<br>创建打字机风格的文本</li>
+<li><code>&lt;code&gt;&lt;/code&gt;</code>:Used to define source code, usually monospace<br>用于定义源代码，通常为等宽字体</li>
+<li><code>&lt;cite&gt;&lt;/cite&gt;</code>:Creates a citation, usually processed in italics<br>创建引用，通常为斜体</li>
+<li><code>&lt;address&gt;&lt;/address&gt;</code>:Creates address section, usually processed in italics<br>创建地址部分，通常为斜体</li>
+<li><code>&lt;em&gt;&lt;/em&gt;</code>:Emphasizes a word (usually processed in italics)<br>强调一个词（通常为斜体）</li>
+<li><code>&lt;strong&gt;&lt;/strong&gt;</code>:Emphasizes a word (usually processed in bold)<br>强调一个词（通常为粗体）</li>
+<li><code>&lt;font size=?&gt;&lt;/font&gt;</code>:Sets size of font - 1 to 7 (should use CSS instead)<br>设置字体大小 - 1 到 7（应该使用 CSS 代替）</li>
+<li><code>&lt;font color=?&gt;&lt;/font&gt;</code>:Sets font color (should use CSS instead)<br>设置字体颜色（应该使用 CSS 代替）</li>
+<li><code>&lt;font face=?&gt;&lt;/font&gt;</code>:Defines the font used(should use the CSS instead)<br>定义所使用的字体（应该使用 CSS 代替）</li>
 </ol>
 <h3 id="1-4-Links">1.4 Links</h3>
 <ol>
-<li><code>&lt;a href=&quot;URL&quot;&gt;clickable text&lt;/a&gt;</code>:<br>Creates a hyperlink to a Uniform Resource Locator<br>创建一个指向统一资源定位符（URL）的超链接</li>
-<li><code>&lt;a href=&quot;mailto:EMAIL_ADDRESS&quot;&gt;clickable text&lt;/a&gt;</code>:<br>Creates a hyperlink to an email address<br>创建一个指向电子邮件地址的超链接</li>
-<li><code>&lt;a name=&quot;NAME&quot;&gt;</code>:<br>Creates a target location within a document<br>在文档内创建一个目标位置</li>
-<li><code>&lt;a href=&quot;#NAME&quot;&gt;clickable text&lt;/a&gt;</code>:<br>Creates a link to that target location<br>创建一个指向该目标位置的链接<br>大白话：创建一个指向该目标位置的链接。点击此链接时，页面会滚动到相应的锚点目标位置</li>
+<li><code>&lt;a href=&quot;URL&quot;&gt;clickable text&lt;/a&gt;</code>:Creates a hyperlink to a Uniform Resource Locator<br>创建一个指向统一资源定位符（URL）的超链接</li>
+<li><code>&lt;a href=&quot;mailto:EMAIL_ADDRESS&quot;&gt;clickable text&lt;/a&gt;</code>:Creates a hyperlink to an email address<br>创建一个指向电子邮件地址的超链接</li>
+<li><code>&lt;a name=&quot;NAME&quot;&gt;</code>:Creates a target location within a document<br>在文档内创建一个目标位置</li>
+<li><code>&lt;a href=&quot;#NAME&quot;&gt;clickable text&lt;/a&gt;</code>:Creates a link to that target location<br>创建一个指向该目标位置的链接<br>大白话：创建一个指向该目标位置的链接。点击此链接时，页面会滚动到相应的锚点目标位置</li>
 </ol>
 <blockquote>
 <p><strong>小贴士：</strong><br>
@@ -382,14 +383,88 @@ URL是&quot;Uniform Resource Locator&quot;的缩写，中文常译为“统一�
 </blockquote>
 <h3 id="1-5-Formatting-格式化">1.5 Formatting(格式化)</h3>
 <ol>
-<li><code>&lt;p&gt;&lt;/p&gt;</code>:<br>Creates a new paragraph<br>创建一个新段落</li>
-<li><code>&lt;br&gt;</code>：<br>Inserts a line break(carriage return)<br>插入一个换行符(回车)</li>
-<li><code>&lt;blockquote&gt;&lt;/blockquote&gt;</code>:<br>Puts content in a quote-indents text from both sides<br>将内容放在引号中-将文本从两边缩进<br>大白话：<code>&lt;blockquote&gt;</code> 标签用于表示引用的内容，浏览器通常会对其进行缩进处理以突出显示引用的部分。这种标记常用于显示他人的言论或引用的文本，以便与正文区分开来。通常，浏览器会在左右两侧添加一些空白来使引用部分与周围内容有所区别。</li>
-<li><code>&lt;div&gt;&lt;/div&gt;</code>:<br>Used to format block content with CSS<br>用于使用 CSS 格式化块级内容</li>
-<li><code>&lt;span&gt;&lt;/span&gt;</code>:<br>Used to format inline content with CSS<br>用于使用 CSS 格式化内联内容<br><code>&lt;span&gt;</code> 标签用于对文本中的一部分进行行内样式控制，通常用于对文本进行格式化或添加样式而不影响其它文本。它类似于 <code>&lt;div&gt;</code>，但 <code>&lt;span&gt; </code>是行内元素，而 <code>&lt;div&gt;</code>是块级元素，所以 <code>&lt;span&gt;</code> 通常用于对文本的一部分进行样式设置，例如改变颜色、字体、大小等。<br>打个比方，<code>&lt;span&gt;</code> 标签就像是一个装饰盒，你可以把它放在文字中任何你想要装饰的地方。比如，你可以用 <code>&lt;span&gt;</code> 来给文字涂上不同的颜色、改变字体大小或者添加特殊效果，而不会影响到其他文字。就像给一小块文字打扮一样，不会影响到整个段落的装扮。</li>
+<li><code>&lt;p&gt;&lt;/p&gt;</code>:Creates a new paragraph<br>创建一个新段落</li>
+<li><code>&lt;br&gt;</code>：Inserts a line break(carriage return)<br>插入一个换行符(回车)</li>
+<li><code>&lt;blockquote&gt;&lt;/blockquote&gt;</code>:Puts content in a quote-indents text from both sides<br>将内容放在引号中-将文本从两边缩进<br>大白话：<code>&lt;blockquote&gt;</code> 标签用于表示引用的内容，浏览器通常会对其进行缩进处理以突出显示引用的部分。这种标记常用于显示他人的言论或引用的文本，以便与正文区分开来。通常，浏览器会在左右两侧添加一些空白来使引用部分与周围内容有所区别。</li>
+<li><code>&lt;div&gt;&lt;/div&gt;</code>:Used to format block content with CSS<br>用于使用 CSS 格式化块级内容</li>
+<li><code>&lt;span&gt;&lt;/span&gt;</code>:Used to format inline content with CSS<br>用于使用 CSS 格式化内联内容<br><code>&lt;span&gt;</code> 标签用于对文本中的一部分进行行内样式控制，通常用于对文本进行格式化或添加样式而不影响其它文本。它类似于 <code>&lt;div&gt;</code>，但 <code>&lt;span&gt; </code>是行内元素，而 <code>&lt;div&gt;</code>是块级元素，所以 <code>&lt;span&gt;</code> 通常用于对文本的一部分进行样式设置，例如改变颜色、字体、大小等。<br>打个比方，<code>&lt;span&gt;</code> 标签就像是一个装饰盒，你可以把它放在文字中任何你想要装饰的地方。比如，你可以用 <code>&lt;span&gt;</code> 来给文字涂上不同的颜色、改变字体大小或者添加特殊效果，而不会影响到其他文字。就像给一小块文字打扮一样，不会影响到整个段落的装扮。</li>
 </ol>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>这是一段 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: red;&quot;</span>&gt;</span>红色<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 的文字。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p><img src="/images/span.png" srcset="/img/loading.gif" lazyload alt="效果图"></p>
+<h3 id="1-6-Lists-列表">1.6 Lists(列表)</h3>
+<ol>
+<li><code>&lt;ul&gt;&lt;/ul&gt;</code>:Creates an unordered list<br>创建一个无序列表</li>
+<li><code>&lt;ol start=?&gt;&lt;/ol&gt;</code>:Creates an ordered list (start=xx,<br>
+where xx is a counting number)<br>创建一个有序列表（start=xx，其中 xx 是一个计数数字）<br>xx 可以是任意整数，表示列表从这个编号开始。默认情况下，有序列表从 1 开始编号，但通过设置 start 属性，可以更改起始编号。</li>
+<li><code>&lt;li&gt;&lt;/li&gt;</code>:Encompasses each list item<br>包围每个列表项</li>
+<li><code>&lt;dl&gt;&lt;/dl&gt;</code>:Creates a definition list<br>创建一个定义列表</li>
+<li><code>&lt;dt&gt;&lt;/dt&gt;</code>:Precedes each definition term<br>在每个定义术语之前</li>
+<li><code>&lt;dd&gt;&lt;/dd&gt;</code>:Precedes each definition<br>在每个定义之前</li>
+</ol>
+<p><strong>没听懂？没关系，举个例子你就明白了</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span> <span class="hljs-attr">start</span>=<span class="hljs-string">&quot;5&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>项一<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>项二<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>项三<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">dl</span>&gt;</span><span class="hljs-comment">&lt;!--&lt;dl&gt;:定义列表的容器--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>HTML<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><span class="hljs-comment">&lt;!--&lt;dt&gt;:定义列表中的术语--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>超文本标记语言，用于创建网页。<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span><span class="hljs-comment">&lt;!--定义列表中的定义--&gt;</span><br>  <br>  <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>CSS<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>层叠样式表，用于控制网页的外观和布局。<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span><br>  <br>  <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>JavaScript<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>一种编程语言，用于为网页添加互动功能。<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><img src="/images/list.png" srcset="/img/loading.gif" lazyload alt="效果图"></p>
+<h3 id="1-7-Graphical-elements-图形元素">1.7 Graphical elements(图形元素)</h3>
+<ol>
+<li><code>&lt;hr&gt;</code>:Inserts a horizontal rule<br>插入一个水平线</li>
+<li><code>&lt;hr size=?&gt;</code>:Sets size (height) of horizontal rule<br>设置水平线的高度</li>
+<li><code>&lt;hr width=?&gt;</code>:Sets width of rule(as a % or absolute pixel length)<br>设置水平线的宽度（可以是百分比或绝对像素长度）</li>
+<li><code>&lt;hr noshade&gt;</code>:Creates a horizoontal rule without a shadow<br>创建一个没有阴影的水平线</li>
+<li><code>&lt;img src=&quot;URL&quot; /&gt;</code>:Adds image; it is a separate file located at the URL<br>添加图像；它是一个位于指定 URL 的单独文件<br><code>&lt;img src=&quot;URL&quot; /&gt;</code> 标签中的 / 是自闭合标签的写法。这种写法主要源于 XHTML 规范，在 XHTML 中，所有标签都必须正确关闭，即使是那些在 HTML 中不需要关闭的空元素（例如 <code>&lt;img&gt;</code>、<code>&lt;br&gt;</code>、<code>&lt;hr&gt;</code> 等）。</li>
+<li><code>&lt;img src=&quot;URL&quot; align=?&gt;</code>:Aligns image left/right/center/bottom/top/middle (use CSS)<br>将图像左对齐/右对齐/居中对齐/底部对齐/顶部对齐/中间对齐（建议使用 CSS）</li>
+<li><code>&lt;img src=&quot;URL&quot; border=?&gt;</code>:Sets size of border surrounding image (use CSS)<br>设置图像周围边框的大小（建议使用 CSS）</li>
+<li><code>&lt;img src=&quot;URL&quot; height=?&gt;</code>:Sets height of image, in pixels<br>设置图像的高度（单位为像素）</li>
+<li><code>&lt;img src=&quot;URL&quot; width=?&gt;</code>:Sets width of image, in pixels<br>设置图像的宽度（单位为像素）</li>
+<li><code>&lt;img src=&quot;URL&quot; alt=?&gt;</code>:Sets the alternate text for browsers that can’t process images (required by the ADA)<br>为无法处理图像的浏览器设置替代文本（ADA 要求）</li>
+</ol>
+<h3 id="1-8-Forms-表单">1.8 Forms(表单)</h3>
+<ol>
+<li><code>&lt;form&gt;&lt;/form&gt;</code>:Defines a form<br>定义一个表单</li>
+<li><code>&lt;select multiple name=? size=?&gt;&lt;/select&gt;</code>:Creates a scrolling menu. Size sets the number of menu items visible before user needs to scroll.<br>创建一个滚动菜单。size设置用于需要滚动前可见的菜单项数量</li>
+<li><code>&lt;select name=?&gt;&lt;/select&gt;</code>:Creates a pulldown menu<br>创建一个下拉菜单</li>
+<li><code>&lt;option&gt;</code>:Sets off each menu item<br>设置每个菜单项</li>
+<li><code>&lt;textarea name=? col=&quot;x&quot; rows=&quot;y&quot;&gt;&lt;/textarea&gt;</code>:Creates a text box area. Columns set the width; rows set the height.<br>创建一个文本区域。cols 设置宽度；rows 设置高度。</li>
+<li><code>&lt;input type=&quot;checkbox&quot; name=? value=?&gt;</code>:Creates a checkbox.<br>创建一个复选框。</li>
+<li><code>&lt;input type=&quot;checkbox&quot; name=? value=? checked&gt;</code>:Creates a checkbox which is pre-checked<br>创建一个预选中的复选框。</li>
+<li><code>&lt;input type=&quot;radio&quot; name=? value=?&gt;</code>:Creates a radio button.<br>创建一个单选按钮</li>
+<li><code>&lt;input type=&quot;radio&quot; name=? value=? checked&gt;</code>:Creates a radio button which is pre-checked.<br>创建一个预选中的单选按钮。</li>
+<li><code>&lt;input type=&quot;text&quot; name=? size=?&gt;</code>:Creates a one-line text area. Size sets length, in characters.<br>创建一个单行文本区域。size 设置长度，以字符为单位。</li>
+<li><code>&lt;input type=&quot;submit&quot; value=?&gt;</code>:Creates a submit button. Value sets the text in the submit button.<br>创建一个提交按钮。value 设置提交按钮上的文本。</li>
+<li><code>&lt;input type=&quot;image&quot; name=? src=? border=? alt=?&gt;</code>:Creates a submit button using an image.<br>使用图像创建一个提交按钮。</li>
+<li><code>&lt;input type=&quot;reset&quot;&gt;</code>:Creates a reset button<br>创建一个重置按钮</li>
+</ol>
+<h3 id="1-9-HTML5-input-tag-attributes-HTML5-输入标签属性（不是所有浏览器都支持；请访问-http-caniuse-com-获取详细信息）">1.9 HTML5 input tag attributes[HTML5 输入标签属性（不是所有浏览器都支持；请访问 <a target="_blank" rel="noopener" href="http://caniuse.com">http://caniuse.com</a> 获取详细信息）]</h3>
+<ol>
+<li><code>&lt;input type=&quot;email&quot; name=?&gt;</code>:Sets a single-line textbox for email addresses<br>设置一个用于电子邮件地址的单行文本框</li>
+<li><code>&lt;input type=&quot;URL&quot; name=?&gt;</code>:Sets a single-line textbox for URLs<br>设置一个用于 URL 的单行文本框</li>
+<li><code>&lt;input type=&quot;number&quot; name=?&gt;</code>:Sets a single-line textbox for a number<br>设置一个用于数字的单行文本框</li>
+<li><code>&lt;input type=&quot;range&quot; name=?&gt;</code>:Sets a single-line text box for a range of numbers<br>设置一个用于范围数字的单行文本框</li>
+<li><code>&lt;input type=&quot;date/month/week/time&quot; name=?&gt;</code>:Sets a single-line text box with a calendar showing the date/month/week/time<br>设置一个带有日历的单行文本框，显示日期/月份/周/时间</li>
+<li><code>&lt;input type=&quot;search&quot; name=?&gt;</code>:Sets a single-line text box for searching<br>设置一个用于搜索的单行文本框</li>
+<li><code>&lt;input type=&quot;color&quot; name=?&gt;</code>:Sets a single-line text box for picking a color<br>设置一个用于选择颜色的单行文本框</li>
+</ol>
+<h3 id="1-10-Tables-use-only-for-data-layout-use-CSS-for-page-layout-表格（仅用于数据布局-使用-CSS-进行页面布局）">1.10 Tables(use only for data layout -use CSS for page layout)[表格（仅用于数据布局 - 使用 CSS 进行页面布局）]</h3>
+<ol>
+<li><code>&lt;table&gt;&lt;/table&gt;</code>:Creates a table<br>创建一个表格</li>
+<li><code>&lt;tr&gt;&lt;/tr&gt;</code>:Sets off each row in a table<br>设置表格中的每一行</li>
+<li><code>&lt;td&gt;&lt;/td&gt;</code>:Sets off each cell in a row<br>设置每行中的每个单元格<br>td:table data</li>
+<li><code>&lt;th&gt;&lt;/th&gt;</code>:Sets off the table header(a normal cell with bold,centeered text)<br>设置表头（一个普通单元格，其中的文本加粗且居中显示）</li>
+</ol>
+<h3 id="1-11-Table-attributes-only-use-for-email-newsletters-表格属性-仅用于电子邮件新闻简报">1.11 Table attributes(only use for email newsletters)[表格属性(仅用于电子邮件新闻简报)]</h3>
+<ol>
+<li><code>&lt;table border=?&gt;</code>:Sets the width of the border around table cells<br>设置单元格周围边框的宽度</li>
+<li><code>&lt;table cellspacing=?&gt;</code>:Sets amount of space between table cells<br>设置表格单元格之间的间距</li>
+<li><code>&lt;table cellpadding=?&gt;</code>:Sets amount of space between a cell’s border and its contents<br>设置单元格边框和内容之间的间距</li>
+<li><code>&lt;table width=?&gt;</code>:Sets width of the table in pixels or as a percentage<br>设置表格的宽度，单位可以是像素或百分比</li>
+<li><code>&lt;tr align=?&gt;</code>:Sets alignment for cells within the roe(left/center/right)<br>设置行内单元格的对齐方式（左对齐/居中/右对齐）</li>
+<li><code>&lt;td align=?&gt;</code>:Sets alignment for cells within the row<br>
+(left/center/right)<br>设置单元格的对齐方式（左对齐/居中/右对齐）</li>
+<li><code>&lt;tr valign=?&gt;</code>:Sets vertical alignment for cells within the row (top/middle/bottom)<br>设置行内单元格的垂直对齐方式（顶部对齐/居中/底部对齐）</li>
+<li><code>&lt;td valign=?&gt;</code>:Sets vertical alignment for cell (top/middle/bottom)<br>设置单元格的垂直对齐方式（顶部对齐/居中/底部对齐）</li>
+<li><code>&lt;td rowspan=?&gt;</code>:Sets number of rows a cell should span (default=1)<br>设置单元格应跨越的行数（默认为1）</li>
+<li><code>&lt;td colspan=?&gt;</code>:Sets number of columns a cell should span<br>设置单元格应跨越的列数</li>
+<li><code>&lt;td nowrap&gt;</code>:Prevents lines within a cell from being broken to fit<br>防止单元格内部的文本换行以适应</li>
+</ol>
 
                 
               </div>
