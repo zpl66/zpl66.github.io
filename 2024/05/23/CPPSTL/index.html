@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/C++STL.png">
 <meta property="article:published_time" content="2024-05-23T13:35:45.000Z">
-<meta property="article:modified_time" content="2024-06-07T05:26:45.284Z">
+<meta property="article:modified_time" content="2024-06-07T08:25:13.108Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="STL">
@@ -256,7 +256,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k words
+          3.1k words
         
       </span>
     
@@ -267,7 +267,7 @@
         
         
         
-          23 mins
+          26 mins
         
       </span>
     
@@ -531,6 +531,82 @@
 <p><code>hh</code>表示队首元素的下标，初始为0</p>
 <p><code>tt</code>表示队尾元素的下标，初始为-1，表示刚开始时队列为空</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>;<br><br><span class="hljs-type">int</span> q[N];<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>     <span class="hljs-type">int</span> hh = <span class="hljs-number">0</span>, tt = <span class="hljs-number">-1</span>;<br>     <span class="hljs-comment">//入队</span><br>     q[++tt] = <span class="hljs-number">1</span>;<br>     q[++tt] = <span class="hljs-number">2</span>;<br>     <span class="hljs-comment">//出队</span><br>     <span class="hljs-keyword">while</span>(hh &lt;= tt)<br>     &#123;<br>          <span class="hljs-type">int</span> t = q[hh++];<br>          <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, t);<br>     &#125;<br><br>     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="6-map">6 map</h2>
+<h3 id="6-1-介绍">6.1 介绍</h3>
+<p>映射类似于函数的对应关系，每一个<code>x</code>对应一个<code>y</code>，而<code>map</code>是每个键对应一个值</p>
+<h3 id="6-2-初始化">6.2 初始化</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;map&gt;</span></span><br><br>map&lt;string, string&gt; mp1;<br>map&lt;string, <span class="hljs-type">int</span>&gt; mp2;<br>map&lt;<span class="hljs-type">int</span>, node&gt; mp3;<span class="hljs-comment">//node为结构体</span><br></code></pre></td></tr></table></figure>
+<h3 id="6-3-函数方法">6.3 函数方法</h3>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mp.find(key)</code></td>
+<td>返回键围殴key的映射迭代器</td>
+</tr>
+<tr>
+<td><code>mp.erase(it)</code></td>
+<td>删除迭代器对应的键和值</td>
+</tr>
+<tr>
+<td><code>mp.erase(key)</code></td>
+<td>根据映射的键删除键和值</td>
+</tr>
+<tr>
+<td><code>mp.insert(first,last)</code></td>
+<td>删除左闭右开区间迭代器对应的键和值</td>
+</tr>
+<tr>
+<td><code>mp.insert()</code></td>
+<td>插入元素，插入时要构造键值对</td>
+</tr>
+<tr>
+<td><code>mp.size()</code></td>
+<td>返回映射的对数</td>
+</tr>
+<tr>
+<td><code>mp.clear()</code></td>
+<td>清空map中所有元素</td>
+</tr>
+<tr>
+<td><code>mp.empty()</code></td>
+<td>如果map为空，返回true，否则返回false</td>
+</tr>
+<tr>
+<td><code>mp.mp.begin()</code></td>
+<td>返回指向map第一个元素的迭代器（地址）</td>
+</tr>
+<tr>
+<td><code>mp.end()</code></td>
+<td>返回指向map尾部的迭代器（最后一个元素的下一个地址）</td>
+</tr>
+<tr>
+<td><code>mp.rbegin()</code></td>
+<td>返回指向map最后一个元素的迭代器（地址）</td>
+</tr>
+<tr>
+<td><code>mp.rend()</code></td>
+<td>返回指向map第一个元素前面(上一个）的逆向迭代器（地址）</td>
+</tr>
+<tr>
+<td><code>mp.count(key)</code></td>
+<td>查看元素是否存在，因为map中键是唯一的，所以存在返回1，不存在返回0</td>
+</tr>
+<tr>
+<td><code>mp.lower_bound()</code></td>
+<td>返回一个迭代器，指向键值&gt;= key的第一个元素</td>
+</tr>
+<tr>
+<td><code>mp.upper_bound()</code></td>
+<td>返回一个迭代器，指向键值&gt; key的第一个元素</td>
+</tr>
+</tbody>
+</table>
 <h2 id="7-set">7 set</h2>
 <h3 id="7-1-介绍">7.1 介绍</h3>
 <p><code>set</code>容器中的元素不会重复，当插入集合中已有的元素时不会插入进去，而且<code>set</code>容器里的元素自动从小到大排序</p>
