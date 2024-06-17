@@ -42,25 +42,6 @@
   
   
   <entry>
-    <title>vue</title>
-    <link href="/2024/06/12/vue/"/>
-    <url>/2024/06/12/vue/</url>
-    
-    <content type="html"><![CDATA[<h2 id="介绍">介绍</h2><p>vue是一个JavaScript框架</p><p>与vue相似的框架还有React和Angular，但vue更轻量级，更容易上手</p><p>vue以JavaScript文件的形式发布，可通过脚本标签添加到网页中</p><script src="https://unpkg.com/vue3/dist/vue.global.js"></script><p>要使用vue，您有两种选择：</p><ol><li>下载（不需要网络）</li><li>CDN（使用链接，需要网络）</li></ol>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>web前端</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>数据结构常用模板</title>
     <link href="/2024/06/11/dataStructureTemplate/"/>
     <url>/2024/06/11/dataStructureTemplate/</url>
