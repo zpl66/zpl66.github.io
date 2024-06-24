@@ -8,7 +8,7 @@
     <link href="/2024/06/24/webQuestionBank/"/>
     <url>/2024/06/24/webQuestionBank/</url>
     
-    <content type="html"><![CDATA[<p><img src="https://www.javatpoint.com/html-mcq" alt="Html"><br><img src="https://www.javatpoint.com/css-mcq" alt="CSS"><br><img src="https://www.javatpoint.com/javascript-mcq" alt="Javascript"><br><img src="https://www.javatpoint.com/jquery-mcq" alt="jQuery"><br><img src="https://www.javatpoint.com/bootstrap-mcq" alt="Bootstrap"></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://www.javatpoint.com/html-mcq">Html</a><br><a href="https://www.javatpoint.com/css-mcq">CSS</a><br><a href="https://www.javatpoint.com/javascript-mcq">Javascript</a><br><a href="https://www.javatpoint.com/jquery-mcq">jQuery</a><br><a href="https://www.javatpoint.com/bootstrap-mcq">Bootstrap</a></p>]]></content>
     
     
     
@@ -17,19 +17,6 @@
       <tag>web前端</tag>
       
     </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>webmcq</title>
-    <link href="/2024/06/19/webmcq/"/>
-    <url>/2024/06/19/webmcq/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
     
   </entry>
   
@@ -161,9 +148,9 @@
     
     <tags>
       
-      <tag>css</tag>
-      
       <tag>web前端</tag>
+      
+      <tag>css</tag>
       
     </tags>
     
@@ -188,9 +175,9 @@
     
     <tags>
       
-      <tag>web前端</tag>
-      
       <tag>Bootstrap</tag>
+      
+      <tag>web前端</tag>
       
     </tags>
     
