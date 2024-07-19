@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/%E5%A4%AA%E7%A9%BA%E6%8F%92%E7%94%BB%E4%B8%AD%E7%9A%84%E7%9F%A2%E9%87%8F%E5%AE%87%E8%88%AA%E5%91%98%E5%9B%A2%E9%98%9F.jpg">
 <meta property="article:published_time" content="2024-06-11T13:12:13.000Z">
-<meta property="article:modified_time" content="2024-07-19T14:12:46.501Z">
+<meta property="article:modified_time" content="2024-07-19T14:21:12.699Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="算法">
@@ -332,25 +332,25 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">merge_sort</span><span class="hljs-params">(<span class="hljs-type">int</span> q[], <span class="hljs-type">int</span> l, <span class="hljs-type">int</span> r)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (l &gt;= r) <span class="hljs-keyword">return</span>;<br><br>    <span class="hljs-type">int</span> mid = l + r &gt;&gt; <span class="hljs-number">1</span>;<br>    <span class="hljs-built_in">merge_sort</span>(q, l, mid);<br>    <span class="hljs-built_in">merge_sort</span>(q, mid + <span class="hljs-number">1</span>, r);<br><br>    <span class="hljs-type">int</span> k = <span class="hljs-number">0</span>, i = l, j = mid + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= r)<br>        <span class="hljs-keyword">if</span> (q[i] &lt;= q[j]) tmp[k++] = q[i++];<br>        <span class="hljs-keyword">else</span> tmp[k++] = q[j++];<br><br>    <span class="hljs-keyword">while</span> (i &lt;= mid) tmp[k++] = q[i++];<br>    <span class="hljs-keyword">while</span> (j &lt;= r) tmp[k++] = q[j++];<br><br>    <span class="hljs-keyword">for</span>(i = l, j = <span class="hljs-number">0</span>; i &lt;= r; i++, j++) q[i] = tmp[j];<br>&#125;<br></code></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>小贴士</strong> 快速排序和归并排序时间复杂度都是<span
-class="math inline">\(O(nlogn)\)</span> 二者的选择： *
-快速排序：大规模数据 *
-归并排序：对于稳定性要求高，比如涉及多关键字排序（成绩排序）或者涉及数据记录的题目；链表排序
+class="math inline">\(O(nlogn)\)</span><br> 二者的选择：<br> *
+快速排序：大规模数据<br> *
+归并排序：对于稳定性要求高，比如涉及多关键字排序（成绩排序）或者涉及数据记录的题目；链表排序<br>
 在大多数算法比赛中不需要考虑稳定性，而快速排序大部分情况下平均表现优异</p>
 </blockquote>
 <h3 id="整数二分">1.3 整数二分</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">check</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> </span>&#123;<span class="hljs-comment">/*...*/</span>&#125;<br><br><span class="hljs-comment">//当区间[l, r]被划分为[l, mid]和[mid + 1, r]时使用</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">bsearch_1</span><span class="hljs-params">(<span class="hljs-type">int</span> l, <span class="hljs-type">int</span> r)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">while</span> (l &lt; r)<br>    &#123;<br>        <span class="hljs-type">int</span> mid = l + r &gt;&gt; <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(mid)) r = mid;<br>        <span class="hljs-keyword">else</span> l = mid + <span class="hljs-number">1</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> l;<br>&#125;<br><br><span class="hljs-comment">//当区间[l, r]被划分为[l, mid - 1]和[mid, r]时使用</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">bsearch_2</span><span class="hljs-params">(<span class="hljs-type">int</span> l, <span class="hljs-type">int</span> r)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">while</span> (l &lt; r) <br>    &#123;<br>        <span class="hljs-type">int</span> mid = l + r + <span class="hljs-number">1</span> &gt;&gt; <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(mid)) l = mid;<br>        <span class="hljs-keyword">else</span> r = mid  - <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> l;<br>&#125;<br></code></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>小贴士</strong> 1.
-<code>bsearch_1</code>特点：区间划分为<code>[l, mid]</code>和<code>[mid + 1, r]</code>
-当<code>check(mid)</code>为真时，将右边界收缩到<code>mid</code>，即<code>r = mid</code>
-当<code>check(mid)</code>为假时，将左边界移到<code>mid + 1</code>即<code>l = mid + 1</code>
-这种方式确保了最终收敛时，l 和 r 会指向满足条件的最左边的位置
-使用场景：适用于需要找到满足<code>check</code>条件的第一个位置，如有序数组中寻找第一个大于等于某个值的位置
+<code>bsearch_1</code>特点：区间划分为<code>[l, mid]</code>和<code>[mid + 1, r]</code><br>
+当<code>check(mid)</code>为真时，将右边界收缩到<code>mid</code>，即<code>r = mid</code><br>
+当<code>check(mid)</code>为假时，将左边界移到<code>mid + 1</code>即<code>l = mid + 1</code><br>
+这种方式确保了最终收敛时，l 和 r 会指向满足条件的最左边的位置<br>
+使用场景：适用于需要找到满足<code>check</code>条件的第一个位置，如有序数组中寻找第一个大于等于某个值的位置<br>
 2.
-<code>bsearch_2</code>特点：区间划分为<code>[l, mid - 1]</code>和<code>[mid, r]</code>
-当<code>check(mid)</code>为真时，将左边界收缩到<code>mid</code>，即<code>l = mid</code>
-当<code>check(mid)</code>为假时，将右边界移到<code>mid - 1</code>即<code>r = mid - 1</code>
-这种方式确保了最终收敛时，l 和 r 会指向满足条件的最右边的位置
+<code>bsearch_2</code>特点：区间划分为<code>[l, mid - 1]</code>和<code>[mid, r]</code><br>
+当<code>check(mid)</code>为真时，将左边界收缩到<code>mid</code>，即<code>l = mid</code><br>
+当<code>check(mid)</code>为假时，将右边界移到<code>mid - 1</code>即<code>r = mid - 1</code><br>
+这种方式确保了最终收敛时，l 和 r 会指向满足条件的最右边的位置<br>
 使用场景：适用于需要找到满足<code>check</code>条件的最后一个位置，如有序数组中寻找最后一个小于等于某个值的位置</p>
 </blockquote>
 <h3 id="浮点数二分算法">1.4 浮点数二分算法</h3>
@@ -387,45 +387,49 @@ class="math inline">\(O(nlogn)\)</span> 二者的选择： *
 <h3 id="一维差分">1.11 一维差分</h3>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs TXT">给区间[l, r]中的每个数加上c：B[l] += c, B[r + 1] -= c<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>小贴士</strong> 差分原理： 假设我们有一个原数组<span
+<p><strong>小贴士</strong> 差分原理：<br> 假设我们有一个原数组<span
 class="math inline">\(a\)</span>，差分数组<span
-class="math inline">\(b\)</span>定义如下： * <span
+class="math inline">\(b\)</span>定义如下：<br> * <span
 class="math inline">\(b[i] = a[i] - a[i - 1]\)</span> (其中<span
-class="math inline">\(a[0]\)</span>为0) 假设原数组<span
+class="math inline">\(a[0]\)</span>为0)<br> 假设原数组<span
 class="math inline">\(a = [2, 3, 5, 8]\)</span>,我们希望对区间[2,
-4]的每个元素增加3 原数组<span class="math inline">\(a = [2, 3, 5,
-8]\)</span> <span class="math inline">\(b[1] = a[1] - a[0] = 2\)</span>
-<span class="math inline">\(b[2] = a[2] - a[1] = 1\)</span> <span
-class="math inline">\(b[3] = a[3] - a[2] = 2\)</span> <span
-class="math inline">\(b[4] = a[4] - a[3] = 3\)</span> 更新差分数组：
-<span class="math inline">\(b[2] += 3\)</span> <span
-class="math inline">\(b[5] -= 3\)</span>(假设b[5]初始为0) 更新后<span
-class="math inline">\(b = [2, 4, 2, 3, -3]\)</span>
-通过前缀和恢复原数组： * a[1] = b[1] + a[0] = 2; * a[2] = b[2] + a[1] =
-6; * a[3] = b[3] + a[2] = 9; * a[4] = b[4] + a[3] = 11;</p>
+4]的每个元素增加3<br> 原数组<span class="math inline">\(a = [2, 3, 5,
+8]\)</span><br> <span class="math inline">\(b[1] = a[1] - a[0] =
+2\)</span><br> <span class="math inline">\(b[2] = a[2] - a[1] =
+1\)</span><br> <span class="math inline">\(b[3] = a[3] - a[2] =
+2\)</span><br> <span class="math inline">\(b[4] = a[4] - a[3] =
+3\)</span><br> 更新差分数组：<br> <span class="math inline">\(b[2] +=
+3\)</span><br> <span class="math inline">\(b[5] -=
+3\)</span>(假设b[5]初始为0)<br> 更新后<span class="math inline">\(b =
+[2, 4, 2, 3, -3]\)</span><br> 通过前缀和恢复原数组：<br> * a[1] = b[1] +
+a[0] = 2;<br> * a[2] = b[2] + a[1] = 6;<br> * a[3] = b[3] + a[2] =
+9;<br> * a[4] = b[4] + a[3] = 11;<br></p>
 </blockquote>
 <h3 id="二维差分">1.12 二维差分</h3>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs TXT">给以(x1, y1)为左上角，(x2, y2)为右下角的子矩阵中的所有元素加上c：<br>S[x1, y1] += c, S[x2 + 1, y1] -= c, S[x1, y2 + 1] -= c, S[x2 + 1, y2 + 1] += c<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>小贴士</strong> 差分矩阵原理： 1. 假设我们有一个二维矩阵<span
+<p><strong>小贴士</strong> 差分矩阵原理：<br> 1.
+假设我们有一个二维矩阵<span
 class="math inline">\(a\)</span>,差分矩阵<span
-class="math inline">\(b\)</span>的定义如下： <span
+class="math inline">\(b\)</span>的定义如下：<br> <span
 class="math inline">\(b[i][j] = a[i][j] - a[i - 1][j] - a[i][j - 1] +
-a[i - 1][j - 1]\)</span> 2. 更新差分矩阵： 假设我们要对子矩形区域<span
+a[i - 1][j - 1]\)</span><br> 2. 更新差分矩阵：<br>
+假设我们要对子矩形区域<span
 class="math inline">\([x1][y1]\)</span>到<span
-class="math inline">\(x[2][y2]\)</span>进行加c操作 <span
-class="math inline">\(b[x1][y1] += c\)</span> <span
-class="math inline">\(b[x2 + 1][y1] -= c\)</span> <span
-class="math inline">\(b[x1][y2 + 1] -= c\)</span> <span
-class="math inline">\(b[x2 + 1][y2 + 1] += c\)</span> 3.
-通过前缀和恢复原矩阵： <span class="math inline">\(a[i][j] = b[i][j] +
-a[i - 1][j] + a[i][j - 1] - a[i - 1][j - 1]\)</span> 具体例子： 1.
-假设一个二维数组 a = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} }; 差分矩阵为 b =
-{ {1, 1, 1}, {3, 0, 0}, {3, 0, 0} }; 2. 对子矩阵区域[1, 1]到[2,
-2]进行更新 * <span class="math inline">\(b[1][1] += 10\)</span> * <span
-class="math inline">\(b[3][1] -= 10\)</span> * <span
-class="math inline">\(b[1][3] -= 10\)</span> * <span
-class="math inline">\(b[3][3] += 10\)</span> 3. 恢复原矩阵 <span
+class="math inline">\(x[2][y2]\)</span>进行加c操作<br> <span
+class="math inline">\(b[x1][y1] += c\)</span><br> <span
+class="math inline">\(b[x2 + 1][y1] -= c\)</span><br> <span
+class="math inline">\(b[x1][y2 + 1] -= c\)</span><br> <span
+class="math inline">\(b[x2 + 1][y2 + 1] += c\)</span><br> 3.
+通过前缀和恢复原矩阵：<br> <span class="math inline">\(a[i][j] = b[i][j]
++ a[i - 1][j] + a[i][j - 1] - a[i - 1][j - 1]\)</span><br>
+具体例子：<br> 1. 假设一个二维数组 a = {<br> {1, 2, 3},<br> {4, 5,
+6},<br> {7, 8, 9} };<br> 差分矩阵为 b = {<br> {1, 1, 1},<br> {3, 0,
+0},<br> {3, 0, 0}<br> };<br> 2. 对子矩阵区域[1, 1]到[2, 2]进行更新<br> *
+<span class="math inline">\(b[1][1] += 10\)</span><br> * <span
+class="math inline">\(b[3][1] -= 10\)</span><br> * <span
+class="math inline">\(b[1][3] -= 10\)</span><br> * <span
+class="math inline">\(b[3][3] += 10\)</span><br> 3. 恢复原矩阵<br> <span
 class="math inline">\(a[i][j] = b[i][j] + a[i - 1][j] + a[i][j - 1] -a
 [i - 1][j - 1]\)</span></p>
 </blockquote>
