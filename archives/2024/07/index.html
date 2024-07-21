@@ -104,6 +104,29 @@
 
 
   
+  <script src="/js/howler.min.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var sound = new Howl({
+        src: ['/media/周杰伦 - 不能说的秘密.ogg'],
+        autoplay: false,
+        loop: true,
+        volume: 0.5
+    });
+
+    var live2dElement = document.getElementById('live2d-widget');
+    if (live2dElement) {
+        live2dElement.addEventListener('click', function() {
+            if (sound.playing()) {
+                sound.pause();
+            } else {
+                sound.play();
+            }
+        });
+    }
+  });
+   </script>
+  
 <meta name="generator" content="Hexo 7.2.0"></head>
 
 
@@ -466,4 +489,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
 </script>
 
 <script src="/js/cursor.js"></script>
+
+<script src="/js/howler.min.js"></script>
+
 

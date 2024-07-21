@@ -34,3 +34,7 @@
     -ms-transform: scale(0.5);
     -o-transform: scale(0.5);
   }
+
+  #live2d-widget {
+    pointer-events: auto !important;
+  }
