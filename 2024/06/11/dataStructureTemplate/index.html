@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/%E5%A4%AA%E7%A9%BA%E6%8F%92%E7%94%BB%E4%B8%AD%E7%9A%84%E7%9F%A2%E9%87%8F%E5%AE%87%E8%88%AA%E5%91%98%E5%9B%A2%E9%98%9F.jpg">
 <meta property="article:published_time" content="2024-06-11T13:12:13.000Z">
-<meta property="article:modified_time" content="2024-07-23T05:08:57.959Z">
+<meta property="article:modified_time" content="2024-07-23T08:37:54.336Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="算法">
@@ -409,36 +409,40 @@ class="math inline">\(O(nlogn)\)</span><br> 二者的选择：<br> 1.
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs TXT">给区间[l, r]中的每个数加上c：B[l] += c, B[r + 1] -= c<br></code></pre></td></tr></table></figure>
 <p><strong>小贴士</strong></p>
 <blockquote>
-<p>差分原理：<br> 1. 假设我们有一个原数组<span
-class="math inline">\(a\)</span>，差分数组<span
-class="math inline">\(b\)</span>定义如下：<br> <span
-class="math inline">\(b[i] = a[i] - a[i - 1]\)</span> (其中<span
-class="math inline">\(a[0]\)</span>为0)<br> 2. 假设原数组<span
-class="math inline">\(a = [2, 3, 5, 8]\)</span>,我们希望对区间[2,
-4]的每个元素增加3<br> 原数组<span class="math inline">\(a = [2, 3, 5,
-8]\)</span><br> <span class="math inline">\(b[1] = a[1] - a[0] =
-2\)</span><br> <span class="math inline">\(b[2] = a[2] - a[1] =
-1\)</span><br> <span class="math inline">\(b[3] = a[3] - a[2] =
-2\)</span><br> <span class="math inline">\(b[4] = a[4] - a[3] =
-3\)</span><br> 3. 更新差分数组：<br> <span class="math inline">\(b[2] +=
-3\)</span><br> <span class="math inline">\(b[5] -=
-3\)</span>(假设b[5]初始为0)<br> 更新后<span class="math inline">\(b =
-[2, 4, 2, 3, -3]\)</span><br> 4. 通过前缀和恢复原数组：<br> <span
-class="math inline">\(a[1] = b[1] + a[0] = 2;\)</span><br> <span
-class="math inline">\(a[2] = b[2] + a[1] = 6;\)</span><br> <span
-class="math inline">\(a[3] = b[3] + a[2] = 9;\)</span><br> <span
-class="math inline">\(a[4] = b[4] + a[3] = 11;\)</span><br></p>
+<p>差分原理： 1. 假设我们有一个原数组 <span
+class="math inline">\(a\)</span>，差分数组 <span
+class="math inline">\(b\)</span> 定义如下：<br />
+<span class="math inline">\(b[i] = a[i] - a[i - 1]\)</span> （其中 <span
+class="math inline">\(a[0]\)</span> 为 0） 2. 假设原数组 <span
+class="math inline">\(a = [2, 3, 5, 8]\)</span>，我们希望对区间 [2, 4]
+的每个元素增加 3<br />
+原数组 <span class="math inline">\(a = [2, 3, 5, 8]\)</span><br />
+<span class="math inline">\(b[1] = a[1] - a[0] = 2\)</span><br />
+<span class="math inline">\(b[2] = a[2] - a[1] = 1\)</span><br />
+<span class="math inline">\(b[3] = a[3] - a[2] = 2\)</span><br />
+<span class="math inline">\(b[4] = a[4] - a[3] = 3\)</span> 3.
+更新差分数组：<br />
+<span class="math inline">\(b[2] += 3\)</span><br />
+<span class="math inline">\(b[5] -= 3\)</span>（假设 <span
+class="math inline">\(b[5]\)</span> 初始为 0）<br />
+更新后 <span class="math inline">\(b = [2, 4, 2, 3, -3]\)</span> 4.
+通过前缀和恢复原数组：<br />
+<span class="math inline">\(a[1] = b[1] + a[0] = 2\)</span><br />
+<span class="math inline">\(a[2] = b[2] + a[1] = 6\)</span><br />
+<span class="math inline">\(a[3] = b[3] + a[2] = 9\)</span><br />
+<span class="math inline">\(a[4] = b[4] + a[3] = 11\)</span></p>
 </blockquote>
 <h3 id="二维差分">1.12 二维差分</h3>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs TXT">给以(x1, y1)为左上角，(x2, y2)为右下角的子矩阵中的所有元素加上c：<br>S[x1, y1] += c, S[x2 + 1, y1] -= c, S[x1, y2 + 1] -= c, S[x2 + 1, y2 + 1] += c<br></code></pre></td></tr></table></figure>
 <p><strong>小贴士</strong></p>
 <blockquote>
-<p>差分矩阵原理：<br> 1. 假设我们有一个二维矩阵<span
+<p>差分矩阵原理：<br />
+1. 假设我们有一个二维矩阵<span
 class="math inline">\(a\)</span>,差分矩阵<span
-class="math inline">\(b\)</span>的定义如下：<br> <span
-class="math inline">\(b[i][j] = a[i][j] - a[i - 1][j] - a[i][j - 1] +
-a[i - 1][j - 1]\)</span><br> 2. 更新差分矩阵：<br>
-假设我们要对子矩形区域<span
+class="math inline">\(b\)</span>的定义如下：<br />
+<span class="math inline">\(b[i][j] = a[i][j] - a[i - 1][j] - a[i][j -
+1] + a[i - 1][j - 1]\)</span><br />
+2. 更新差分矩阵：<br> 假设我们要对子矩形区域<span
 class="math inline">\([x1][y1]\)</span>到<span
 class="math inline">\(x[2][y2]\)</span>进行加c操作<br> <span
 class="math inline">\(b[x1][y1] += c\)</span><br> <span
@@ -499,7 +503,7 @@ class="math inline">\(2^2 = 4\)</span></p>
 </ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs CPP">vector&lt;<span class="hljs-type">int</span>&gt; alls; <span class="hljs-comment">// 存储所有待离散化的值</span><br><span class="hljs-built_in">sort</span>(alls.<span class="hljs-built_in">begin</span>(), alls.<span class="hljs-built_in">end</span>()); <span class="hljs-comment">// 将所有值排序</span><br>alls.<span class="hljs-built_in">erase</span>(<span class="hljs-built_in">unique</span>(alls.<span class="hljs-built_in">begin</span>(), alls.<span class="hljs-built_in">end</span>()), alls.<span class="hljs-built_in">end</span>());   <span class="hljs-comment">// 去掉重复元素</span><br><br><span class="hljs-comment">// 二分求出x对应的离散化的值</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> <span class="hljs-comment">// 找到第一个大于等于x的位置</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> l = <span class="hljs-number">0</span>, r = alls.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (l &lt; r)<br>    &#123;<br>        <span class="hljs-type">int</span> mid = l + r &gt;&gt; <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (alls[mid] &gt;= x) r = mid;<br>        <span class="hljs-keyword">else</span> l = mid + <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> r + <span class="hljs-number">1</span>; <span class="hljs-comment">// 映射到1, 2, ...n</span><br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="区间合并">1.16 区间合并</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-comment">// 将所有存在交集的区间合并</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(vector&lt;PII&gt; &amp;segs)</span></span><br><span class="hljs-function"></span>&#123;<br>    vector&lt;PII&gt; res;<br><br>    <span class="hljs-built_in">sort</span>(segs.<span class="hljs-built_in">begin</span>(), segs.<span class="hljs-built_in">end</span>());<br><br>    <span class="hljs-type">int</span> st = <span class="hljs-number">-2e9</span>, ed = <span class="hljs-number">-2e9</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> seg : segs)<br>        <span class="hljs-keyword">if</span> (ed &lt; seg.first)<br>        &#123;<br>            <span class="hljs-keyword">if</span> (st != <span class="hljs-number">-2e9</span>) res.<span class="hljs-built_in">push_back</span>(&#123;st, ed&#125;);<br>            st = seg.first, ed = seg.second;<br>        &#125;<br>        <span class="hljs-keyword">else</span> ed = <span class="hljs-built_in">max</span>(ed, seg.second);<br><br>    <span class="hljs-keyword">if</span> (st != <span class="hljs-number">-2e9</span>) res.<span class="hljs-built_in">push_back</span>(&#123;st, ed&#125;);<br><br>    segs = res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><br><span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; PII;<br><span class="hljs-comment">// 将所有存在交集的区间合并</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(vector&lt;PII&gt; &amp;segs)</span></span><br><span class="hljs-function"></span>&#123;<br>    vector&lt;PII&gt; res;<br><br>    <span class="hljs-built_in">sort</span>(segs.<span class="hljs-built_in">begin</span>(), segs.<span class="hljs-built_in">end</span>());<br><br>    <span class="hljs-type">int</span> st = <span class="hljs-number">-2e9</span>, ed = <span class="hljs-number">-2e9</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> seg : segs)<br>        <span class="hljs-keyword">if</span> (ed &lt; seg.first)<br>        &#123;<br>            <span class="hljs-keyword">if</span> (st != <span class="hljs-number">-2e9</span>) res.<span class="hljs-built_in">push_back</span>(&#123;st, ed&#125;);<br>            st = seg.first, ed = seg.second;<br>        &#125;<br>        <span class="hljs-keyword">else</span> ed = <span class="hljs-built_in">max</span>(ed, seg.second);<br><br>    <span class="hljs-keyword">if</span> (st != <span class="hljs-number">-2e9</span>) res.<span class="hljs-built_in">push_back</span>(&#123;st, ed&#125;);<br><br>    segs = res;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="数据结构">2. 数据结构</h2>
 <figure>
 <img src="/images/数据结构知识框架.jpg" srcset="/img/loading.gif" lazyload alt="数据结构知识框架" />
