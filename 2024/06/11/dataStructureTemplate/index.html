@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/%E5%A4%AA%E7%A9%BA%E6%8F%92%E7%94%BB%E4%B8%AD%E7%9A%84%E7%9F%A2%E9%87%8F%E5%AE%87%E8%88%AA%E5%91%98%E5%9B%A2%E9%98%9F.jpg">
 <meta property="article:published_time" content="2024-06-11T13:12:13.000Z">
-<meta property="article:modified_time" content="2024-07-21T08:03:20.852Z">
+<meta property="article:modified_time" content="2024-07-23T05:08:57.959Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="算法">
@@ -279,7 +279,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.9k words
+          8.1k words
         
       </span>
     
@@ -290,7 +290,7 @@
         
         
         
-          67 mins
+          68 mins
         
       </span>
     
@@ -449,10 +449,10 @@ class="math inline">\(b[x2 + 1][y2 + 1] += c\)</span><br> 3.
 + a[i - 1][j] + a[i][j - 1] - a[i - 1][j - 1]\)</span><br>
 具体例子：<br> 1. 假设一个二维数组 a = {<br> {1, 2, 3},<br> {4, 5,
 6},<br> {7, 8, 9} };<br> 差分矩阵为 b = {<br> {1, 1, 1},<br> {3, 0,
-0},<br> {3, 0, 0}<br> };<br> 2. 对子矩阵区域[1, 1]到[2, 2]进行更新<br> *
-<span class="math inline">\(b[1][1] += 10\)</span><br> * <span
-class="math inline">\(b[3][1] -= 10\)</span><br> * <span
-class="math inline">\(b[1][3] -= 10\)</span><br> * <span
+0},<br> {3, 0, 0}<br> };<br> 2. 对子矩阵区域[1, 1]到[2, 2]进行更新<br>
+<span class="math inline">\(b[1][1] += 10\)</span><br> <span
+class="math inline">\(b[3][1] -= 10\)</span><br> <span
+class="math inline">\(b[1][3] -= 10\)</span><br> <span
 class="math inline">\(b[3][3] += 10\)</span><br> 3. 恢复原矩阵<br> <span
 class="math inline">\(a[i][j] = b[i][j] + a[i - 1][j] + a[i][j - 1] -a
 [i - 1][j - 1]\)</span></p>
@@ -643,6 +643,34 @@ m % p) * C(n / p, m / p) (mod p)</p>
 这个公式求出每个质因子的次数。 n! 中p的次数是 n / p + n / p^2 + n / p^3
 + ... 3. 用高精度乘法将所有质因子相乘</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-type">int</span> primes[N], cnt;     <span class="hljs-comment">// 存储所有质数</span><br><span class="hljs-type">int</span> sum[N];     <span class="hljs-comment">// 存储每个质数的次数</span><br><span class="hljs-type">bool</span> st[N];     <span class="hljs-comment">// 存储每个数是否已被筛掉</span><br><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">get_primes</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span>      <span class="hljs-comment">// 线性筛法求素数</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i ++ )<br>    &#123;<br>        <span class="hljs-keyword">if</span> (!st[i]) primes[cnt ++ ] = i;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; primes[j] &lt;= n / i; j ++ )<br>        &#123;<br>            st[primes[j] * i] = <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">if</span> (i % primes[j] == <span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> p)</span>       <span class="hljs-comment">// 求n！中的次数</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (n)<br>    &#123;<br>        res += n / p;<br>        n /= p;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><br><br><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">mul</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; a, <span class="hljs-type">int</span> b)</span>       <span class="hljs-comment">// 高精度乘低精度模板</span></span><br><span class="hljs-function"></span>&#123;<br>    vector&lt;<span class="hljs-type">int</span>&gt; c;<br>    <span class="hljs-type">int</span> t = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; a.<span class="hljs-built_in">size</span>(); i ++ )<br>    &#123;<br>        t += a[i] * b;<br>        c.<span class="hljs-built_in">push_back</span>(t % <span class="hljs-number">10</span>);<br>        t /= <span class="hljs-number">10</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">while</span> (t)<br>    &#123;<br>        c.<span class="hljs-built_in">push_back</span>(t % <span class="hljs-number">10</span>);<br>        t /= <span class="hljs-number">10</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> c;<br>&#125;<br><br><span class="hljs-built_in">get_primes</span>(a);  <span class="hljs-comment">// 预处理范围内的所有质数</span><br><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; cnt; i ++ )     <span class="hljs-comment">// 求每个质因数的次数</span><br>&#123;<br>    <span class="hljs-type">int</span> p = primes[i];<br>    sum[i] = <span class="hljs-built_in">get</span>(a, p) - <span class="hljs-built_in">get</span>(b, p) - <span class="hljs-built_in">get</span>(a - b, p);<br>&#125;<br><br>vector&lt;<span class="hljs-type">int</span>&gt; res;<br>res.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">1</span>);<br><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; cnt; i ++ )     <span class="hljs-comment">// 用高精度乘法将所有质因子相乘</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; sum[i]; j ++ )<br>        res = <span class="hljs-built_in">mul</span>(res, primes[i]);<br></code></pre></td></tr></table></figure>
+<h2 id="小tips">5. 小tips</h2>
+<h3 id="命名规范">5.1 命名规范</h3>
+<h4 id="变量">5.1.1 变量</h4>
+<ul>
+<li>小驼峰命名法</li>
+<li>示例：<code>totalCount</code>, <code>userName</code></li>
+</ul>
+<h4 id="常量">5.1.2 常量</h4>
+<ul>
+<li>使用全大写字母，单词之间使用下划线分割</li>
+<li>示例：<code>MAX_SIZE</code>, <code>PI_VALUE</code></li>
+</ul>
+<h4 id="函数和方法">5.1.3 函数和方法</h4>
+<ul>
+<li>小驼峰命名法</li>
+<li>函数名应描述函数的动作或返回的结果</li>
+<li>示例：<code>calculateTotal</code>, <code>getUserName</code></li>
+</ul>
+<h4 id="类和结构体">5.1.4 类和结构体</h4>
+<ul>
+<li>大驼峰命名法</li>
+<li>示例：<code>UserAccount</code>, <code>DataManager</code></li>
+</ul>
+<h3 id="时间复杂度">5.2 时间复杂度</h3>
+<figure>
+<img src="/images/时间复杂度.jpg" srcset="/img/loading.gif" lazyload alt="时间复杂度" />
+<figcaption aria-hidden="true">时间复杂度</figcaption>
+</figure>
 
                 
               </div>
