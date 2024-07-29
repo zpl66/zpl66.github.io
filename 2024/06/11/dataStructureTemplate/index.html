@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/%E5%A4%AA%E7%A9%BA%E6%8F%92%E7%94%BB%E4%B8%AD%E7%9A%84%E7%9F%A2%E9%87%8F%E5%AE%87%E8%88%AA%E5%91%98%E5%9B%A2%E9%98%9F.jpg">
 <meta property="article:published_time" content="2024-06-11T13:12:13.000Z">
-<meta property="article:modified_time" content="2024-07-24T06:37:26.587Z">
+<meta property="article:modified_time" content="2024-07-29T02:17:22.602Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="算法">
@@ -279,7 +279,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.4k words
+          10k words
         
       </span>
     
@@ -290,7 +290,7 @@
         
         
         
-          71 mins
+          85 mins
         
       </span>
     
@@ -660,55 +660,163 @@ m % p) * C(n / p, m / p) (mod p)</p>
 这个公式求出每个质因子的次数。 n! 中p的次数是 n / p + n / p^2 + n / p^3
 + ... 3. 用高精度乘法将所有质因子相乘</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-type">int</span> primes[N], cnt;     <span class="hljs-comment">// 存储所有质数</span><br><span class="hljs-type">int</span> sum[N];     <span class="hljs-comment">// 存储每个质数的次数</span><br><span class="hljs-type">bool</span> st[N];     <span class="hljs-comment">// 存储每个数是否已被筛掉</span><br><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">get_primes</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span>      <span class="hljs-comment">// 线性筛法求素数</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i ++ )<br>    &#123;<br>        <span class="hljs-keyword">if</span> (!st[i]) primes[cnt ++ ] = i;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; primes[j] &lt;= n / i; j ++ )<br>        &#123;<br>            st[primes[j] * i] = <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">if</span> (i % primes[j] == <span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> p)</span>       <span class="hljs-comment">// 求n！中的次数</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (n)<br>    &#123;<br>        res += n / p;<br>        n /= p;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><br><br><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">mul</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; a, <span class="hljs-type">int</span> b)</span>       <span class="hljs-comment">// 高精度乘低精度模板</span></span><br><span class="hljs-function"></span>&#123;<br>    vector&lt;<span class="hljs-type">int</span>&gt; c;<br>    <span class="hljs-type">int</span> t = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; a.<span class="hljs-built_in">size</span>(); i ++ )<br>    &#123;<br>        t += a[i] * b;<br>        c.<span class="hljs-built_in">push_back</span>(t % <span class="hljs-number">10</span>);<br>        t /= <span class="hljs-number">10</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">while</span> (t)<br>    &#123;<br>        c.<span class="hljs-built_in">push_back</span>(t % <span class="hljs-number">10</span>);<br>        t /= <span class="hljs-number">10</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> c;<br>&#125;<br><br><span class="hljs-built_in">get_primes</span>(a);  <span class="hljs-comment">// 预处理范围内的所有质数</span><br><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; cnt; i ++ )     <span class="hljs-comment">// 求每个质因数的次数</span><br>&#123;<br>    <span class="hljs-type">int</span> p = primes[i];<br>    sum[i] = <span class="hljs-built_in">get</span>(a, p) - <span class="hljs-built_in">get</span>(b, p) - <span class="hljs-built_in">get</span>(a - b, p);<br>&#125;<br><br>vector&lt;<span class="hljs-type">int</span>&gt; res;<br>res.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">1</span>);<br><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; cnt; i ++ )     <span class="hljs-comment">// 用高精度乘法将所有质因子相乘</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; sum[i]; j ++ )<br>        res = <span class="hljs-built_in">mul</span>(res, primes[i]);<br></code></pre></td></tr></table></figure>
-<h2 id="小tips">5. 小tips</h2>
-<h3 id="命名规范">5.1 命名规范</h3>
-<h4 id="变量">5.1.1 变量</h4>
+<h2 id="动态规划">5. 动态规划</h2>
+<h3 id="动态规划的三大步骤">5.1 动态规划的三大步骤</h3>
+<ul>
+<li><p><strong>第一步骤</strong>：定义<strong>数组元素的含义</strong>。假设用一维数组dp[]，就是规定这个数组元素的含义</p></li>
+<li><p><strong>第二步骤</strong>：找出<strong>数组元素之间的关系式</strong>。动态规划有点类似于我们高中学的归纳法，当我们要计算dp[n]
+时，可以利用dp[n - 1]， dp[n -
+2]...d[[1]]，来推出dp[n]，也就是可以利用<strong>历史数据</strong>来推出新的元素值</p></li>
+<li><p><strong>第三步骤</strong>：找出<strong>初始值</strong>。虽然我们知道了数组元素之间的关系式，例如dp[n]
+= dp[n - 1] + dp[n -
+2],但是，我们要知道初始值，例如这样一直推下去的话，会得到dp[3] = dp[2] +
+dp[1]。而dp[2]和dp[1]是不能再分解的了，所以我们必须要能够直接获得dp[2]和dp[1]的值，而这，就是所谓的初始值</p></li>
+</ul>
+<p>有了<strong>初始值</strong>，并且有了<strong>数组元素之间的关系式</strong>，我们就可以得到dp[n]的值了，而dp[n]的含义是由你来定义的，你想求什么，就定义什么，这样，这题的值也就解出来了</p>
+<h3 id="案例一简单的一维dp">5.2 案例一、简单的一维DP</h3>
+<blockquote>
+<p>问题描述：一只青蛙一次可以跳上1级台阶，也可以跳上2级，求该青蛙跳上一个n级台阶总共有多少种跳法</p>
+</blockquote>
+<ul>
+<li><strong>第一步骤</strong>：我们的问题是青蛙跳上n级台阶总共有多少种跳法，我们不妨设：跳上i级台阶总共有dp[i]种跳法</li>
+<li><strong>第二步骤</strong>：对于这道题，由于情况可以是跳一级，也可以是跳2级，所以我们得出dp[i]
+= dp[i - 1] + dp[i - 2]</li>
+<li><strong>第三步骤</strong>：显然，由第二步推出的关系式我们知道我们最多需要得到dp[0],dp[1],dp[2]的值，而dp[0]
+= 0, dp[1] = 1(青蛙一次跳一级台阶)， dp[2] =
+2(青蛙经过2次一次跳一级台阶或经过1次一次跳两级台阶)</li>
+</ul>
+<p>所以我们得到代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>    dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>, dp[<span class="hljs-number">2</span>] = <span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">3</span>; i &lt;= n; i++) dp[i] = dp[i - <span class="hljs-number">1</span>] + dp[i - <span class="hljs-number">2</span>];<br>    <span class="hljs-keyword">return</span> dp[n];<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="案例二二维数组的dp">5.3 案例二、二维数组的DP</h3>
+<blockquote>
+<p>问题描述：一个机器人位于一个 m * n
+网格的左上角(起始点在下图中标记为"Start")。机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角(在下图中标记为"Finish")。问总共由多少条不同的路径？</p>
+</blockquote>
+<figure>
+<img src="/images/leetcode62.jpg" srcset="/img/loading.gif" lazyload alt="图示" />
+<figcaption aria-hidden="true">图示</figcaption>
+</figure>
+<ul>
+<li><strong>第一步骤</strong>：由于我们的目的是求从左上角到右下角一共有多少种路径，那我们就定义<code>dp[i][j]</code>的含义为：当机器人从左上角移动到(i,
+j)这个位置时，总共由多少种路径</li>
+<li><strong>第二步骤</strong>：由于机器人每次只能向下或者向右移动一步，所以我们可以得到<code>dp[i][j]</code>
+= <code>dp[i - 1][j]</code> + <code>dp[i][j - 1]</code></li>
+<li><strong>第三步骤</strong>：由第二步骤得到的关系式我们知道我们需要的初始值是第0行和第0列，而很显然<code>dp[0][j]</code>和<code>dp[i][0]</code>的值都为1</li>
+</ul>
+<blockquote>
+<p>注意，这个网格相当于一个二维数组，数组是从下标为0开始算的，所以右下角的位置是(m
+- 1, n - 1)</p>
+</blockquote>
+<p>所以我们得到代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt;= m - <span class="hljs-number">1</span>; i++) dp[i][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt;= n - <span class="hljs-number">1</span>; j++) dp[<span class="hljs-number">0</span>][j] = <span class="hljs-number">1</span>;<br>    <br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= m - <span class="hljs-number">1</span>; i++) <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt;= n - <span class="hljs-number">1</span>; j++)<br>            dp[i][j] = dp[i - <span class="hljs-number">1</span>][j] + dp[i][j - <span class="hljs-number">1</span>];<br>    <br>    <span class="hljs-keyword">return</span> dp[m - <span class="hljs-number">1</span>][n - <span class="hljs-number">1</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="案例三二维数组的dp">5.4 案例三、二维数组的DP</h3>
+<blockquote>
+<p>问题描述：给定一个包含非负整数的 m * n
+网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和最小。</p>
+<p>说明：每次只能向下或向右移动一步</p>
+</blockquote>
+<ul>
+<li><strong>第一步骤</strong>：
+<ul>
+<li>用数组<code>a[M][N]</code>存储每个网格的数字。</li>
+<li>由题意可设<code>dp[i][j]</code>为从(0, 0)到(i,
+j)路径上的数字总和最小。</li>
+</ul></li>
+<li><strong>第二步骤</strong>：由于每次只能向下或向右移动一步，故我们可得关系式：<code>dp[i][j]</code>
+= min(<code>dp[i][j - 1]</code> + <code>dp[i - 1][j]</code>) +
+<code>a[i][j]</code></li>
+<li><strong>第三步骤</strong>：很显然初始值还是第0行和第0列，由此我们可得初始值<code>dp[i][0]</code>
+= <code>dp[i - 1][0]</code> + <code>a[i][0]</code>,<code>dp[0][j]</code>
+= <code>dp[0][j - 1]</code> + <code>a[0][j]</code></li>
+</ul>
+<p>所以我们得到代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> </span>&#123;<br>    dp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = a[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; m; i++) dp[i][<span class="hljs-number">0</span>] = dp[i - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>] + a[i][<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt; n; j++) dp[<span class="hljs-number">0</span>][j] = dp[<span class="hljs-number">0</span>][j - <span class="hljs-number">1</span>] + a[<span class="hljs-number">0</span>][j];<br>    <br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; m; i++) <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt; n; j++)<br>            dp[i][j] = <span class="hljs-built_in">min</span>(dp[i - <span class="hljs-number">1</span>][j], dp[i][j - <span class="hljs-number">1</span>]) + a[i][j];<br>    <br>    <span class="hljs-keyword">return</span> dp[m - <span class="hljs-number">1</span>][n - <span class="hljs-number">1</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="案例四编辑距离">5.5 案例四、编辑距离</h3>
+<blockquote>
+<p>问题描述：给定两个单词word1和word2，计算出将word1转换成word2所使用的最少操作数</p>
+<p>你可以对一个单词进行如下三种操作：</p>
+<p>插入一个字符，删除一个字符，替换一个字符</p>
+</blockquote>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs xl">示例：  <br>输入：word1 = <span class="hljs-string">&quot;horse&quot;</span>,word2 = <span class="hljs-string">&quot;ros&quot;</span>  <br>输出：<span class="hljs-number">3</span>  <br>解释：  <br><span class="hljs-function"><span class="hljs-title">horse</span> -&gt;</span> rorse(将<span class="hljs-string">&#x27;h&#x27;</span>替换成<span class="hljs-string">&#x27;r&#x27;</span>)  <br><span class="hljs-function"><span class="hljs-title">rorse</span> -&gt;</span> rose(删除<span class="hljs-string">&#x27;r&#x27;</span>)  <br><span class="hljs-function"><span class="hljs-title">rose</span> -&gt;</span> ros(删除<span class="hljs-string">&#x27;e&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>第一步骤</strong>：
+<ul>
+<li>我们不妨将第一个单词存入word1[N]数组中，将第二个单词存入word2[NJ]数组中</li>
+<li>当第一个单词长度为i，第二个单词长度为j时，将单词1转换成单词2所需的最少操作数是<code>dp[i][j]</code></li>
+</ul></li>
+<li><strong>第二步骤</strong>：
+<ul>
+<li>当word1[i] = word2[j]时，显然有<code>dp[i][j]</code> =
+<code>dp[i - 1][j - 1]</code>,即不用对他进行任何操作</li>
+<li>当word1[i] ≠ word2[j]时，有三种操作分别如下：
+<ul>
+<li>插入：如果对word1插入一个字符，则有<code>dp[i][j]</code> =
+<code>dp[i - 1][j]</code> + 1</li>
+<li>删除：如果对word1删除一个字符，则有<code>dp[i][j]</code> =
+<code>dp[i][j - 1]</code> + 1;</li>
+<li>替换：如果将word1一个字符替换成另一个字符，则有<code>dp[i][j]</code>
+= <code>dp[i - 1][j - 1]</code> + 1;</li>
+<li>因此得到关系式：<code>dp[i][j]</code> =
+min(<code>dp[i - 1][j]</code>, <code>dp[i][j - 1]</code>,
+<code>dp[i - 1][j - 1]</code>) + 1</li>
+</ul></li>
+</ul></li>
+<li><strong>第三步骤</strong>：由第二步骤得到的关系式可以看出我们需要的初始值是i
+= 0或是j = 0的情况。显然，i, j不同时等于0时，<code>dp[i][0]</code> =
+<code>dp[ i - 1][0]</code> + 1， <code>dp[0][j]</code> =
+<code>dp[0][j - 1]</code> + 1(进行删除操作)</li>
+</ul>
+<p>所以我们得到代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-type">int</span> n1, <span class="hljs-type">int</span> n2)</span> </span>&#123;<br>    dp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n1; i++) dp[i][<span class="hljs-number">0</span>] = dp[i - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>] + <span class="hljs-number">1</span>;<span class="hljs-comment">//对word1进行删除操作</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt;= n2; j++) dp[<span class="hljs-number">0</span>][j] = dp[<span class="hljs-number">0</span>][j - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<span class="hljs-comment">//对word2进行插入操作</span><br>    <br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n1; i++)  <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt;= n2; j++)<br>        &#123;<br>        	<span class="hljs-keyword">if</span> (word1[i] == word2[j]) dp[i][j] = dp[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>];    <br>            <span class="hljs-keyword">else</span> dp[i][j] = <span class="hljs-built_in">min</span>(dp[i - <span class="hljs-number">1</span>][j], dp[i][j - <span class="hljs-number">1</span>], dp[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>]) + <span class="hljs-number">1</span>;<br>		&#125;<br>    <br>    <span class="hljs-keyword">return</span> dp[n1][n2];<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="小tips">6. 小tips</h2>
+<h3 id="命名规范">6.1 命名规范</h3>
+<h4 id="变量">6.1.1 变量</h4>
 <ul>
 <li>小驼峰命名法</li>
 <li>示例：<code>totalCount</code>, <code>userName</code></li>
 </ul>
-<h4 id="常量">5.1.2 常量</h4>
+<h4 id="常量">6.1.2 常量</h4>
 <ul>
 <li>使用全大写字母，单词之间使用下划线分割</li>
 <li>示例：<code>MAX_SIZE</code>, <code>PI_VALUE</code></li>
 </ul>
-<h4 id="函数和方法">5.1.3 函数和方法</h4>
+<h4 id="函数和方法">6.1.3 函数和方法</h4>
 <ul>
 <li>小驼峰命名法</li>
 <li>函数名应描述函数的动作或返回的结果</li>
 <li>示例：<code>calculateTotal</code>, <code>getUserName</code></li>
 </ul>
-<h4 id="类和结构体">5.1.4 类和结构体</h4>
+<h4 id="类和结构体">6.1.4 类和结构体</h4>
 <ul>
 <li>大驼峰命名法</li>
 <li>示例：<code>UserAccount</code>, <code>DataManager</code></li>
 </ul>
-<h3 id="时间复杂度">5.2 时间复杂度</h3>
+<h3 id="时间复杂度">6.2 时间复杂度</h3>
 <figure>
 <img src="/images/时间复杂度.jpg" srcset="/img/loading.gif" lazyload alt="时间复杂度" />
 <figcaption aria-hidden="true">时间复杂度</figcaption>
 </figure>
-<h3 id="代码风格">5.3 代码风格</h3>
-<h4 id="缩进">5.3.1 缩进</h4>
+<h3 id="代码风格">6.3 代码风格</h3>
+<h4 id="缩进">6.3.1 缩进</h4>
 <ul>
 <li>使用一致的缩进风格(常用 4 个空格或 1 个 Tab)<br />
 </li>
 <li>确保所有代码块都正确缩进</li>
 </ul>
-<h4 id="括号">5.3.2 括号</h4>
+<h4 id="括号">6.3.2 括号</h4>
 <ul>
 <li>代码块的左括号 <code>&#123;</code> 通常放在行尾，右括号 <code>&#125;</code>
 单独占一行</li>
 <li>示例：<br />
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-keyword">if</span> (condition) &#123;<br>    <span class="hljs-comment">// code block</span><br>&#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-comment">// code block</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="空行">5.3.3 空行</h4>
+<h4 id="空行">6.3.3 空行</h4>
 <ul>
 <li>使用空行分割逻辑上相关的代码块，增强代码可读性</li>
 <li>示例:<br />
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">initialize</span>();<br>    <br>    <span class="hljs-keyword">while</span> (running) &#123;<br>        <span class="hljs-built_in">processInput</span>();<br>        <span class="hljs-built_in">update</span>();<br>        <span class="hljs-built_in">render</span>();<br>    &#125;<br>    <br>    <span class="hljs-built_in">cleanup</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="空格">5.3.4 空格</h4>
+<h4 id="空格">6.3.4 空格</h4>
 <ul>
 <li>在关键字和括号之间加空格<br />
 </li>
@@ -717,7 +825,7 @@ m % p) * C(n / p, m / p) (mod p)</p>
 <li>示例：<br />
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>    <span class="hljs-keyword">if</span> (a[i] &gt; b[i]) &#123;<br>        result = a[i] + b[i];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="的两种使用方法">5.4 &amp;的两种使用方法</h3>
+<h3 id="的两种使用方法">6.4 &amp;的两种使用方法</h3>
 <p><code>&amp;：</code>一个是取地址用，另一个是引用</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-type">int</span> a;<br><br><span class="hljs-type">int</span> *p = &amp;a;<span class="hljs-comment">//这就是取地址符，指针p指向对象a，p里面存着a的地址</span><br><br><span class="hljs-type">int</span> b;<br><br><span class="hljs-type">int</span> &amp;c = b;<span class="hljs-comment">//这是引用，定义一个引用就是说c是b的一个别名。c就是代表b。注意的是声明引用要初始化</span><br></code></pre></td></tr></table></figure>
 
