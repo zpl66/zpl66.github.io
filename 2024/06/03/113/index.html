@@ -21,18 +21,18 @@
     <meta name="description" content="1 P3156 询问学号 传送门 没啥好说的，跳 2 P3613 寄包柜 传送门 二维数组秒了 虽然这题的题目是寄包柜，但他真的是考察寄包柜吗？是的 根据问题找答案，显然对于每个问题有三个元素:第i个寄包柜，第j个格子里的物品。如果用二维数组，显然105 * 109会MLE，即使是动态数组也不太妥。 所以呢？最简单的方法当然是STL大法！ 但有个问题，一个map元素只有两个值，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于洛谷113号题单对线性表的总结">
-<meta property="og:url" content="http://example.com/2024/06/03/113/index.html">
+<meta property="og:url" content="http://crazythursdayv50tome.cn/2024/06/03/113/index.html">
 <meta property="og:site_name" content="Dumpling">
 <meta property="og:description" content="1 P3156 询问学号 传送门 没啥好说的，跳 2 P3613 寄包柜 传送门 二维数组秒了 虽然这题的题目是寄包柜，但他真的是考察寄包柜吗？是的 根据问题找答案，显然对于每个问题有三个元素:第i个寄包柜，第j个格子里的物品。如果用二维数组，显然105 * 109会MLE，即使是动态数组也不太妥。 所以呢？最简单的方法当然是STL大法！ 但有个问题，一个map元素只有两个值，">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/%E8%A1%8C%E6%98%9F%E5%92%8C%E5%B0%8F%E8%A1%8C%E6%98%9F.jpg">
+<meta property="og:image" content="http://crazythursdayv50tome.cn/images/%E8%A1%8C%E6%98%9F%E5%92%8C%E5%B0%8F%E8%A1%8C%E6%98%9F.jpg">
 <meta property="article:published_time" content="2024-06-03T14:10:42.000Z">
 <meta property="article:modified_time" content="2024-07-24T08:41:41.435Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/images/%E8%A1%8C%E6%98%9F%E5%92%8C%E5%B0%8F%E8%A1%8C%E6%98%9F.jpg">
+<meta name="twitter:image" content="http://crazythursdayv50tome.cn/images/%E8%A1%8C%E6%98%9F%E5%92%8C%E5%B0%8F%E8%A1%8C%E6%98%9F.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -76,7 +76,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"lOkJtG1IBpX77w4JOxGu9OEG-gzGzoHsz","app_key":"8vPOgPxTS5mrCgjaXribWKRY","server_url":"https://lokjtg1i.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"crazythursdayv50tome.cn","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"lOkJtG1IBpX77w4JOxGu9OEG-gzGzoHsz","app_key":"8vPOgPxTS5mrCgjaXribWKRY","server_url":"https://lokjtg1i.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -497,7 +497,7 @@ a[MAX]表示查询单词是否在区域中，如果在则为1，不在为0 *
   <div class="license-box my-3">
     <div class="license-title">
       <div>基于洛谷113号题单对线性表的总结</div>
-      <div>http://example.com/2024/06/03/113/</div>
+      <div>http://crazythursdayv50tome.cn/2024/06/03/113/</div>
     </div>
     <div class="license-meta">
       
