@@ -18,12 +18,12 @@
   <meta name="author" content="饺子">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Document               	window.onload&#x3D;mermaid.initialize({&quot;theme&quot;: &quot;forest&quot;});       本文主要从jQuery简介、核心函数、核心对象三方面介绍jQuery 文章可能有点长，但要相信干货满满 而不是某Dumpling太啰嗦了 0.前言 可能对于刚学web前端的同学(比如我)来说，学了很多">
+    <meta name="description" content="Document            window.onload&#x3D;mermaid.initialize({&quot;theme&quot;: &quot;forest&quot;});       本文主要从jQuery简介、核心函数、核心对象三方面介绍jQuery 文章可能有点长，但要相信干货满满 而不是某Dumpling太啰嗦了 0.前言 可能对于刚学web前端的同学(比如我)来说，学了很多">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery入门">
 <meta property="og:url" content="http://crazythursdayv50tome.cn/2024/05/25/jQuery/index.html">
 <meta property="og:site_name" content="Dumpling">
-<meta property="og:description" content="Document               	window.onload&#x3D;mermaid.initialize({&quot;theme&quot;: &quot;forest&quot;});       本文主要从jQuery简介、核心函数、核心对象三方面介绍jQuery 文章可能有点长，但要相信干货满满 而不是某Dumpling太啰嗦了 0.前言 可能对于刚学web前端的同学(比如我)来说，学了很多">
+<meta property="og:description" content="Document            window.onload&#x3D;mermaid.initialize({&quot;theme&quot;: &quot;forest&quot;});       本文主要从jQuery简介、核心函数、核心对象三方面介绍jQuery 文章可能有点长，但要相信干货满满 而不是某Dumpling太啰嗦了 0.前言 可能对于刚学web前端的同学(比如我)来说，学了很多">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://crazythursdayv50tome.cn/images/%E5%8D%AB%E6%98%9F%E7%A7%91%E6%8A%80.jpg">
 <meta property="article:published_time" content="2024-05-25T05:45:05.000Z">
@@ -341,82 +341,68 @@
               <div class="markdown-body">
                 
                 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-    	window.onload=mermaid.initialize({"theme": "forest"});
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>
+Document
+</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+        window.onload=mermaid.initialize({"theme": "forest"});
     </script>
 </head>
 <p>本文主要从jQuery简介、核心函数、核心对象三方面介绍jQuery</p>
 <p>文章可能有点长，但要相信干货满满</p>
-<p><s>而不是某Dumpling太啰嗦了</s></p>
-<h2 id="0-前言">0.前言</h2>
+<p><del>而不是某Dumpling太啰嗦了</del></p>
+<h2 id="前言">0.前言</h2>
 <p>可能对于刚学web前端的同学(比如我)来说，学了很多东西，但是对于他们的内在联系不太清晰。所以在jQuery入门之前我想先梳理一下他们的关系</p>
 <p>话不多说，先上图</p>
 <div class="mermaid">
-        graph TD;
-    HTML[HTML<br>网页结构] --> CSS[CSS<br>网页样式];
-    HTML --> JS[JavaScript<br>动态交互];
-    JS --> jQuery[jQuery<br>简化JS操作];
-    JS --> Bootstrap[Bootstrap<br>响应式设计];
-    CSS --> Bootstrap;
-    jQuery --> Bootstrap;
-    classDef someclass fill:#f9f,stroke:#333,stroke-width:2px;
-    class HTML,CSS,JS,jQuery,Bootstrap someclass;
+<pre><code class="hljs">    graph TD;</code></pre>
+<p>    HTML[HTML<br>网页结构] --&gt; CSS[CSS<br>网页样式];     HTML
+--&gt; JS[JavaScript<br>动态交互];     JS --&gt;
+jQuery[jQuery<br>简化JS操作];     JS --&gt;
+Bootstrap[Bootstrap<br>响应式设计];     CSS --&gt; Bootstrap;     jQuery
+--&gt; Bootstrap;     classDef someclass
+fill:#f9f,stroke:#333,stroke-width:2px;     class
+HTML,CSS,JS,jQuery,Bootstrap someclass;</p>
 </div>
 <ul>
-<li>
-<p><code>HTML(HyperText Markup Language)</code>:</p>
+<li><code>HTML(HyperText Markup Language)</code>:
 <ul>
 <li>是用来构建网站的基础，定义网页的结构和内容。</li>
 <li>你可以把它想象成建筑的骨架</li>
-</ul>
-</li>
-<li>
-<p><code>CSS(Cascading Style Sheets)</code>:</p>
+</ul></li>
+<li><code>CSS(Cascading Style Sheets)</code>:
 <ul>
 <li>用于设置网页布局和样式，比如字体(font)、颜色(color)和间距(padding)等。</li>
 <li>CSS像是给网页穿上衣服，让结构更美观</li>
-</ul>
-</li>
-<li>
-<p><code>JavaScript</code>:</p>
+</ul></li>
+<li><code>JavaScript</code>:
 <ul>
 <li>是一种程序语言，用于添加网页的动态功能，如响应用户的点击、数据更新等。</li>
 <li>他让网页有了动起来的能力。</li>
-</ul>
-</li>
-<li>
-<p><code>jQuery</code>：</p>
+</ul></li>
+<li><code>jQuery</code>：
 <ul>
 <li>是一个<code>JavaScript</code>的库，简化<code>JavaScript</code>的编程。</li>
 <li>比如，他让文档操作、事件处理、动画等更容易实现</li>
 <li><code>jQuery</code>就像一个工具包，帮你更好使用<code>JavaScript</code>。</li>
-</ul>
-</li>
-<li>
-<p><code>BootStrap</code>:</p>
+</ul></li>
+<li><code>BootStrap</code>:
 <ul>
 <li>一个前端框架，包含了<code>HTML</code>、<code>CSS</code>和<code>JavaScript</code>的组件。</li>
 <li>提供了一套预设的样式和功能，可以快速帮你开发响应式和移动优先的网页</li>
 <li><code>BootStrap</code>就像一个建筑工具包，里面有各种模块和工具，让建筑(网页)更快速的搭建起来</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="1-jQuery简介">1 jQuery简介</h2>
-<h3 id="1-1-jQuery简介">1.1 jQuery简介</h3>
-<p><s>虽然感觉不会有人喜欢看定义但还是感觉要写</s></p>
+<h2 id="jquery简介">1 jQuery简介</h2>
+<h3 id="jquery简介-1">1.1 jQuery简介</h3>
+<p><del>虽然感觉不会有人喜欢看定义但还是感觉要写</del></p>
 <ul>
-<li>
-<p>jQuery 是一个 JavaScript 函数库。</p>
-</li>
-<li>
-<p>jQuery 是一个轻量级的&quot;写的少，做的多&quot;的 JavaScript 库。</p>
-</li>
-<li>
-<p>jQuery 库包含以下功能：</p>
+<li><p>jQuery 是一个 JavaScript 函数库。</p></li>
+<li><p>jQuery 是一个轻量级的"写的少，做的多"的 JavaScript 库。</p></li>
+<li><p>jQuery 库包含以下功能：</p>
 <ul>
 <li>HTML 元素选取</li>
 <li>HTML 元素操作</li>
@@ -425,195 +411,185 @@
 <li>JavaScript 特效和动画</li>
 <li>HTML DOM 遍历和修改</li>
 <li>AJAX</li>
-<li>Utilities<br>
-提示： 除此之外，jQuery 还提供了大量的插件。</li>
+<li>Utilities 提示： 除此之外，jQuery 还提供了大量的插件。</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="1-2-jQuery上手">1.2 jQuery上手</h3>
+<h3 id="jquery上手">1.2 jQuery上手</h3>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>jQuery<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">    $(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-comment">// 请将jQuery代码书写在这里 ...</span></span><br><span class="language-javascript">        <span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;Hello,World!&#x27;</span>);</span><br><span class="language-javascript">    &#125;);</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
-<h3 id="1-3-jQuery的双枪">1.3 jQuery的双枪</h3>
+<h3 id="jquery的双枪">1.3 jQuery的双枪</h3>
 <p><code>jQuery</code>的双枪分别是：</p>
-<pre><code class="hljs">* jQuery的核心函数： 即：`$()`或`jQuery()`。jQuery定义了这个全局函数供我们使用，他既可以作为一般函数调用，且传递的参数类型不同/格式不同，功能就完全不同，也可以作为对象调用其定义好的方法
-* jQuery的核心对象： 即执行`jQuery`核心函数所返回的对象，`jQuery`对象内部包含的`dom`元素对象的伪数组(可能只有一个元素)，`jQuery`对象有很多属性和方法，让程序员能够方便的操纵`dom`,调用jQuery对象的任何方法后返回的还是当前jQuery对象
-</code></pre>
+<ul>
+<li>jQuery的核心函数：
+即：<code>$()</code>或<code>jQuery()</code>。jQuery定义了这个全局函数供我们使用，他既可以作为一般函数调用，且传递的参数类型不同/格式不同，功能就完全不同，也可以作为对象调用其定义好的方法
+<ul>
+<li>jQuery的核心对象：
+即执行<code>jQuery</code>核心函数所返回的对象，<code>jQuery</code>对象内部包含的<code>dom</code>元素对象的伪数组(可能只有一个元素)，<code>jQuery</code>对象有很多属性和方法，让程序员能够方便的操纵<code>dom</code>,调用jQuery对象的任何方法后返回的还是当前jQuery对象</li>
+</ul></li>
+</ul>
 <p>以上这段话你可能没看明白，但是没关系，先看完后面的内容再回过头来看</p>
-<h2 id="2-jQuery的核心函数">2 jQuery的核心函数</h2>
-<h3 id="2-1-选择器">2.1 选择器</h3>
-<h3 id="2-1-1-基本选择器">2.1.1 基本选择器</h3>
+<h2 id="jquery的核心函数">2 jQuery的核心函数</h2>
+<h3 id="选择器">2.1 选择器</h3>
+<h3 id="基本选择器">2.1.1 基本选择器</h3>
 <p>写在前头：其实选择器的大部分的格式都是</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;example&#x27;).css(&#x27;example1&#x27;);<br></code></pre></td></tr></table></figure>
 <p>带着这个公式去读以下内容，你会很容易发现套路</p>
-<h4 id="2-1-1-1-标签选择器">2.1.1.1 标签选择器</h4>
+<h4 id="标签选择器">2.1.1.1 标签选择器</h4>
 <p>需求：选择页面中所有的div标签，设置其背景为红色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>我是div1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>我是div2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>我是div3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;div&#x27;).css(&#x27;background&#x27;, &#x27;red&#x27;);<br></code></pre></td></tr></table></figure>
-<h4 id="2-1-1-2-id选择器">2.1.1.2 id选择器</h4>
+<h4 id="id选择器">2.1.1.2 id选择器</h4>
 <p>需求：选择页面中所有id为btn的按钮，将其改为红色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>按钮1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span>按钮2<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>按钮3<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;#btn&#x27;).css(&#x27;background&#x27;, &#x27;red&#x27;);<br></code></pre></td></tr></table></figure>
-<h4 id="2-1-1-3-class选择器">2.1.1.3 class选择器</h4>
+<h4 id="class选择器">2.1.1.3 class选择器</h4>
 <p>需求：选择页面中所有class为red的段落，将其背景设置成红色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;red&quot;</span>&gt;</span>我会变红<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我不红了<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;red&quot;</span>&gt;</span>我又红了<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;.red&#x27;).css(&#x27;background&#x27;, &#x27;red&#x27;);<br></code></pre></td></tr></table></figure>
-<h4 id="2-1-1-4-通配符选择器">2.1.1.4 通配符选择器</h4>
+<h4 id="通配符选择器">2.1.1.4 通配符选择器</h4>
 <p>需求：将页面中class为content的div下所有元素的背景设置成红色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>段落1<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>段落2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;.content *&#x27;).css(&#x27;background&#x27;, &#x27;red&#x27;);<br></code></pre></td></tr></table></figure>
-<h4 id="2-1-1-5-并集选择器">2.1.1.5 并集选择器</h4>
+<h4 id="并集选择器">2.1.1.5 并集选择器</h4>
 <p>需求：选择页面中所有段落与按钮，设置其背景为红色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我是段落，我是红色<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>我是按钮，也是红色<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>我不是红色<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;p, button&#x27;).css(&#x27;background&#x27;, &#x27;red&#x27;);<br></code></pre></td></tr></table></figure>
-<h4 id="2-1-1-6-交集选择器">2.1.1.6 交集选择器</h4>
+<h4 id="交集选择器">2.1.1.6 交集选择器</h4>
 <p>需求：选择页面中所有class为红色的段落，设置其背景为红色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;red&quot;</span>&gt;</span>我是红的<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我不是红的<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;red&quot;</span>&gt;</span>我也不是红的<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;p.red&#x27;).css(&#x27;background&#x27;, &#x27;red&#x27;);<br></code></pre></td></tr></table></figure>
-<h3 id="2-1-2-层级选择器">2.1.2 层级选择器</h3>
-<h4 id="2-1-2-1-子代选择器">2.1.2.1 子代选择器</h4>
+<h3 id="层级选择器">2.1.2 层级选择器</h3>
+<h4 id="子代选择器">2.1.2.1 子代选择器</h4>
 <p>需求：选择ul下所有span子元素，设置其背景为红色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>我是ul的span1,我是红的<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>我不是红的，因为我是li<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>我也不是<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;ul&gt;span&#x27;).css(&#x27;background&#x27;, &#x27;red&#x27;);<br></code></pre></td></tr></table></figure>
-<h4 id="2-1-2-2-后代选择器">2.1.2.2 后代选择器</h4>
+<h4 id="后代选择器">2.1.2.2 后代选择器</h4>
 <p>需求：选择ul下所有span元素，设置其背景为红色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>我是ul的span1,我是红的<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>我不是红的，因为我是li <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>但我还是红的<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>我也不是<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;ul span&#x27;).css(&#x27;background&#x27;, &#x27;red&#x27;);<br></code></pre></td></tr></table></figure>
-<p><s>DUmpling的唠叨</s><br>
-子代选择器和后代选择器的区别：<br>
-- 我觉得这很像西欧封建领主和中国封建领主的差别，西欧领主认为：我的附庸的附庸不是我的附庸(子代选择器)，但在中国，普天之下莫非王土，率土之滨莫非王臣，管你是谁，耶稣来了也不行，皇- 帝说的(后代选择器)。<br>
-- 子代选择器只能管一个人，所以要带<code>&gt;</code>。<br>
-- 但是后代选择器却是空格。这是为什么呢？因为这不是空格，而是朕的天下</p>
-<h4 id="2-1-2-3-兄弟选择器">2.1.2.3 兄弟选择器</h4>
+<p><del>DUmpling的唠叨</del> 子代选择器和后代选择器的区别： -
+我觉得这很像西欧封建领主和中国封建领主的差别，西欧领主认为：我的附庸的附庸不是我的附庸(子代选择器)，但在中国，普天之下莫非王土，率土之滨莫非王臣，管你是谁，耶稣来了也不行，皇-
+帝说的(后代选择器)。 -
+子代选择器只能管一个人，所以要带<code>&gt;</code>。 -
+但是后代选择器却是空格。这是为什么呢？因为这不是空格，而是朕的天下</p>
+<h4 id="兄弟选择器">2.1.2.3 兄弟选择器</h4>
 <p>需求：选中id为box的下一个兄弟li，设置其背景为红色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>我是ul的span1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span>我是li1 <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>我是li1的span1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>我是li2 <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>我是li2的span2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span> <span class="hljs-comment">&lt;!--这一行是红色的--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>我是li3 <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>我是li3的span3<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>我是ul的span2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;#box+li&#x27;).css(&#x27;background&#x27;, &#x27;red&#x27;);<br></code></pre></td></tr></table></figure>
 <p>需求：选中id为box之后所有的li，设置其背景为红色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>我是ul的span1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span>我是li1 <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>我是li1的span1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>我是li2 <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>我是li2的span2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>我是li3 <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>我是li3的span3<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>我是ul的span2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;#box~li&#x27;).css(&#x27;background&#x27;, &#x27;red&#x27;);<br></code></pre></td></tr></table></figure>
-<h3 id="2-1-3-过滤选择器">2.1.3 过滤选择器</h3>
-<h4 id="2-1-3-1-基本筛选器">2.1.3.1 基本筛选器</h4>
+<h3 id="过滤选择器">2.1.3 过滤选择器</h3>
+<h4 id="基本筛选器">2.1.3.1 基本筛选器</h4>
 <p>需求：隔行变色，让表格奇数行背景为红色，:even代表选取下标为偶数的行</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">cellspacing</span>=<span class="hljs-string">&quot;0px&quot;</span> <span class="hljs-attr">cellpadding</span>=<span class="hljs-string">&quot;10px&quot;</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;1px&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>张三<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>21<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>//我是红的<br>    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>李四<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>22<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>王五<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>23<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>//我也是红的<br>    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>赵六<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>24<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;tr:even&#x27;).css(&#x27;background&#x27;, &#x27;red&#x27;);<br></code></pre></td></tr></table></figure>
-<p><s>Dumpling又来唠叨了</s><br>
-为什么第1，3行是红色的？<br>
+<p><del>Dumpling又来唠叨了</del> 为什么第1，3行是红色的？
 因为行数下标是从0开始取的，所以你可以理解为是第0行、第2行是红色的</p>
 <ul>
-<li>
-<p>要使表格偶数行背景为红色，把:even改成:odd就行了(行的下标从0开始)</p>
-</li>
-<li>
-<p>要使表格第一行背景为红色，把:even改成:first</p>
-</li>
-<li>
-<p>要使表格最后一行背景为红色，把:even改成:last</p>
-</li>
-<li>
-<p>要使表格第0行到第n行的下标为红色，把:even改成:lt(n)就行了(行的下标从0开始)</p>
-</li>
-<li>
-<p>要使表格从第n行开始全部变成红色，把:even改成:gt(n)就行了(行的下标从0开始)</p>
-</li>
-<li>
-<p>要使表格第n行的背景为红色，把:even改成:eq(n)就行了(行的下标从0开始)</p>
-</li>
-<li>
-<p>要使表格除了第n行，其他行的背景为红色，把:even改成:not(eq(n))就行了(行的下标从0开始)</p>
-</li>
+<li><p>要使表格偶数行背景为红色，把:even改成:odd就行了(行的下标从0开始)</p></li>
+<li><p>要使表格第一行背景为红色，把:even改成:first</p></li>
+<li><p>要使表格最后一行背景为红色，把:even改成:last</p></li>
+<li><p>要使表格第0行到第n行的下标为红色，把:even改成:lt(n)就行了(行的下标从0开始)</p></li>
+<li><p>要使表格从第n行开始全部变成红色，把:even改成:gt(n)就行了(行的下标从0开始)</p></li>
+<li><p>要使表格第n行的背景为红色，把:even改成:eq(n)就行了(行的下标从0开始)</p></li>
+<li><p>要使表格除了第n行，其他行的背景为红色，把:even改成:not(eq(n))就行了(行的下标从0开始)</p></li>
 </ul>
-<p><s>Dumpling又双叒叕来了</s><br>
-聪明如你，肯定发现了lt是less than的缩写，gt是greater than的缩写，eq是equal的缩写，所以这些还是很好记的</p>
-<h4 id="2-1-3-2-内容筛选器">2.1.3.2 内容筛选器</h4>
-<p>需求：实现让内容为&quot;男&quot;的单元格的背景变为红色</p>
+<p><del>Dumpling又双叒叕来了</del> 聪明如你，肯定发现了lt是less
+than的缩写，gt是greater
+than的缩写，eq是equal的缩写，所以这些还是很好记的</p>
+<h4 id="内容筛选器">2.1.3.2 内容筛选器</h4>
+<p>需求：实现让内容为"男"的单元格的背景变为红色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">cellspacing</span>=<span class="hljs-string">&quot;0px&quot;</span> <span class="hljs-attr">cellpadding</span>=<span class="hljs-string">&quot;10px&quot;</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;1px&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>张三<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>21<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>李四<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>22<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>王五<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>23<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>赵六<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>24<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;td:contains(&quot;男&quot;)&#x27;).css(&#x27;background&#x27;, &#x27;red&#x27;);<br></code></pre></td></tr></table></figure>
 <p>需求：实现让内容为span标签的单元格的背景变为红色</p>
-<p>把:contains(“男”)改成:has(span)就行了</p>
+<p>把:contains("男")改成:has(span)就行了</p>
 <p>需求：实现让内容为空的单元格的背景变为红色</p>
-<p>把:contains(“男”)改成:empty就行了</p>
+<p>把:contains("男")改成:empty就行了</p>
 <p>需求：实现让内容不为空的单元格的背景变为红色</p>
-<p>把:contains(“男”)改成:parent就行了</p>
-<h4 id="2-1-3-3-属性筛选器">2.1.3.3 属性筛选器</h4>
+<p>把:contains("男")改成:parent就行了</p>
+<h4 id="属性筛选器">2.1.3.3 属性筛选器</h4>
 <p>需求描述：查找herflang属性的标签元素，设置其背景为红色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">hreflang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>en<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">hreflang</span>=<span class="hljs-string">&quot;en-UK&quot;</span>&gt;</span>en-UK<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">hreflang</span>=<span class="hljs-string">&quot;zh-CN&quot;</span>&gt;</span>zh-CN<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;a[hreflang]&#x27;).css(&#x27;background&#x27;, &#x27;red&#x27;);<br></code></pre></td></tr></table></figure>
 <p>需求：查找hreflang属性值是en的所有超链接，设置其背景为红色</p>
-<p>把[hreflang]改成[hreflang=“en”]就行了</p>
+<p>把[hreflang]改成[hreflang="en"]就行了</p>
 <p>需求：查找hreflang属性值不是en的所有超链接，设置其背景为红色</p>
-<p>把[hreflang]改成[hreflang!=“en”]就行了</p>
-<h2 id="2-2-工具">2.2 工具</h2>
-<h3 id="2-2-1-each方法">2.2.1 $.each方法</h3>
-<p>方法描述：一个通用的迭代函数，它可以用来无缝迭代对象和数组。数组和类似数组的对象通过一个长度属性（如一个函数的参数对象）来迭代数字索引，从0到length - 1，其他对象通过其属性名进行迭代。</p>
+<p>把[hreflang]改成[hreflang!="en"]就行了</p>
+<h2 id="工具">2.2 工具</h2>
+<h3 id="each方法">2.2.1 $.each方法</h3>
+<p>方法描述：一个通用的迭代函数，它可以用来无缝迭代对象和数组。数组和类似数组的对象通过一个长度属性（如一个函数的参数对象）来迭代数字索引，从0到length
+- 1，其他对象通过其属性名进行迭代。</p>
 <p>需求：给定一个数组，使用$.each方法进行遍历输出</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs HTML">var arr = [10, 90, 20, 80, 30, 70, 40, 60, 50];<br>$.each(arr, function (index, element) &#123;<br>    console.log(index, element);<br>&#125;);<br></code></pre></td></tr></table></figure>
-<h3 id="2-2-2-trim方法">2.2.2 $.trim方法</h3>
+<h3 id="trim方法">2.2.2 $.trim方法</h3>
 <p>方法描述：去掉字符串起始和结尾的空格。(trim的中文意思是修剪)</p>
 <p>需求：给定一个字符串，去掉该字符串的前后空格</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs HTML">var str = &#x27;    hello    &#x27;;<br>console.log($.trim(str));//hello<br></code></pre></td></tr></table></figure>
-<h3 id="2-2-3-type方法">2.2.3 $.type方法</h3>
+<h3 id="type方法">2.2.3 $.type方法</h3>
 <p>方法描述：确定JavaScript 对象的类型。</p>
 <p>需求：给定一个对象，输出该对象的类型</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs HTML">var str = &#x27;    hello    &#x27;;<br>console.log($.type(str));//string<br></code></pre></td></tr></table></figure>
-<h3 id="2-2-4-isArray方法">2.2.4 $.isArray方法</h3>
+<h3 id="isarray方法">2.2.4 $.isArray方法</h3>
 <p>方法描述：用来测试指定对象是否为一个数组。</p>
 <p>需求：给定一个对象，输出该对象是不是数组类型</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs HTML">var arr = [10, 90, 20, 80, 30, 70, 40, 60, 50];<br>console.log($.isArray(arr));//true<br></code></pre></td></tr></table></figure>
-<h3 id="2-2-5-isFunction方法">2.2.5 $.isFunction方法</h3>
+<h3 id="isfunction方法">2.2.5 $.isFunction方法</h3>
 <p>方法描述：用来测试指定对象是否为一个函数。</p>
 <p>需求：给定一个对象，输出该对象是不是函数类型</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs HTML">var fun = function () &#123;<br>    console.log(&quot;hello&quot;);<br>&#125;;<br>console.log($.isFunction(fun));//true<br></code></pre></td></tr></table></figure>
-<h2 id="3-jQuery的核心对象">3 jQuery的核心对象</h2>
-<h3 id="3-1-属性">3.1 属性</h3>
-<h4 id="3-1-1-属性">3.1.1 属性</h4>
-<h4 id="3-1-1-1-attr">3.1.1.1 attr()</h4>
+<h2 id="jquery的核心对象">3 jQuery的核心对象</h2>
+<h3 id="属性">3.1 属性</h3>
+<h4 id="属性-1">3.1.1 属性</h4>
+<h4 id="attr">3.1.1.1 attr()</h4>
 <p>方法描述：专门操作属性值为非布尔值的属性，该方法读写一体。</p>
-<p>需求：设置p标签的title属性为&quot;我是attr修改后的段落标题&quot;</p>
+<p>需求：设置p标签的title属性为"我是attr修改后的段落标题"</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;我是段落标题&quot;</span>&gt;</span>我是段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;#content&#x27;).attr(&#x27;title&#x27;, &#x27;我是attr修改后的段落标题&#x27;);<br></code></pre></td></tr></table></figure>
-<h4 id="3-1-1-2-prop">3.1.1.2 prop()</h4>
+<h4 id="prop">3.1.1.2 prop()</h4>
 <p>方法描述：专门操作属性值为布尔值的属性，该方法读写一体。</p>
 <p>需求：设置复选框的状态为选中状态</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span>&gt;</span>复选框<br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;:checkbox&#x27;).prop(&#x27;checked&#x27;, &#x27;true&#x27;);<br></code></pre></td></tr></table></figure>
-<h4 id="3-1-1-3-val">3.1.1.3 val()</h4>
+<h4 id="val">3.1.1.3 val()</h4>
 <p>方法描述：该方法主要用于获取表单元素的值和设置表单元素的值，该方法读写一体。</p>
-<p>需求：设置文本框的值为&quot;123456&quot;</p>
+<p>需求：设置文本框的值为"123456"</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;:text&#x27;).val(&#x27;123456&#x27;)<br></code></pre></td></tr></table></figure>
-<h3 id="3-1-2-样式">3.1.2 样式</h3>
-<h4 id="3-1-2-1-css">3.1.2.1 css()</h4>
+<h3 id="样式">3.1.2 样式</h3>
+<h4 id="css">3.1.2.1 css()</h4>
 <p>方法描述：获取匹配元素集合中的第一个元素的样式属性的计算值或设置每个匹配元素的一个或多个CSS属性。</p>
 <p>需求描述：设置div的背景颜色为红色，字体颜色为白色</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>我是div<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;div&#x27;).css(&#123;<br>    &#x27;background&#x27;: &#x27;red&#x27;,<br>    &#x27;color&#x27;: &#x27;white&#x27;<br>&#125;);<br></code></pre></td></tr></table></figure>
-<h4 id="3-1-2-2-addClass">3.1.2.2 addClass()</h4>
+<h4 id="addclass">3.1.2.2 addClass()</h4>
 <p>方法描述：为每个匹配的元素添加指定的样式类名。</p>
 <p>需求描述：为所有的li添加样式”beauty“</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs HTML">.beauty &#123;<br>    font-weight: bold;<br>    font-size: 18px;<br>    color: coral;<br>&#125;<br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>列表项1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>列表项2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>列表项3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>列表项4<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;li&#x27;).addClass(&#x27;beauty&#x27;);<br></code></pre></td></tr></table></figure>
-<h4 id="3-1-2-3-removeClass">3.1.2.3 removeClass()</h4>
+<h4 id="removeclass">3.1.2.3 removeClass()</h4>
 <p>方法描述：移除集合中每个匹配元素上一个，多个或全部样式。</p>
 <p>需求：为所有的li移除样式”beauty“</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs HTML">.beauty &#123;<br>    font-weight: bold;<br>    font-size: 18px;<br>    color: coral;<br>&#125;<br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;beauty&quot;</span>&gt;</span>列表项1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;beauty&quot;</span>&gt;</span>列表项2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;beauty&quot;</span>&gt;</span>列表项3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;beauty&quot;</span>&gt;</span>列表项4<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;li&#x27;).removeClass(&#x27;beauty&#x27;);<br></code></pre></td></tr></table></figure>
-<h4 id="3-1-2-4-toggleClass">3.1.2.4 toggleClass()</h4>
+<h4 id="toggleclass">3.1.2.4 toggleClass()</h4>
 <p>方法描述：为匹配的元素集合中的每个元素上添加或删除一个或多个样式类，取决于这个样式类是否存在。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs HTML">.hide &#123;<br>    width: 100px;<br>    height: 100px;<br>    display: none;<br>&#125;<br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>按钮<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>我是div<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs HTML">$(&#x27;button&#x27;).click(function () &#123;<br>    $(&#x27;div&#x27;).toggleClass(&#x27;hide&#x27;);<br>&#125;);<br></code></pre></td></tr></table></figure>
-<h3 id="3-1-3-尺寸">3.1.3 尺寸</h3>
-<h4 id="3-1-3-1-width">3.1.3.1 width()</h4>
+<h3 id="尺寸">3.1.3 尺寸</h3>
+<h4 id="width">3.1.3.1 width()</h4>
 <p>方法描述：获取内容元素width的值。</p>
-<h4 id="3-1-3-2-height">3.1.3.2 height()</h4>
+<h4 id="height">3.1.3.2 height()</h4>
 <p>方法描述：获取内容元素height的值。</p>
-<h4 id="3-1-3-3-innerWidth">3.1.3.3 innerWidth()</h4>
+<h4 id="innerwidth">3.1.3.3 innerWidth()</h4>
 <p>方法描述：获取内容元素width+padding的值。</p>
-<h4 id="3-1-3-4-innerHeight">3.1.3.4 innerHeight()</h4>
+<h4 id="innerheight">3.1.3.4 innerHeight()</h4>
 <p>方法描述：获取内容元素height+padding的值。</p>
-<h4 id="3-1-3-5-outerWidth">3.1.3.5 outerWidth()</h4>
+<h4 id="outerwidth">3.1.3.5 outerWidth()</h4>
 <p>方法描述：outerWidth(false/true)，获取内容元素width+padding+border的值，如果是true再加上margin的值。</p>
-<h4 id="3-1-3-6-outerHeight">3.1.3.6 outerHeight()</h4>
+<h4 id="outerheight">3.1.3.6 outerHeight()</h4>
 <p>方法描述：outerHeight(false/true)，获取内容元素height+padding+border的值，如果是true再加上margin的值。</p>
 
                 
