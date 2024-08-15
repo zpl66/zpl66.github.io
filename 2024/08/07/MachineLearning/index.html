@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://crazythursdayv50tome.cn/images/%E5%B0%8F%E8%A1%8C%E6%98%9F%E5%92%8C%E6%B0%94%E4%BD%93%E5%B7%A8%E6%98%9F.jpg">
 <meta property="article:published_time" content="2024-08-07T12:17:24.000Z">
-<meta property="article:modified_time" content="2024-08-12T05:20:25.446Z">
+<meta property="article:modified_time" content="2024-08-14T04:20:00.715Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="ai">
@@ -279,7 +279,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          11k words
+          13k words
         
       </span>
     
@@ -290,7 +290,7 @@
         
         
         
-          92 mins
+          106 mins
         
       </span>
     
@@ -1309,6 +1309,68 @@ index的长度与字典中某一个键值对的值的长度一样</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pandas<br><br>dataFrame = pandas.DataFrame(<br>    data=[<br>        [<span class="hljs-string">&#x27;一级&#x27;</span>, <span class="hljs-string">&#x27;读书&#x27;</span>, <span class="hljs-number">21</span>, <span class="hljs-number">176</span>],<br>        [<span class="hljs-string">&#x27;二级&#x27;</span>, <span class="hljs-string">&#x27;游泳&#x27;</span>, <span class="hljs-number">20</span>, <span class="hljs-number">178</span>],<br>        [<span class="hljs-string">&#x27;三级&#x27;</span>, <span class="hljs-string">&#x27;游泳&#x27;</span>, <span class="hljs-number">21</span>, <span class="hljs-number">185</span>],<br>        [<span class="hljs-string">&#x27;四级&#x27;</span>, <span class="hljs-string">&#x27;游泳&#x27;</span>, <span class="hljs-number">19</span>, <span class="hljs-number">177</span>],<br>        [<span class="hljs-string">&#x27;四级&#x27;</span>, <span class="hljs-string">&#x27;读书&#x27;</span>, <span class="hljs-number">19</span>, <span class="hljs-number">165</span>],<br>        [<span class="hljs-string">&#x27;四级&#x27;</span>, <span class="hljs-string">&#x27;读书&#x27;</span>, <span class="hljs-number">19</span>, <span class="hljs-number">190</span>],<br>    ],<br>    columns=[<span class="hljs-string">&#x27;等级&#x27;</span>, <span class="hljs-string">&#x27;爱好&#x27;</span>, <span class="hljs-string">&#x27;年龄&#x27;</span>, <span class="hljs-string">&#x27;身高&#x27;</span>],<br>    index=[<span class="hljs-string">&#x27;小明&#x27;</span>, <span class="hljs-string">&#x27;小红&#x27;</span>, <span class="hljs-string">&#x27;小强&#x27;</span>, <span class="hljs-string">&#x27;小于&#x27;</span>, <span class="hljs-string">&#x27;小兰&#x27;</span>, <span class="hljs-string">&#x27;小智&#x27;</span>]<br>)<br>r = pandas.cut(x = dataFrame[<span class="hljs-string">&#x27;身高&#x27;</span>], bins = [<span class="hljs-number">160</span>, <span class="hljs-number">170</span>, <span class="hljs-number">180</span>, <span class="hljs-number">190</span>, <span class="hljs-number">200</span>], right = <span class="hljs-literal">False</span>, labels = [<span class="hljs-string">&#x27;中等身高&#x27;</span>, <span class="hljs-string">&#x27;身高较高&#x27;</span>, <span class="hljs-string">&#x27;身高很高&#x27;</span>, <span class="hljs-string">&#x27;身高太高&#x27;</span>])<br><span class="hljs-built_in">print</span>(r, end = <span class="hljs-string">&#x27;\n&#x27;</span>)<br>r = pandas.cut(x=dataFrame[<span class="hljs-string">&#x27;身高&#x27;</span>], bins = <span class="hljs-number">4</span>, right=<span class="hljs-literal">False</span>, labels=[<span class="hljs-string">&#x27;中等身高&#x27;</span>, <span class="hljs-string">&#x27;身高较高&#x27;</span>, <span class="hljs-string">&#x27;身高很高&#x27;</span>, <span class="hljs-string">&#x27;身高太高&#x27;</span>])<br><span class="hljs-built_in">print</span>(r)<br></code></pre></td></tr></table></figure>
 <p>输出</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python">小明    身高较高<br>小红    身高较高<br>小强    身高很高<br>小于    身高较高<br>小兰    中等身高<br>小智    身高太高<br>Name: 身高, dtype: category<br>Categories (<span class="hljs-number">4</span>, <span class="hljs-built_in">object</span>): [<span class="hljs-string">&#x27;中等身高&#x27;</span> &lt; <span class="hljs-string">&#x27;身高较高&#x27;</span> &lt; <span class="hljs-string">&#x27;身高很高&#x27;</span> &lt; <span class="hljs-string">&#x27;身高太高&#x27;</span>]<br>小明    身高较高<br>小红    身高很高<br>小强    身高太高<br>小于    身高较高<br>小兰    中等身高<br>小智    身高太高<br>Name: 身高, dtype: category<br>Categories (<span class="hljs-number">4</span>, <span class="hljs-built_in">object</span>): [<span class="hljs-string">&#x27;中等身高&#x27;</span> &lt; <span class="hljs-string">&#x27;身高较高&#x27;</span> &lt; <span class="hljs-string">&#x27;身高很高&#x27;</span> &lt; <span class="hljs-string">&#x27;身高太高&#x27;</span>]<br></code></pre></td></tr></table></figure>
+<h2 id="回归算法与应用">3. 回归算法与应用</h2>
+<h3 id="回归分析">3.1 回归分析</h3>
+<p><strong>回归分析（regression
+analysis）</strong>是确定两种或两种以上变量间相互依赖定量关系的一种统计分析方法，是应用极其广泛的数据分析方法之一。作为一种预测模型，它基于观测数据建立变量间适当的依赖关系，以分析数据内在规律，并用于预测、控制等问题。</p>
+<p><strong>例1:假设我们想要一个能够预测二手车价格的系统。</strong></p>
+<p>系统输入：品牌、年龄、发动机性能、里程等我们认为会影响车价的属性信息。</p>
+<p>输出：车的价格。</p>
+<p>这种输出为数值的问题是回归问题。</p>
+<p>现假设x表示车的属性，y表示车的价格。我们通过调查以往的交易情况，能够收集训练数据。而机器学习中的线性回归方法能够构造出一个函数来拟合这些数据，从而得到关于x的函数y。如下图所示，其中w和w0为待拟合的参数值，拟合函数具有如下表达式：</p>
+<p>y=wx+w0</p>
+<p><strong>例2：移动机器人的导航。如自动汽车导航。</strong></p>
+<p>输出：每次转动的角度，使得汽车前进而不会撞到障碍物或偏离车道</p>
+<p>输入的数值：由汽车上的传感器（如视频相机、GPS等）提供。训练数据可以通过监视和记录驾驶员的动作收集。</p>
+<p><strong>例3:假设要制造一个焙炒咖啡的机器。</strong></p>
+<p>输入数值为各种温度、时间、咖啡豆种类等配置。针对不同的输入配置进行大量实验，并检测咖啡的品质。</p>
+<p>例如，可根据消费者的满意度测量咖啡的品质。</p>
+<p>为寻求最优配置，我们可以先拟合一个回归模型，并在当前模型的最优样本附近选择一些新的点，来检测咖啡的品质，再将他们加入训练数据，并拟合新的模型。</p>
+<p>预测问题可以划分为回归和分类这两大类，前者的输出为连续值，后者的输出为离散值。由于这两类问题具有不同的特点，需要使用不同的分析方法。本节将对回归问题进行讨论。</p>
+<h3 id="常见数据集">3.2 常见数据集</h3>
+<p>1、波士顿房价数据集</p>
+<p>波士顿房价数据集（BostonHousePriceDataset）包含对房价的预测，以千美元计，给定的条件是房屋及其相邻房屋的详细信息。该数据集是一个回归问题。每个类的观察值数量是均等的，共有506个观察值，13个输入变量和1个输出变量。部分变量名如下：</p>
+<p>CRIM：表示城镇人均犯罪率；</p>
+<p>ZN：表示住宅用地超过25000英寸的比例；</p>
+<p>INDUS：表示城镇中非商业用地的所占比例；</p>
+<p>CHAS：表示查尔斯河虚拟变量，用于回归分析；</p>
+<p>NOX：表示环保指数；</p>
+<p>RM：表示每栋住宅平均房间数；</p>
+<p>AGE：表示1940年以前建成的自住单位的比例；</p>
+<p>DIS：表示距离五个波士顿就业中心的加权距离；</p>
+<p>RAD：表示辐射性公路的接近指数；</p>
+<p>TAX：表示每一万美元的不动产税率。</p>
+<p>2、温室气体观测网络数据集</p>
+<p>该数据集根据天气模型模拟给出的综合观测值和示踪剂的时间序列，来监测加利福尼亚的温室气体（GHG）排放得到。该数据集包含使用化学方法对天气研究和预报模型（WRF-Chem）模拟创建的加利福尼亚州2921个网格单元的温室气体（GHG）浓度的时间序列。</p>
+<p>利用这些数据：</p>
+<p>（1）使用逆方法来确定与合成观测值最匹配的15个示踪剂的加权总和中的权重的最佳值；</p>
+<p>（2）使用优化方法来确定要观测的最佳位置。</p>
+<p>数据集中的每个文件都标记为ghg.gid.siteWXYZ.dat，其中WXYZ是网格单元的位置ID。每个网格单元文件中（GHG浓度以万亿分之一为单位）：</p>
+<p>第1-15行：从区域1-15排放的示踪剂的温室气体浓度第16行：综合观测值的温室气体浓度第1-327列：自2010年5月10日至2010年7月31日，每6个小时的温室气体浓度。</p>
+<p><a
+target="_blank" rel="noopener" href="http://archive.ics.uci.edu/ml/datasets/Greenhouse+Gas+Observing+Network">数据集下载</a></p>
+<p>3、葡萄酒质量数据集</p>
+<p>包括来自葡萄牙北部的两个与红色和白色vinhoverde葡萄酒样品有关的数据集。目标是根据理化测试对葡萄酒质量进行建模。这两个数据集与葡萄牙“VinhoVerde”葡萄酒的红色和白色变体有关。由于隐私和物流问题，只有理化变量特征是可以进行使用的（例如，数据集中没有关于葡萄品种、葡萄酒品牌、葡萄酒销售价格等的数据）。此数据集可以视为分类或回归任务。本数据集有4898个观察值，11个输入变量和一个输出变量。变量名如下：</p>
+<p>输入变量（基于理化测试）：</p>
+<p>1-固定酸度；2-挥发性酸度；3-柠檬酸；</p>
+<p>4-残留糖；5-氯化物；6-游离二氧化硫；</p>
+<p>7-总二氧化硫；8-密度；9-pH；</p>
+<p>10-硫酸盐；11-醇；</p>
+<p>输出变量（基于感官数据）：</p>
+<p>12-质量（得分在0到10之间）。</p>
+<p><a
+target="_blank" rel="noopener" href="http://archive.ics.uci.edu/ml/datasets/Wine+Quality">数据集下载</a></p>
+<h3 id="线性回归">3.3 线性回归</h3>
+<p>原理与应用场景</p>
+<p>当两个或多个变量间存在线性相关关系时，常常希望在变量间建立定量关系，相关变量间的定量关系的表达即是线性回归。</p>
+<p>给定由d个属性描述的示例x=(x1,x2,⋯,xd)，其中xi是x在第i个属性上的取值，线性模型就是通过属性的线性组合构造预测的函数，即</p>
+<p><span class="math inline">\(f(x) = w^1 \times x_1+ w^2 \times x^2 +
+... + w^d \ times x^d + b\)</span></p>
+<p>一般用向量形式写成：</p>
+<p><span class="math inline">\(f(x) = w^Tx + b\)</span></p>
+<p>其中w=(w1,w2,⋯,wd)。得到参数w和b之后，模型就得以确定，即线性回归模型。</p>
+<p>特点：</p>
+<p>形式简单、易于建模，但蕴含着机器学习中一些重要的基本思想，许多功能更为强大的非线性模型可在线性模型的基础上通过引入层级结构或高维映射获得。此外，由于푤直观表达了各属性在预测中的重要性，因此线性模型有很好的解释性。</p>
 
                 
               </div>
