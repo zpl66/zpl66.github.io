@@ -18,16 +18,16 @@
   <meta name="author" content="饺子">
   <meta name="keywords" content="">
   
-    <meta name="description" content="计算机网络知识框架  1. 计算机网络概述   计算机网络概述知识框架  1.1 互联网的构成  网络边缘(Network Edge)：网络边缘是指直接与终端用户相连接的部分，包括用户的计算机、智能手机、平板电脑等设备，以及家庭网络、办公室网络等。网络边缘的主要功能包括：  终端设备：用户使用的各种设备，如计算机、手机、平板等，这些设备通过网络接口（如以太网、Wi-">
+    <meta name="description" content="0. 前言：如果让你来设计网络？ 0.1 物理层 假如你是一台电脑，你的名字叫A。 在很久很久以前，你不和任何电脑相连接，孤苦伶仃。 直到有一天，你希望与另一台电脑B建立联系 于是你们各开了一个网口，用一根网线连接了起来 有一天，一个新伙伴C加入了 但聪明的你们很快发现，可以每个人各开两个网口 用一共三根网线相连 随着越来越多电脑的加入，你发现身上开的网口实在太多了 （实际上根">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络">
 <meta property="og:url" content="http://crazythursdayv50tome.cn/2024/08/06/ComputerNetwork/index.html">
 <meta property="og:site_name" content="Dumpling">
-<meta property="og:description" content="计算机网络知识框架  1. 计算机网络概述   计算机网络概述知识框架  1.1 互联网的构成  网络边缘(Network Edge)：网络边缘是指直接与终端用户相连接的部分，包括用户的计算机、智能手机、平板电脑等设备，以及家庭网络、办公室网络等。网络边缘的主要功能包括：  终端设备：用户使用的各种设备，如计算机、手机、平板等，这些设备通过网络接口（如以太网、Wi-">
+<meta property="og:description" content="0. 前言：如果让你来设计网络？ 0.1 物理层 假如你是一台电脑，你的名字叫A。 在很久很久以前，你不和任何电脑相连接，孤苦伶仃。 直到有一天，你希望与另一台电脑B建立联系 于是你们各开了一个网口，用一根网线连接了起来 有一天，一个新伙伴C加入了 但聪明的你们很快发现，可以每个人各开两个网口 用一共三根网线相连 随着越来越多电脑的加入，你发现身上开的网口实在太多了 （实际上根">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://crazythursdayv50tome.cn/images/%E6%9C%AA%E6%9D%A5%E5%9F%8E%E5%B8%82%E6%99%AF%E8%A7%82%E5%9F%8E%E5%B8%82%E5%92%8C%E5%AE%87%E5%AE%99%E9%A3%9E%E8%88%B9.jpg">
 <meta property="article:published_time" content="2024-08-06T02:59:40.000Z">
-<meta property="article:modified_time" content="2024-08-07T11:35:20.280Z">
+<meta property="article:modified_time" content="2024-08-23T13:42:42.708Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary_large_image">
@@ -278,7 +278,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.7k words
+          11k words
         
       </span>
     
@@ -289,7 +289,7 @@
         
         
         
-          48 mins
+          94 mins
         
       </span>
     
@@ -339,7 +339,510 @@
             
               <div class="markdown-body">
                 
-                <figure>
+                <h2 id="前言如果让你来设计网络">0. 前言：如果让你来设计网络？</h2>
+<h3 id="物理层">0.1 物理层</h3>
+<p>假如你是一台电脑，你的名字叫<code>A</code>。</p>
+<p>在很久很久以前，你不和任何电脑相连接，孤苦伶仃。</p>
+<p>直到有一天，你希望与另一台电脑<code>B</code>建立联系</p>
+<p>于是你们各开了一个网口，用一根网线连接了起来</p>
+<p>有一天，一个新伙伴<code>C</code>加入了</p>
+<p>但聪明的你们很快发现，可以每个人各开两个网口</p>
+<p>用一共三根网线相连</p>
+<p>随着越来越多电脑的加入，你发现身上开的网口实在太多了</p>
+<p>（实际上根本不能开多网口）</p>
+<p>而且网线密密麻麻，混乱不堪</p>
+<p>于是你们发明了一个中间设备</p>
+<p><img src="/images/image-182.png" srcset="/img/loading.gif" lazyload /></p>
+<p>你们将网线都插在这个设备上，由这个设备做转发</p>
+<p>就可以彼此之间通信了</p>
+<p>本质上和原来一样，只不过网口的数量和网线的数量减少了</p>
+<p>你给他取名叫</p>
+<p><strong>集线器(hub)</strong></p>
+<p>集线器仅仅是无脑将电信号转发到所有出口，不做任何处理</p>
+<p>你觉得他是没有智商的</p>
+<p>因此把人家定性在了</p>
+<p><strong>物理层</strong></p>
+<p>由于转发到了所有出口</p>
+<p>那和集线器相连的<code>B</code>,<code>C</code>,<code>D</code>，<code>E</code>四台机器怎么知道数据包是不是发送给自己的呢？</p>
+<p>首先，你要给所有连接到集线器的设备都取个名字</p>
+<p>原来你们叫<code>A</code>,<code>B</code>,<code>C</code>,<code>D</code></p>
+<p>但现在需要一个更专业的、全局唯一的名字作为标志</p>
+<p>你把这个更高端的名字称为</p>
+<p><strong>Mac地址</strong></p>
+<p>例如，你的Mac地址是<code>AAA</code></p>
+<p>而你的伙伴的Mac地址是<code>BBB</code></p>
+<p>以此类推，确保每个Mac地址都是独一无二的</p>
+<p>这样，只要<code>A</code>在发送数据包给<code>B</code>时，只要在头部拼接一个这样的结构的数据就可以了：</p>
+<p><img src="/images/屏幕截图%202024-08-19%20185555.png" srcset="/img/loading.gif" lazyload /></p>
+<p><code>B</code>在收到数据包后</p>
+<p>根据头部的目标Mac地址信息</p>
+<p>判断这个数据包的确是发给自己的</p>
+<p>于是就收下了</p>
+<p>其他的<code>B</code>,<code>C</code>,<code>D</code>,<code>E</code>收到数据包后</p>
+<p>根据头部的目标Mac地址信息</p>
+<p>判断这个数据包并不是发给自己的</p>
+<p>于是便丢弃</p>
+<p>虽然集线器使整个布局干净不少</p>
+<p>但原来我只需要发送给电脑<code>B</code>的消息</p>
+<p>现在却要发送给集线器中所有的电脑</p>
+<p>这样既不安全，也不节省网络资源</p>
+<h3 id="数据链路层">0.2 数据链路层</h3>
+<p>如果把集线器弄得更智能一些</p>
+<p>只发给目标Mac地址指向的那台电脑就好了</p>
+<p>虽然只比集线器多了一点点区别</p>
+<p>但看起来似乎更智能了</p>
+<p>你把这东西叫做</p>
+<p><strong>交换机(Switch)</strong></p>
+<figure>
+<img src="/images/v2-4220b11946b4edcbea586cd9d2bf1509_r.jpg" srcset="/img/loading.gif" lazyload
+alt="交换机" />
+<figcaption aria-hidden="true">交换机</figcaption>
+</figure>
+<p>也正因为这一点点智能，你把他放在了另一个场景</p>
+<p><strong>数据链路层</strong></p>
+<p>交换机内部维护一张Mac地址表</p>
+<p>记录着每一个Mac地址的设备，连接在其哪一个端口上</p>
+<table>
+<thead>
+<tr>
+<th>Mac地址</th>
+<th>端口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bb-bb-bb-bb-bb-bb</td>
+<td>1</td>
+</tr>
+<tr>
+<td>cc-cc-cc-cc-cc-cc</td>
+<td>2</td>
+</tr>
+<tr>
+<td>aa-aa-aa-aa-aa-aa</td>
+<td>3</td>
+</tr>
+<tr>
+<td>dd-dd-dd-dd-dd-dd</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>假如你仍然发送给<code>B</code>一个数据包，</p>
+<p>构造了这样的数据结构从网口发出</p>
+<p><img src="/images/屏幕截图%202024-08-19%20185555.png" srcset="/img/loading.gif" lazyload /></p>
+<p>当数据到达交换机时</p>
+<p>交换机内部通过自己维护的Mac地址表</p>
+<p>发现目标机器<code>B</code>的Mac地址映射到了端口<code>1</code>上</p>
+<p>于是把数据从1号端口发送给了<code>B</code></p>
+<p>你给这样传输方式而组成的小范围网络，叫做</p>
+<p><strong>以太网</strong></p>
+<p>当然，最开始的时候Mac地址表是空的</p>
+<p>是怎么逐步建立起来的呢</p>
+<p>假如在Mac地址表为空时</p>
+<p>你给<code>B</code>发送了数据</p>
+<p>这个包从端口<code>3</code>进入的交换机</p>
+<p>所以此时交换机就可以在Mac地址表记录第一条数据</p>
+<table>
+<thead>
+<tr>
+<th>Mac地址</th>
+<th>端口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>aa-aa-aa-aa-aa-aa</td>
+<td>3</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>交换机看目标Mac地址在Mac表中并没有映射关系</p>
+<p>于是将此包发给了所有端口，也就是所有机器</p>
+<p>之后只有机器<code>B</code>收到了确实是发给自己的包</p>
+<p>于是做出响应</p>
+<p>响应数据从端口<code>1</code>进入交换机</p>
+<p>于是交换机此时在地址表中更新了第二条数据</p>
+<table>
+<thead>
+<tr>
+<th>Mac地址</th>
+<th>端口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bb-bb-bb-bb-bb-bb</td>
+<td>1</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>aa-aa-aa-aa-aa-aa</td>
+<td>3</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>经过该网络中的机器不断的通信</p>
+<p>交换机最终将Mac地址表建立完毕</p>
+<p>随着机器越来越多，交换机的端口也不够了</p>
+<p>但聪明的你发现</p>
+<p>只要将多个交换机连接起来</p>
+<p>这个问题就可以轻而易举的搞定了</p>
+<p>你不需要设计任何额外的东西</p>
+<p>只需要按照之前的设计和规则来操作</p>
+<p>就可以实现所有电脑的互联</p>
+<p>不过需要注意的是，两个交换机相连的线</p>
+<p>在Mac地址表中并不是一条记录</p>
+<p>而是要将另一台交换机连接的四台机器与该端口的记录</p>
+<p>全都记录在表中</p>
+<p>最终两个交换机将分别记录从<code>A</code>到<code>H</code>所有机器的映射关系</p>
+<p>比如：</p>
+<table>
+<thead>
+<tr>
+<th>Mac地址</th>
+<th>端口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bb-bb-bb-bb-bb-bb</td>
+<td>1</td>
+</tr>
+<tr>
+<td>cc-cc-cc-cc-cc-cc</td>
+<td>2</td>
+</tr>
+<tr>
+<td>aa-aa-aa-aa-aa-aa</td>
+<td>3</td>
+</tr>
+<tr>
+<td>dd-dd-dd-dd-dd-dd</td>
+<td>4</td>
+</tr>
+<tr>
+<td>ee-ee-ee-ee-ee-ee</td>
+<td>5</td>
+</tr>
+<tr>
+<td>ff-ff-ff-ff-ff-ff</td>
+<td>5</td>
+</tr>
+<tr>
+<td>gg-gg-gg-gg-gg-gg</td>
+<td>5</td>
+</tr>
+<tr>
+<td>hh-hh-hh-hh-hh-hh</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Mac地址</th>
+<th>端口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bb-bb-bb-bb-bb-bb</td>
+<td>1</td>
+</tr>
+<tr>
+<td>cc-cc-cc-cc-cc-cc</td>
+<td>1</td>
+</tr>
+<tr>
+<td>aa-aa-aa-aa-aa-aa</td>
+<td>1</td>
+</tr>
+<tr>
+<td>dd-dd-dd-dd-dd-dd</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ee-ee-ee-ee-ee-ee</td>
+<td>2</td>
+</tr>
+<tr>
+<td>ff-ff-ff-ff-ff-ff</td>
+<td>3</td>
+</tr>
+<tr>
+<td>gg-gg-gg-gg-gg-gg</td>
+<td>4</td>
+</tr>
+<tr>
+<td>hh-hh-hh-hh-hh-hh</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>这在只有8台甚至只有几百台电脑的时候都还好</p>
+<p>所以这种交换机的交换方式已经足够支持一阵子了</p>
+<p>但很快，电脑的数量发展到几万、几十万甚至更多</p>
+<p>​</p>
+<h3 id="网络层">0.3 网络层</h3>
+<p>交换机已经无法支撑如此庞大的数据关系了</p>
+<p>此时你动了歪脑筋</p>
+<p>你发现了问题的关键在于</p>
+<p>连接其他交换机的那根网线</p>
+<p>后面不知道有多少个设备在源源不断的连接起来</p>
+<p>从而使得地址表越来越大</p>
+<p>那我能不能把这根网线接入到一个新的设备</p>
+<p>这个设备就跟电脑一样</p>
+<p>有自己独立的Mac地址</p>
+<p>而且同时还能帮我把数据包做一次转发呢？</p>
+<p>这个设备就是</p>
+<p><strong>路由器(Router)</strong></p>
+<p>作为一个独立的拥有Mac地址的设备</p>
+<p>并且可以帮我把数据包做一次转发</p>
+<p>你把他定在了</p>
+<p><strong>网络层</strong></p>
+<p>好了，现在交换机的Mac地址表中</p>
+<p>只需要多出一条<code>ABAB</code>与其端口的映射关系</p>
+<p>又可以成功将数据包转交给路由器了</p>
+<p><img src="/images/微信图片_20240823195754.jpg" srcset="/img/loading.gif" lazyload /></p>
+<p>那如何做到把<code>A</code>发送给<code>C</code>和<code>D</code></p>
+<p>甚至是<code>E</code>,<code>F</code>,<code>G</code>,<code>H</code>的数据包，统统先发送给路由器呢？</p>
+<p>不难想到这样一个点子：</p>
+<p>假如电脑<code>C</code>和<code>D</code>拥有共同的前缀</p>
+<blockquote>
+<p>C的Mac地址：FFFF-FFFF-CCCC</p>
+<p>D的Mac地址：FFFF-FFFF-DDDD</p>
+</blockquote>
+<p>那我们就可以说，将目标地址<code>FFFF-FFFF-?</code>开头的</p>
+<p>统统先发送给路由器这样是否可行呢？</p>
+<p>答案是不行的</p>
+<p>我们先从现实中的Mac地址入手</p>
+<p>Mac地址也叫物理地址、硬件地址</p>
+<p>长度为48位</p>
+<p>比如：<code>00-16-EA-AR-3C-40</code></p>
+<p>他是由网络设备制造商生产时烧录在网卡的一种闪存芯片</p>
+<p>前24位：<code>00-16-EA</code>代表网络硬件制造商的编号</p>
+<p>后24位<code>AE-3C-40</code>是该厂家自己分配的，一般具有系列号</p>
+<p>Mac地址就如同身份证上的身份证一样，具有唯一性</p>
+<p>于是你发明了一个新的地址</p>
+<p>给每一台机器一个32位的编号</p>
+<p><code>11000000101010000000000000000001</code></p>
+<p>你觉得这有些不清晰</p>
+<p>于是把它分成四个部分，中间用点相连</p>
+<p>你还觉得不清晰，于是转换为十进制</p>
+<p><code>192.168.0.1</code></p>
+<p>最后，你给了这个地址一个响亮的名字：</p>
+<p><strong>IP地址</strong></p>
+<p>现在每一台电脑都既有自己的Mac地址，又有自己的IP地址</p>
+<p>只不过IP地址是软件层面上的</p>
+<p>可以随时修改</p>
+<p>Mac地址一般是无法修改的</p>
+<p>假如我想把数据包发送给<code>A</code>,<code>B</code>,<code>C</code>,<code>D</code>中的一台设备</p>
+<p>无论是哪一台，我都可以这样描述：</p>
+<blockquote>
+<p>将IP地址为192.168.0开头的全部发送给路由器，之后再怎么发，交给他！</p>
+</blockquote>
+<p>那交给路由器之后，路由器又是怎么把数据包准确转发给其他设备的呢？</p>
+<p>我们先给所有的电脑加上自己的IP地址</p>
+<p>现在两个设备之间进行传输</p>
+<p>除了加上数据链路层的头部之外</p>
+<p>还要再增加一个网络层的头部</p>
+<p>假如<code>A</code>给<code>B</code>发送数据</p>
+<p>由于他们直接连着交换机</p>
+<p>所以<code>A</code>直接发出如下数据包即可：</p>
+<p><img src="/images/屏幕截图%202024-08-23%20201835.png" srcset="/img/loading.gif" lazyload /></p>
+<p>其实网络层并没有发挥作用</p>
+<p>但如果<code>A</code>给<code>C</code>发送数据</p>
+<p><code>A</code>就需要先转交给路由器然后再有路由器转发给<code>C</code></p>
+<p><img src="/images/屏幕截图%202024-08-23%20202944.png" srcset="/img/loading.gif" lazyload /></p>
+<p>由于这个过程仍然需要以太网</p>
+<p>所以这个数据包是分成两段：</p>
+<p><code>A-路由器</code>这段的包和<code>路由器-C</code>这段的包</p>
+<p>那<code>A</code>给<code>C</code>发数据包，怎么知道是否要经过路由器转发呢？</p>
+<p>经过一番思考，你发明了</p>
+<p><strong>子网</strong></p>
+<p>如果源IP与目的IP处于一个子网，直接将包通过交换机发出去</p>
+<p>如果源IP与目的IP不处于一个子网，就交给路由器去处理</p>
+<p>现在，只需要解决什么叫处于一个子网就好了</p>
+<p>你规定如下：</p>
+<blockquote>
+<p>192.168.0.1和192.168.0.2处于一个子网</p>
+<p>192.168.0.1和192.168.1.1不处于一个子网</p>
+</blockquote>
+<p>即你想表示，对于<code>192.168.0.1</code>来说,<code>192.168.0</code>开头的就算是在一个子网</p>
+<p>否则就是在不同的子网</p>
+<p>那对于其他计算机兄弟来说，怎么表达这个意思呢？</p>
+<p>于是你们发明了</p>
+<p><strong>子网掩码</strong></p>
+<p>假如某台机器的子网掩码定为<code>255.255.255.0</code></p>
+<p>这表示将源IP与目的IP分别与这个子网掩码进行与运算</p>
+<p>相等则是在一个子网</p>
+<p>不相等则不是在一个子网</p>
+<p>例如</p>
+<blockquote>
+<p>A电脑：<span class="math inline">\(192.168.0.1 &amp; 255.255.255.0 =
+192.168.0.0\)</span></p>
+</blockquote>
+<p>至此，经过物理层、数据链路层、网络层这前三层的协议</p>
+<p>以及根据这些协议设计的各种网络设备</p>
+<p>网线、集线器、交换机、路由器</p>
+<p>理论上只要有对方的IP地址</p>
+<p>就可以将地球上的任意位置的两个节点</p>
+<h3 id="传输层">0.4 传输层</h3>
+<p>前三层协议只能将数据从一台主机传输到另外一台主机</p>
+<p>但是，到了目的地之后</p>
+<p>数据包具体交给哪个程序呢？</p>
+<p>所以，你需要将通信的进程区分开来</p>
+<p>于是就给每个进程分配一个数字编号</p>
+<p>你给他起了一个响亮的名字:</p>
+<p><strong>端口号</strong></p>
+<p>然后你在需要发送的包上，增加了传输层的头部、源端口号和目标端口号</p>
+<p><img src="/images/屏幕截图%202024-08-23%20205843.png" srcset="/img/loading.gif" lazyload /></p>
+<p>这样，你将原本<strong>主机到主机</strong>的通信</p>
+<p>升级为了<strong>进程和进程</strong>之间的通信</p>
+<p>你没有意识到，你不知不觉实现了</p>
+<p><strong>UDP协议</strong></p>
+<p>就这样，你用UDP协议无忧无虑的同B进行着通信，一直没发生什么问题</p>
+<p>但很快，你发现事情变得非常复杂</p>
+<p><strong>丢包问题</strong></p>
+<p>由于网络的不可靠，数据包可能在半路丢失，而<code>A</code>和<code>B</code>却无法察觉</p>
+<p>对于丢包问题，只需要解决两个事就好了：</p>
+<blockquote>
+<p>A怎么知道包丢了？</p>
+<p>丢了的包怎么办?</p>
+</blockquote>
+<p>于是你设计了一个方案：</p>
+<p><code>A</code>每发送一个包，都必须收到来自<code>B</code>的确认(ACK)</p>
+<p>再发下一个</p>
+<p>否则在一定时间内没有收到确认，就重传这个包</p>
+<p>你管他叫</p>
+<p><strong>停止等待协议</strong></p>
+<p>只要按照这个协议来，虽然<code>A</code>无法保证<code>B</code>一定能收到包，但<code>A</code>能确认<code>B</code>是否收到了包</p>
+<p>收不到就重试</p>
+<p>尽最大努力让这个通信变得可靠</p>
+<p>于是你们现在的通信有了一个新的特征：</p>
+<p><strong>可靠交付</strong></p>
+<p>但很快，你又发现了一个问题</p>
+<p><strong>效率问题</strong></p>
+<p>停止等待虽然能解决问题，但是效率太低了</p>
+<p><code>A</code>本来能在发完第一个数据包之后立刻发第二个数据包</p>
+<p>但由于停止等待协议</p>
+<p><code>A</code>必须等数据到达了<code>B</code>，且<code>B</code>的确认包又回到了<code>A</code></p>
+<p>才可以继续发第二个数据包</p>
+<p>这差的可不是一星半点</p>
+<p>于是你对这个过程进行了改进</p>
+<p>采用<strong>流水线</strong>的方式，不再傻傻的等</p>
+<p><strong>顺序问题</strong></p>
+<p>网络是复杂的、不可靠的</p>
+<p>有的时候<code>A</code>发出去的数据包</p>
+<p>分别走了不同的路由到达<code>B</code></p>
+<p>可能无法保证和发送数据包时一样的顺序</p>
+<p>这时，你想到一个好方法：</p>
+<p><code>A</code>在发送的<code>数据包</code>中增加一个<strong>序号(seq)</strong></p>
+<p>同时<code>B</code>要在<code>ACK包</code>上增加一个<strong>确认号(ack)</strong></p>
+<p>这样不但解决了停止等待协议的效率问题</p>
+<p>也通过这样标序号的方式解决了顺序问题</p>
+<p>而<code>B</code>这个确认号意义非凡</p>
+<p>比如<code>B</code>发了一个确认号为<code>3</code></p>
+<p>它不仅仅表示<code>A</code>发送的序号为<code>2</code>的包收到了</p>
+<p>还表示<code>2</code>之前的数据包都收到了</p>
+<p>这种方式叫做</p>
+<p><strong>累计确认</strong>或<strong>累计应答</strong></p>
+<blockquote>
+<p>注意：实际上<code>ack</code>的号是收到的最后一个数据包的序号<code>seq</code>
++ 1,也就是告诉对方下一个应该发的序号是多少</p>
+</blockquote>
+<p>有的时候，<code>A</code>发送数据包的速度太快，而<code>B</code>的接收能力不够但<code>B</code>却没有告知<code>A</code>这种情况</p>
+<p>那怎么办呢？</p>
+<p>很简单，<code>B</code>告诉<code>A</code>自己的接收能力</p>
+<p><code>A</code>根据<code>B</code>的接收能力相应控制自己的发送速率就好了</p>
+<p>于是<code>B</code>决定，每次发送数据包给<code>A</code>时，顺带传过来一个值</p>
+<p>叫<strong>窗口大小(win)</strong></p>
+<p>这个值就表示<code>B</code>的接收能力</p>
+<p>同理，每次<code>A</code>给<code>B</code>发包时也带上自己的窗口大小</p>
+<p>表示<code>A</code>的接收能力</p>
+<p><strong>拥塞问题</strong></p>
+<p>但有的时候，不是<code>B</code>的接收能力不够</p>
+<p>而是网络不太好，造成了网络拥塞</p>
+<p>拥塞控制与流量控制有些像</p>
+<p>但流量控制是受<code>B</code>的接收能力影响</p>
+<p>而拥塞控制是受网络环境的影响</p>
+<p>拥塞问题的解决仍然是通过控制窗口的大小</p>
+<p>只不过，流量控制的窗口大小是<code>B</code>直接告诉<code>A</code>的</p>
+<p>而拥塞控制的窗口大小按理说就应该是网络环境主动告诉<code>A</code></p>
+<p>这明显不现实</p>
+<p>所以只能通过<code>A</code>不断单方面的试探</p>
+<p>不断感知网络环境的好坏</p>
+<p>进而确定自己的拥塞窗口的大小</p>
+<p>有的时候，<code>B</code>主机的相应进程还没准备好或者是挂掉了</p>
+<p><code>A</code>就发送了数据包</p>
+<p>导致了浪费</p>
+<p>这个问题在于，<code>A</code>在跟<code>B</code>通信之前</p>
+<p>没有事先确认<code>B</code>是否已经准备好</p>
+<p>就开始发了一连串的信息</p>
+<p>就好比你跟一个人打电话</p>
+<p>你还没有“喂”一下确认对方有没有在听</p>
+<p>你就巴拉巴拉说了一堆</p>
+<p>这个问题该怎么解决呢？</p>
+<p>地球人都知道，三次握手嘛</p>
+<p><code>A</code>与<code>B</code>各自在内存中维护着自己的状态变量</p>
+<p>三次握手之后，双方的状态都变成了连接已建立</p>
+<blockquote>
+<p>第一次握手：<code>A</code>给<code>B</code>发送<code>SYN</code></p>
+<p>第二次握手：<code>B</code>给<code>A</code>发送<code>ACK</code>与<code>SYN</code></p>
+<p>第三次握手：<code>A</code>给<code>B</code>发送<code>ACK</code></p>
+</blockquote>
+<p>虽然只发了三次数据包，并且在各自的内存中维护了状态变量</p>
+<p>但这么说总觉得太low</p>
+<p>你看这个过程相当于双方建立连接的过程</p>
+<p>于是你灵机一动，就叫他</p>
+<p><strong>面向连接</strong></p>
+<p>但凡事有始有终</p>
+<p>有了连接的过程</p>
+<p>就要考虑释放连接的过程：四次握手</p>
+<blockquote>
+<p>A：再见，我要关闭了(FIN)</p>
+<p>B：我知道了(ACK)</p>
+<p>B：再见，我要关闭了(FIN)</p>
+<p>A：我知道了(ACK)</p>
+</blockquote>
+<p>以上阐述的，就是<strong>TCP协议</strong>的主要内容</p>
+<blockquote>
+<p>TCP协议是面向连接的、可靠的、基于字节流的传输层通信协议</p>
+</blockquote>
+<p>面向连接的、可靠的我们通过上文已经理解。</p>
+<p>那如何理解基于字节流呢？</p>
+<p>很简单，TCP在建立连接时</p>
+<p>需要告诉对方最大报文段大小</p>
+<p>也就是说，如果需要发送的数据很大</p>
+<p>在TCP层是需要按照最大报文段大小来切割成一个个的TCP报文段的</p>
+<p>切割的时候不用管原来的数据是什么意思、需要在哪里断句</p>
+<p>只需要切割的时候标上序号</p>
+<p>接收方再根据这个序号拼成最终想要的完整数据就行了</p>
+<p>在TCP传输这里</p>
+<p>就把他当作一个个的字节</p>
+<p>也就是基于字节的含义了</p>
+<figure>
 <img src="/images/计算机网络知识框架.png" srcset="/img/loading.gif" lazyload alt="计算机网络知识框架" />
 <figcaption aria-hidden="true">计算机网络知识框架</figcaption>
 </figure>
@@ -674,7 +1177,7 @@ Relay）。</li>
 </ul></li>
 </ul>
 <p>注意：教材是以下分层来讲述的：<code>物理层</code>、<code>数据链路层</code>、<code>网络层</code>、<code>传输层</code>、<code>应用层</code></p>
-<h2 id="物理层">2、物理层</h2>
+<h2 id="物理层-1">2、物理层</h2>
 <ul>
 <li>物理层考虑的是怎样才能<strong>在连接各种计算机的传输媒体上传输数据比特流</strong>，而不是指具体的传输媒体。</li>
 <li>物理层的作用是要尽可能地<strong>屏蔽掉不同传输媒体和通信手段的差异</strong>。</li>
@@ -986,6 +1489,182 @@ Multiplexing）是指在同一传输介质上同时传输多个信号的技术�
 <li>数据中心互连</li>
 </ul></li>
 </ul>
+<h2 id="数据链路层-1">3、 数据链路层</h2>
+<h3 id="功能要解决的问题">3.1 功能（要解决的问题）</h3>
+<p><strong>成帧（Framing）</strong></p>
+<p>将比特流划分成<strong>帧</strong>的主要目的是为了检测和纠正物理层在比特传输中可能出现的错误，数据链路层功能需借助<strong>帧</strong>的各个域来实现</p>
+<p><strong>差错控制（Error Control）</strong></p>
+<p>处理传输中出现的差错，如位错误、丢失等</p>
+<p><strong>流量控制（Flow Control）</strong></p>
+<p>确保发送方的发送速率，不大于接收方的处理速率，避免接收缓冲区溢出</p>
+<h3 id="数据链路层提供的服务">3.2 数据链路层提供的服务</h3>
+<ol type="1">
+<li><strong>无确认、无连接服务(Unacknowledged connections)</strong>
+<ul>
+<li>接收方不对收到的帧进行确认</li>
+<li>适用场景：误码率低的可靠信道；实时通信</li>
+<li>网络实例：以太网</li>
+</ul></li>
+<li><strong>有确认、无连接服务(Acknowledged connections)</strong>
+<ul>
+<li>每一帧都得到单独的确认</li>
+<li>适用场景：不可靠的信道(无线信道)</li>
+<li>网络实例：802.11</li>
+</ul></li>
+<li><strong>有确认、有连接服务(Acknowleddge
+connection-oriented)</strong>
+<ul>
+<li>适用场景：长延迟的不可靠信道</li>
+</ul></li>
+</ol>
+<h3 id="成帧framing">3.3 成帧(Framing)</h3>
+<h4 id="什么是成帧和帧">3.3.1 什么是成帧和帧</h4>
+<ul>
+<li><p><strong>成帧(Framing)</strong>旨在将网络层传递的数据包(通常称为网络层数据报)封装为数据链路层课传输的单位，称为<strong>帧(Frame)</strong>。每个帧包含了实际的数据以及用于传输控制和错误检测的附加信息</p></li>
+<li><p><strong>帧的结构</strong>：</p>
+<ol type="1">
+<li><strong>帧头(Header):</strong>包含控制信息，如源地址、目的地址、协议标识、帧序号等。这些信息帮助接收方识别帧并正确处理2.</li>
+<li><strong>数据字段(Payload/Data):</strong>包含要传输的实际数据，即从网络层传递下来的数据包</li>
+<li><strong>帧尾(Trailer):</strong>通常包括错误检测信息，如循环冗余校验(CRC)，用于检测帧在传输过程中是否发生错误</li>
+</ol></li>
+</ul>
+<h4 id="要解决的关键问题如何表示一个帧的开始">3.3.1
+要解决的关键问题：如何表示一个帧的开始？</h4>
+<ul>
+<li>接收方必须能从物理层接收的比特流中明确区分出一帧的开始和结束，这个问题被称为帧同步或帧定界</li>
+<li><strong>关键：</strong>选择何种定界符？定界符出现在数据部分如何处理？</li>
+</ul>
+<h4 id="成帧framing的方式">3.3.2 成帧(framing)的方式</h4>
+<ol type="1">
+<li><p><strong>带比特填充的定界符法</strong></p>
+<p><strong>定界符：</strong>两个0比特之间，连续6个1比特，即<code>01111110</code>,0x7E</p>
+<p><img src="/images/875b471e44a6b0c85370a060308c384d(1)(1).png" srcset="/img/loading.gif" lazyload /></p>
+<p>发送方检查有效载荷：若在有效载荷中出现连续5个1比特，则直接插入1个0比特</p>
+<p><img src="/images/f91c2c9a1ad4ac4232124097737f8162(1)(1).png" srcset="/img/loading.gif" lazyload /></p>
+<p>接收方的处理：</p>
+<ul>
+<li>若出现连续5个1比特</li>
+<li>若下一个比特为0，则为有效载荷，直接丢弃0比特</li>
+<li>若下一个比特为1，则连同后一比特的0，构成定界符，一帧结束</li>
+</ul></li>
+<li><p><strong>物理层编码违例</strong></p>
+<ul>
+<li><p><strong>物理层编码违例(Physical Layer Coding
+Violation)</strong>是物理层的一种信号编码技术，通常用于在数据传输过程中标识特定的控制信息，如帧的开始和结束、错误检测或其他特殊信号</p></li>
+<li><p>核心思想：<strong>选择的定界符不会在数据部分出现</strong></p></li>
+<li><p><strong>4B/5B编码方案：</strong></p>
+<ul>
+<li>4比特数据映射成5比特编码，剩余的一半码字(16个码字)未使用，可以用作帧界定符。</li>
+<li><strong>传统的NRZ(不归零)编码</strong>存在这样的问题：如果数据中有长串的0或1，信号电平会长时间保持不变，导致时钟同步困难</li>
+<li><strong>4B/5B编码</strong>通过将4位数据映射为5位编码，确保在传输的数据流中不会出现<strong>长时间没有电平变化</strong>的情况，从而提高了信号的可靠性和传输质量</li>
+<li><strong>具体示例</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>4位数据</th>
+<th>5位编码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0000</td>
+<td>11110</td>
+</tr>
+<tr>
+<td>0001</td>
+<td>01001</td>
+</tr>
+<tr>
+<td>0010</td>
+<td>10100</td>
+</tr>
+<tr>
+<td>0011</td>
+<td>10101</td>
+</tr>
+<tr>
+<td>0100</td>
+<td>01010</td>
+</tr>
+<tr>
+<td>0101</td>
+<td>01011</td>
+</tr>
+<tr>
+<td>0110</td>
+<td>01110</td>
+</tr>
+<tr>
+<td>0111</td>
+<td>01111</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>10010</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>10011</td>
+</tr>
+<tr>
+<td>1010</td>
+<td>10110</td>
+</tr>
+<tr>
+<td>1011</td>
+<td>10111</td>
+</tr>
+<tr>
+<td>1100</td>
+<td>11010</td>
+</tr>
+<tr>
+<td>1101</td>
+<td>11011</td>
+</tr>
+<tr>
+<td>1110</td>
+<td>11100</td>
+</tr>
+<tr>
+<td>1111</td>
+<td>11101</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例说明</strong></p>
+<ul>
+<li><strong>输入数据：</strong>假设我妈需要传输数据序列<code>0101 1100 0011</code></li>
+<li><strong>编码过程：</strong>
+<ul>
+<li><code>0101</code> --&gt; <code>01011</code></li>
+<li><code>1100</code> --&gt; <code>11010</code></li>
+<li><code>0011</code> --&gt; <code>10101</code></li>
+</ul></li>
+<li><strong>传输信号：</strong>编码后的数据序列为<code>01011 11010 10101</code></li>
+<li><strong>解码过程：</strong>
+<ul>
+<li>接收<code>01011</code>，查表还原为<code>0101</code></li>
+<li>接收<code>11010</code>，查表还原为<code>1100</code></li>
+<li>接收<code>10101</code>，查表还原为<code>0011</code></li>
+</ul></li>
+<li><strong>最终数据：</strong>成功还原为原始数据序列<code>0101 1100 0011</code></li>
+</ul></li>
+<li><p><strong>前导码：</strong></p>
+<ul>
+<li><strong>前导码(Preamble)</strong>是网络通信中用于信号同步的一个特殊序列，通常位于数据帧的最前端</li>
+<li>例如：在<strong>以太网协议(如IEEE
+802.3)中</strong>，前导码通常由7个字节组成，每个字节为<code>10101010</code>(十六进制为<code>0xAA</code>)，紧接着是一个<strong>帧起始定界符(Start
+Frame Delimiter)</strong></li>
+</ul></li>
+<li><p><strong>曼切斯特编码/差分曼切斯特编码：</strong></p>
+<ul>
+<li>正常的信号在周期中间有跳变，持续的高电平(或低电平)为违例码，可以用作定界符</li>
+<li>例如：802.5令牌环网</li>
+</ul></li>
+</ul></li>
+</ol>
 
                 
               </div>

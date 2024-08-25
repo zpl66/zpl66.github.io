@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://crazythursdayv50tome.cn/images/%E5%9C%9F%E6%98%9F%E5%A4%AA%E7%A9%BA%E8%83%8C%E6%99%AF%E4%B8%8E%E5%B0%8F%E8%A1%8C%E6%98%9F%E5%A4%96%E5%A4%AA%E7%A9%BA.jpg">
 <meta property="article:published_time" content="2024-08-10T09:06:57.000Z">
-<meta property="article:modified_time" content="2024-08-12T10:46:54.509Z">
+<meta property="article:modified_time" content="2024-08-17T04:32:42.303Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary_large_image">
@@ -278,7 +278,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          16k words
+          18k words
         
       </span>
     
@@ -289,7 +289,7 @@
         
         
         
-          135 mins
+          150 mins
         
       </span>
     
@@ -1618,6 +1618,179 @@ inner()函数在另一个函数external()的范围内定义。</p>
 <p>现在我们可以直接调用此函数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">select_difficulty(<span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
 <p>尽管比较简单，但不建议使用此方法。使用完整的命名空间可避免混淆，并防止两个相同的标识符名称冲突</p>
+<h2 id="python文件操作">4 python文件操作</h2>
+<h3 id="python文件io">4.1 python文件I/O</h3>
+<h4 id="什么是文件">4.1.1 什么是文件</h4>
+<p>文件是磁盘上用于存储相关信息的命名位置。它用于将数据永久存储在非易失性存储器（例如硬盘）中。</p>
+<p>由于随机存取存储器（RAM）易失，当计算机关闭时会丢失其数据，因此我们将文件用于将来的数据使用。</p>
+<p>当我们要读取或写入文件时，我们需要先打开它。完成后，需要将其关闭，以便释放与文件绑定的资源。</p>
+<p>因此，在Python中，文件操作按以下顺序进行。</p>
+<ol type="1">
+<li><p>打开文件</p></li>
+<li><p>读取或写入（执行操作）</p></li>
+<li><p>关闭文件</p></li>
+</ol>
+<h4 id="如何打开文件">4.1.2 如何打开文件</h4>
+<p>python具有内置函数open()来打开文件。此函数返回文件对象，也称为句柄，因为它用于相应的读取或修改文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>f = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;test.txt&quot;</span>) <span class="hljs-comment"># 打开当前目录中的文件</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>f = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;C:/Python33/README.txt&quot;</span>) <span class="hljs-comment"># 指定完整路径</span><br></code></pre></td></tr></table></figure>
+<p>我们可以在打开文件时指定模式。在模式下，我们指定是要读取'r'，写入'w'还是追加'a'到文件。我们还指定是否要以文本模式或二进制模式打开文件。</p>
+<p>默认设置是在文本模式下阅读。在这种模式下，当从文件中读取时，我们会得到字符串。</p>
+<p>另一方面，二进制模式返回字节，这是处理非文本文件（如图像或exe文件）时要使用的模式。</p>
+<p><strong>python文件模式</strong></p>
+<table>
+
+<thead>
+<tr>
+<th>模式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>'r'</td>
+<td>打开文件进行读取。(默认)</td>
+</tr>
+<tr>
+<td>'w'</td>
+<td>打开文件进行写入。如果不存在则创建一个新文件，或者如果存在将其截断</td>
+</tr>
+<tr>
+<td>'x'</td>
+<td>打开文件以进行独占创建。如果文件已经存在，则操作失败。</td>
+</tr>
+<tr>
+<td>'a'</td>
+<td>打开以在文件末尾追加而不截断。如果不存在，则创建一个新文件</td>
+</tr>
+<tr>
+<td>'t'</td>
+<td>以文本模式打开。(默认)</td>
+</tr>
+<tr>
+<td>'b'</td>
+<td>以二进制模式打开</td>
+</tr>
+<tr>
+<td>'+'</td>
+<td>打开文件进行更新(读取和写入)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>截断：清空文件内容，从头开始写入</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">f = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;test.txt&quot;</span>) <span class="hljs-comment"># 等同于&quot;r&quot;或&quot;rt&quot;</span><br>f = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;test.txt&quot;</span>, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-comment"># 文本模式写入</span><br>f = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;img.bmp&quot;</span>, <span class="hljs-string">&#x27;r+b&#x27;</span>) <span class="hljs-comment"># 以二进制模式读取和写入</span><br></code></pre></td></tr></table></figure>
+<p>与其他语言不同，该字符'a'在使用ASCII（或其他等效编码）进行编码之前不会暗示数字97
+。</p>
+<p>此外，默认编码取决于平台。在Windows中，'cp1252'但是'utf-8'在Linux中。</p>
+<p>因此，我们也不能依赖默认编码，否则我们的代码在不同平台上的行为会有所不同。</p>
+<p>因此，在以文本模式处理文件时，强烈建议指定编码类型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">f = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;test.txt&quot;</span>, mode = <span class="hljs-string">&#x27;r&#x27;</span>, encoding = <span class="hljs-string">&#x27;utf-8&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<h4 id="如何使用python关闭文件">4.1.3 如何使用python关闭文件</h4>
+<p>完成对文件的操作后，我们需要正确关闭文件</p>
+<p>关闭文件将释放与该文件绑定的资源，并且使用close()方法完成 。</p>
+<p>Python有一个垃圾收集器来清理未引用的对象，但是，我们绝对不能依靠它来关闭文件。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">f = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;test.txt&quot;</span>, encoding = <span class="hljs-string">&#x27;utf-8&#x27;</span>)<br><span class="hljs-comment"># 执行文件操作</span><br>f.close()<br></code></pre></td></tr></table></figure>
+<p>这种方法并不完全安全。如果对文件执行某些操作时发生异常，则代码将退出而不关闭文件。</p>
+<p>一种更安全的方法是使用<code>try ... finally</code>块</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">try</span>:<br>    f = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;test.txt&quot;</span>, encoding = <span class="hljs-string">&#x27;utf-8&#x27;</span>)<br>    <span class="hljs-comment"># 执行文件操作</span><br><span class="hljs-keyword">finally</span>:<br>    f.close()<br></code></pre></td></tr></table></figure>
+<p>这样，我们可以保证即使引发异常也可以正确关闭文件，从而导致程序流停止。</p>
+<p>最好的方法是使用with语句。这样可以确保在with退出内部块时关闭文件。</p>
+<p>我们不需要显式调用该close()方法。它是在内部完成的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;test.txt&quot;</span>, encoding = <span class="hljs-string">&#x27;utf-8&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    <span class="hljs-comment"># 执行文件操作</span><br></code></pre></td></tr></table></figure>
+<h4 id="如何在python中读取文件">4.1.4 如何在python中读取文件</h4>
+<p>要使用Python读取文件，我们必须以读取模式打开文件。</p>
+<p>有多种方法可用于此目的。我们可以使用该read(size)方法读取大小数据。如果未指定size参数，它将读取并返回到文件末尾。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>f = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;test.txt&quot;</span>,<span class="hljs-string">&#x27;r&#x27;</span>,encoding = <span class="hljs-string">&#x27;utf-8&#x27;</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>f.read(<span class="hljs-number">4</span>)    <span class="hljs-comment"># 读取前4个数据</span><br><span class="hljs-string">&#x27;This&#x27;</span><br><br><span class="hljs-meta">&gt;&gt;&gt; </span>f.read(<span class="hljs-number">4</span>)    <span class="hljs-comment"># 读取接下来的4个数据</span><br><span class="hljs-string">&#x27; is &#x27;</span><br><br><span class="hljs-meta">&gt;&gt;&gt; </span>f.read()     <span class="hljs-comment"># 读取其余部分，直到文件末尾</span><br><span class="hljs-string">&#x27;my first file\nThis file\ncontains three lines\n&#x27;</span><br><br><span class="hljs-meta">&gt;&gt;&gt; </span>f.read()  <span class="hljs-comment"># 进一步读取返回空字符串</span><br><span class="hljs-string">&#x27;&#x27;</span><br></code></pre></td></tr></table></figure>
+<p>我们可以看到，read()方法将换行符返回为''。到达文件末尾后，我们将在进一步阅读时得到空字符串。</p>
+<p>我们可以使用seek()方法更改当前文件的光标（位置）。同样，tell()方法返回我们的当前位置（以字节数为单位）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>f.tell()    <span class="hljs-comment"># 获取当前文件位置</span><br><span class="hljs-number">56</span><br><br><span class="hljs-meta">&gt;&gt;&gt; </span>f.seek(<span class="hljs-number">0</span>)   <span class="hljs-comment"># 将文件光标移到初始位置</span><br><span class="hljs-number">0</span><br><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(f.read())  <span class="hljs-comment"># 读取整个文件</span><br>This <span class="hljs-keyword">is</span> my first file<br>This file<br>contains three lines<br></code></pre></td></tr></table></figure>
+<p>我们可以使用for循环逐行读取文件。这既高效又快速</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f:<br><span class="hljs-meta">... </span>    <span class="hljs-built_in">print</span>(line, end = <span class="hljs-string">&#x27;&#x27;</span>)<br>...<br>This <span class="hljs-keyword">is</span> my first file<br>This file<br>contains three lines<br></code></pre></td></tr></table></figure>
+<p>文件本身的行具有换行符''。</p>
+<p>此外，print()结束参数在打印时避免了两行换行。</p>
+<p>或者，我们可以使用readline()方法读取文件的各个行。此方法读取文件，直到换行符为止，包括换行符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>f.readline()<br><span class="hljs-string">&#x27;This is my first file\n&#x27;</span><br><br><span class="hljs-meta">&gt;&gt;&gt; </span>f.readline()<br><span class="hljs-string">&#x27;This file\n&#x27;</span><br><br><span class="hljs-meta">&gt;&gt;&gt; </span>f.readline()<br><span class="hljs-string">&#x27;contains three lines\n&#x27;</span><br><br><span class="hljs-meta">&gt;&gt;&gt; </span>f.readline()<br><span class="hljs-string">&#x27;&#x27;</span><br></code></pre></td></tr></table></figure>
+<p>最后，该readlines()方法返回整个文件的其余行的列表。当到达文件结尾（EOF）时，所有这些读取方法都将返回空值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>f.readlines()<br>[<span class="hljs-string">&#x27;This is my first file\n&#x27;</span>, <span class="hljs-string">&#x27;This file\n&#x27;</span>, <span class="hljs-string">&#x27;contains three lines\n&#x27;</span>]<br></code></pre></td></tr></table></figure>
+<h4 id="python文件方法">4.1.5Python文件方法</h4>
+<p>文件对象有多种可用方法。其中一些已在以上示例中使用。</p>
+<p>这是文本模式下方法的完整列表，并带有简要说明。</p>
+<p>python文件方法</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>close()</code></td>
+<td>关闭文件</td>
+</tr>
+<tr>
+<td><code>detach()</code></td>
+<td>从缓冲区返回分离的原始流(raw stream)</td>
+</tr>
+<tr>
+<td><code>fileno()</code></td>
+<td>从操作系统的角度返回表示流的数字</td>
+</tr>
+<tr>
+<td><code>flush()</code></td>
+<td>刷新内部缓冲区</td>
+</tr>
+<tr>
+<td><code>isatty()</code></td>
+<td>返回文件流是否是交互式</td>
+</tr>
+<tr>
+<td><code>read()</code></td>
+<td>返回文件内容</td>
+</tr>
+<tr>
+<td><code>readable()</code></td>
+<td>返回是否能够读取文件流</td>
+</tr>
+<tr>
+<td><code>readline()</code></td>
+<td>返回文件中的一行</td>
+</tr>
+<tr>
+<td><code>readlines()</code></td>
+<td>返回文件中的行列表</td>
+</tr>
+<tr>
+<td><code>seek()</code></td>
+<td>更改文件位置</td>
+</tr>
+<tr>
+<td><code>seekable()</code></td>
+<td>返回文件是否允许我们更改文件位置</td>
+</tr>
+<tr>
+<td><code>tell()</code></td>
+<td>返回当前文件位置</td>
+</tr>
+<tr>
+<td><code>truncate()</code></td>
+<td>把文件调整为指定的大小</td>
+</tr>
+<tr>
+<td><code>writeable()</code></td>
+<td>返回是否能够写入文件</td>
+</tr>
+<tr>
+<td><code>write()</code></td>
+<td>把指定的字符串写入文件</td>
+</tr>
+<tr>
+<td><code>writelines()</code></td>
+<td>把字符串列表写入文件</td>
+</tr>
+</tbody>
+</table>
 
                 
               </div>

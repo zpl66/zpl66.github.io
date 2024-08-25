@@ -18,25 +18,27 @@
   <meta name="author" content="饺子">
   <meta name="keywords" content="">
   
-    <meta name="description" content="最近在复现代码的时候，遇到了很多工具类、辅助函数或通用组件的模块命名缩写，遂记录下来  lib - Library（库）：通常包含一系列可重用的代码模块或函数集合。 helper - Helper（助手）：这类文件或模块提供一些辅助性的功能函数。 common - Common（公共）：存放项目中多个部分都会用到的通用函数或组件。 aux 或 auxiliary - 辅助，与he">
+    <meta name="description" content="0. 前言 爬虫其实就像是一个自动化的网络助手，它能够像人一样浏览网页，但是速度更快，效率更高。简单来说，爬虫就是一个程序，它可以自动访问网页，读取网页上的内容，并把你想要的信息提取出来。 举个例子：想象一下，你想了解某个商品的价格，通常你会打开网站，搜索这个商品，然后手动记录下它的价格。爬虫可以帮你做这件事，程序会自动打开网页，搜索商品，并把价格信息提取出来，甚至可以保存到一个文件里，这样你">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编程常用缩写">
-<meta property="og:url" content="http://crazythursdayv50tome.cn/2024/08/15/abbr/index.html">
+<meta property="og:title" content="crawler">
+<meta property="og:url" content="http://crazythursdayv50tome.cn/2024/08/21/crawler/index.html">
 <meta property="og:site_name" content="Dumpling">
-<meta property="og:description" content="最近在复现代码的时候，遇到了很多工具类、辅助函数或通用组件的模块命名缩写，遂记录下来  lib - Library（库）：通常包含一系列可重用的代码模块或函数集合。 helper - Helper（助手）：这类文件或模块提供一些辅助性的功能函数。 common - Common（公共）：存放项目中多个部分都会用到的通用函数或组件。 aux 或 auxiliary - 辅助，与he">
+<meta property="og:description" content="0. 前言 爬虫其实就像是一个自动化的网络助手，它能够像人一样浏览网页，但是速度更快，效率更高。简单来说，爬虫就是一个程序，它可以自动访问网页，读取网页上的内容，并把你想要的信息提取出来。 举个例子：想象一下，你想了解某个商品的价格，通常你会打开网站，搜索这个商品，然后手动记录下它的价格。爬虫可以帮你做这件事，程序会自动打开网页，搜索商品，并把价格信息提取出来，甚至可以保存到一个文件里，这样你">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://crazythursdayv50tome.cn/images/%E5%A4%96%E5%A4%AA%E7%A9%BA%E7%9A%84%E8%A1%8C%E6%98%9F%E4%B8%8E%E5%8D%AB%E6%98%9F%E5%92%8C%E6%B5%81%E6%98%9F.jpg">
-<meta property="article:published_time" content="2024-08-15T02:57:09.000Z">
-<meta property="article:modified_time" content="2024-08-15T03:10:53.949Z">
+<meta property="og:image" content="http://crazythursdayv50tome.cn/images/%E8%89%B2%E5%BD%A9%E6%96%91%E6%96%93%EF%BC%8C%E5%85%85%E6%BB%A1%E6%B4%BB%E5%8A%9B%EF%BC%8C%E6%A2%A6%E5%B9%BB%E8%88%AC%E7%9A%84%E5%A4%AA%E9%98%B3%E7%B3%BB%E5%8D%A1%E9%80%9A%E8%AE%BE%E8%AE%A1%E9%A3%8E%E6%A0%BC.jpg">
+<meta property="article:published_time" content="2024-08-21T03:16:52.000Z">
+<meta property="article:modified_time" content="2024-08-25T05:41:40.045Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="web前端">
+<meta property="article:tag" content="爬虫">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://crazythursdayv50tome.cn/images/%E5%A4%96%E5%A4%AA%E7%A9%BA%E7%9A%84%E8%A1%8C%E6%98%9F%E4%B8%8E%E5%8D%AB%E6%98%9F%E5%92%8C%E6%B5%81%E6%98%9F.jpg">
+<meta name="twitter:image" content="http://crazythursdayv50tome.cn/images/%E8%89%B2%E5%BD%A9%E6%96%91%E6%96%93%EF%BC%8C%E5%85%85%E6%BB%A1%E6%B4%BB%E5%8A%9B%EF%BC%8C%E6%A2%A6%E5%B9%BB%E8%88%AC%E7%9A%84%E5%A4%AA%E9%98%B3%E7%B3%BB%E5%8D%A1%E9%80%9A%E8%AE%BE%E8%AE%A1%E9%A3%8E%E6%A0%BC.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>编程常用缩写 - Dumpling</title>
+  <title>crawler - Dumpling</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -254,7 +256,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="编程常用缩写"></span>
+            <span id="subtitle" data-typed-text="crawler"></span>
           
         </div>
 
@@ -265,8 +267,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-15 10:57" pubdate>
-          August 15, 2024 am
+        <time datetime="2024-08-21 11:16" pubdate>
+          August 21, 2024 am
         </time>
       </span>
     
@@ -277,7 +279,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          735 words
+          1.3k words
         
       </span>
     
@@ -288,7 +290,7 @@
         
         
         
-          7 mins
+          12 mins
         
       </span>
     
@@ -333,69 +335,122 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">编程常用缩写</h1>
+            <h1 id="seo-header">crawler</h1>
             
             
               <div class="markdown-body">
                 
-                <p>最近在复现代码的时候，遇到了很多工具类、辅助函数或通用组件的模块命名缩写，遂记录下来</p>
+                <h2 id="前言">0. 前言</h2>
+<p>爬虫其实就像是一个自动化的网络助手，它能够像人一样浏览网页，但是速度更快，效率更高。简单来说，爬虫就是一个程序，它可以自动访问网页，读取网页上的内容，并把你想要的信息提取出来。</p>
+<p>举个例子：想象一下，你想了解某个商品的价格，通常你会打开网站，搜索这个商品，然后手动记录下它的价格。爬虫可以帮你做这件事，程序会自动打开网页，搜索商品，并把价格信息提取出来，甚至可以保存到一个文件里，这样你就不用自己一个一个去查找了。</p>
+<p>爬虫可以用于很多场景，比如从多个网站上收集商品信息，追踪新闻动态，甚至是抓取社交媒体上的数据。总之，爬虫就是一个帮你自动从互联网上获取数据的工具。</p>
+<p>我们平时都说Python爬虫，其实这里可能有个误解，爬虫并不是Python独有的，可以做爬虫的语言有很多例如：PHP,JAVA,C#,C++,Python，选择Python做爬虫是因为Python相对来说比较简单，而且功能比较齐全。</p>
+<p>本文使用的语言为python，IDE为pycharm</p>
+<h2 id="框架">1. 框架</h2>
+<p>本文使用的是<strong>Requests +
+Beautifulsoup</strong>组合作为框架，这也是一个非常经典的组合</p>
+<p>他的原理是这样的：</p>
+<ul>
+<li><strong>Requests</strong>发送HTTP请求，比如获取网页的HTML内容</li>
+<li><strong>Beautifulsoup</strong>用于解析HTML并从中提取所需的数据</li>
+</ul>
+<h2 id="基础知识介绍">2. 基础知识介绍</h2>
+<h3 id="requests">2.1 Requests</h3>
+<p><strong>什么是requests库</strong></p>
+<p><code>requests</code> 库主要用于与 Web
+服务进行通信。发送请求后服务器返回的响应会包含很多信息。<code>requests</code>库可以处理响应和管理对话</p>
+<p>**如何使用</p>
+<p>首先，我们要安装<code>Requests</code>库</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">pip install requests<br></code></pre></td></tr></table></figure>
+<p>下面案例是<code>Requests</code>库中<code>get()</code>方法发送一个get请求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 导入requests库</span><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-comment"># 发送一个get请求并得到响应</span><br>r = requests.get(<span class="hljs-string">&#x27;http://crazythursdayv50tome.cn&#x27;</span>)<br><span class="hljs-comment"># 查看响应对象的类型</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(r))<br><span class="hljs-comment"># 查看响应状态码</span><br><span class="hljs-built_in">print</span>(r.status_code)<br><span class="hljs-comment"># 查看响应内容的类型</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(r.text))<br><span class="hljs-comment"># 查看cookies</span><br><span class="hljs-built_in">print</span>(r.cookies)<br></code></pre></td></tr></table></figure>
+<p>运行效果</p>
+<figure>
+<img src="/images/屏幕截图%202024-08-21%20121042.png" srcset="/img/loading.gif" lazyload alt="运行效果" />
+<figcaption aria-hidden="true">运行效果</figcaption>
+</figure>
+<p>查看响应的内容</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(r.text)<br></code></pre></td></tr></table></figure>
+<figure>
+<img src="/images/屏幕截图%202024-08-21%20121337.png" srcset="/img/loading.gif" lazyload alt="运行效果" />
+<figcaption aria-hidden="true">运行效果</figcaption>
+</figure>
+<p><strong>小贴士</strong></p>
+<blockquote>
 <ol type="1">
-<li><code>lib</code> -
-<code>Library（库）</code>：通常包含一系列可重用的代码模块或函数集合。</li>
-<li><code>helper</code> -
-<code>Helper（助手）</code>：这类文件或模块提供一些辅助性的功能函数。</li>
-<li><code>common</code> -
-<code>Common（公共）</code>：存放项目中多个部分都会用到的通用函数或组件。</li>
-<li><code>aux</code> 或 <code>auxiliary</code> -
-<code>辅助</code>，与helper类似，指辅助性代码模块。</li>
-<li><code>funcs / functions</code> -
-<code>函数集</code>：用来存储独立、非特定业务逻辑的函数。</li>
-<li><code>services</code> -
-<code>服务层</code>：在某些架构中，这一层封装了应用程序的核心业务逻辑和数据处理操作。</li>
-<li><code>consts / constants</code> -
-<code>常量</code>：存放程序中不会改变的值。</li>
-<li><code>models</code> -
-<code>模型</code>：在MVC（Model-View-Controller）架构或其他框架中，模型通常代表数据结构及相关的业务逻辑。</li>
-<li><code>middlewares</code> -
-<code>中间件</code>：在像Express.js这样的Node.js框架中，中间件是指处理HTTP请求的函数序列。</li>
-<li><code>io</code> -
-<code>Input/Output（输入/输出）</code>：与数据读取、写入等I/O操作相关的模块。</li>
-<li><code>config</code> -
-<code>配置</code>：存放应用程序配置信息的模块或文件夹。</li>
-<li><code>logger / logging</code> -
-<code>日志记录</code>：用于处理日志生成和管理的模块。</li>
-<li><code>cache</code> -
-<code>缓存</code>：提供缓存功能，如数据缓存、HTTP请求缓存等的模块。</li>
-<li><code>validators / validation</code> -
-<code>校验器/验证</code>：包含数据校验逻辑的模块。</li>
-<li><code>exceptions</code> -
-<code>异常处理</code>：用来定义和处理自定义异常的模块。</li>
-<li><code>tasks / jobs</code> -
-<code>任务/作业</code>：用于定时任务或其他异步工作流程的模块。</li>
-<li><code>enums</code> - <code>枚举</code>：存储枚举类型的模块。</li>
-<li><code>templates / views</code> -
-<code>模板/视图</code>：在Web开发中，存放HTML模板或其他类型视图文件的目录。</li>
-<li><code>db / database</code> -
-<code>数据库</code>：封装数据库操作相关代码的模块。</li>
-<li><code>extensions / ext</code> -
-<code>扩展方法</code>：扩展已有对象或类型的额外功能函数。</li>
-<li><code>primitives</code> -
-<code>基础工具</code>：包含一些基础且常用的处理数据、字符串等的基础方法。</li>
-<li><code>tools</code> -
-<code>工具集</code>：各种杂项但实用的功能函数合集。</li>
-<li><code>commons</code> -
-<code>公共组件/方法</code>：项目中多个部分都会用到的通用逻辑和功能。</li>
-<li><code>utils</code> -
-<code>Utility的缩写，全称为Utilities</code>。在编程中，我们通常将一些常用、通用的功能函数或工具类放置在一个名为utils的模块或者文件夹中，这些函数和类可以被多个其他模块调用，以提供诸如数据处理、格式转换、错误处理等实用功能。</li>
-<li><code>utilities（完整形式）</code>-
-<code>同样指代工具函数</code>，与utils含义一致。</li>
-<li><code>support</code> -
-<code>支持模块</code>：为其它主要模块提供支持性功能的代码块。</li>
-<li><code>services_utils</code> -
-<code>服务层工具</code>：在服务层内部使用的通用功能模块。</li>
-<li><code>core_utils</code> -
-<code>核心工具</code>：专用于项目核心模块的一组工具方法。</li>
+<li><p>常见的状态码包括：</p>
+<ol type="1">
+<li><code>200 OK</code>:请求成功，服务器返回了所请求的资源</li>
+<li><code>404 Not Found</code>:服务器找不到请求的资源</li>
+<li><code>500 INternal Server Error</code>:服务器内部错误</li>
+</ol></li>
+<li><p>常见方法内容类型包括：</p>
+<ol type="1">
+<li><code>text/html</code>:表示内容是HTML文档</li>
+<li><code>application/json</code>:表示内容是JSON数据</li>
+<li><code>image/png</code>:表示内容是啥PNG图片</li>
 </ol>
+<ul>
+<li>用途：
+<ul>
+<li>如果是HTML，你可以用<code>BeautifulSoup</code>解析</li>
+<li>如果是JSON，你可以用python的<code>json</code>模块解析</li>
+<li>如果是图片或文件，你可以保存他们</li>
+</ul></li>
+</ul></li>
+<li><p>Cookies</p>
+<ol type="1">
+<li>Cookies
+是由服务器生成并发送到客户端（通常是浏览器）的小数据片段，这些数据会被浏览器存储并在随后的请求中发送回服务器。Cookies
+通常用于以下目的：
+<ul>
+<li><strong>会话管理</strong>：比如登陆状态、购物车内容等</li>
+<li><strong>个性化设置</strong>：比如用户的语言偏好、主题颜色等</li>
+<li><strong>用户跟踪</strong>：比如统计用户的访问行为，广告投放等</li>
+</ul></li>
+<li><code>&lt;RequestsCookieJar[]&gt;</code> 时，这表示当前
+<code>RequestsCookieJar</code> 对象是空的，即没有任何 Cookies
+存储在其中。</li>
+</ol></li>
+</ol>
+</blockquote>
+<p>其他类型的请求：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 当你需要向服务器发送数据以创建新的资源或提交表单时</span><br>r = requests.post(<span class="hljs-string">&#x27;crazythursdayv50tome.cn&#x27;</span>)<br><span class="hljs-comment"># 当你需要更新或替换服务器上的现有资源时</span><br>r = requests.put(<span class="hljs-string">&#x27;crazythursdayv50tome.cn&#x27;</span>)<br><span class="hljs-comment"># 当你需要删除服务器上的资源时</span><br>r = requests.delete(<span class="hljs-string">&#x27;crazythursdayv50tome.cn&#x27;</span>)<br><span class="hljs-comment"># 当你只需要检查资源的存在性或获取元数据时</span><br>r = requests.head(<span class="hljs-string">&#x27;crazythursdayv50tome.cn&#x27;</span>)<br><span class="hljs-comment"># 当你需要了解服务器支持哪些 HTTP 方法或进行 CORS 预检时</span><br>r = requests.options(<span class="hljs-string">&#x27;crazythursdayv50tome.cn&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<h3 id="beautifulsoup库">2.2 BeautifulSoup库</h3>
+<p><strong>什么是BeautifulSoup库？</strong></p>
+<p><code>BeautifulSoup</code> 是一个用于解析 HTML 和 XML 文档的 Python
+库。它可以把复杂的 HTML 文档转换成一个复杂的树形结构，其中每个节点都是
+Python 对象，表示 HTML 文档中的一部分，比如标签、属性、文本等。</p>
+<p><code>BeautifulSoup</code>
+使得从网页中提取数据变得非常简单。你可以通过标签名、属性、CSS
+选择器等方式来查找和操作网页内容。</p>
+<p><strong>原理：</strong>实例化一个<code>BeautifulSoup</code>对象，并且将页面源码数据加载到该对象中。之后通过调用<code>BeautifulSoup</code>对象中相关的属性或者方法进行标签定位和数据提取</p>
+<p><strong>使用BeautifulSoup库</strong></p>
+<p>首先，我们要安装<code>BeautifulSoup</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">pip install beautifulsoup4<br></code></pre></td></tr></table></figure>
+<p>接着，导入从<code>bs4</code>包中导入<code>BeautifulSoup</code>类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br></code></pre></td></tr></table></figure>
+<p>要使用<code>BeautifulSoup</code>解析HTML文档，我们要先获取HTML文本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br><br>url = <span class="hljs-string">&quot;https://crazythursdayv50tome.cn&quot;</span><br>response = requests.get(url)<br>html_content = response.text<br><br>soup = BeautifulSoup(html_content,<span class="hljs-string">&#x27;html.parser&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<p>下面是一些常见操作：</p>
+<ol type="1">
+<li><p><strong>查找元素</strong></p>
+<ol type="1">
+<li><strong>按标签名查找单个元素</strong></li>
+</ol>
+<p><code>find()</code>：返回第一个匹配的元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">title_tag = soup.find(<span class="hljs-string">&#x27;title&#x27;</span>)<br><span class="hljs-built_in">print</span>(title_tag) <span class="hljs-comment"># 输出&lt;title&gt;Dumpling&lt;/title&gt;</span><br><span class="hljs-built_in">print</span>(title_tag.string) <span class="hljs-comment"># 输出Dumpling</span><br></code></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li><strong>按标签名查找所有元素</strong></li>
+</ol>
+<p><code>find_all()</code>:返回所有匹配的元素，返回一个列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">all_headers = soup.find_all(<span class="hljs-string">&#x27;h2&#x27;</span>, class_=<span class="hljs-string">&quot;index-header&quot;</span>)<br><br><span class="hljs-keyword">for</span> header <span class="hljs-keyword">in</span> all_headers:<br>    content = header.find(<span class="hljs-string">&#x27;a&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;content.text.strip()&#125;</span>&quot;</span>)<br></code></pre></td></tr></table></figure>
+<ol start="3" type="1">
+<li><strong>按标签名和属性查找元素</strong></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="实例">3. 实例</h2>
 
                 
               </div>
@@ -405,6 +460,15 @@
               <div class="post-metas my-3">
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/web%E5%89%8D%E7%AB%AF/" class="print-no-link">#web前端</a>
+      
+        <a href="/tags/%E7%88%AC%E8%99%AB/" class="print-no-link">#爬虫</a>
+      
+    </div>
+  
 </div>
 
 
@@ -413,8 +477,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>编程常用缩写</div>
-      <div>http://crazythursdayv50tome.cn/2024/08/15/abbr/</div>
+      <div>crawler</div>
+      <div>http://crazythursdayv50tome.cn/2024/08/21/crawler/</div>
     </div>
     <div class="license-meta">
       
@@ -426,7 +490,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>August 15, 2024</div>
+          <div>August 21, 2024</div>
         </div>
       
       
@@ -458,9 +522,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/21/crawler/" title="crawler">
+                      <a href="/2024/08/25/markdown/" title="markdown语法整理">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">crawler</span>
+                        <span class="hidden-mobile">markdown语法整理</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -468,8 +532,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/08/10/pythonStudy/" title="python学习">
-                        <span class="hidden-mobile">python学习</span>
+                      <a href="/2024/08/15/abbr/" title="编程常用缩写">
+                        <span class="hidden-mobile">编程常用缩写</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

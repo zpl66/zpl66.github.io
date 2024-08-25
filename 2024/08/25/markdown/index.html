@@ -1,0 +1,1358 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <link rel="stylesheet" href="/css/starEffects.css" type="text/css">
+  <link rel="stylesheet" href="/css/custom.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="饺子">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1. 引用公式  行内公式：使用$包裹公式。例如：  $n &#x3D; p_1^&#123;k_1&#125; p_2^&#123;k_2&#125; \dots p_r^&#123;k_r&#125;$ \(n &#x3D; p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}\) * 独立公式：使用$$包裹公式 123$$  n &#x3D; p_1^&#123;k_1&#125; p_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown语法整理">
+<meta property="og:url" content="http://crazythursdayv50tome.cn/2024/08/25/markdown/index.html">
+<meta property="og:site_name" content="Dumpling">
+<meta property="og:description" content="1. 引用公式  行内公式：使用$包裹公式。例如：  $n &#x3D; p_1^&#123;k_1&#125; p_2^&#123;k_2&#125; \dots p_r^&#123;k_r&#125;$ \(n &#x3D; p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}\) * 独立公式：使用$$包裹公式 123$$  n &#x3D; p_1^&#123;k_1&#125; p_">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://crazythursdayv50tome.cn/images/%E7%B4%AB%E8%89%B2%E5%A4%A9%E7%A9%BA%E4%B8%8B%E7%9A%84%E5%A4%96%E6%98%9F%E6%98%9F%E7%90%83%E6%99%AF%E8%A7%82.jpg">
+<meta property="article:published_time" content="2024-08-25T09:33:28.000Z">
+<meta property="article:modified_time" content="2024-08-25T13:33:55.685Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="markdown">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://crazythursdayv50tome.cn/images/%E7%B4%AB%E8%89%B2%E5%A4%A9%E7%A9%BA%E4%B8%8B%E7%9A%84%E5%A4%96%E6%98%9F%E6%98%9F%E7%90%83%E6%99%AF%E8%A7%82.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>markdown语法整理 - Dumpling</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"crazythursdayv50tome.cn","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"lOkJtG1IBpX77w4JOxGu9OEG-gzGzoHsz","app_key":"8vPOgPxTS5mrCgjaXribWKRY","server_url":"https://lokjtg1i.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+  <script src="/js/howler.min.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var sound = new Howl({
+        src: ['/media/周杰伦 - 不能说的秘密.ogg'],
+        autoplay: false,
+        loop: true,
+        volume: 0.5
+    });
+
+    var live2dElement = document.getElementById('live2d-widget');
+    if (live2dElement) {
+        live2dElement.addEventListener('click', function() {
+            if (sound.playing()) {
+                sound.pause();
+            } else {
+                sound.play();
+            }
+        });
+    }
+  });
+   </script>
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Dumpling&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="markdown语法整理"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-08-25 17:33" pubdate>
+          August 25, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.3k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> views
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">markdown语法整理</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="引用公式">1. 引用公式</h2>
+<ul>
+<li><strong>行内公式</strong>：使用<code>$</code>包裹公式。例如：</li>
+</ul>
+<p><code>$n = p_1^&#123;k_1&#125; p_2^&#123;k_2&#125; \dots p_r^&#123;k_r&#125;$</code></p>
+<p><span class="math inline">\(n = p_1^{k_1} p_2^{k_2} \dots
+p_r^{k_r}\)</span><br />
+* <strong>独立公式</strong>：使用<code>$$</code>包裹公式<br />
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">$$  <br>n = p_1^&#123;k_1&#125; p_2^&#123;k_2&#125; \dots p_r^&#123;k_r&#125;  <br>$$<br></code></pre></td></tr></table></figure> <span class="math display">\[
+n = p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}
+\]</span></p>
+<ul>
+<li>公式加边框：<code>\boxed</code>命令修饰</li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">$$  <br>\boxed&#123;n = p_1^&#123;k_1&#125; p_2^&#123;k_2&#125; \dots p_r^&#123;k_r&#125;&#125;  <br>$$<br></code></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\boxed{n = p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}}  
+\]</span></p>
+<h2 id="特殊转义字符">2. 特殊转义字符</h2>
+<p><code># $ &amp; ~ _ ^ \ &#123; &#125; %</code>这些字符在<code>MaarkDown</code>中有特殊的意义，在需要使用这些字符时需要进行转义，即在前加上<code>\</code>。例如：<br />
+* <code>\#</code> -&gt; #<br />
+* <code>\~</code> -&gt; ~</p>
+<h2 id="希腊字母">3. 希腊字母</h2>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>大写</th>
+<th>TeX</th>
+<th>小写</th>
+<th>TeX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alpha</td>
+<td><span class="math inline">\(A\)</span></td>
+<td><code>$A$</code></td>
+<td><span class="math inline">\(\alpha\)</span></td>
+<td><code>$\alpha$</code></td>
+</tr>
+<tr>
+<td>beta</td>
+<td><span class="math inline">\(B\)</span></td>
+<td><code>$B$</code></td>
+<td><span class="math inline">\(\beta\)</span></td>
+<td><code>$\beta$</code></td>
+</tr>
+<tr>
+<td>gamma</td>
+<td><span class="math inline">\(\Gamma\)</span></td>
+<td><code>$\Gamma$</code></td>
+<td><span class="math inline">\(\gamma\)</span></td>
+<td><code>$\gamma$</code></td>
+</tr>
+<tr>
+<td>delta</td>
+<td><span class="math inline">\(\Delta\)</span></td>
+<td><code>$\Delta$</code></td>
+<td><span class="math inline">\(\delta\)</span></td>
+<td><code>\delta</code></td>
+</tr>
+<tr>
+<td>epsilon</td>
+<td><span class="math inline">\(E\)</span></td>
+<td><code>$\Epsilon$</code></td>
+<td><span class="math inline">\(\epsilon\)</span></td>
+<td><code>$\epsilon$</code></td>
+</tr>
+<tr>
+<td>zeta</td>
+<td><span class="math inline">\(Z\)</span></td>
+<td><code>$Z$</code></td>
+<td><span class="math inline">\(\zeta\)</span></td>
+<td><code>\zeta</code></td>
+</tr>
+<tr>
+<td>eta</td>
+<td><span class="math inline">\(H\)</span></td>
+<td><code>$H$</code></td>
+<td><span class="math inline">\(\eta\)</span></td>
+<td><code>$\eta$</code></td>
+</tr>
+<tr>
+<td>theta</td>
+<td><span class="math inline">\(\Theta\)</span></td>
+<td><code>$\Theta$</code></td>
+<td><span class="math inline">\(\theta\)</span></td>
+<td><code>$\theta$</code></td>
+</tr>
+<tr>
+<td>iota</td>
+<td><span class="math inline">\(I\)</span></td>
+<td><code>$I$</code></td>
+<td><span class="math inline">\(\iota\)</span></td>
+<td><code>$\iota$</code></td>
+</tr>
+<tr>
+<td>kappa</td>
+<td><span class="math inline">\(K\)</span></td>
+<td><code>$K$</code></td>
+<td><span class="math inline">\(\kappa\)</span></td>
+<td><code>$\kappa$</code></td>
+</tr>
+<tr>
+<td>lambda</td>
+<td><span class="math inline">\(\Lambda\)</span></td>
+<td><code>$\Lambda$</code></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td><code>$\lambda$</code></td>
+</tr>
+<tr>
+<td>mu</td>
+<td><span class="math inline">\(M\)</span></td>
+<td><code>$M$</code></td>
+<td><span class="math inline">\(\mu\)</span></td>
+<td><code>$\mu$</code></td>
+</tr>
+<tr>
+<td>nu</td>
+<td><span class="math inline">\(N\)</span></td>
+<td><code>$N$</code></td>
+<td><span class="math inline">\(\nu\)</span></td>
+<td><code>$\nu$</code></td>
+</tr>
+<tr>
+<td>xi</td>
+<td><span class="math inline">\(\Xi\)</span></td>
+<td><code>$\Xi$</code></td>
+<td><span class="math inline">\(\xi\)</span></td>
+<td><code>$\xi$</code></td>
+</tr>
+<tr>
+<td>omicron</td>
+<td><span class="math inline">\(O\)</span></td>
+<td><code>$O$</code></td>
+<td><span class="math inline">\(\omicron\)</span></td>
+<td><code>$\omicron$</code></td>
+</tr>
+<tr>
+<td>pi</td>
+<td><span class="math inline">\(\Pi\)</span></td>
+<td><code>$\Pi$</code></td>
+<td><span class="math inline">\(\pi\)</span></td>
+<td><code>$\pi$</code></td>
+</tr>
+<tr>
+<td>rho</td>
+<td><span class="math inline">\(P\)</span></td>
+<td><code>$P$</code></td>
+<td><span class="math inline">\(\rho\)</span></td>
+<td><code>$\rho</code></td>
+</tr>
+<tr>
+<td>sigma</td>
+<td><span class="math inline">\(\Sigma\)</span></td>
+<td><code>$\Sigma$</code></td>
+<td><span class="math inline">\(\sigma\)</span></td>
+<td><code>$\sigma$</code></td>
+</tr>
+<tr>
+<td>tau</td>
+<td><span class="math inline">\(T\)</span></td>
+<td><code>$T$</code></td>
+<td><span class="math inline">\(\tau\)</span></td>
+<td><code>$\tau$</code></td>
+</tr>
+<tr>
+<td>upsilon</td>
+<td><span class="math inline">\(\Upsilon\)</span></td>
+<td><code>$\Upsilon$</code></td>
+<td><span class="math inline">\(\upsilon\)</span></td>
+<td><code>$\upsilon$</code></td>
+</tr>
+<tr>
+<td>phi</td>
+<td><span class="math inline">\(\Phi\)</span></td>
+<td><code>$\Phi$</code></td>
+<td><span class="math inline">\(\phi\)</span></td>
+<td><code>$\phi$</code></td>
+</tr>
+<tr>
+<td>chi</td>
+<td><span class="math inline">\(X\)</span></td>
+<td><code>$X$</code></td>
+<td><span class="math inline">\(\chi\)</span></td>
+<td><code>$\chi$</code></td>
+</tr>
+<tr>
+<td>psi</td>
+<td><span class="math inline">\(\Psi\)</span></td>
+<td><code>$\Psi$</code></td>
+<td><span class="math inline">\(\psi\)</span></td>
+<td><code>$\psi$</code></td>
+</tr>
+<tr>
+<td>omega</td>
+<td><span class="math inline">\(\Omega\)</span></td>
+<td><code>$\Omega$</code></td>
+<td><span class="math inline">\(\omega\)</span></td>
+<td><code>$\omega$</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="上下标">4. 上下标</h2>
+<p>上下标分别用<code>^</code>和<code>_</code>表示。例如：<br />
+* <code>$x^2$</code> - &gt; <span
+class="math inline">\(x^2\)</span><br />
+* <code>$x_2$</code> - &gt; <span class="math inline">\(x_2\)</span></p>
+<p>默认情况下，<strong>上下标符号只对下一个组起作用</strong>。一个组即<strong>单个字符</strong>或<strong>使用<code>&#123;&#125;</code>包裹起来的内容</strong>。例如：<br />
+* <code>$10^10$</code> - &gt; <span
+class="math inline">\(10^10\)</span><br />
+* <code>$10^&#123;10&#125;$</code> - &gt; <span
+class="math inline">\(10^{10}\)</span><br />
+大括号还能消除二义性，如<code>$x^5^6$</code>会显示错误，必须要用大括号来界定<code>^</code>的结合性。例如：<br />
+* <code>$&#123;x^5&#125;^6$</code> - &gt; <span
+class="math inline">\({x^5}^6\)</span><br />
+* <code>$x^&#123;5^6&#125;$</code> - &gt; <span
+class="math inline">\(x^{5^6}\)</span><br />
+* <code>$x_i^2$</code> - &gt; <span
+class="math inline">\(x_i^2\)</span><br />
+* <code>$x_&#123;i^2&#125;$</code> - &gt; <span
+class="math inline">\(x_{i^2}\)</span></p>
+<h2 id="根号分数括号">5. 根号、分数、括号</h2>
+<h3 id="根号">5.1 根号</h3>
+<p>通用表达方式为<code>$\sqrt[a]&#123;b&#125;$</code> - &gt; <span
+class="math inline">\(\sqrt[a]{b}\)</span><br />
+*
+<code>[]</code>内的<code>a</code>表示开<code>a</code>次方。若省略则表示开平方。如：<code>$\sqrt[]&#123;b&#125;$</code>
+- &gt; <span class="math inline">\(\sqrt[]{b}\)</span> *
+如果被开方的是单个字符，<code>&#123;&#125;</code>可以省略，<code>$\sqrt[a]b$</code>
+- &gt; <span class="math inline">\(\sqrt[a]b\)</span></p>
+<h3 id="分数">5.2 分数</h3>
+<p>分数有两种表示方法 * 第一种是使用<code>$\frac &#123;a&#125;&#123;b&#125;$</code> - &gt;
+<span class="math inline">\(\frac {a}{b}\)</span> *
+第二种是使用<code>$\over$</code>来分割一个组的前后两部分。<code>$a+1 \over b+1$</code>
+- &gt; <span class="math inline">\(a+1 \over b+1\)</span></p>
+<h3 id="括号">5.3 括号</h3>
+<ul>
+<li><strong>小括号和方括号</strong>：使用原始的<code>()</code>和<code>[]</code>即可。<code>$(2+3)[4+4]$</code>
+- &gt; <span class="math inline">\((2+3)[4+4]\)</span></li>
+<li><strong>大括号</strong>：由于<code>&#123;&#125;</code>用来分组，因此需要用<code>\&#123;</code>和<code>\&#125;</code>来进行转移表示大括号。也可以使用<code>\lbrace</code>和<code>\rbrace</code>来表示。如<code>$\&#123;a*b\&#125;$</code>和<code>$\lbrace a*b \rbrace$</code>都会显示为<span
+class="math inline">\(\lbrace a*b \rbrace\)</span></li>
+<li><strong>尖括号</strong>：使用<code>\langle</code>和<code>\rangle</code>分别表示左尖括号和右尖括号。<code>$\langle x \rangle$</code>
+- &gt; <span class="math inline">\(\langle x \rangle\)</span></li>
+<li><strong>向上取整</strong>：使用<code>\lceil</code>和<code>\rceil</code>表示。<code>$\lceil x \rceil$</code>
+- &gt; <span class="math inline">\(\lceil x \rceil\)</span></li>
+<li><strong>向下取整</strong>：使用<code>\lfloor</code>和<code>\rfloor</code>表示。<code>$\lfloor x \rfloor$</code>
+- &gt; <span class="math inline">\(\lfloor x \rfloor\)</span></li>
+</ul>
+<h2 id="数学运算符与数学符号">6. 数学运算符与数学符号</h2>
+<h3 id="常规使用">6.1 常规使用</h3>
+<p><code>+ - * / =</code>这五个直接输入即可</p>
+<h3 id="特殊形式的数学运算符与数学符号">6.2
+特殊形式的数学运算符与数学符号</h3>
+<table style="width:100%;">
+
+<thead>
+<tr>
+<th>符号</th>
+<th>TeX</th>
+<th>符号</th>
+<th>TeX</th>
+<th>符号</th>
+<th>TeX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(\pm\)</span></td>
+<td><code>$\pm$</code></td>
+<td><span class="math inline">\(\mp\)</span></td>
+<td><code>$\mp$</code></td>
+<td><span class="math inline">\(\cdot\)</span></td>
+<td><code>$\cdot$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\times\)</span></td>
+<td><code>$\times$</code></td>
+<td><span class="math inline">\(\div\)</span></td>
+<td><code>$\div$</code></td>
+<td><span class="math inline">\(\star\)</span></td>
+<td><code>$\star$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\ast\)</span></td>
+<td><code>$\ast$</code></td>
+<td><span class="math inline">\(\cup\)</span></td>
+<td><code>$\cup$</code></td>
+<td><span class="math inline">\(\cap\)</span></td>
+<td><code>$\cap$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\vee\)</span></td>
+<td><code>$\vee$</code>或<code>$\lor$</code></td>
+<td><span class="math inline">\(\wedge\)</span></td>
+<td><code>$\wedge$</code>或<code>$\land$</code></td>
+<td><span class="math inline">\(\simeq\)</span></td>
+<td><code>$\simwq$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\oplus\)</span></td>
+<td><code>$\oplus$</code></td>
+<td><span class="math inline">\(\otimes\)</span></td>
+<td><code>$\otimes$</code></td>
+<td><span class="math inline">\(\sim\)</span></td>
+<td><code>$\sim$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\circ\)</span></td>
+<td><code>$\circ$</code></td>
+<td><span class="math inline">\(\bullet\)</span></td>
+<td><code>$\bullet$</code></td>
+<td><span class="math inline">\(\subset\)</span></td>
+<td><code>$\subset$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\bigtriangleup\)</span></td>
+<td><code>$\bigtriangleup$</code></td>
+<td><span class="math inline">\(\bigtriangledown\)</span></td>
+<td><code>$\bigtriangledown$</code></td>
+<td><span class="math inline">\(\supset\)</span></td>
+<td><code>$\supset$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\nabla\)</span></td>
+<td><code>$\nabla$</code></td>
+<td><span class="math inline">\(\exists\)</span></td>
+<td><code>$\exists$</code></td>
+<td><span class="math inline">\(\subseteq\)</span></td>
+<td><code>$\subseteq$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\partial\)</span></td>
+<td><code>$\partial$</code></td>
+<td><span class="math inline">\(\infty\)</span></td>
+<td><code>$\infty$</code></td>
+<td><span class="math inline">\(\subseteq\)</span></td>
+<td><code>$\subseteq$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\forall\)</span></td>
+<td><code>$\forall$</code></td>
+<td><span class="math inline">\(\surd\)</span></td>
+<td><code>$\surd$</code></td>
+<td><span class="math inline">\(\in\)</span></td>
+<td><code>$\in$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\angle\)</span></td>
+<td><code>\angle</code></td>
+<td><span class="math inline">\(\bot\)</span></td>
+<td><code>$\bot$</code></td>
+<td><span class="math inline">\(\ni\)</span></td>
+<td><code>$\ni$</code>或者<code>$\owns$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\leq\)</span></td>
+<td><code>\leq</code>或者<code>\le</code></td>
+<td><span class="math inline">\(\geq\)</span></td>
+<td><code>$\geq$</code>或者<code>$\ge$</code></td>
+<td><span class="math inline">\(\notin\)</span></td>
+<td><code>$\notin$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\equiv\)</span></td>
+<td><code>$\equiv$</code></td>
+<td><span class="math inline">\(\approx\)</span></td>
+<td><code>$\approx$</code></td>
+<td><span class="math inline">\(\neq\)</span></td>
+<td><code>\neq</code>或者<code>\ne</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\lll\)</span></td>
+<td><code>$\lll$</code></td>
+<td><span class="math inline">\(\ggg\)</span></td>
+<td><code>$\ggg$</code></td>
+<td></td>
+<td><code>\cong</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\propto\)</span></td>
+<td><code>$\propto$</code></td>
+<td><span class="math inline">\(\varsubsetneqq\)</span></td>
+<td><code>$\varsubsetneqq$</code></td>
+<td><span class="math inline">\(\varsupsetneqq\)</span></td>
+<td><code>$\varsupsetneqq$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\mid\)</span></td>
+<td><code>$\mid$</code></td>
+<td><span class="math inline">\(\Rrightarrow\)</span></td>
+<td><code>$Rrightarrow$</code></td>
+<td><span class="math inline">\(\Lleftarrow\)</span></td>
+<td><code>$Lleftarrow$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\parallel\)</span></td>
+<td><code>$\parallel$</code></td>
+<td><span class="math inline">\(\upharpoonright\)</span></td>
+<td><code>$upharpoonright$</code></td>
+<td><span class="math inline">\(\downharpoonright\)</span></td>
+<td><code>$downharpoonright$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\because\)</span></td>
+<td><code>$\because$</code></td>
+<td><span class="math inline">\(\therefore\)</span></td>
+<td><code>$\therefore$</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="省略号空白间隔分界符">7. 省略号、空白间隔、分界符</h2>
+<h3 id="省略号">7.1 省略号</h3>
+<p>省略号用<code>\dots \cdots \vdots \ddots</code>表示<br />
+* <code>$\dots$</code> - &gt; <span
+class="math inline">\(\dots\)</span>，位置比较低 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">$$<br>x_1, x_2, \dots, x_n<br>$$<br></code></pre></td></tr></table></figure> <span
+class="math display">\[
+x_1, x_2, \dots, x_n
+\]</span> * <code>$\cdots$</code> - &gt; <span
+class="math inline">\(\cdots\)</span>，位置居中 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">$$<br>1, 2, \cdots, n<br>$$<br></code></pre></td></tr></table></figure> <span
+class="math display">\[
+1, 2, \cdots, n
+\]</span> * <code>$\vdots$</code> - &gt; <span
+class="math inline">\(\vdots\)</span>，竖直省略号<br />
+* <code>$\ddots$</code> - &gt; <span
+class="math inline">\(\ddots\)</span>，45°方向省略号</p>
+<h3 id="空白间隔">7.2 空白间隔</h3>
+<p><code>$\quad$</code> - &gt; <span
+class="math inline">\(\quad\)</span><br />
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text">$\,$ 3/18em   <br>$\:$  4/18em  <br>$\;$ 5/18em <br>$\quad$ 1em <br>$\qquad$ 2m <br>$\!$ -3/18em<br></code></pre></td></tr></table></figure> <span class="math inline">\(\,\)</span> 3/18em<br />
+<span class="math inline">\(\:\)</span> 4/18em<br />
+<span class="math inline">\(\;\)</span> 5/18em<br />
+<span class="math inline">\(\quad\)</span> 1em<br />
+<span class="math inline">\(\qquad\)</span> 2m<br />
+<span class="math inline">\(\!\)</span> -3/18em</p>
+<h3 id="分界符">7.3 分界符</h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>TeX</th>
+<th>符号</th>
+<th>TeX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(\lgroup\)</span></td>
+<td><code>$\lgroup$</code></td>
+<td><span class="math inline">\(\rgroup\)</span></td>
+<td><code>$\group$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\lmoustache\)</span></td>
+<td><code>$\lmoustache$</code></td>
+<td><span class="math inline">\(\rmoustache\)</span></td>
+<td><code>$\rmoustache$</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="分段函数">8. 分段函数</h2>
+<p><code>&amp;</code>表示对齐，<code>\\</code>表示换行，<code>\qquad</code>可以表示空格
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">$$<br>函数名=\begin&#123;cases&#125;<br>公式1 &amp; 条件1 \\<br>公式2 &amp; 条件2 \\<br>公式3 &amp; 条件3 \\<br>\end&#123;cases&#125;<br>$$<br></code></pre></td></tr></table></figure> <span class="math display">\[
+函数名=\begin{cases}
+公式1 &amp; 条件1 \\
+公式2 &amp; 条件2 \\
+公式3 &amp; 条件3 \\
+\end{cases}
+\]</span></p>
+<h2 id="大型数学运算符">9. 大型数学运算符</h2>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>TeX</th>
+<th>运算符</th>
+<th>TeX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(\sum\)</span></td>
+<td><code>$\sum$</code></td>
+<td><span class="math inline">\(\int\)</span></td>
+<td><code>$\int$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\prod\)</span></td>
+<td><code>$\prod$</code></td>
+<td><span class="math inline">\(\iint\)</span></td>
+<td><code>$\iint$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\coprod\)</span></td>
+<td><code>$\coprod$</code></td>
+<td><span class="math inline">\(\iiint\)</span></td>
+<td><code>$\iiint$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\bigvee\)</span></td>
+<td><code>$\bigvee$</code></td>
+<td><span class="math inline">\(\bigwedge\)</span></td>
+<td><code>$\bigwedge$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\bigoplus\)</span></td>
+<td><code>$\bigoplus$</code></td>
+<td><span class="math inline">\(\bigotimes\)</span></td>
+<td><code>$\bigotimes$</code></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\bigcup\)</span></td>
+<td><code>$\bigcup$</code></td>
+<td><span class="math inline">\(\lim\)</span></td>
+<td><code>$\lim$</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="使用上标和下标分别表示运算符号的上下限">9.1
+使用上标和下标分别表示运算符号的上下限</h3>
+<p><code>$\sum_0^\infty$</code> - &gt; <span
+class="math inline">\(\sum_0^\infty\)</span><br />
+<code>$\int_&#123;-\infty&#125;^&#123;\infty&#125;$</code> - &gt; <span
+class="math inline">\(\int_{-\infty}^{\infty}\)</span><br />
+<code>$\lim_&#123;x\to0&#125; &#123;sinx \over x&#125;$</code> - &gt; <span
+class="math inline">\(\lim_{x\to0}{sinx \over x}\)</span> ### 9.2
+使用<code>\to</code>表示趋近于的箭头 <code>$x\to0$</code> - &gt; <span
+class="math inline">\(x\to0\)</span> ### 9.3 和、积、极限、积分等运算符
+用<code>\sum</code>,<code>\prod</code>,<code>\lim</code>,<code>\int</code>，这些公式在行内公式被压缩，以适应行高，可以通过<code>\limits</code>和<code>\nolimits</code>命令显示是否压缩<br />
+<code>$\int\limits_&#123;-\infty&#125;^&#123;\infty&#125; \frac &#123;sinx&#125;xdx$</code> - &gt;
+<span class="math inline">\(\int\limits_{-\infty}^{\infty} \frac
+{sinx}xdx\)</span><br />
+<code>$\int\nolimits_&#123;-\infty&#125;^&#123;\infty&#125; \frac &#123;sinx&#125;xdx$</code> - &gt;
+<span class="math inline">\(\int\limits_{-\infty}^{\infty} \frac
+{sinx}xdx\)</span><br />
+<code>$\lim\limits_&#123;n\to&#123;+\infty&#125;&#125; \frac&#123;n-1&#125;&#123;n(n+1)(n+2)&#125;$</code> -
+&gt; <span class="math inline">\(\lim\limits_{n\to{+\infty}}
+\frac{n-1}{n(n+1)(n+2)}\)</span><br />
+<code>$\lim\nolimits_&#123;n\to&#123;+\infty&#125;&#125; \frac&#123;n-1&#125;&#123;n(n+1)(n+2)&#125;$</code> -
+&gt; <span class="math inline">\(\lim\nolimits_{n\to{+\infty}}
+\frac{n-1}{n(n+1)(n+2)}\)</span></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/markdown/" class="print-no-link">#markdown</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>markdown语法整理</div>
+      <div>http://crazythursdayv50tome.cn/2024/08/25/markdown/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>饺子</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>August 25, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/08/21/crawler/" title="crawler">
+                        <span class="hidden-mobile">crawler</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Dumpling</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Sleep</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        Views: 
+        <span id="busuanzi_value_site_pv"></span>
+        
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        Visitors: 
+        <span id="busuanzi_value_site_uv"></span>
+        
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+<div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Dumpling</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Sleep</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        Views: 
+        <span id="busuanzi_value_site_pv"></span>
+        
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        Visitors: 
+        <span id="busuanzi_value_site_uv"></span>
+        
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+  
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/rotateWords.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+<script type="text/javascript" src="\js\FunnyTitle.js"></script>
+
+<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<script src="/js/cursor.js"></script>
+
+<script src="/js/howler.min.js"></script>
+
+
