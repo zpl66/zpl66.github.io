@@ -18,15 +18,15 @@
   <meta name="author" content="饺子">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. 基础 1.1 数据库相关概念     名称 全称 简称     数据库 存储数据的仓库，数据是有组织的进行存储 DataBase(DB)   数据库管理系统 操纵和管理数据库的大型软件 DataBase Management System(DBMS)   SQL 操作关系型数据库的编程语言，定义了一套操作关系型数据库统一标准 Structur">
+    <meta name="description" content="1. 概述 1.1 数据库相关概念     名称 全称 简称     数据库 存储数据的仓库，数据是有组织的进行存储 DataBase(DB)   数据库管理系统 操纵和管理数据库的大型软件 DataBase Management System(DBMS)   SQL 操作关系型数据库的编程语言，定义了一套操作关系型数据库统一标准 Structur">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL">
+<meta property="og:title" content="MySQL基础">
 <meta property="og:url" content="http://crazythursdayv50tome.cn/2024/08/28/MySQL/index.html">
 <meta property="og:site_name" content="Dumpling">
-<meta property="og:description" content="1. 基础 1.1 数据库相关概念     名称 全称 简称     数据库 存储数据的仓库，数据是有组织的进行存储 DataBase(DB)   数据库管理系统 操纵和管理数据库的大型软件 DataBase Management System(DBMS)   SQL 操作关系型数据库的编程语言，定义了一套操作关系型数据库统一标准 Structur">
+<meta property="og:description" content="1. 概述 1.1 数据库相关概念     名称 全称 简称     数据库 存储数据的仓库，数据是有组织的进行存储 DataBase(DB)   数据库管理系统 操纵和管理数据库的大型软件 DataBase Management System(DBMS)   SQL 操作关系型数据库的编程语言，定义了一套操作关系型数据库统一标准 Structur">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-08-28T10:10:16.000Z">
-<meta property="article:modified_time" content="2024-08-28T10:44:30.596Z">
+<meta property="article:modified_time" content="2024-08-30T09:04:15.895Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary_large_image">
@@ -35,7 +35,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>MySQL - Dumpling</title>
+  <title>MySQL基础 - Dumpling</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -253,7 +253,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="MySQL"></span>
+            <span id="subtitle" data-typed-text="MySQL基础"></span>
           
         </div>
 
@@ -276,7 +276,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          101 words
+          1.9k words
         
       </span>
     
@@ -287,7 +287,7 @@
         
         
         
-          1 mins
+          16 mins
         
       </span>
     
@@ -332,12 +332,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">MySQL</h1>
+            <h1 id="seo-header">MySQL基础</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="基础">1. 基础</h2>
+                <h2 id="概述">1. 概述</h2>
 <h3 id="数据库相关概念">1.1 数据库相关概念</h3>
 <table>
 
@@ -367,6 +367,439 @@
 </tbody>
 </table>
 <h3 id="mysql数据库">1.2 MySQL数据库</h3>
+<ul>
+<li><strong>启动与停止</strong>
+<ul>
+<li><code>win</code>+<code>r</code>，输入<code>services.msc</code>，进入服务，右击<code>MySQL80</code>，点击<code>启动</code>或<code>停止</code></li>
+<li>在命令行中输入<code>net start mysql80</code>以<code>启动</code>，输入<code>net stop mysql80</code>以<code>停止</code>（注意，要<code>以管理员身份运行</code>进入<code>命令提示符</code>）</li>
+</ul></li>
+<li><strong>客户端连接</strong>
+<ul>
+<li>MySQL提供的客户端命令行工具
+<ul>
+<li>开始菜单选择<code>MySQL 8.0 Command Line Client</code></li>
+<li>输入密码</li>
+</ul></li>
+<li>系统自带的命令行工具执行指令
+<ul>
+<li><code>mysql -u root -p</code></li>
+<li>输入密码</li>
+<li>注意：使用这种方式时，需要配置PATH环境变量</li>
+</ul></li>
+</ul></li>
+<li><strong>数据模型</strong>
+<ul>
+<li><code>MySQL客户端</code>给<code>MySQL数据库服务器</code>发送对应的<code>SQL语句</code></li>
+<li>在<code>MySQL服务器内部</code>有个<code>DBMS</code>数据库管理系统，<code>DBMS</code>会维护和操作数据库，它也可以创建数据库</li>
+<li>一个<code>数据库</code>里可以维护多张表</li>
+<li>表是最终存储数据的</li>
+</ul></li>
+</ul>
+<h3 id="mysql数据模型">1.3 MySQL数据模型</h3>
+<ul>
+<li><strong>关系型数据库(RDBMS)</strong>
+<ul>
+<li><strong>概念</strong>：建立在关系模型基础上，由多张相互连接的二维表组成的数据库</li>
+<li><strong>特点</strong>：
+<ul>
+<li>使用表存储数据，格式统一，便于维护</li>
+<li>使用SQL语言操作，标准统一，使用方便</li>
+</ul></li>
+</ul></li>
+<li><strong>数据模型</strong>
+<ul>
+<li>我们安装完了MySQL之后，我们的计算机就成了MySQL数据库服务器</li>
+<li>我们可以通过客户端来连接数据库管理系统<code>DBMS</code></li>
+<li>使用<code>SQL</code>语句，通过数据库管理系统，来创建数据库</li>
+<li>也可以通过<code>SQL</code>语句通过数据库管理系统，在指定的数据库当中来创建表</li>
+<li>在一个数据库服务器当中可以创建多个数据库</li>
+<li>在一个数据库当中可以创建多张表（二维表）</li>
+<li>在表中我们可以创造一条一条记录</li>
+</ul></li>
+</ul>
+<h2 id="sql">2. SQL</h2>
+<h3 id="通用语法及分类">2.1 通用语法及分类</h3>
+<h4 id="sql通用语法">2.1.1 SQL通用语法</h4>
+<ol type="1">
+<li>SQL语句可以单行或多行书写，以分号结尾</li>
+<li>SQL语句可以使用空格/缩进来增强语句的可读性</li>
+<li>MySQL数据库的SQL语句不区分大小写，关键字建议使用大写</li>
+<li>注释：
+<ul>
+<li>单行注释：<code>-- 注释内容</code> 或
+<code># 注释内容</code>(MySQL特有)</li>
+<li>多行注释：/<em>注释内容</em>/</li>
+</ul></li>
+</ol>
+<h4 id="sql分类">2.1.2 SQL分类</h4>
+<table>
+
+<thead>
+<tr>
+<th>分类</th>
+<th>全称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DDL</td>
+<td>Data Definition Language</td>
+<td>数据库定义语言，用来定义数据库对象（数据库，表，字段）</td>
+</tr>
+<tr>
+<td>DML</td>
+<td>Data Manipulation Language</td>
+<td>数据操作语言，用来对数据库表中的数据进行增删改</td>
+</tr>
+<tr>
+<td>DQL</td>
+<td>Data Query Language</td>
+<td>数据查询语言，用来查询数据库中表的记录</td>
+</tr>
+<tr>
+<td>DCL</td>
+<td>Data Control Language</td>
+<td>数据控制语言，用来创建数据库用户、控制数据库的访问权限</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ddl">2.2 DDL</h3>
+<h4 id="数据库操作">2.2.1 数据库操作</h4>
+<p><strong>小贴士</strong></p>
+<blockquote>
+<ol type="1">
+<li>结束记得用<code>;</code></li>
+<li>若没有输入<code>;</code>，输入完之后会出现<code>-&gt;</code>，此时输入<code>Ctrl</code>
++ <code>C</code>即可退出<br />
+</li>
+<li>字符集不建议使用<code>utf8</code>，而建议使用<code>utf8mb4</code>。
+<ul>
+<li>理由：因为<code>utf8</code>实际上是一种不完全的<code>UTF-8</code>编码，只支持<code>UTF-8</code>前三个字节，不支持部分特殊字符，如
+Emoji 和一些罕见的汉字或其他符号。而<code>utf8mb4</code> 是 MySQL
+中真正的完整 UTF-8 编码，能够使用完整的 4 个字节表示字符，因此可以支持
+Unicode 中的所有字符，包括 Emoji 和其他 4 字节字符</li>
+</ul></li>
+</ol>
+</blockquote>
+<ol type="1">
+<li><strong>查询</strong></li>
+</ol>
+<p>查询所有数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> DATABASES;<br></code></pre></td></tr></table></figure>
+<p>查询当前数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> DATABASE();<br></code></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li><strong>创建</strong></li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> DATABASE [IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span>] 数据库名 [<span class="hljs-keyword">DEFAULT</span> CHARSET 字符集] [<span class="hljs-keyword">COLLATE</span> 排序规则];<br></code></pre></td></tr></table></figure>
+<ol start="3" type="1">
+<li><strong>删除</strong></li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> DATABASE[IF <span class="hljs-keyword">EXISTS</span>]数据库名;<br></code></pre></td></tr></table></figure>
+<ol start="4" type="1">
+<li>使用</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">USE 数据库名;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><code>USE</code>语句的分号不是必须的</p>
+</blockquote>
+<h4 id="表操作创建查询">2.2.2 表操作：创建&amp;查询</h4>
+<ol type="1">
+<li><p><strong>查询</strong></p>
+<ol type="1">
+<li>查询当前数据库所有表</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> TABLES;<br></code></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li>查询表结构</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DESC</span> 表名;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>desc - &gt; describe</p>
+</blockquote>
+<ol start="3" type="1">
+<li>查询指定表的建表语句</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名;<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>创建</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名(<br>	字段<span class="hljs-number">1</span> 字段<span class="hljs-number">1</span>类型[COMMENT 字段<span class="hljs-number">1</span>注释],<br>	字段<span class="hljs-number">2</span> 字段<span class="hljs-number">2</span>类型[COMMENT 字段<span class="hljs-number">2</span>注释],<br>	字段<span class="hljs-number">3</span> 字段<span class="hljs-number">3</span>类型[COMMENT 字段<span class="hljs-number">3</span>注释],<br>	......<br>    字段n 字段n类型[COMMENT 字段n注释]<br>)[COMMENT 表注释];<br></code></pre></td></tr></table></figure>
+<p><strong>小贴士</strong></p>
+<blockquote>
+<p>[...]为可选参数，最后一个字段后面没有逗号</p>
+</blockquote></li>
+</ol>
+<h4 id="数据类型">2.2.3 数据类型</h4>
+<p>数据类型主要分为三类：<code>数值类型</code>，<code>字符串类型</code>，<code>日期时间类型</code>。</p>
+<ol type="1">
+<li><strong>数值类型</strong></li>
+</ol>
+<table style="width:100%;">
+
+<thead>
+<tr>
+<th>分类</th>
+<th>类型</th>
+<th>大小</th>
+<th>有符号(SIGNED)范围</th>
+<th>无符号(UNSIGNED)范围</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数值类型</td>
+<td><code>tinyint</code></td>
+<td>1 byte</td>
+<td><span class="math inline">\((-2^7,2^7-1)\)</span></td>
+<td>(<span class="math inline">\(0,2^8-1\)</span>)</td>
+<td>小整数值</td>
+</tr>
+<tr>
+<td>数值类型</td>
+<td><code>smallint</code></td>
+<td>2 bytes</td>
+<td><span class="math inline">\((-2^{15},2^{15}-1)\)</span></td>
+<td><span class="math inline">\((0,2^{16}-1)\)</span></td>
+<td>大整数值</td>
+</tr>
+<tr>
+<td>数值类型</td>
+<td><code>mediumint</code></td>
+<td>3 bytes</td>
+<td><span class="math inline">\((-2^{23},2^{23}-1)\)</span></td>
+<td><span class="math inline">\((0,2^{24}-1)\)</span></td>
+<td>大整数值</td>
+</tr>
+<tr>
+<td>数值类型</td>
+<td><code>int/integer</code></td>
+<td>4 bytes</td>
+<td><span class="math inline">\((-2^{31},2^{31}-1)\)</span></td>
+<td><span class="math inline">\((0,2^{32}-1)\)</span></td>
+<td>大整数值</td>
+</tr>
+<tr>
+<td>数值类型</td>
+<td><code>bigint</code></td>
+<td>8 bytes</td>
+<td><span class="math inline">\((-2^{63},2^{63}-1)\)</span></td>
+<td><span class="math inline">\((0,2^{64}-1)\)</span></td>
+<td>极大整数值</td>
+</tr>
+<tr>
+<td>数值类型</td>
+<td><code>float</code></td>
+<td>4 bytes</td>
+<td><span class="math inline">\((-3,4028 E+38, 3.4028
+E+38)\)</span></td>
+<td>0和<span class="math inline">\((1.17549 E-308, 1.79769
+E+308)\)</span></td>
+<td>单精度浮点数值</td>
+</tr>
+<tr>
+<td>数值类型</td>
+<td><code>double</code></td>
+<td>8 bytes</td>
+<td><span class="math inline">\((-1.79769 E+308, 1.79769
+E+308)\)</span></td>
+<td>0和<span class="math inline">\((2.2250738585 E-308,
+1.79769E+308)\)</span></td>
+<td>双精度浮点数</td>
+</tr>
+<tr>
+<td>数值类型</td>
+<td><code>decimal</code></td>
+<td></td>
+<td>依赖于M(精度)和D（标度）的值</td>
+<td>依赖于M(精度)和D（标度）的值</td>
+<td>小数值（精确定点数）</td>
+</tr>
+</tbody>
+</table>
+<p>​ <strong>小贴士</strong></p>
+<blockquote>
+<ol type="1">
+<li><strong>M(精度)和D(标度)</strong>:比如123.45，总共有五位，所以精度是5，小数点后有两位，所以标度是2</li>
+<li><strong>无符号表示</strong>：比如年龄，可以写为：<code>age TINYINT UNSIGNED</code></li>
+<li><strong>位数</strong>：比如我们想输入分数，总共有四位，其中一位是小数，则用<code>score double(4,1)</code></li>
+</ol>
+</blockquote>
+<ol start="2" type="1">
+<li><strong>字符串类型</strong></li>
+</ol>
+<table>
+
+<thead>
+<tr>
+<th>分类</th>
+<th>类型</th>
+<th>大小</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字符串类型</td>
+<td>CHAR</td>
+<td>0~255 bytes</td>
+<td>定长字符串</td>
+</tr>
+<tr>
+<td>字符串类型</td>
+<td>VARCHAR</td>
+<td><span class="math inline">\(0\)</span>~<span
+class="math inline">\(2^{16}-1\)</span> bytes</td>
+<td>变长字符串</td>
+</tr>
+<tr>
+<td>字符串类型</td>
+<td>TINYBLOB</td>
+<td>0~255 bytes</td>
+<td>不超过255个字符的二进制数据</td>
+</tr>
+<tr>
+<td>字符串类型</td>
+<td>TINYTEXT</td>
+<td>0~255 bytes</td>
+<td>短文本字符串</td>
+</tr>
+<tr>
+<td>字符串类型</td>
+<td>BLOB</td>
+<td><span class="math inline">\(0\)</span>~<span
+class="math inline">\(2^{16}-1\)</span> bytes</td>
+<td>二进制形式的长文本数据</td>
+</tr>
+<tr>
+<td>字符串类型</td>
+<td>TEXT</td>
+<td><span class="math inline">\(0\)</span>~<span
+class="math inline">\(2^{16}-1\)</span> bytes</td>
+<td>长文本数据</td>
+</tr>
+<tr>
+<td>字符串类型</td>
+<td>MEDIUMBLOB</td>
+<td>0~<span class="math inline">\(2^{24}-1\)</span> bytes</td>
+<td>二进制形式的中等长度文本数据</td>
+</tr>
+<tr>
+<td>字符串类型</td>
+<td>MEDIUMTEXT</td>
+<td>0~<span class="math inline">\(2^{24}-1\)</span> bytes</td>
+<td>中等长度文本数据</td>
+</tr>
+<tr>
+<td>字符串类型</td>
+<td>LONGBLOB</td>
+<td>0~<span class="math inline">\(2^{32}-1\)</span></td>
+<td>二进制形式的极大文本数据</td>
+</tr>
+<tr>
+<td>字符串类型</td>
+<td>LONGTEXT</td>
+<td>0~<span class="math inline">\(2^{32}-1\)</span></td>
+<td>极大长文本数据</td>
+</tr>
+</tbody>
+</table>
+<p>​ <strong>小贴士</strong></p>
+<blockquote>
+<ol type="1">
+<li><code>BLOB</code>:<code>Binary Large Object</code>，二进制大对象文本类型，用于存储如图片、音频、视频文件、压缩文件或其他非文本数据<br />
+</li>
+<li><code>TEXT</code>:存储文本数据</li>
+</ol>
+</blockquote>
+<ol start="3" type="1">
+<li><strong>日期类型</strong></li>
+</ol>
+<table>
+
+<thead>
+<tr>
+<th>分类</th>
+<th>类型</th>
+<th>大小</th>
+<th>范围</th>
+<th>格式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>日期类型</td>
+<td>DATE</td>
+<td>3</td>
+<td><code>1000-01-01</code>至<code>9999-12-31</code></td>
+<td>YYYY-MM-DD</td>
+<td>日期值</td>
+</tr>
+<tr>
+<td>日期类型</td>
+<td>TIME</td>
+<td>3</td>
+<td><code>-838:59:59</code>至<code>838:59:59</code></td>
+<td>HH:MM:SS</td>
+<td>时间值或持续时间</td>
+</tr>
+<tr>
+<td>日期类型</td>
+<td>YEAR</td>
+<td>1</td>
+<td><code>1901</code>至<code>2155</code></td>
+<td>YYYY</td>
+<td>年份值</td>
+</tr>
+<tr>
+<td>日期类型</td>
+<td>DATATIME</td>
+<td>8</td>
+<td><code>1000-01-01 00:00:00</code>至<code>9999-12-31 23:59:59</code></td>
+<td>YYYY-MM-DD HH:MM:SS</td>
+<td>混合日期和时间值</td>
+</tr>
+<tr>
+<td>日期类型</td>
+<td>TIMESTAMP</td>
+<td>4</td>
+<td><code>1970-01-01 00:00:01</code>至<code>2038-01-19 03:14:07</code></td>
+<td>YYYY-MM-DD HH:MM:SS</td>
+<td>混合日期和时间值，时间戳</td>
+</tr>
+</tbody>
+</table>
+<h4 id="表操作修改删除">2.2.4 表操作：修改&amp;删除</h4>
+<ol type="1">
+<li><strong>修改</strong></li>
+</ol>
+<p>添加字段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">ADD</span> 字段名 类型(长度) [COMMENT 注释] [约束];<br></code></pre></td></tr></table></figure>
+<p>修改数据类型</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 MODIFY 字段名 新数据类型(长度);<br></code></pre></td></tr></table></figure>
+<p>修改字段名和字段类型</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 CHANGE 旧字段名 新字段名 类型(长度) [COMMENT 注释] [约束];<br></code></pre></td></tr></table></figure>
+<p>删除字段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">DROP</span> 字段名;<br></code></pre></td></tr></table></figure>
+<p>修改表名</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 RENAME <span class="hljs-keyword">TO</span> 新表名;<br></code></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li><strong>删除</strong></li>
+</ol>
+<p>删除表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> [IF <span class="hljs-keyword">EXISTS</span>] 表名<br></code></pre></td></tr></table></figure>
+<p>删除指定表，并重新创建该表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">TRUNCATE</span> <span class="hljs-keyword">TABLE</span> 表名;<br></code></pre></td></tr></table></figure>
+<h4 id="小结">2.2.5 小结</h4>
+<ol type="1">
+<li><strong>DDL-数据库操作</strong></li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> DATABASES;<br><span class="hljs-keyword">CREATE</span> DATABASE 数据库名;<br>USE 数据库名;<br><span class="hljs-keyword">SELECT</span> 数据库名;<br><span class="hljs-keyword">DROP</span> DATABASE 数据库名;<br></code></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li><strong>DDL-表操作</strong></li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> TABLES;<br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名(字段 字段类型,字段 字段类型);<br><span class="hljs-keyword">DESC</span> 表名;<br><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名;<br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">ADD</span><span class="hljs-operator">/</span>MODIFY<span class="hljs-operator">/</span>CHANGE<span class="hljs-operator">/</span><span class="hljs-keyword">DROP</span><span class="hljs-operator">/</span>RENAME TO...;<br><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> 表名;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -391,7 +824,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>MySQL</div>
+      <div>MySQL基础</div>
       <div>http://crazythursdayv50tome.cn/2024/08/28/MySQL/</div>
     </div>
     <div class="license-meta">
@@ -435,6 +868,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/08/31/blackmyth/" title="blackmyth">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">blackmyth</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
