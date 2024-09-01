@@ -18,12 +18,12 @@
   <meta name="author" content="饺子">
   <meta name="keywords" content="">
   
-    <meta name="description" content="知识框架  1.vector 1.1 介绍 vector为可变长数组(我比较喜欢叫他动态数组),可以随时添加数值和删除元素 1.2 初始化 vector分为一维初始化和二维初始化 一维初始化 12345vector&lt;int&gt; t1; &#x2F;&#x2F;一维数组vector&lt;int&gt; t2(n); &#x2F;&#x2F;定义一个长度为n的数组vector&lt;int&gt; t3(n, 1">
+    <meta name="description" content="知识框架  1.vector 1.1 介绍 vector为可变长数组(我比较喜欢叫他动态数组),可以随时添加数值和删除元素 1.2 初始化 vector分为一维初始化和二维初始化 一维初始化 12345vector&lt;int&gt; t1; &#x2F;&#x2F;一维数组vector&lt;int&gt; t2(n); &#x2F;&#x2F;定义一个长度为n的数组vector&lt;int&gt; t3(n, 1); &#x2F;&#x2F;定义一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ STL">
 <meta property="og:url" content="http://crazythursdayv50tome.cn/2024/05/23/CPPSTL/index.html">
 <meta property="og:site_name" content="Dumpling">
-<meta property="og:description" content="知识框架  1.vector 1.1 介绍 vector为可变长数组(我比较喜欢叫他动态数组),可以随时添加数值和删除元素 1.2 初始化 vector分为一维初始化和二维初始化 一维初始化 12345vector&lt;int&gt; t1; &#x2F;&#x2F;一维数组vector&lt;int&gt; t2(n); &#x2F;&#x2F;定义一个长度为n的数组vector&lt;int&gt; t3(n, 1">
+<meta property="og:description" content="知识框架  1.vector 1.1 介绍 vector为可变长数组(我比较喜欢叫他动态数组),可以随时添加数值和删除元素 1.2 初始化 vector分为一维初始化和二维初始化 一维初始化 12345vector&lt;int&gt; t1; &#x2F;&#x2F;一维数组vector&lt;int&gt; t2(n); &#x2F;&#x2F;定义一个长度为n的数组vector&lt;int&gt; t3(n, 1); &#x2F;&#x2F;定义一">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://crazythursdayv50tome.cn/images/%E6%B0%B4%E6%99%B6%E6%98%9F%E7%90%83.jpg">
 <meta property="article:published_time" content="2024-05-23T13:35:45.000Z">
@@ -341,21 +341,20 @@
               <div class="markdown-body">
                 
                 <h2 id="知识框架">知识框架</h2>
-<p><img src="/images/C++STL.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="vector">1.vector</h2>
-<h3 id="介绍">1.1 介绍</h3>
+<img src="/images/C++STL.png" srcset="/img/loading.gif" lazyload>
+<h2 id="1-vector">1.vector</h2>
+<h3 id="1-1-介绍">1.1 介绍</h3>
 <p><code>vector</code>为可变长数组(我比较喜欢叫他动态数组),可以随时添加数值和删除元素</p>
-<h3 id="初始化">1.2 初始化</h3>
+<h3 id="1-2-初始化">1.2 初始化</h3>
 <p><code>vector</code>分为一维初始化和二维初始化</p>
 <h4 id="一维初始化">一维初始化</h4>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt; t1; <span class="hljs-comment">//一维数组</span><br><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">t2</span><span class="hljs-params">(n)</span></span>; <span class="hljs-comment">//定义一个长度为n的数组</span><br><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">t3</span><span class="hljs-params">(n, <span class="hljs-number">1</span>)</span></span>; <span class="hljs-comment">//定义一个长度为n的数组，t3[0]~t3[n - 1]均初始化为1</span><br>vector&lt;<span class="hljs-type">int</span>&gt; t4&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;; <span class="hljs-comment">//数组中有五个元素，数组长度就为5</span><br>vector&lt;<span class="hljs-type">int</span>&gt; t5 = t4; <span class="hljs-comment">//拷贝初始化</span><br></code></pre></td></tr></table></figure>
 <h4 id="二维初始化">二维初始化</h4>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; t2;<span class="hljs-comment">//二维数组</span><br>vector&lt;<span class="hljs-type">int</span>&gt; v[<span class="hljs-number">5</span>];<span class="hljs-comment">//定义可变长二维数组</span><br><span class="hljs-comment">//注意：行不可变（只有5行）, 而列可变,可以在指定行添加元素</span><br><span class="hljs-comment">//第一维固定长度为5，第二维长度可以改变</span><br><span class="hljs-comment">//注意：[]是二维数组，()是一维数组！ ！ ！</span><br><span class="hljs-comment">//（有个大聪明因为这个debug了半个小时）</span><br></code></pre></td></tr></table></figure>
-<h3 id="方法函数">1.3 方法函数</h3>
+<h3 id="1-3-方法函数">1.3 方法函数</h3>
 <p>话不多说，直接上</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt; c;<br></code></pre></td></tr></table></figure>
 <table>
-
 <thead>
 <tr>
 <th>代码</th>
@@ -430,7 +429,7 @@
 <td>O(1)</td>
 </tr>
 <tr>
-<td>c.at(idx)</td>
+<td><a target="_blank" rel="noopener" href="http://c.at">c.at</a>(idx)</td>
 <td>返回c[idx]的值（但还是建议用[]）</td>
 <td></td>
 </tr>
@@ -451,11 +450,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="访问">1.4 访问</h3>
+<h3 id="1-4-访问">1.4 访问</h3>
 <p>总共三种方法：<code>下标法</code>、<code>迭代器法</code>、<code>auto</code></p>
-<h4 id="下标访问">1.4.1 下标访问</h4>
+<h4 id="1-4-1-下标访问">1.4.1 下标访问</h4>
 <p>和普通数组的区别是没有区别</p>
-<h4 id="迭代器访问">1.4.2 迭代器访问</h4>
+<h4 id="1-4-2-迭代器访问">1.4.2 迭代器访问</h4>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt; vi&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;;<br><span class="hljs-comment">//迭代器访问</span><br>vector&lt;<span class="hljs-type">int</span>&gt;::iterator it;   <br><span class="hljs-comment">// 相当于声明了一个迭代器类型的变量it</span><br><span class="hljs-comment">// 通俗来说就是声明了一个指针变量</span><br></code></pre></td></tr></table></figure>
 <ul>
 <li>方法一</li>
@@ -465,15 +464,15 @@
 <li>方法二</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;<span class="hljs-type">int</span>&gt;::iterator it; <span class="hljs-keyword">for</span>(it = vi.<span class="hljs-built_in">begin</span>(); it != vi.<span class="hljs-built_in">end</span>();it ++) cout &lt;&lt; *it &lt;&lt; <span class="hljs-string">&quot; &quot;</span>; <br><span class="hljs-comment">//vi.end()指向尾元素地址的下一个地址 </span><br><span class="hljs-comment">// 或者 </span><br><span class="hljs-keyword">auto</span> it = vi.<span class="hljs-built_in">begin</span>();<br><span class="hljs-keyword">while</span>(it != vi.<span class="hljs-built_in">end</span>())<br>&#123;<br>    cout &lt;&lt; *it &lt;&lt; endl;<br>    it++;<br>&#125;<br><br></code></pre></td></tr></table></figure>
-<h4 id="智能指针">1.4.3 智能指针</h4>
+<h4 id="1-4-3-智能指针">1.4.3 智能指针</h4>
 <p>只能遍历完整个数组，如果要遍历指定内容，参考方法一、二</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 1. 输入 </span><br><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(n)</span></span>; <br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;x: a) <br>&#123;<br>     cin &gt;&gt; x; <span class="hljs-comment">// 可以进行输入，注意加引用 </span><br>&#125; <br><br><span class="hljs-comment">// 2. 输出 </span><br>vector&lt;<span class="hljs-type">int</span>&gt; v; <br>v.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">12</span>); <br>v.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">241</span>); <br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> val : v) <br>&#123;<br>     cout &lt;&lt; val &lt;&lt; <span class="hljs-string">&quot; &quot;</span>; <span class="hljs-comment">// 12 241 </span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="stack">2 stack</h2>
-<h3 id="介绍-1">2.1 介绍</h3>
+<h2 id="2-stack">2 stack</h2>
+<h3 id="2-1-介绍">2.1 介绍</h3>
 <p>栈为数据结构的一种，实现先进后出(FILO)的容器</p>
-<h3 id="初始化-1">2.2 初始化</h3>
+<h3 id="2-2-初始化">2.2 初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stack&gt;</span></span><br><br>stack&lt;<span class="hljs-type">int</span>&gt; s1;<br>stack&lt;string&gt; s2;<br>stack&lt;node&gt; s3;<span class="hljs-comment">//node为结构体类型</span><br></code></pre></td></tr></table></figure>
-<h3 id="方法函数-1">2.3 方法函数</h3>
+<h3 id="2-3-方法函数">2.3 方法函数</h3>
 <table>
 <thead>
 <tr>
@@ -504,18 +503,18 @@
 </tr>
 </tbody>
 </table>
-<h3 id="栈遍历">2.4 栈遍历</h3>
+<h3 id="2-4-栈遍历">2.4 栈遍历</h3>
 <p>栈只能对栈顶元素进行操作，如果想要操作，只能将栈中元素一个个取出来存在数组中</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs CPP">stack&lt;<span class="hljs-type">int</span>&gt; st;<br><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) st.<span class="hljs-built_in">push</span>(i);<br><br><span class="hljs-keyword">while</span>(!st.<span class="hljs-built_in">empty</span>())<br>&#123;<br>     <span class="hljs-type">int</span> tp = st.<span class="hljs-built_in">top</span>();<br>     st.<span class="hljs-built_in">pop</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="数组模拟栈进行遍历">2.5 数组模拟栈进行遍历</h3>
+<h3 id="2-5-数组模拟栈进行遍历">2.5 数组模拟栈进行遍历</h3>
 <p>优点：比<code>STL</code>的<code>stack</code>速度更快，遍历元素更方便</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-type">int</span> s[<span class="hljs-number">100</span>];<br><span class="hljs-type">int</span> tt = <span class="hljs-number">-1</span>;<span class="hljs-comment">//tt代表栈顶指针，初始栈内无元素，tt为-1</span><br><br><span class="hljs-comment">//入栈</span><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">5</span>; i++)<br>&#123;<br>     s[++tt] = i;<br>&#125;<br><br><span class="hljs-comment">//出栈</span><br><span class="hljs-type">int</span> top_element = s[tt--];<br><br><span class="hljs-comment">//入栈示意图</span><br><span class="hljs-comment">//0 1 2 3 4 5</span><br><span class="hljs-comment">//          tt</span><br><span class="hljs-comment">//出栈后示意图</span><br><span class="hljs-comment">//0 1 2 3 4</span><br><span class="hljs-comment">//        tt</span><br></code></pre></td></tr></table></figure>
-<h2 id="queue">3 queue</h2>
-<h3 id="介绍-2">3.1 介绍</h3>
+<h2 id="3-queue">3 queue</h2>
+<h3 id="3-1-介绍">3.1 介绍</h3>
 <p>队列是一种先进先出的数据结构(FIFO)</p>
-<h3 id="初始化-2">3.2 初始化</h3>
+<h3 id="3-2-初始化">3.2 初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;queue&gt;</span><span class="hljs-comment">//别忘了头文件</span></span><br><br>queue&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
-<h3 id="方法函数-2">3.3 方法函数</h3>
+<h3 id="3-3-方法函数">3.3 方法函数</h3>
 <table>
 <thead>
 <tr>
@@ -550,21 +549,20 @@
 </tr>
 </tbody>
 </table>
-<h3 id="数组模拟">3.4 数组模拟</h3>
+<h3 id="3-4-数组模拟">3.4 数组模拟</h3>
 <p>使用<code>q[]</code>数组模拟队列</p>
 <p><code>hh</code>表示队首元素的下标，初始为0</p>
 <p><code>tt</code>表示队尾元素的下标，初始为-1，表示刚开始时队列为空</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>;<br><br><span class="hljs-type">int</span> q[N];<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>     <span class="hljs-type">int</span> hh = <span class="hljs-number">0</span>, tt = <span class="hljs-number">-1</span>;<br>     <span class="hljs-comment">//入队</span><br>     q[++tt] = <span class="hljs-number">1</span>;<br>     q[++tt] = <span class="hljs-number">2</span>;<br>     <span class="hljs-comment">//出队</span><br>     <span class="hljs-keyword">while</span>(hh &lt;= tt)<br>     &#123;<br>          <span class="hljs-type">int</span> t = q[hh++];<br>          <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, t);<br>     &#125;<br><br>     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="deque">4 deque</h2>
-<h3 id="介绍-3">4.1 介绍</h3>
-<p>首尾都可插入和删除的队列为双端队列<br />
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-comment">//添加头文件</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;deque&gt;</span></span><br><span class="hljs-comment">//初始化定义</span><br>deque&lt;<span class="hljs-type">int</span>&gt; dq;<br></code></pre></td></tr></table></figure></p>
-<h3 id="方法函数-3">4.2 方法函数</h3>
+<h2 id="4-deque">4 deque</h2>
+<h3 id="4-1-介绍">4.1 介绍</h3>
+<p>首尾都可插入和删除的队列为双端队列</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-comment">//添加头文件</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;deque&gt;</span></span><br><span class="hljs-comment">//初始化定义</span><br>deque&lt;<span class="hljs-type">int</span>&gt; dq;<br></code></pre></td></tr></table></figure>
+<h3 id="4-2-方法函数">4.2 方法函数</h3>
 <blockquote>
 <p>注意双端队列的常数比较大</p>
 </blockquote>
 <table>
-
 <thead>
 <tr>
 <th>代码</th>
@@ -576,22 +574,37 @@
 <tr>
 <td>push_back(x) / push_front(x)</td>
 <td>把<code>x</code>插入队尾后/队首</td>
-<td><span class="math inline">\(O(1)\)</span></td>
+<td>$O(1)$</td>
 </tr>
 <tr>
 <td>back() / front()</td>
 <td>返回队尾/队首元素</td>
-<td><span class="math inline">\(O(1)\)</span></td>
+<td>$O(1)$</td>
 </tr>
 <tr>
 <td>pop_back() / pop_front()</td>
 <td>删除队尾/队首元素</td>
-<td><span class="math inline">\(O(1)|
-|erase(iterator it)|删除双端队列中的某一个元素||
-|erase(iterator first, iterator last)|删除双端队列中[first,
-last)中的元素||
-|empty()|判断deque是否为空|\)</span>O(1)<span class="math inline">\(|
-|size()|返回deque的元素数量|\)</span>O(1)$</td>
+<td>$O(1)</td>
+</tr>
+<tr>
+<td>erase(iterator it)</td>
+<td>删除双端队列中的某一个元素</td>
+<td></td>
+</tr>
+<tr>
+<td>erase(iterator first, iterator last)</td>
+<td>删除双端队列中[first, last)中的元素</td>
+<td></td>
+</tr>
+<tr>
+<td>empty()</td>
+<td>判断deque是否为空</td>
+<td>$O(1)$</td>
+</tr>
+<tr>
+<td>size()</td>
+<td>返回deque的元素数量</td>
+<td>$O(1)$</td>
 </tr>
 <tr>
 <td>clear()</td>
@@ -600,16 +613,17 @@ last)中的元素||
 </tr>
 </tbody>
 </table>
-<h3 id="注意点">4.3 注意点</h3>
+<h3 id="4-3-注意点">4.3 注意点</h3>
 <blockquote>
-<p>deque可以进行排序 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-comment">//从小到大</span><br><span class="hljs-built_in">sort</span>(q.<span class="hljs-built_in">begin</span>(), q.<span class="hljs-built_in">end</span>());<br><span class="hljs-comment">//从大到小排列</span><br><span class="hljs-built_in">sort</span>(q.<span class="hljs-built_in">begin</span>(), q.<span class="hljs-built_in">end</span>(), <span class="hljs-built_in">greater</span>&lt;<span class="hljs-type">int</span>&gt;());<br></code></pre></td></tr></table></figure></p>
+<p>deque可以进行排序</p>
 </blockquote>
-<h2 id="priority_queue">5 priority_queue</h2>
-<h3 id="介绍-4">5.1 介绍</h3>
-<p>优先队列是在正常队列的基础上加了优先级，保证每次的队首元素都是优先级最大的。<br />
-可以实现每次从优先队列中取出的元素都是队列中优先级最大的一个。<br />
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-comment">//从小到大</span><br><span class="hljs-built_in">sort</span>(q.<span class="hljs-built_in">begin</span>(), q.<span class="hljs-built_in">end</span>());<br><span class="hljs-comment">//从大到小排列</span><br><span class="hljs-built_in">sort</span>(q.<span class="hljs-built_in">begin</span>(), q.<span class="hljs-built_in">end</span>(), <span class="hljs-built_in">greater</span>&lt;<span class="hljs-type">int</span>&gt;());<br></code></pre></td></tr></table></figure>
+<h2 id="5-priority-queue">5 priority_queue</h2>
+<h3 id="5-1-介绍">5.1 介绍</h3>
+<p>优先队列是在正常队列的基础上加了优先级，保证每次的队首元素都是优先级最大的。<br>
+可以实现每次从优先队列中取出的元素都是队列中优先级最大的一个。<br>
 它的底层是通过堆来实现的。</p>
-<h3 id="函数方法">5.2 函数方法</h3>
+<h3 id="5-2-函数方法">5.2 函数方法</h3>
 <table>
 <thead>
 <tr>
@@ -622,27 +636,27 @@ last)中的元素||
 <tr>
 <td>q.top()</td>
 <td>访问队首元素</td>
-<td><span class="math inline">\(O(1)\)</span></td>
+<td>$O(1)$</td>
 </tr>
 <tr>
 <td>q.push()</td>
 <td>入队</td>
-<td><span class="math inline">\(O(logN)\)</span></td>
+<td>$O(logN)$</td>
 </tr>
 <tr>
 <td>q.pop()</td>
 <td>堆顶(队首)元素出队</td>
-<td><span class="math inline">\(O(logN)\)</span></td>
+<td>$O(logN)$</td>
 </tr>
 <tr>
 <td>q.size()</td>
 <td>队列元素个数</td>
-<td><span class="math inline">\(O(1)\)</span></td>
+<td>$O(1)$</td>
 </tr>
 <tr>
 <td>q.empty()</td>
 <td>是否为空</td>
-<td><span class="math inline">\(O(1)\)</span></td>
+<td>$O(1)$</td>
 </tr>
 <tr>
 <td>注意没有clear()!</td>
@@ -651,19 +665,18 @@ last)中的元素||
 </tr>
 </tbody>
 </table>
-<h3 id="设置优先级">5.3 设置优先级</h3>
-<h3 id="基本数据类型的优先级">5.3.1 基本数据类型的优先级</h3>
+<h3 id="5-3-设置优先级">5.3 设置优先级</h3>
+<h3 id="5-3-1-基本数据类型的优先级">5.3.1 基本数据类型的优先级</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs CPP">priority_queue&lt;<span class="hljs-type">int</span>&gt; pq;<span class="hljs-comment">//默认大根堆，即每次取出的元素是队列中的最大值</span><br>priortiy_queue&lt;<span class="hljs-type">int</span>, vector&lt;<span class="hljs-type">int</span>&gt;, greater&lt;<span class="hljs-type">int</span>&gt;&gt; q;<span class="hljs-comment">//小根堆，每次取出的元素是队列中的最小值</span><br></code></pre></td></tr></table></figure>
-<h3 id="结构体优先级">5.3.2 结构体优先级</h3>
+<h3 id="5-3-2-结构体优先级">5.3.2 结构体优先级</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Point</span> &#123;<br>    <span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y;<br>&#125;;<br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">cmp</span> &#123;<br>	<span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">operator</span><span class="hljs-params">()</span> <span class="hljs-params">(<span class="hljs-type">const</span> Point&amp; a, <span class="hljs-type">const</span> Point&amp; b)</span>  </span>&#123;<br>        <span class="hljs-keyword">return</span> a.x &lt; b.x;<br>    &#125;<br>&#125;;<br><br><span class="hljs-built_in">priority_queue</span>(Point, vector&lt;point&gt;, cmp) q;<br></code></pre></td></tr></table></figure>
-<h2 id="map">6 map</h2>
-<h3 id="介绍-5">6.1 介绍</h3>
+<h2 id="6-map">6 map</h2>
+<h3 id="6-1-介绍">6.1 介绍</h3>
 <p>映射类似于函数的对应关系，每一个<code>x</code>对应一个<code>y</code>，而<code>map</code>是每个键对应一个值</p>
-<h3 id="初始化-3">6.2 初始化</h3>
+<h3 id="6-2-初始化">6.2 初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;map&gt;</span></span><br><br>map&lt;string, string&gt; mp1;<br>map&lt;string, <span class="hljs-type">int</span>&gt; mp2;<br>map&lt;<span class="hljs-type">int</span>, node&gt; mp3;<span class="hljs-comment">//node为结构体</span><br></code></pre></td></tr></table></figure>
-<h3 id="函数方法-1">6.3 函数方法</h3>
+<h3 id="6-3-函数方法">6.3 函数方法</h3>
 <table>
-
 <thead>
 <tr>
 <th>代码</th>
@@ -733,15 +746,14 @@ last)中的元素||
 </tr>
 </tbody>
 </table>
-<h2 id="set">7 set</h2>
-<h3 id="介绍-6">7.1 介绍</h3>
+<h2 id="7-set">7 set</h2>
+<h3 id="7-1-介绍">7.1 介绍</h3>
 <p><code>set</code>容器中的元素不会重复，当插入集合中已有的元素时不会插入进去，而且<code>set</code>容器里的元素自动从小到大排序</p>
 <p>即：不重复，且有序</p>
-<h3 id="初始化-4">7.2 初始化</h3>
+<h3 id="7-2-初始化">7.2 初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;set&gt;</span></span><br><br>set&lt;<span class="hljs-type">int</span>&gt; s;<br></code></pre></td></tr></table></figure>
-<h3 id="函数方法-2">7.3 函数方法</h3>
+<h3 id="7-3-函数方法">7.3 函数方法</h3>
 <table>
-
 <thead>
 <tr>
 <th>代码</th>
@@ -815,7 +827,7 @@ last)中的元素||
 </tr>
 </tbody>
 </table>
-<h3 id="访问-1">7.4 访问</h3>
+<h3 id="7-4-访问">7.4 访问</h3>
 <ul>
 <li>迭代器访问</li>
 </ul>
@@ -824,26 +836,29 @@ last)中的元素||
 <li>智能指针</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> i : s)<br>     cout &lt;&lt; i &lt;&lt; endl;<br></code></pre></td></tr></table></figure>
-<h2 id="pair">8 pair</h2>
-<h3 id="介绍-7">8.1 介绍</h3>
-<p>pair只含有两个元素，可以看作是只有两个元素的结论体<br />
-应用：<br />
-* 代替二元结构体 * 作为map键值对进行插入<br />
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;string,<span class="hljs-type">int</span>&gt;mp;<br>mp.<span class="hljs-built_in">insert</span>(<span class="hljs-built_in">pair</span>&lt;string,<span class="hljs-type">int</span>&gt;(<span class="hljs-string">&quot;xingmaqi&quot;</span>,<span class="hljs-number">1</span>));<br><span class="hljs-comment">// mp.insert(make_pair(&quot;xingmaqi&quot;, 1));</span><br><span class="hljs-comment">// mp.insert(&#123;&quot;xingmaqi&quot;, 1&#125;);</span><br></code></pre></td></tr></table></figure></p>
-<h3 id="访问-2">8.2 访问</h3>
+<h2 id="8-pair">8 pair</h2>
+<h3 id="8-1-介绍">8.1 介绍</h3>
+<p>pair只含有两个元素，可以看作是只有两个元素的结论体<br>
+应用：</p>
+<ul>
+<li>代替二元结构体</li>
+<li>作为map键值对进行插入</li>
+</ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;string,<span class="hljs-type">int</span>&gt;mp;<br>mp.<span class="hljs-built_in">insert</span>(<span class="hljs-built_in">pair</span>&lt;string,<span class="hljs-type">int</span>&gt;(<span class="hljs-string">&quot;xingmaqi&quot;</span>,<span class="hljs-number">1</span>));<br><span class="hljs-comment">// mp.insert(make_pair(&quot;xingmaqi&quot;, 1));</span><br><span class="hljs-comment">// mp.insert(&#123;&quot;xingmaqi&quot;, 1&#125;);</span><br></code></pre></td></tr></table></figure>
-<h2 id="string">9 string</h2>
-<h3 id="介绍-8">9.1 介绍</h3>
+<h3 id="8-2-访问">8.2 访问</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs CPP">map&lt;string,<span class="hljs-type">int</span>&gt;mp;<br>mp.<span class="hljs-built_in">insert</span>(<span class="hljs-built_in">pair</span>&lt;string,<span class="hljs-type">int</span>&gt;(<span class="hljs-string">&quot;xingmaqi&quot;</span>,<span class="hljs-number">1</span>));<br><span class="hljs-comment">// mp.insert(make_pair(&quot;xingmaqi&quot;, 1));</span><br><span class="hljs-comment">// mp.insert(&#123;&quot;xingmaqi&quot;, 1&#125;);</span><br></code></pre></td></tr></table></figure>
+<h2 id="9-string">9 string</h2>
+<h3 id="9-1-介绍">9.1 介绍</h3>
 <p><code>string</code>是一个字符串类，和<code>char</code>型字符串类似</p>
 <p>可以把<code>string</code>理解为一个字符串类型，像int一样定义</p>
-<h3 id="初始化-5">9.2 初始化</h3>
+<h3 id="9-2-初始化">9.2 初始化</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string&gt;</span></span><br><br>string str1;<span class="hljs-comment">//空字符串</span><br><br><span class="hljs-function">string <span class="hljs-title">str2</span><span class="hljs-params">(<span class="hljs-string">&quot;123456&quot;</span>)</span></span>;<br><br><span class="hljs-function">string <span class="hljs-title">str3</span><span class="hljs-params">(<span class="hljs-string">&quot;12345&quot;</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>)</span></span>;<span class="hljs-comment">//结果为&quot;123&quot;</span><br><span class="hljs-comment">//从0索引开始，长度为3</span><br><br><span class="hljs-function">string <span class="hljs-title">str4</span><span class="hljs-params">(<span class="hljs-string">&quot;12345&quot;</span>, <span class="hljs-number">3</span>)</span></span>;<span class="hljs-comment">//结果为&quot;123&quot;</span><br><br><span class="hljs-function">string <span class="hljs-title">str5</span><span class="hljs-params">(<span class="hljs-number">5</span>, <span class="hljs-string">&#x27;2&#x27;</span>)</span></span>;<span class="hljs-comment">//结果为&quot;22222&quot;</span><br><br><span class="hljs-function">string <span class="hljs-title">str6</span><span class="hljs-params">(str2, <span class="hljs-number">2</span>)</span></span>;<span class="hljs-comment">//结果为&quot;345&quot;；</span><br><span class="hljs-comment">//截取第二个索引及其之后的元素</span><br></code></pre></td></tr></table></figure>
-<h3 id="简单使用及其特性">9.3 简单使用及其特性</h3>
-<h4 id="访问单个字符">9.3.1 访问单个字符</h4>
+<h3 id="9-3-简单使用及其特性">9.3 简单使用及其特性</h3>
+<h4 id="9-3-1-访问单个字符">9.3.1 访问单个字符</h4>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>     string str=<span class="hljs-string">&quot;12345&quot;</span>;<br><br>     cout &lt;&lt; str[<span class="hljs-number">2</span>] &lt;&lt; endl;<br><br>     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>结果为3。</p>
 <p>从这个案例中就可以很直观的感受到string可以作为数组使用</p>
-<h4 id="string特性">9.3.2 string特性</h4>
+<h4 id="9-3-2-string特性">9.3.2 string特性</h4>
 <ul>
 <li>支持比较运算符
 <ul>
@@ -851,11 +866,12 @@ last)中的元素||
 <li>本质上是按字符顺序依次比较ASCII码</li>
 <li>常用ASCII码：<code>A：65</code>；<code>a：97</code>；<code>1： 49</code></li>
 <li>故而，在比较时，数字&lt;大写字母&lt;小写字母</li>
-</ul></li>
+</ul>
+</li>
 <li>支持<code>+</code>运算符，代表拼接</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>     string str1 = <span class="hljs-string">&quot;123&quot;</span>;<br>     string str2 = <span class="hljs-string">&quot;456&quot;</span>;<br>     string str3 = str1 + str2;<br>     cout &lt;&lt; str3 &lt;&lt; endl;<span class="hljs-comment">//输出结果为123456</span><br>     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="string读入">9.3.3 string读入</h4>
+<h4 id="9-3-3-string读入">9.3.3 string读入</h4>
 <p>读入字符串，遇空格，回车结束</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">string s;<br>cin &gt;&gt; s;<br></code></pre></td></tr></table></figure>
 <p>读入一行字符串(包括空格)，遇回车结束</p>
@@ -865,37 +881,38 @@ last)中的元素||
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> n;<br>string s;<br><br>cin &gt;&gt; n;<br>cin &gt;&gt; s;<br></code></pre></td></tr></table></figure>
 <p>正确示例</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> n;<br>string s;<br><br>cin &gt;&gt; n;<br><span class="hljs-built_in">getchar</span>();<br><span class="hljs-built_in">getline</span>(cin, s);<br></code></pre></td></tr></table></figure>
-<p><em>当时偶然看见一个大佬的解释，恍然大悟：</em><br />
+<p><em>当时偶然看见一个大佬的解释，恍然大悟：</em><br>
 <em><code>cin</code>输入完后，回车，<code>cin</code>遇到回车键结束，但回车还在输入流中，<code>cin</code>不会清除，导致<code>getline</code>读取回车，结束。所以后面的字符串并没有被正确输入</em></p>
-<h3 id="函数方法-3">9.4 函数方法</h3>
+<h3 id="9-4-函数方法">9.4 函数方法</h3>
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">string s <span class="hljs-operator">=</span> <span class="hljs-number">123</span><span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
-<p><em>注意：</em> <em>it为迭代器</em></p>
+<p><em>注意：</em><br>
+<em>it为迭代器</em></p>
 <ul>
 <li>插入</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">代码</th>
-<th style="text-align: left;">含义</th>
+<th style="text-align:left">代码</th>
+<th style="text-align:left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>s.push_back('element')</code></td>
-<td style="text-align: left;">在末尾插入</td>
+<td style="text-align:left"><code>s.push_back('element')</code></td>
+<td style="text-align:left">在末尾插入</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>s.insert(pos,'element')</code></td>
-<td style="text-align: left;">在pos位置插入element</td>
+<td style="text-align:left"><code>s.insert(pos,'element')</code></td>
+<td style="text-align:left">在pos位置插入element</td>
 </tr>
 <tr>
-<td style="text-align: left;">eg:s.insert(s.begin() + 2, 6)</td>
-<td style="text-align: left;">在第二个位置插入6，结果是1263</td>
+<td style="text-align:left">eg:s.insert(s.begin() + 2, 6)</td>
+<td style="text-align:left">在第二个位置插入6，结果是1263</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>s.append("str")</code></td>
-<td style="text-align: left;">在s字符串末尾添加str字符串</td>
+<td style="text-align:left"><code>s.append(&quot;str&quot;)</code></td>
+<td style="text-align:left">在s字符串末尾添加str字符串</td>
 </tr>
 </tbody>
 </table>
@@ -903,31 +920,28 @@ last)中的元素||
 <li>删除</li>
 </ul>
 <table>
-
 <thead>
 <tr>
-<th style="text-align: left;">代码</th>
-<th style="text-align: left;">含义</th>
+<th style="text-align:left">代码</th>
+<th style="text-align:left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>erase(iterator p)</code></td>
-<td style="text-align: left;">删除字符串中p所指字符</td>
+<td style="text-align:left"><code>erase(iterator p)</code></td>
+<td style="text-align:left">删除字符串中p所指字符</td>
 </tr>
 <tr>
-<td
-style="text-align: left;"><code>erase(iterator first, iterator last)</code></td>
-<td
-style="text-align: left;">删除字符串中迭代器区间<code>[first,last)</code>上的所有值</td>
+<td style="text-align:left"><code>erase(iterator first, iterator last)</code></td>
+<td style="text-align:left">删除字符串中迭代器区间<code>[first,last)</code>上的所有值</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>erase(pos, len)</code></td>
-<td style="text-align: left;">删除字符串中索引从pos开始的len个字符</td>
+<td style="text-align:left"><code>erase(pos, len)</code></td>
+<td style="text-align:left">删除字符串中索引从pos开始的len个字符</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>clear()</code></td>
-<td style="text-align: left;">清空字符串</td>
+<td style="text-align:left"><code>clear()</code></td>
+<td style="text-align:left">清空字符串</td>
 </tr>
 </tbody>
 </table>
@@ -937,25 +951,22 @@ style="text-align: left;">删除字符串中迭代器区间<code>[first,last)</c
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">代码</th>
-<th style="text-align: left;">含义</th>
+<th style="text-align:left">代码</th>
+<th style="text-align:left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>s.replace(pos, n, str)</code></td>
-<td
-style="text-align: left;">把当前字符串从索引pos开始的n个字符替换成str</td>
+<td style="text-align:left"><code>s.replace(pos, n, str)</code></td>
+<td style="text-align:left">把当前字符串从索引pos开始的n个字符替换成str</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>s.replace(pos, n, n1, c)</code></td>
-<td
-style="text-align: left;">把当前字符串从pos开始n个字符替换为n1个字符c</td>
+<td style="text-align:left"><code>s.replace(pos, n, n1, c)</code></td>
+<td style="text-align:left">把当前字符串从pos开始n个字符替换为n1个字符c</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>s.replace(it1, it2, str)</code></td>
-<td
-style="text-align: left;">把当前字符串<code>[it1, it2)</code>区间替换为str</td>
+<td style="text-align:left"><code>s.replace(it1, it2, str)</code></td>
+<td style="text-align:left">把当前字符串<code>[it1, it2)</code>区间替换为str</td>
 </tr>
 </tbody>
 </table>
@@ -966,41 +977,37 @@ style="text-align: left;">把当前字符串<code>[it1, it2)</code>区间替换�
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">代码</th>
-<th style="text-align: left;">含义</th>
+<th style="text-align:left">代码</th>
+<th style="text-align:left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>tolower(s[i])</code></td>
-<td style="text-align: left;">转换为小写</td>
+<td style="text-align:left"><code>tolower(s[i])</code></td>
+<td style="text-align:left">转换为小写</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>toupper(s[i])</code></td>
-<td style="text-align: left;">转换为大写</td>
+<td style="text-align:left"><code>toupper(s[i])</code></td>
+<td style="text-align:left">转换为大写</td>
 </tr>
 </tbody>
 </table>
 <p>多个字符的转换：</p>
 <table>
-
 <thead>
 <tr>
-<th style="text-align: left;">代码</th>
-<th style="text-align: left;">含义</th>
+<th style="text-align:left">代码</th>
+<th style="text-align:left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td
-style="text-align: left;"><code>transform(s.begin(), s.end(), s.begin(), ::tolower)</code></td>
-<td
-style="text-align: left;">转换小写。前两个参数指定容器转换起止范围，第三个参数是结果存放容器的开始位置</td>
+<td style="text-align:left"><code>transform(s.begin(), s.end(), s.begin(), ::tolower)</code></td>
+<td style="text-align:left">转换小写。前两个参数指定容器转换起止范围，第三个参数是结果存放容器的开始位置</td>
 </tr>
 <tr>
-<td
-style="text-align: left;"><code>transform(s.begin(), s.end(), s.begin(), ::toupper)</code></td>
-<td style="text-align: left;">转换大写</td>
+<td style="text-align:left"><code>transform(s.begin(), s.end(), s.begin(), ::toupper)</code></td>
+<td style="text-align:left">转换大写</td>
 </tr>
 </tbody>
 </table>
@@ -1010,24 +1017,22 @@ style="text-align: left;"><code>transform(s.begin(), s.end(), s.begin(), ::toupp
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">代码</th>
-<th style="text-align: left;">含义</th>
+<th style="text-align:left">代码</th>
+<th style="text-align:left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td
-style="text-align: left;"><code>s.size()</code>和<code>s.length()</code></td>
-<td style="text-align: left;">返回string字符串个数。两者一个意思</td>
+<td style="text-align:left"><code>s.size()</code>和<code>s.length()</code></td>
+<td style="text-align:left">返回string字符串个数。两者一个意思</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>s.max_size()</code></td>
-<td style="text-align: left;">返回string对象最多包含的字符数</td>
+<td style="text-align:left"><code>s.max_size()</code></td>
+<td style="text-align:left">返回string对象最多包含的字符数</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>s.capcity()</code></td>
-<td
-style="text-align: left;">重新分配内存之前，string对象能包含的最大字符数</td>
+<td style="text-align:left"><code>s.capcity()</code></td>
+<td style="text-align:left">重新分配内存之前，string对象能包含的最大字符数</td>
 </tr>
 </tbody>
 </table>
@@ -1037,14 +1042,14 @@ style="text-align: left;">重新分配内存之前，string对象能包含的最
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">代码</th>
-<th style="text-align: left;">含义</th>
+<th style="text-align:left">代码</th>
+<th style="text-align:left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">s.substr(pos, n)</td>
-<td style="text-align: left;">截取从pos索引开始的n个字符</td>
+<td style="text-align:left">s.substr(pos, n)</td>
+<td style="text-align:left">截取从pos索引开始的n个字符</td>
 </tr>
 </tbody>
 </table>
@@ -1052,32 +1057,28 @@ style="text-align: left;">重新分配内存之前，string对象能包含的最
 <li>查找</li>
 </ul>
 <table>
-
 <thead>
 <tr>
-<th style="text-align: left;">代码</th>
-<th style="text-align: left;">含义</th>
+<th style="text-align:left">代码</th>
+<th style="text-align:left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">s.find(str, pos)</td>
-<td
-style="text-align: left;">默认从索引0开始。从索引pos开始查找子串str,返回找到位置的索引。找不到返回-1</td>
+<td style="text-align:left">s.find(str, pos)</td>
+<td style="text-align:left">默认从索引0开始。从索引pos开始查找子串str,返回找到位置的索引。找不到返回-1</td>
 </tr>
 <tr>
-<td style="text-align: left;">s.find(c, pos)</td>
-<td style="text-align: left;">从pos索引开始查找字符c</td>
+<td style="text-align:left">s.find(c, pos)</td>
+<td style="text-align:left">从pos索引开始查找字符c</td>
 </tr>
 <tr>
-<td style="text-align: left;">s.rfind(str, pos)</td>
-<td
-style="text-align: left;">从当前字符串pos索引开始，反向查找子串s</td>
+<td style="text-align:left">s.rfind(str, pos)</td>
+<td style="text-align:left">从当前字符串pos索引开始，反向查找子串s</td>
 </tr>
 <tr>
-<td style="text-align: left;">s.rfind(c, pos)</td>
-<td
-style="text-align: left;">从当前字符串pos索引开始，反向查找字符c</td>
+<td style="text-align:left">s.rfind(c, pos)</td>
+<td style="text-align:left">从当前字符串pos索引开始，反向查找字符c</td>
 </tr>
 </tbody>
 </table>
@@ -1085,15 +1086,15 @@ style="text-align: left;">从当前字符串pos索引开始，反向查找字符
 <li>排序</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">sort</span>(s.<span class="hljs-built_in">begin</span>(), s.<span class="hljs-built_in">end</span>());<span class="hljs-comment">//按照ASCII码排序</span><br></code></pre></td></tr></table></figure>
-<h2 id="stl-函数">STL 函数</h2>
+<h2 id="STL-函数">STL 函数</h2>
 <h3 id="sort">sort</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-type">int</span> a[N];<br><span class="hljs-comment">//对 a 数组的[1, n]位置从小到大排序：</span><br><span class="hljs-built_in">sort</span>(a + <span class="hljs-number">1</span>, a + <span class="hljs-number">1</span> + n)<span class="hljs-comment">//因为 a + 1 是起始位置，a + 1 + n 是第 n + 1 个元素的指针，表示排序到第 n 个元素。</span><br><span class="hljs-comment">//对a数组的[0, n-1]位置从大到小排序</span><br><span class="hljs-built_in">sort</span>(a, a + n, <span class="hljs-built_in">greater</span>&lt;<span class="hljs-type">int</span>&gt;());<br><span class="hljs-comment">//对a数组的[0, n-1]位置从小到大排序</span><br><span class="hljs-built_in">sort</span>(a, a + n, <span class="hljs-built_in">less</span>&lt;<span class="hljs-type">int</span>&gt;());<br><br><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">b</span><span class="hljs-params">(n + <span class="hljs-number">1</span>)</span></span>; <br><span class="hljs-built_in">sort</span>(b.<span class="hljs-built_in">begin</span>() + <span class="hljs-number">1</span>, b.<span class="hljs-built_in">end</span>());<span class="hljs-comment">//升序</span><br><span class="hljs-built_in">sort</span>(b.<span class="hljs-built_in">begin</span>() + <span class="hljs-number">1</span>, b.<span class="hljs-built_in">end</span>(), <span class="hljs-built_in">greater</span>&lt;<span class="hljs-type">int</span>&gt;());<span class="hljs-comment">//降序</span><br></code></pre></td></tr></table></figure>
 <h3 id="unique">unique</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-built_in">unique</span>(beg, end)<br></code></pre></td></tr></table></figure>
-<p>时间复杂度：<span class="math inline">\(O(N)\)</span></p>
+<p>时间复杂度：$O(N)$</p>
 <blockquote>
-<p>消除重复元素，返回消除完重复元素的下一个位置的地址<br>
-如：<code>a[] = &#123;1, 3, 2, 3, 6&#125;</code>
+<p>消除重复元素，返回消除完重复元素的下一个位置的地址<br><br>
+如：<code>a[] = &#123;1, 3, 2, 3, 6&#125;</code><br>
 <code>unique</code>之后<code>a</code>数组为<code>&#123;1, 2, 3, 6, 3&#125;</code>前面为无重复元素的数组，后面则是重复元素移到后面，返回a[4]位置的地址（不重复元素的尾后地址）</p>
 </blockquote>
 <p>消除重复元素一般需要原序列是有序序列</p>

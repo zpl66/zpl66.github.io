@@ -18,12 +18,12 @@
   <meta name="author" content="饺子">
   <meta name="keywords" content="">
   
-    <meta name="description" content="0. 前言 爬虫其实就像是一个自动化的网络助手，它能够像人一样浏览网页，但是速度更快，效率更高。简单来说，爬虫就是一个程序，它可以自动访问网页，读取网页上的内容，并把你想要的信息提取出来。 举个例子：想象一下，你想了解某个商品的价格，通常你会打开网站，搜索这个商品，然后手动记录下它的价格。爬虫可以帮你做这件事，程序会自动打开网页，搜索商品，并把价格信息提取出来，甚至可以保存到一个文件里，这样你">
+    <meta name="description" content="0. 前言 爬虫其实就像是一个自动化的网络助手，它能够像人一样浏览网页，但是速度更快，效率更高。简单来说，爬虫就是一个程序，它可以自动访问网页，读取网页上的内容，并把你想要的信息提取出来。 举个例子：想象一下，你想了解某个商品的价格，通常你会打开网站，搜索这个商品，然后手动记录下它的价格。爬虫可以帮你做这件事，程序会自动打开网页，搜索商品，并把价格信息提取出来，甚至可以保存到一个文件里，这样你就不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="crawler">
 <meta property="og:url" content="http://crazythursdayv50tome.cn/2024/08/21/crawler/index.html">
 <meta property="og:site_name" content="Dumpling">
-<meta property="og:description" content="0. 前言 爬虫其实就像是一个自动化的网络助手，它能够像人一样浏览网页，但是速度更快，效率更高。简单来说，爬虫就是一个程序，它可以自动访问网页，读取网页上的内容，并把你想要的信息提取出来。 举个例子：想象一下，你想了解某个商品的价格，通常你会打开网站，搜索这个商品，然后手动记录下它的价格。爬虫可以帮你做这件事，程序会自动打开网页，搜索商品，并把价格信息提取出来，甚至可以保存到一个文件里，这样你">
+<meta property="og:description" content="0. 前言 爬虫其实就像是一个自动化的网络助手，它能够像人一样浏览网页，但是速度更快，效率更高。简单来说，爬虫就是一个程序，它可以自动访问网页，读取网页上的内容，并把你想要的信息提取出来。 举个例子：想象一下，你想了解某个商品的价格，通常你会打开网站，搜索这个商品，然后手动记录下它的价格。爬虫可以帮你做这件事，程序会自动打开网页，搜索商品，并把价格信息提取出来，甚至可以保存到一个文件里，这样你就不">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://crazythursdayv50tome.cn/images/%E8%89%B2%E5%BD%A9%E6%96%91%E6%96%93%EF%BC%8C%E5%85%85%E6%BB%A1%E6%B4%BB%E5%8A%9B%EF%BC%8C%E6%A2%A6%E5%B9%BB%E8%88%AC%E7%9A%84%E5%A4%AA%E9%98%B3%E7%B3%BB%E5%8D%A1%E9%80%9A%E8%AE%BE%E8%AE%A1%E9%A3%8E%E6%A0%BC.jpg">
 <meta property="article:published_time" content="2024-08-21T03:16:52.000Z">
@@ -279,7 +279,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k words
+          1.4k words
         
       </span>
     
@@ -340,52 +340,47 @@
             
               <div class="markdown-body">
                 
-                <h2 id="前言">0. 前言</h2>
+                <h2 id="0-前言">0. 前言</h2>
 <p>爬虫其实就像是一个自动化的网络助手，它能够像人一样浏览网页，但是速度更快，效率更高。简单来说，爬虫就是一个程序，它可以自动访问网页，读取网页上的内容，并把你想要的信息提取出来。</p>
 <p>举个例子：想象一下，你想了解某个商品的价格，通常你会打开网站，搜索这个商品，然后手动记录下它的价格。爬虫可以帮你做这件事，程序会自动打开网页，搜索商品，并把价格信息提取出来，甚至可以保存到一个文件里，这样你就不用自己一个一个去查找了。</p>
 <p>爬虫可以用于很多场景，比如从多个网站上收集商品信息，追踪新闻动态，甚至是抓取社交媒体上的数据。总之，爬虫就是一个帮你自动从互联网上获取数据的工具。</p>
 <p>我们平时都说Python爬虫，其实这里可能有个误解，爬虫并不是Python独有的，可以做爬虫的语言有很多例如：PHP,JAVA,C#,C++,Python，选择Python做爬虫是因为Python相对来说比较简单，而且功能比较齐全。</p>
 <p>本文使用的语言为python，IDE为pycharm</p>
-<h2 id="框架">1. 框架</h2>
-<p>本文使用的是<strong>Requests +
-Beautifulsoup</strong>组合作为框架，这也是一个非常经典的组合</p>
+<h2 id="1-框架">1. 框架</h2>
+<p>本文使用的是<strong>Requests + Beautifulsoup</strong>组合作为框架，这也是一个非常经典的组合</p>
 <p>他的原理是这样的：</p>
 <ul>
 <li><strong>Requests</strong>发送HTTP请求，比如获取网页的HTML内容</li>
 <li><strong>Beautifulsoup</strong>用于解析HTML并从中提取所需的数据</li>
 </ul>
-<h2 id="基础知识介绍">2. 基础知识介绍</h2>
-<h3 id="requests">2.1 Requests</h3>
+<h2 id="2-基础知识介绍">2. 基础知识介绍</h2>
+<h3 id="2-1-Requests">2.1 Requests</h3>
 <p><strong>什么是requests库</strong></p>
-<p><code>requests</code> 库主要用于与 Web
-服务进行通信。发送请求后服务器返回的响应会包含很多信息。<code>requests</code>库可以处理响应和管理对话</p>
+<p><code>requests</code> 库主要用于与 Web 服务进行通信。发送请求后服务器返回的响应会包含很多信息。<code>requests</code>库可以处理响应和管理对话</p>
 <p>**如何使用</p>
 <p>首先，我们要安装<code>Requests</code>库</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">pip install requests<br></code></pre></td></tr></table></figure>
 <p>下面案例是<code>Requests</code>库中<code>get()</code>方法发送一个get请求</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 导入requests库</span><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-comment"># 发送一个get请求并得到响应</span><br>r = requests.get(<span class="hljs-string">&#x27;http://crazythursdayv50tome.cn&#x27;</span>)<br><span class="hljs-comment"># 查看响应对象的类型</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(r))<br><span class="hljs-comment"># 查看响应状态码</span><br><span class="hljs-built_in">print</span>(r.status_code)<br><span class="hljs-comment"># 查看响应内容的类型</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(r.text))<br><span class="hljs-comment"># 查看cookies</span><br><span class="hljs-built_in">print</span>(r.cookies)<br></code></pre></td></tr></table></figure>
 <p>运行效果</p>
-<figure>
-<img src="/images/屏幕截图%202024-08-21%20121042.png" srcset="/img/loading.gif" lazyload alt="运行效果" />
-<figcaption aria-hidden="true">运行效果</figcaption>
-</figure>
+<p>![运行效果](/images/屏幕截图 2024-08-21 121042.png)</p>
 <p>查看响应的内容</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(r.text)<br></code></pre></td></tr></table></figure>
-<figure>
-<img src="/images/屏幕截图%202024-08-21%20121337.png" srcset="/img/loading.gif" lazyload alt="运行效果" />
-<figcaption aria-hidden="true">运行效果</figcaption>
-</figure>
+<p>![运行效果](/images/屏幕截图 2024-08-21 121337.png)</p>
 <p><strong>小贴士</strong></p>
 <blockquote>
-<ol type="1">
-<li><p>常见的状态码包括：</p>
-<ol type="1">
+<ol>
+<li>
+<p>常见的状态码包括：</p>
+<ol>
 <li><code>200 OK</code>:请求成功，服务器返回了所请求的资源</li>
 <li><code>404 Not Found</code>:服务器找不到请求的资源</li>
 <li><code>500 INternal Server Error</code>:服务器内部错误</li>
-</ol></li>
-<li><p>常见方法内容类型包括：</p>
-<ol type="1">
+</ol>
+</li>
+<li>
+<p>常见方法内容类型包括：</p>
+<ol>
 <li><code>text/html</code>:表示内容是HTML文档</li>
 <li><code>application/json</code>:表示内容是JSON数据</li>
 <li><code>image/png</code>:表示内容是啥PNG图片</li>
@@ -396,35 +391,32 @@ Beautifulsoup</strong>组合作为框架，这也是一个非常经典的组合<
 <li>如果是HTML，你可以用<code>BeautifulSoup</code>解析</li>
 <li>如果是JSON，你可以用python的<code>json</code>模块解析</li>
 <li>如果是图片或文件，你可以保存他们</li>
-</ul></li>
-</ul></li>
-<li><p>Cookies</p>
-<ol type="1">
-<li>Cookies
-是由服务器生成并发送到客户端（通常是浏览器）的小数据片段，这些数据会被浏览器存储并在随后的请求中发送回服务器。Cookies
-通常用于以下目的：
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Cookies</p>
+<ol>
+<li>Cookies 是由服务器生成并发送到客户端（通常是浏览器）的小数据片段，这些数据会被浏览器存储并在随后的请求中发送回服务器。Cookies 通常用于以下目的：
 <ul>
 <li><strong>会话管理</strong>：比如登陆状态、购物车内容等</li>
 <li><strong>个性化设置</strong>：比如用户的语言偏好、主题颜色等</li>
 <li><strong>用户跟踪</strong>：比如统计用户的访问行为，广告投放等</li>
-</ul></li>
-<li><code>&lt;RequestsCookieJar[]&gt;</code> 时，这表示当前
-<code>RequestsCookieJar</code> 对象是空的，即没有任何 Cookies
-存储在其中。</li>
-</ol></li>
+</ul>
+</li>
+<li><code>&lt;RequestsCookieJar[]&gt;</code> 时，这表示当前 <code>RequestsCookieJar</code> 对象是空的，即没有任何 Cookies 存储在其中。</li>
+</ol>
+</li>
 </ol>
 </blockquote>
 <p>其他类型的请求：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 当你需要向服务器发送数据以创建新的资源或提交表单时</span><br>r = requests.post(<span class="hljs-string">&#x27;crazythursdayv50tome.cn&#x27;</span>)<br><span class="hljs-comment"># 当你需要更新或替换服务器上的现有资源时</span><br>r = requests.put(<span class="hljs-string">&#x27;crazythursdayv50tome.cn&#x27;</span>)<br><span class="hljs-comment"># 当你需要删除服务器上的资源时</span><br>r = requests.delete(<span class="hljs-string">&#x27;crazythursdayv50tome.cn&#x27;</span>)<br><span class="hljs-comment"># 当你只需要检查资源的存在性或获取元数据时</span><br>r = requests.head(<span class="hljs-string">&#x27;crazythursdayv50tome.cn&#x27;</span>)<br><span class="hljs-comment"># 当你需要了解服务器支持哪些 HTTP 方法或进行 CORS 预检时</span><br>r = requests.options(<span class="hljs-string">&#x27;crazythursdayv50tome.cn&#x27;</span>)<br></code></pre></td></tr></table></figure>
-<h3 id="beautifulsoup库">2.2 BeautifulSoup库</h3>
+<h3 id="2-2-BeautifulSoup库">2.2 BeautifulSoup库</h3>
 <p><strong>什么是BeautifulSoup库？</strong></p>
-<p><code>BeautifulSoup</code> 是一个用于解析 HTML 和 XML 文档的 Python
-库。它可以把复杂的 HTML 文档转换成一个复杂的树形结构，其中每个节点都是
-Python 对象，表示 HTML 文档中的一部分，比如标签、属性、文本等。</p>
-<p><code>BeautifulSoup</code>
-使得从网页中提取数据变得非常简单。你可以通过标签名、属性、CSS
-选择器等方式来查找和操作网页内容。</p>
-<p><strong>原理：</strong>实例化一个<code>BeautifulSoup</code>对象，并且将页面源码数据加载到该对象中。之后通过调用<code>BeautifulSoup</code>对象中相关的属性或者方法进行标签定位和数据提取</p>
+<p><code>BeautifulSoup</code> 是一个用于解析 HTML 和 XML 文档的 Python 库。它可以把复杂的 HTML 文档转换成一个复杂的树形结构，其中每个节点都是 Python 对象，表示 HTML 文档中的一部分，比如标签、属性、文本等。</p>
+<p><code>BeautifulSoup</code> 使得从网页中提取数据变得非常简单。你可以通过标签名、属性、CSS 选择器等方式来查找和操作网页内容。</p>
+<p>**原理：**实例化一个<code>BeautifulSoup</code>对象，并且将页面源码数据加载到该对象中。之后通过调用<code>BeautifulSoup</code>对象中相关的属性或者方法进行标签定位和数据提取</p>
 <p><strong>使用BeautifulSoup库</strong></p>
 <p>首先，我们要安装<code>BeautifulSoup</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">pip install beautifulsoup4<br></code></pre></td></tr></table></figure>
@@ -433,24 +425,26 @@ Python 对象，表示 HTML 文档中的一部分，比如标签、属性、文�
 <p>要使用<code>BeautifulSoup</code>解析HTML文档，我们要先获取HTML文本</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br><br>url = <span class="hljs-string">&quot;https://crazythursdayv50tome.cn&quot;</span><br>response = requests.get(url)<br>html_content = response.text<br><br>soup = BeautifulSoup(html_content,<span class="hljs-string">&#x27;html.parser&#x27;</span>)<br></code></pre></td></tr></table></figure>
 <p>下面是一些常见操作：</p>
-<ol type="1">
-<li><p><strong>查找元素</strong></p>
-<ol type="1">
+<ol>
+<li>
+<p><strong>查找元素</strong></p>
+<ol>
 <li><strong>按标签名查找单个元素</strong></li>
 </ol>
 <p><code>find()</code>：返回第一个匹配的元素</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">title_tag = soup.find(<span class="hljs-string">&#x27;title&#x27;</span>)<br><span class="hljs-built_in">print</span>(title_tag) <span class="hljs-comment"># 输出&lt;title&gt;Dumpling&lt;/title&gt;</span><br><span class="hljs-built_in">print</span>(title_tag.string) <span class="hljs-comment"># 输出Dumpling</span><br></code></pre></td></tr></table></figure>
-<ol start="2" type="1">
+<ol start="2">
 <li><strong>按标签名查找所有元素</strong></li>
 </ol>
 <p><code>find_all()</code>:返回所有匹配的元素，返回一个列表</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">all_headers = soup.find_all(<span class="hljs-string">&#x27;h2&#x27;</span>, class_=<span class="hljs-string">&quot;index-header&quot;</span>)<br><br><span class="hljs-keyword">for</span> header <span class="hljs-keyword">in</span> all_headers:<br>    content = header.find(<span class="hljs-string">&#x27;a&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;content.text.strip()&#125;</span>&quot;</span>)<br></code></pre></td></tr></table></figure>
-<ol start="3" type="1">
+<ol start="3">
 <li><strong>按标签名和属性查找元素</strong></li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><br></code></pre></td></tr></table></figure></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><br></code></pre></td></tr></table></figure>
+</li>
 </ol>
-<h2 id="实例">3. 实例</h2>
+<h2 id="3-实例">3. 实例</h2>
 
                 
               </div>

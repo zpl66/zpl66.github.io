@@ -18,12 +18,12 @@
   <meta name="author" content="饺子">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. 引用公式  行内公式：使用$包裹公式。例如：  $n &#x3D; p_1^&#123;k_1&#125; p_2^&#123;k_2&#125; \dots p_r^&#123;k_r&#125;$ \(n &#x3D; p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}\)  独立公式：使用$$包裹公式 123$$  n &#x3D; p_1^&#123;k_1&#125; p_">
+    <meta name="description" content="1. 引用公式  行内公式：使用$包裹公式。例如：  $n &#x3D; p_1^&#123;k_1&#125; p_2^&#123;k_2&#125; \dots p_r^&#123;k_r&#125;$ $n &#x3D; p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}$  独立公式：使用$$包裹公式  123$$  n &#x3D; p_1^&#123;k_1&#125; p_2^&#123;k_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="markdown语法整理">
 <meta property="og:url" content="http://crazythursdayv50tome.cn/2024/08/25/markdown/index.html">
 <meta property="og:site_name" content="Dumpling">
-<meta property="og:description" content="1. 引用公式  行内公式：使用$包裹公式。例如：  $n &#x3D; p_1^&#123;k_1&#125; p_2^&#123;k_2&#125; \dots p_r^&#123;k_r&#125;$ \(n &#x3D; p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}\)  独立公式：使用$$包裹公式 123$$  n &#x3D; p_1^&#123;k_1&#125; p_">
+<meta property="og:description" content="1. 引用公式  行内公式：使用$包裹公式。例如：  $n &#x3D; p_1^&#123;k_1&#125; p_2^&#123;k_2&#125; \dots p_r^&#123;k_r&#125;$ $n &#x3D; p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}$  独立公式：使用$$包裹公式  123$$  n &#x3D; p_1^&#123;k_1&#125; p_2^&#123;k_">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://crazythursdayv50tome.cn/images/%E7%B4%AB%E8%89%B2%E5%A4%A9%E7%A9%BA%E4%B8%8B%E7%9A%84%E5%A4%96%E6%98%9F%E6%98%9F%E7%90%83%E6%99%AF%E8%A7%82.jpg">
 <meta property="article:published_time" content="2024-08-25T09:33:28.000Z">
@@ -339,29 +339,33 @@
             
               <div class="markdown-body">
                 
-                <h2 id="引用公式">1. 引用公式</h2>
+                <h2 id="1-引用公式">1. 引用公式</h2>
 <ul>
 <li><strong>行内公式</strong>：使用<code>$</code>包裹公式。例如：</li>
 </ul>
 <p><code>$n = p_1^&#123;k_1&#125; p_2^&#123;k_2&#125; \dots p_r^&#123;k_r&#125;$</code></p>
-<p><span class="math inline">\(n = p_1^{k_1} p_2^{k_2} \dots
-p_r^{k_r}\)</span></p>
+<p>$n = p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}$</p>
 <ul>
-<li><p><strong>独立公式</strong>：使用<code>$$</code>包裹公式<br />
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">$$  <br>n = p_1^&#123;k_1&#125; p_2^&#123;k_2&#125; \dots p_r^&#123;k_r&#125;  <br>$$<br></code></pre></td></tr></table></figure> <span class="math display">\[
-n = p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}
-\]</span></p></li>
-<li><p>公式加边框：<code>\boxed</code>命令修饰</p></li>
+<li><strong>独立公式</strong>：使用<code>$$</code>包裹公式</li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">$$  <br>n = p_1^&#123;k_1&#125; p_2^&#123;k_2&#125; \dots p_r^&#123;k_r&#125;  <br>$$<br></code></pre></td></tr></table></figure>
+<p>$$<br>
+n = p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}<br>
+$$</p>
+<ul>
+<li>公式加边框：<code>\boxed</code>命令修饰</li>
 </ul>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">$$  <br>\boxed&#123;n = p_1^&#123;k_1&#125; p_2^&#123;k_2&#125; \dots p_r^&#123;k_r&#125;&#125;  <br>$$<br></code></pre></td></tr></table></figure>
-<p><span class="math display">\[
-\boxed{n = p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}}  
-\]</span></p>
-<h2 id="特殊转义字符">2. 特殊转义字符</h2>
-<p><code># $ &amp; ~ _ ^ \ &#123; &#125; %</code>这些字符在<code>MaarkDown</code>中有特殊的意义，在需要使用这些字符时需要进行转义，即在前加上<code>\</code>。例如：<br />
-* <code>\#</code> -&gt; #<br />
-* <code>\~</code> -&gt; ~</p>
-<h2 id="希腊字母">3. 希腊字母</h2>
+<p>$$<br>
+\boxed{n = p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}}<br>
+$$</p>
+<h2 id="2-特殊转义字符">2. 特殊转义字符</h2>
+<p><code># $ &amp; ~ _ ^ \ &#123; &#125; %</code>这些字符在<code>MaarkDown</code>中有特殊的意义，在需要使用这些字符时需要进行转义，即在前加上<code>\</code>。例如：</p>
+<ul>
+<li><code>\#</code> -&gt; #</li>
+<li><code>\~</code> -&gt; ~</li>
+</ul>
+<h2 id="3-希腊字母">3. 希腊字母</h2>
 <table>
 <thead>
 <tr>
@@ -375,229 +379,216 @@ n = p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}
 <tbody>
 <tr>
 <td>alpha</td>
-<td><span class="math inline">\(A\)</span></td>
+<td>$A$</td>
 <td><code>$A$</code></td>
-<td><span class="math inline">\(\alpha\)</span></td>
+<td>$\alpha$</td>
 <td><code>$\alpha$</code></td>
 </tr>
 <tr>
 <td>beta</td>
-<td><span class="math inline">\(B\)</span></td>
+<td>$B$</td>
 <td><code>$B$</code></td>
-<td><span class="math inline">\(\beta\)</span></td>
+<td>$\beta$</td>
 <td><code>$\beta$</code></td>
 </tr>
 <tr>
 <td>gamma</td>
-<td><span class="math inline">\(\Gamma\)</span></td>
+<td>$\Gamma$</td>
 <td><code>$\Gamma$</code></td>
-<td><span class="math inline">\(\gamma\)</span></td>
+<td>$\gamma$</td>
 <td><code>$\gamma$</code></td>
 </tr>
 <tr>
 <td>delta</td>
-<td><span class="math inline">\(\Delta\)</span></td>
+<td>$\Delta$</td>
 <td><code>$\Delta$</code></td>
-<td><span class="math inline">\(\delta\)</span></td>
+<td>$\delta$</td>
 <td><code>\delta</code></td>
 </tr>
 <tr>
 <td>epsilon</td>
-<td><span class="math inline">\(E\)</span></td>
+<td>$E$</td>
 <td><code>$\Epsilon$</code></td>
-<td><span class="math inline">\(\epsilon\)</span></td>
+<td>$\epsilon$</td>
 <td><code>$\epsilon$</code></td>
 </tr>
 <tr>
 <td>zeta</td>
-<td><span class="math inline">\(Z\)</span></td>
+<td>$Z$</td>
 <td><code>$Z$</code></td>
-<td><span class="math inline">\(\zeta\)</span></td>
+<td>$\zeta$</td>
 <td><code>\zeta</code></td>
 </tr>
 <tr>
 <td>eta</td>
-<td><span class="math inline">\(H\)</span></td>
+<td>$H$</td>
 <td><code>$H$</code></td>
-<td><span class="math inline">\(\eta\)</span></td>
+<td>$\eta$</td>
 <td><code>$\eta$</code></td>
 </tr>
 <tr>
 <td>theta</td>
-<td><span class="math inline">\(\Theta\)</span></td>
+<td>$\Theta$</td>
 <td><code>$\Theta$</code></td>
-<td><span class="math inline">\(\theta\)</span></td>
+<td>$\theta$</td>
 <td><code>$\theta$</code></td>
 </tr>
 <tr>
 <td>iota</td>
-<td><span class="math inline">\(I\)</span></td>
+<td>$I$</td>
 <td><code>$I$</code></td>
-<td><span class="math inline">\(\iota\)</span></td>
+<td>$\iota$</td>
 <td><code>$\iota$</code></td>
 </tr>
 <tr>
 <td>kappa</td>
-<td><span class="math inline">\(K\)</span></td>
+<td>$K$</td>
 <td><code>$K$</code></td>
-<td><span class="math inline">\(\kappa\)</span></td>
+<td>$\kappa$</td>
 <td><code>$\kappa$</code></td>
 </tr>
 <tr>
 <td>lambda</td>
-<td><span class="math inline">\(\Lambda\)</span></td>
+<td>$\Lambda$</td>
 <td><code>$\Lambda$</code></td>
-<td><span class="math inline">\(\lambda\)</span></td>
+<td>$\lambda$</td>
 <td><code>$\lambda$</code></td>
 </tr>
 <tr>
 <td>mu</td>
-<td><span class="math inline">\(M\)</span></td>
+<td>$M$</td>
 <td><code>$M$</code></td>
-<td><span class="math inline">\(\mu\)</span></td>
+<td>$\mu$</td>
 <td><code>$\mu$</code></td>
 </tr>
 <tr>
 <td>nu</td>
-<td><span class="math inline">\(N\)</span></td>
+<td>$N$</td>
 <td><code>$N$</code></td>
-<td><span class="math inline">\(\nu\)</span></td>
+<td>$\nu$</td>
 <td><code>$\nu$</code></td>
 </tr>
 <tr>
 <td>xi</td>
-<td><span class="math inline">\(\Xi\)</span></td>
+<td>$\Xi$</td>
 <td><code>$\Xi$</code></td>
-<td><span class="math inline">\(\xi\)</span></td>
+<td>$\xi$</td>
 <td><code>$\xi$</code></td>
 </tr>
 <tr>
 <td>omicron</td>
-<td><span class="math inline">\(O\)</span></td>
+<td>$O$</td>
 <td><code>$O$</code></td>
-<td><span class="math inline">\(\omicron\)</span></td>
+<td>$\omicron$</td>
 <td><code>$\omicron$</code></td>
 </tr>
 <tr>
 <td>pi</td>
-<td><span class="math inline">\(\Pi\)</span></td>
+<td>$\Pi$</td>
 <td><code>$\Pi$</code></td>
-<td><span class="math inline">\(\pi\)</span></td>
+<td>$\pi$</td>
 <td><code>$\pi$</code></td>
 </tr>
 <tr>
 <td>rho</td>
-<td><span class="math inline">\(P\)</span></td>
+<td>$P$</td>
 <td><code>$P$</code></td>
-<td><span class="math inline">\(\rho\)</span></td>
+<td>$\rho$</td>
 <td><code>$\rho</code></td>
 </tr>
 <tr>
 <td>sigma</td>
-<td><span class="math inline">\(\Sigma\)</span></td>
+<td>$\Sigma$</td>
 <td><code>$\Sigma$</code></td>
-<td><span class="math inline">\(\sigma\)</span></td>
+<td>$\sigma$</td>
 <td><code>$\sigma$</code></td>
 </tr>
 <tr>
 <td>tau</td>
-<td><span class="math inline">\(T\)</span></td>
+<td>$T$</td>
 <td><code>$T$</code></td>
-<td><span class="math inline">\(\tau\)</span></td>
+<td>$\tau$</td>
 <td><code>$\tau$</code></td>
 </tr>
 <tr>
 <td>upsilon</td>
-<td><span class="math inline">\(\Upsilon\)</span></td>
+<td>$\Upsilon$</td>
 <td><code>$\Upsilon$</code></td>
-<td><span class="math inline">\(\upsilon\)</span></td>
+<td>$\upsilon$</td>
 <td><code>$\upsilon$</code></td>
 </tr>
 <tr>
 <td>phi</td>
-<td><span class="math inline">\(\Phi\)</span></td>
+<td>$\Phi$</td>
 <td><code>$\Phi$</code></td>
-<td><span class="math inline">\(\phi\)</span></td>
+<td>$\phi$</td>
 <td><code>$\phi$</code></td>
 </tr>
 <tr>
 <td>chi</td>
-<td><span class="math inline">\(X\)</span></td>
+<td>$X$</td>
 <td><code>$X$</code></td>
-<td><span class="math inline">\(\chi\)</span></td>
+<td>$\chi$</td>
 <td><code>$\chi$</code></td>
 </tr>
 <tr>
 <td>psi</td>
-<td><span class="math inline">\(\Psi\)</span></td>
+<td>$\Psi$</td>
 <td><code>$\Psi$</code></td>
-<td><span class="math inline">\(\psi\)</span></td>
+<td>$\psi$</td>
 <td><code>$\psi$</code></td>
 </tr>
 <tr>
 <td>omega</td>
-<td><span class="math inline">\(\Omega\)</span></td>
+<td>$\Omega$</td>
 <td><code>$\Omega$</code></td>
-<td><span class="math inline">\(\omega\)</span></td>
+<td>$\omega$</td>
 <td><code>$\omega$</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="上下标">4. 上下标</h2>
-<p>上下标分别用<code>^</code>和<code>_</code>表示。例如：<br />
-* <code>$x^2$</code> - &gt; <span
-class="math inline">\(x^2\)</span><br />
-* <code>$x_2$</code> - &gt; <span class="math inline">\(x_2\)</span></p>
-<p>默认情况下，<strong>上下标符号只对下一个组起作用</strong>。一个组即<strong>单个字符</strong>或<strong>使用<code>&#123;&#125;</code>包裹起来的内容</strong>。例如：<br />
-* <code>$10^10$</code> - &gt; <span
-class="math inline">\(10^10\)</span><br />
-* <code>$10^&#123;10&#125;$</code> - &gt; <span
-class="math inline">\(10^{10}\)</span><br />
-大括号还能消除二义性，如<code>$x^5^6$</code>会显示错误，必须要用大括号来界定<code>^</code>的结合性。例如：<br />
-* <code>$&#123;x^5&#125;^6$</code> - &gt; <span
-class="math inline">\({x^5}^6\)</span><br />
-* <code>$x^&#123;5^6&#125;$</code> - &gt; <span
-class="math inline">\(x^{5^6}\)</span><br />
-* <code>$x_i^2$</code> - &gt; <span
-class="math inline">\(x_i^2\)</span><br />
-* <code>$x_&#123;i^2&#125;$</code> - &gt; <span
-class="math inline">\(x_{i^2}\)</span></p>
-<h2 id="根号分数括号">5. 根号、分数、括号</h2>
-<h3 id="根号">5.1 根号</h3>
-<p>通用表达方式为<code>$\sqrt[a]&#123;b&#125;$</code> - &gt; <span
-class="math inline">\(\sqrt[a]{b}\)</span><br />
-*
-<code>[]</code>内的<code>a</code>表示开<code>a</code>次方。若省略则表示开平方。如：<code>$\sqrt[]&#123;b&#125;$</code>
-- &gt; <span class="math inline">\(\sqrt[]{b}\)</span> *
-如果被开方的是单个字符，<code>&#123;&#125;</code>可以省略，<code>$\sqrt[a]b$</code>
-- &gt; <span class="math inline">\(\sqrt[a]b\)</span></p>
-<h3 id="分数">5.2 分数</h3>
-<p>分数有两种表示方法<br />
-* 第一种是使用<code>$\frac &#123;a&#125;&#123;b&#125;$</code> - &gt; <span
-class="math inline">\(\frac {a}{b}\)</span><br />
-*
-第二种是使用<code>$\over$</code>来分割一个组的前后两部分。<code>$a+1 \over b+1$</code>
-- &gt; <span class="math inline">\(a+1 \over b+1\)</span></p>
-<h3 id="括号">5.3 括号</h3>
+<h2 id="4-上下标">4. 上下标</h2>
+<p>上下标分别用<code>^</code>和<code>_</code>表示。例如：</p>
 <ul>
-<li><strong>小括号和方括号</strong>：使用原始的<code>()</code>和<code>[]</code>即可。<code>$(2+3)[4+4]$</code>
-- &gt; <span class="math inline">\((2+3)[4+4]\)</span></li>
-<li><strong>大括号</strong>：由于<code>&#123;&#125;</code>用来分组，因此需要用<code>\&#123;</code>和<code>\&#125;</code>来进行转移表示大括号。也可以使用<code>\lbrace</code>和<code>\rbrace</code>来表示。如<code>$\&#123;a*b\&#125;$</code>和<code>$\lbrace a*b \rbrace$</code>都会显示为<span
-class="math inline">\(\lbrace a*b \rbrace\)</span></li>
-<li><strong>尖括号</strong>：使用<code>\langle</code>和<code>\rangle</code>分别表示左尖括号和右尖括号。<code>$\langle x \rangle$</code>
-- &gt; <span class="math inline">\(\langle x \rangle\)</span></li>
-<li><strong>向上取整</strong>：使用<code>\lceil</code>和<code>\rceil</code>表示。<code>$\lceil x \rceil$</code>
-- &gt; <span class="math inline">\(\lceil x \rceil\)</span></li>
-<li><strong>向下取整</strong>：使用<code>\lfloor</code>和<code>\rfloor</code>表示。<code>$\lfloor x \rfloor$</code>
-- &gt; <span class="math inline">\(\lfloor x \rfloor\)</span></li>
+<li><code>$x^2$</code> - &gt; $x^2$</li>
+<li><code>$x_2$</code> - &gt; $x_2$</li>
 </ul>
-<h2 id="数学运算符与数学符号">6. 数学运算符与数学符号</h2>
-<h3 id="常规使用">6.1 常规使用</h3>
+<p>默认情况下，<strong>上下标符号只对下一个组起作用</strong>。一个组即<strong>单个字符</strong>或<strong>使用<code>&#123;&#125;</code>包裹起来的内容</strong>。例如：</p>
+<ul>
+<li><code>$10^10$</code> - &gt; $10^10$</li>
+<li><code>$10^&#123;10&#125;$</code> - &gt; $10^{10}$<br>
+大括号还能消除二义性，如<code>$x^5^6$</code>会显示错误，必须要用大括号来界定<code>^</code>的结合性。例如：</li>
+<li><code>$&#123;x^5&#125;^6$</code> - &gt; ${x^5}^6$</li>
+<li><code>$x^&#123;5^6&#125;$</code> - &gt; $x^{5^6}$</li>
+<li><code>$x_i^2$</code> - &gt; $x_i^2$</li>
+<li><code>$x_&#123;i^2&#125;$</code> - &gt; $x_{i^2}$</li>
+</ul>
+<h2 id="5-根号、分数、括号">5. 根号、分数、括号</h2>
+<h3 id="5-1-根号">5.1 根号</h3>
+<p>通用表达方式为<code>$\sqrt[a]&#123;b&#125;$</code> - &gt; $\sqrt[a]{b}$</p>
+<ul>
+<li><code>[]</code>内的<code>a</code>表示开<code>a</code>次方。若省略则表示开平方。如：<code>$\sqrt[]&#123;b&#125;$</code> - &gt; $\sqrt[]{b}$</li>
+<li>如果被开方的是单个字符，<code>&#123;&#125;</code>可以省略，<code>$\sqrt[a]b$</code> - &gt; $\sqrt[a]b$</li>
+</ul>
+<h3 id="5-2-分数">5.2 分数</h3>
+<p>分数有两种表示方法</p>
+<ul>
+<li>第一种是使用<code>$\frac &#123;a&#125;&#123;b&#125;$</code> - &gt; $\frac {a}{b}$</li>
+<li>第二种是使用<code>$\over$</code>来分割一个组的前后两部分。<code>$a+1 \over b+1$</code> - &gt; $a+1 \over b+1$</li>
+</ul>
+<h3 id="5-3-括号">5.3 括号</h3>
+<ul>
+<li><strong>小括号和方括号</strong>：使用原始的<code>()</code>和<code>[]</code>即可。<code>$(2+3)[4+4]$</code> - &gt; $(2+3)[4+4]$</li>
+<li><strong>大括号</strong>：由于<code>&#123;&#125;</code>用来分组，因此需要用<code>\&#123;</code>和<code>\&#125;</code>来进行转移表示大括号。也可以使用<code>\lbrace</code>和<code>\rbrace</code>来表示。如<code>$\&#123;a*b\&#125;$</code>和<code>$\lbrace a*b \rbrace$</code>都会显示为$\lbrace a*b \rbrace$</li>
+<li><strong>尖括号</strong>：使用<code>\langle</code>和<code>\rangle</code>分别表示左尖括号和右尖括号。<code>$\langle x \rangle$</code> - &gt; $\langle x \rangle$</li>
+<li><strong>向上取整</strong>：使用<code>\lceil</code>和<code>\rceil</code>表示。<code>$\lceil x \rceil$</code> - &gt; $\lceil x \rceil$</li>
+<li><strong>向下取整</strong>：使用<code>\lfloor</code>和<code>\rfloor</code>表示。<code>$\lfloor x \rfloor$</code> - &gt; $\lfloor x \rfloor$</li>
+</ul>
+<h2 id="6-数学运算符与数学符号">6. 数学运算符与数学符号</h2>
+<h3 id="6-1-常规使用">6.1 常规使用</h3>
 <p><code>+ - * / =</code>这五个直接输入即可</p>
-<h3 id="特殊形式的数学运算符与数学符号">6.2
-特殊形式的数学运算符与数学符号</h3>
-<table style="width:100%;">
-
+<h3 id="6-2-特殊形式的数学运算符与数学符号">6.2 特殊形式的数学运算符与数学符号</h3>
+<table>
 <thead>
 <tr>
 <th>符号</th>
@@ -610,176 +601,182 @@ class="math inline">\(\lbrace a*b \rbrace\)</span></li>
 </thead>
 <tbody>
 <tr>
-<td><span class="math inline">\(\pm\)</span></td>
+<td>$\pm$</td>
 <td><code>$\pm$</code></td>
-<td><span class="math inline">\(\mp\)</span></td>
+<td>$\mp$</td>
 <td><code>$\mp$</code></td>
-<td><span class="math inline">\(\cdot\)</span></td>
+<td>$\cdot$</td>
 <td><code>$\cdot$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\times\)</span></td>
+<td>$\times$</td>
 <td><code>$\times$</code></td>
-<td><span class="math inline">\(\div\)</span></td>
+<td>$\div$</td>
 <td><code>$\div$</code></td>
-<td><span class="math inline">\(\star\)</span></td>
+<td>$\star$</td>
 <td><code>$\star$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\ast\)</span></td>
+<td>$\ast$</td>
 <td><code>$\ast$</code></td>
-<td><span class="math inline">\(\cup\)</span></td>
+<td>$\cup$</td>
 <td><code>$\cup$</code></td>
-<td><span class="math inline">\(\cap\)</span></td>
+<td>$\cap$</td>
 <td><code>$\cap$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\vee\)</span></td>
+<td>$\vee$</td>
 <td><code>$\vee$</code>或<code>$\lor$</code></td>
-<td><span class="math inline">\(\wedge\)</span></td>
+<td>$\wedge$</td>
 <td><code>$\wedge$</code>或<code>$\land$</code></td>
-<td><span class="math inline">\(\simeq\)</span></td>
+<td>$\simeq$</td>
 <td><code>$\simwq$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\oplus\)</span></td>
+<td>$\oplus$</td>
 <td><code>$\oplus$</code></td>
-<td><span class="math inline">\(\otimes\)</span></td>
+<td>$\otimes$</td>
 <td><code>$\otimes$</code></td>
-<td><span class="math inline">\(\sim\)</span></td>
+<td>$\sim$</td>
 <td><code>$\sim$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\circ\)</span></td>
+<td>$\circ$</td>
 <td><code>$\circ$</code></td>
-<td><span class="math inline">\(\bullet\)</span></td>
+<td>$\bullet$</td>
 <td><code>$\bullet$</code></td>
-<td><span class="math inline">\(\subset\)</span></td>
+<td>$\subset$</td>
 <td><code>$\subset$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\bigtriangleup\)</span></td>
+<td>$\bigtriangleup$</td>
 <td><code>$\bigtriangleup$</code></td>
-<td><span class="math inline">\(\bigtriangledown\)</span></td>
+<td>$\bigtriangledown$</td>
 <td><code>$\bigtriangledown$</code></td>
-<td><span class="math inline">\(\supset\)</span></td>
+<td>$\supset$</td>
 <td><code>$\supset$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\nabla\)</span></td>
+<td>$\nabla$</td>
 <td><code>$\nabla$</code></td>
-<td><span class="math inline">\(\exists\)</span></td>
+<td>$\exists$</td>
 <td><code>$\exists$</code></td>
-<td><span class="math inline">\(\subseteq\)</span></td>
+<td>$\subseteq$</td>
 <td><code>$\subseteq$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\partial\)</span></td>
+<td>$\partial$</td>
 <td><code>$\partial$</code></td>
-<td><span class="math inline">\(\infty\)</span></td>
+<td>$\infty$</td>
 <td><code>$\infty$</code></td>
-<td><span class="math inline">\(\subseteq\)</span></td>
+<td>$\subseteq$</td>
 <td><code>$\subseteq$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\forall\)</span></td>
+<td>$\forall$</td>
 <td><code>$\forall$</code></td>
-<td><span class="math inline">\(\surd\)</span></td>
+<td>$\surd$</td>
 <td><code>$\surd$</code></td>
-<td><span class="math inline">\(\in\)</span></td>
+<td>$\in$</td>
 <td><code>$\in$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\angle\)</span></td>
+<td>$\angle$</td>
 <td><code>\angle</code></td>
-<td><span class="math inline">\(\bot\)</span></td>
+<td>$\bot$</td>
 <td><code>$\bot$</code></td>
-<td><span class="math inline">\(\ni\)</span></td>
+<td>$\ni$</td>
 <td><code>$\ni$</code>或者<code>$\owns$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\leq\)</span></td>
+<td>$\leq$</td>
 <td><code>\leq</code>或者<code>\le</code></td>
-<td><span class="math inline">\(\geq\)</span></td>
+<td>$\geq$</td>
 <td><code>$\geq$</code>或者<code>$\ge$</code></td>
-<td><span class="math inline">\(\notin\)</span></td>
+<td>$\notin$</td>
 <td><code>$\notin$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\equiv\)</span></td>
+<td>$\equiv$</td>
 <td><code>$\equiv$</code></td>
-<td><span class="math inline">\(\approx\)</span></td>
+<td>$\approx$</td>
 <td><code>$\approx$</code></td>
-<td><span class="math inline">\(\neq\)</span></td>
+<td>$\neq$</td>
 <td><code>\neq</code>或者<code>\ne</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\lll\)</span></td>
+<td>$\lll$</td>
 <td><code>$\lll$</code></td>
-<td><span class="math inline">\(\ggg\)</span></td>
+<td>$\ggg$</td>
 <td><code>$\ggg$</code></td>
-<td></td>
+<td>\cong</td>
 <td><code>\cong</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\propto\)</span></td>
+<td>$\propto$</td>
 <td><code>$\propto$</code></td>
-<td><span class="math inline">\(\varsubsetneqq\)</span></td>
+<td>$\varsubsetneqq$</td>
 <td><code>$\varsubsetneqq$</code></td>
-<td><span class="math inline">\(\varsupsetneqq\)</span></td>
+<td>$\varsupsetneqq$</td>
 <td><code>$\varsupsetneqq$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\mid\)</span></td>
+<td>$\mid$</td>
 <td><code>$\mid$</code></td>
-<td><span class="math inline">\(\Rrightarrow\)</span></td>
+<td>$\Rrightarrow$</td>
 <td><code>$Rrightarrow$</code></td>
-<td><span class="math inline">\(\Lleftarrow\)</span></td>
+<td>$\Lleftarrow$</td>
 <td><code>$Lleftarrow$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\parallel\)</span></td>
+<td>$\parallel$</td>
 <td><code>$\parallel$</code></td>
-<td><span class="math inline">\(\upharpoonright\)</span></td>
+<td>$\upharpoonright$</td>
 <td><code>$upharpoonright$</code></td>
-<td><span class="math inline">\(\downharpoonright\)</span></td>
+<td>$\downharpoonright$</td>
 <td><code>$downharpoonright$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\because\)</span></td>
+<td>$\because$</td>
 <td><code>$\because$</code></td>
-<td><span class="math inline">\(\therefore\)</span></td>
+<td>$\therefore$</td>
 <td><code>$\therefore$</code></td>
 <td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="省略号空白间隔分界符">7. 省略号、空白间隔、分界符</h2>
-<h3 id="省略号">7.1 省略号</h3>
-<p>省略号用<code>\dots \cdots \vdots \ddots</code>表示<br />
-* <code>$\dots$</code> - &gt; <span
-class="math inline">\(\dots\)</span>，位置比较低 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">$$<br>x_1, x_2, \dots, x_n<br>$$<br></code></pre></td></tr></table></figure> <span
-class="math display">\[
-x_1, x_2, \dots, x_n
-\]</span> * <code>$\cdots$</code> - &gt; <span
-class="math inline">\(\cdots\)</span>，位置居中 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">$$<br>1, 2, \cdots, n<br>$$<br></code></pre></td></tr></table></figure> <span
-class="math display">\[
-1, 2, \cdots, n
-\]</span> * <code>$\vdots$</code> - &gt; <span
-class="math inline">\(\vdots\)</span>，竖直省略号<br />
-* <code>$\ddots$</code> - &gt; <span
-class="math inline">\(\ddots\)</span>，45°方向省略号</p>
-<h3 id="空白间隔">7.2 空白间隔</h3>
-<p><code>$\quad$</code> - &gt; <span
-class="math inline">\(\quad\)</span><br />
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text">$\,$ 3/18em   <br>$\:$  4/18em  <br>$\;$ 5/18em <br>$\quad$ 1em <br>$\qquad$ 2m <br>$\!$ -3/18em<br></code></pre></td></tr></table></figure> <span class="math inline">\(\,\)</span> 3/18em<br />
-<span class="math inline">\(\:\)</span> 4/18em<br />
-<span class="math inline">\(\;\)</span> 5/18em<br />
-<span class="math inline">\(\quad\)</span> 1em<br />
-<span class="math inline">\(\qquad\)</span> 2m<br />
-<span class="math inline">\(\!\)</span> -3/18em</p>
-<h3 id="分界符">7.3 分界符</h3>
+<h2 id="7-省略号、空白间隔、分界符">7. 省略号、空白间隔、分界符</h2>
+<h3 id="7-1-省略号">7.1 省略号</h3>
+<p>省略号用<code>\dots \cdots \vdots \ddots</code>表示</p>
+<ul>
+<li><code>$\dots$</code> - &gt; $\dots$，位置比较低</li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">$$<br>x_1, x_2, \dots, x_n<br>$$<br></code></pre></td></tr></table></figure>
+<p>$$<br>
+x_1, x_2, \dots, x_n<br>
+$$</p>
+<ul>
+<li><code>$\cdots$</code> - &gt; $\cdots$，位置居中</li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">$$<br>1, 2, \cdots, n<br>$$<br></code></pre></td></tr></table></figure>
+<p>$$<br>
+1, 2, \cdots, n<br>
+$$</p>
+<ul>
+<li><code>$\vdots$</code> - &gt; $\vdots$，竖直省略号</li>
+<li><code>$\ddots$</code> - &gt; $\ddots$，45°方向省略号</li>
+</ul>
+<h3 id="7-2-空白间隔">7.2 空白间隔</h3>
+<p><code>$\quad$</code> - &gt; $\quad$</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text">$\,$ 3/18em   <br>$\:$  4/18em  <br>$\;$ 5/18em <br>$\quad$ 1em <br>$\qquad$ 2m <br>$\!$ -3/18em<br></code></pre></td></tr></table></figure>
+<p>$,$ 3/18em<br>
+$:$  4/18em<br>
+$;$ 5/18em<br>
+$\quad$ 1em<br>
+$\qquad$ 2m<br>
+$!$ -3/18em</p>
+<h3 id="7-3-分界符">7.3 分界符</h3>
 <table>
 <thead>
 <tr>
@@ -791,29 +788,30 @@ class="math inline">\(\quad\)</span><br />
 </thead>
 <tbody>
 <tr>
-<td><span class="math inline">\(\lgroup\)</span></td>
+<td>$\lgroup$</td>
 <td><code>$\lgroup$</code></td>
-<td><span class="math inline">\(\rgroup\)</span></td>
+<td>$\rgroup$</td>
 <td><code>$\group$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\lmoustache\)</span></td>
+<td>$\lmoustache$</td>
 <td><code>$\lmoustache$</code></td>
-<td><span class="math inline">\(\rmoustache\)</span></td>
+<td>$\rmoustache$</td>
 <td><code>$\rmoustache$</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="分段函数">8. 分段函数</h2>
-<p><code>&amp;</code>表示对齐，<code>\\</code>表示换行，<code>\qquad</code>可以表示空格
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">$$<br>函数名=\begin&#123;cases&#125;<br>公式1 &amp; 条件1 \\<br>公式2 &amp; 条件2 \\<br>公式3 &amp; 条件3 \\<br>\end&#123;cases&#125;<br>$$<br></code></pre></td></tr></table></figure> <span class="math display">\[
-函数名=\begin{cases}
-公式1 &amp; 条件1 \\
-公式2 &amp; 条件2 \\
-公式3 &amp; 条件3 \\
-\end{cases}
-\]</span></p>
-<h2 id="大型数学运算符">9. 大型数学运算符</h2>
+<h2 id="8-分段函数">8. 分段函数</h2>
+<p><code>&amp;</code>表示对齐，<code>\\</code>表示换行，<code>\qquad</code>可以表示空格</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">$$<br>函数名=\begin&#123;cases&#125;<br>公式1 &amp; 条件1 \\<br>公式2 &amp; 条件2 \\<br>公式3 &amp; 条件3 \\<br>\end&#123;cases&#125;<br>$$<br></code></pre></td></tr></table></figure>
+<p>$$<br>
+函数名=\begin{cases}<br>
+公式1 &amp; 条件1 \<br>
+公式2 &amp; 条件2 \<br>
+公式3 &amp; 条件3 \<br>
+\end{cases}<br>
+$$</p>
+<h2 id="9-大型数学运算符">9. 大型数学运算符</h2>
 <table>
 <thead>
 <tr>
@@ -825,78 +823,62 @@ class="math inline">\(\quad\)</span><br />
 </thead>
 <tbody>
 <tr>
-<td><span class="math inline">\(\sum\)</span></td>
+<td>$\sum$</td>
 <td><code>$\sum$</code></td>
-<td><span class="math inline">\(\int\)</span></td>
+<td>$\int$</td>
 <td><code>$\int$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\prod\)</span></td>
+<td>$\prod$</td>
 <td><code>$\prod$</code></td>
-<td><span class="math inline">\(\iint\)</span></td>
+<td>$\iint$</td>
 <td><code>$\iint$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\coprod\)</span></td>
+<td>$\coprod$</td>
 <td><code>$\coprod$</code></td>
-<td><span class="math inline">\(\iiint\)</span></td>
+<td>$\iiint$</td>
 <td><code>$\iiint$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\bigvee\)</span></td>
+<td>$\bigvee$</td>
 <td><code>$\bigvee$</code></td>
-<td><span class="math inline">\(\bigwedge\)</span></td>
+<td>$\bigwedge$</td>
 <td><code>$\bigwedge$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\bigoplus\)</span></td>
+<td>$\bigoplus$</td>
 <td><code>$\bigoplus$</code></td>
-<td><span class="math inline">\(\bigotimes\)</span></td>
+<td>$\bigotimes$</td>
 <td><code>$\bigotimes$</code></td>
 </tr>
 <tr>
-<td><span class="math inline">\(\bigcup\)</span></td>
+<td>$\bigcup$</td>
 <td><code>$\bigcup$</code></td>
-<td><span class="math inline">\(\lim\)</span></td>
+<td>$\lim$</td>
 <td><code>$\lim$</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="使用上标和下标分别表示运算符号的上下限">9.1
-使用上标和下标分别表示运算符号的上下限</h3>
-<p><code>$\sum_0^\infty$</code> - &gt; <span
-class="math inline">\(\sum_0^\infty\)</span><br />
-<code>$\int_&#123;-\infty&#125;^&#123;\infty&#125;$</code> - &gt; <span
-class="math inline">\(\int_{-\infty}^{\infty}\)</span><br />
-<code>$\lim_&#123;x\to0&#125; &#123;sinx \over x&#125;$</code> - &gt; <span
-class="math inline">\(\lim_{x\to0}{sinx \over x}\)</span></p>
-<h3 id="使用to表示趋近于的箭头">9.2
-使用<code>\to</code>表示趋近于的箭头</h3>
-<p><code>$x\to0$</code> - &gt; <span
-class="math inline">\(x\to0\)</span></p>
-<h3 id="和积极限积分等运算符">9.3 和、积、极限、积分等运算符</h3>
-<p>用<code>\sum</code>,<code>\prod</code>,<code>\lim</code>,<code>\int</code>，这些公式在行内公式被压缩，以适应行高，可以通过<code>\limits</code>和<code>\nolimits</code>命令显示是否压缩<br />
-<code>$\int\limits_&#123;-\infty&#125;^&#123;\infty&#125; \frac &#123;sinx&#125;xdx$</code> - &gt;
-<span class="math inline">\(\int\limits_{-\infty}^{\infty} \frac
-{sinx}xdx\)</span><br />
-<code>$\int\nolimits_&#123;-\infty&#125;^&#123;\infty&#125; \frac &#123;sinx&#125;xdx$</code> - &gt;
-<span class="math inline">\(\int\limits_{-\infty}^{\infty} \frac
-{sinx}xdx\)</span><br />
-<code>$\lim\limits_&#123;n\to&#123;+\infty&#125;&#125; \frac&#123;n-1&#125;&#123;n(n+1)(n+2)&#125;$</code> -
-&gt; <span class="math inline">\(\lim\limits_{n\to{+\infty}}
-\frac{n-1}{n(n+1)(n+2)}\)</span><br />
-<code>$\lim\nolimits_&#123;n\to&#123;+\infty&#125;&#125; \frac&#123;n-1&#125;&#123;n(n+1)(n+2)&#125;$</code> -
-&gt; <span class="math inline">\(\lim\nolimits_{n\to{+\infty}}
-\frac{n-1}{n(n+1)(n+2)}\)</span>​</p>
-<h2 id="加入上划线中划线下划线">10. 加入上划线、中划线、下划线</h2>
-<h3 id="上划线">10.1 上划线</h3>
-<p><code>$\overline&#123;text&#125;$</code>- &gt;<span
-class="math inline">\(\overline{text}\)</span></p>
-<h3 id="中划线">10.2 中划线</h3>
-<p><code>~~text~~</code> - &gt; <del>text</del></p>
-<h3 id="下划线">10.3 下划线</h3>
-<p><code>$\underline&#123;text&#125;$</code> - &gt; <span
-class="math inline">\(\underline{text}\)</span></p>
+<h3 id="9-1-使用上标和下标分别表示运算符号的上下限">9.1 使用上标和下标分别表示运算符号的上下限</h3>
+<p><code>$\sum_0^\infty$</code> - &gt; $\sum_0^\infty$<br>
+<code>$\int_&#123;-\infty&#125;^&#123;\infty&#125;$</code> - &gt; $\int_{-\infty}^{\infty}$<br>
+<code>$\lim_&#123;x\to0&#125; &#123;sinx \over x&#125;$</code> - &gt; $\lim_{x\to0}{sinx \over x}$</p>
+<h3 id="9-2-使用-to表示趋近于的箭头">9.2 使用<code>\to</code>表示趋近于的箭头</h3>
+<p><code>$x\to0$</code> - &gt; $x\to0$</p>
+<h3 id="9-3-和、积、极限、积分等运算符">9.3 和、积、极限、积分等运算符</h3>
+<p>用<code>\sum</code>,<code>\prod</code>,<code>\lim</code>,<code>\int</code>，这些公式在行内公式被压缩，以适应行高，可以通过<code>\limits</code>和<code>\nolimits</code>命令显示是否压缩<br>
+<code>$\int\limits_&#123;-\infty&#125;^&#123;\infty&#125; \frac &#123;sinx&#125;xdx$</code> - &gt; $\int\limits_{-\infty}^{\infty} \frac {sinx}xdx$<br>
+<code>$\int\nolimits_&#123;-\infty&#125;^&#123;\infty&#125; \frac &#123;sinx&#125;xdx$</code> - &gt; $\int\limits_{-\infty}^{\infty} \frac {sinx}xdx$<br>
+<code>$\lim\limits_&#123;n\to&#123;+\infty&#125;&#125; \frac&#123;n-1&#125;&#123;n(n+1)(n+2)&#125;$</code> - &gt; $\lim\limits_{n\to{+\infty}} \frac{n-1}{n(n+1)(n+2)}$<br>
+<code>$\lim\nolimits_&#123;n\to&#123;+\infty&#125;&#125; \frac&#123;n-1&#125;&#123;n(n+1)(n+2)&#125;$</code> - &gt; $\lim\nolimits_{n\to{+\infty}} \frac{n-1}{n(n+1)(n+2)}$​</p>
+<h2 id="10-加入上划线、中划线、下划线">10. 加入上划线、中划线、下划线</h2>
+<h3 id="10-1-上划线">10.1 上划线</h3>
+<p><code>$\overline&#123;text&#125;$</code>- &gt;$\overline{text}$</p>
+<h3 id="10-2-中划线">10.2 中划线</h3>
+<p><code>~~text~~</code> - &gt; <s>text</s></p>
+<h3 id="10-3-下划线">10.3 下划线</h3>
+<p><code>$\underline&#123;text&#125;$</code> - &gt; $\underline{text}$</p>
 
                 
               </div>

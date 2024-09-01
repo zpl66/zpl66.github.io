@@ -18,12 +18,12 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="&lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;prompt-textarea&quot; name&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Type your message here...&quot; class&#x3D;&quot;input&quot;&gt; &lt;button id&#x3D;&quot;send-b">
+    <meta name="description" content=".chat-container {     max-width: 600px;     margin: 0 auto;     padding: 20px;     border: 1px solid #ccc;     border-radius: 10px;     background-c">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Chat with OpenAI">
 <meta property="og:url" content="http://crazythursdayv50tome.cn/openai/index.html">
 <meta property="og:site_name" content="Dumpling">
-<meta property="og:description" content="&lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;prompt-textarea&quot; name&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Type your message here...&quot; class&#x3D;&quot;input&quot;&gt; &lt;button id&#x3D;&quot;send-b">
+<meta property="og:description" content=".chat-container {     max-width: 600px;     margin: 0 auto;     padding: 20px;     border: 1px solid #ccc;     border-radius: 10px;     background-c">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-08-01T04:00:00.000Z">
 <meta property="article:modified_time" content="2024-08-07T01:51:14.408Z">
@@ -284,17 +284,15 @@
   <main>
     <div class="container">
       <div class="chat-container">
-<div id="chatlog" class="chat-log">
-
-</div>
-<div class="chat-input-container">
-<pre><code class="hljs">&lt;input type=&quot;text&quot; id=&quot;prompt-textarea&quot; name=&quot;text&quot; placeholder=&quot;Type your message here...&quot; class=&quot;input&quot;&gt;
-&lt;button id=&quot;send-button&quot; class=&quot;chat-send-button&quot;&gt;
-  &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;24&quot; height=&quot;24&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot;&gt;
-    &lt;path fill=&quot;currentColor&quot; fill-rule=&quot;evenodd&quot; d=&quot;M15.192 8.906a1.143 1.143 0 0 1 1.616 0l5.143 5.143a1.143 1.143 0 0 1-1.616 1.616l-3.192-3.192v9.813a1.143 1.143 0 0 1-2.286 0v-9.813l-3.192 3.192a1.143 1.143 0 1 1-1.616-1.616z&quot; clip-rule=&quot;evenodd&quot;&gt;&lt;/path&gt;
-  &lt;/svg&gt;
-&lt;/button&gt;</code></pre>
-</div>
+  <div id="chatlog" class="chat-log"></div>
+  <div class="chat-input-container">
+    <input type="text" id="prompt-textarea" name="text" placeholder="Type your message here..." class="input">
+    <button id="send-button" class="chat-send-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path fill="currentColor" fill-rule="evenodd" d="M15.192 8.906a1.143 1.143 0 0 1 1.616 0l5.143 5.143a1.143 1.143 0 0 1-1.616 1.616l-3.192-3.192v9.813a1.143 1.143 0 0 1-2.286 0v-9.813l-3.192 3.192a1.143 1.143 0 1 1-1.616-1.616z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
 </div>
 <style>
   .chat-container {
