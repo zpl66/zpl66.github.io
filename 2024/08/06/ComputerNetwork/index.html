@@ -18,12 +18,12 @@
   <meta name="author" content="饺子">
   <meta name="keywords" content="">
   
-    <meta name="description" content="0. 前言：如果让你来设计网络？ 0.1 物理层 假如你是一台电脑，你的名字叫A。 在很久很久以前，你不和任何电脑相连接，孤苦伶仃。 直到有一天，你希望与另一台电脑B建立联系 于是你们各开了一个网口，用一根网线连接了起来 有一天，一个新伙伴C加入了 但聪明的你们很快发现，可以每个人各开两个网口 用一共三根网线相连 随着越来越多电脑的加入，你发现身上开的网口实在太多了 （实际上根本不能开多网口） 而">
+    <meta name="description" content="0. 前言：如果让你来设计网络？ 0.1 物理层 假如你是一台电脑，你的名字叫A。 在很久很久以前，你不和任何电脑相连接，孤苦伶仃。 直到有一天，你希望与另一台电脑B建立联系 于是你们各开了一个网口，用一根网线连接了起来 有一天，一个新伙伴C加入了 但聪明的你们很快发现，可以每个人各开两个网口 用一共三根网线相连 随着越来越多电脑的加入，你发现身上开的网口实在太多了 （实际上根">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络">
 <meta property="og:url" content="http://crazythursdayv50tome.cn/2024/08/06/ComputerNetwork/index.html">
 <meta property="og:site_name" content="Dumpling">
-<meta property="og:description" content="0. 前言：如果让你来设计网络？ 0.1 物理层 假如你是一台电脑，你的名字叫A。 在很久很久以前，你不和任何电脑相连接，孤苦伶仃。 直到有一天，你希望与另一台电脑B建立联系 于是你们各开了一个网口，用一根网线连接了起来 有一天，一个新伙伴C加入了 但聪明的你们很快发现，可以每个人各开两个网口 用一共三根网线相连 随着越来越多电脑的加入，你发现身上开的网口实在太多了 （实际上根本不能开多网口） 而">
+<meta property="og:description" content="0. 前言：如果让你来设计网络？ 0.1 物理层 假如你是一台电脑，你的名字叫A。 在很久很久以前，你不和任何电脑相连接，孤苦伶仃。 直到有一天，你希望与另一台电脑B建立联系 于是你们各开了一个网口，用一根网线连接了起来 有一天，一个新伙伴C加入了 但聪明的你们很快发现，可以每个人各开两个网口 用一共三根网线相连 随着越来越多电脑的加入，你发现身上开的网口实在太多了 （实际上根">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://crazythursdayv50tome.cn/images/%E6%9C%AA%E6%9D%A5%E5%9F%8E%E5%B8%82%E6%99%AF%E8%A7%82%E5%9F%8E%E5%B8%82%E5%92%8C%E5%AE%87%E5%AE%99%E9%A3%9E%E8%88%B9.jpg">
 <meta property="article:published_time" content="2024-08-06T02:59:40.000Z">
@@ -339,8 +339,8 @@
             
               <div class="markdown-body">
                 
-                <h2 id="0-前言：如果让你来设计网络？">0. 前言：如果让你来设计网络？</h2>
-<h3 id="0-1-物理层">0.1 物理层</h3>
+                <h2 id="前言如果让你来设计网络">0. 前言：如果让你来设计网络？</h2>
+<h3 id="物理层">0.1 物理层</h3>
 <p>假如你是一台电脑，你的名字叫<code>A</code>。</p>
 <p>在很久很久以前，你不和任何电脑相连接，孤苦伶仃。</p>
 <p>直到有一天，你希望与另一台电脑<code>B</code>建立联系</p>
@@ -352,7 +352,7 @@
 <p>（实际上根本不能开多网口）</p>
 <p>而且网线密密麻麻，混乱不堪</p>
 <p>于是你们发明了一个中间设备</p>
-<p><img src="/images/image-182.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="/images/image-182.png" srcset="/img/loading.gif" lazyload /></p>
 <p>你们将网线都插在这个设备上，由这个设备做转发</p>
 <p>就可以彼此之间通信了</p>
 <p>本质上和原来一样，只不过网口的数量和网线的数量减少了</p>
@@ -373,7 +373,7 @@
 <p>而你的伙伴的Mac地址是<code>BBB</code></p>
 <p>以此类推，确保每个Mac地址都是独一无二的</p>
 <p>这样，只要<code>A</code>在发送数据包给<code>B</code>时，只要在头部拼接一个这样的结构的数据就可以了：</p>
-<p>![](/images/屏幕截图 2024-08-19 185555.png)</p>
+<p><img src="/images/屏幕截图%202024-08-19%20185555.png" srcset="/img/loading.gif" lazyload /></p>
 <p><code>B</code>在收到数据包后</p>
 <p>根据头部的目标Mac地址信息</p>
 <p>判断这个数据包的确是发给自己的</p>
@@ -386,14 +386,18 @@
 <p>但原来我只需要发送给电脑<code>B</code>的消息</p>
 <p>现在却要发送给集线器中所有的电脑</p>
 <p>这样既不安全，也不节省网络资源</p>
-<h3 id="0-2-数据链路层">0.2 数据链路层</h3>
+<h3 id="数据链路层">0.2 数据链路层</h3>
 <p>如果把集线器弄得更智能一些</p>
 <p>只发给目标Mac地址指向的那台电脑就好了</p>
 <p>虽然只比集线器多了一点点区别</p>
 <p>但看起来似乎更智能了</p>
 <p>你把这东西叫做</p>
 <p><strong>交换机(Switch)</strong></p>
-<p><img src="/images/v2-4220b11946b4edcbea586cd9d2bf1509_r.jpg" srcset="/img/loading.gif" lazyload alt="交换机"></p>
+<figure>
+<img src="/images/v2-4220b11946b4edcbea586cd9d2bf1509_r.jpg" srcset="/img/loading.gif" lazyload
+alt="交换机" />
+<figcaption aria-hidden="true">交换机</figcaption>
+</figure>
 <p>也正因为这一点点智能，你把他放在了另一个场景</p>
 <p><strong>数据链路层</strong></p>
 <p>交换机内部维护一张Mac地址表</p>
@@ -426,7 +430,7 @@
 </table>
 <p>假如你仍然发送给<code>B</code>一个数据包，</p>
 <p>构造了这样的数据结构从网口发出</p>
-<p>![](/images/屏幕截图 2024-08-19 185555.png)</p>
+<p><img src="/images/屏幕截图%202024-08-19%20185555.png" srcset="/img/loading.gif" lazyload /></p>
 <p>当数据到达交换机时</p>
 <p>交换机内部通过自己维护的Mac地址表</p>
 <p>发现目标机器<code>B</code>的Mac地址映射到了端口<code>1</code>上</p>
@@ -600,7 +604,7 @@
 <p>所以这种交换机的交换方式已经足够支持一阵子了</p>
 <p>但很快，电脑的数量发展到几万、几十万甚至更多</p>
 <p>​</p>
-<h3 id="0-3-网络层">0.3 网络层</h3>
+<h3 id="网络层">0.3 网络层</h3>
 <p>交换机已经无法支撑如此庞大的数据关系了</p>
 <p>此时你动了歪脑筋</p>
 <p>你发现了问题的关键在于</p>
@@ -620,7 +624,7 @@
 <p>好了，现在交换机的Mac地址表中</p>
 <p>只需要多出一条<code>ABAB</code>与其端口的映射关系</p>
 <p>又可以成功将数据包转交给路由器了</p>
-<p><img src="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240823195754.jpg" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="/images/微信图片_20240823195754.jpg" srcset="/img/loading.gif" lazyload /></p>
 <p>那如何做到把<code>A</code>发送给<code>C</code>和<code>D</code></p>
 <p>甚至是<code>E</code>,<code>F</code>,<code>G</code>,<code>H</code>的数据包，统统先发送给路由器呢？</p>
 <p>不难想到这样一个点子：</p>
@@ -666,11 +670,11 @@
 <p>假如<code>A</code>给<code>B</code>发送数据</p>
 <p>由于他们直接连着交换机</p>
 <p>所以<code>A</code>直接发出如下数据包即可：</p>
-<p>![](/images/屏幕截图 2024-08-23 201835.png)</p>
+<p><img src="/images/屏幕截图%202024-08-23%20201835.png" srcset="/img/loading.gif" lazyload /></p>
 <p>其实网络层并没有发挥作用</p>
 <p>但如果<code>A</code>给<code>C</code>发送数据</p>
 <p><code>A</code>就需要先转交给路由器然后再有路由器转发给<code>C</code></p>
-<p>![](/images/屏幕截图 2024-08-23 202944.png)</p>
+<p><img src="/images/屏幕截图%202024-08-23%20202944.png" srcset="/img/loading.gif" lazyload /></p>
 <p>由于这个过程仍然需要以太网</p>
 <p>所以这个数据包是分成两段：</p>
 <p><code>A-路由器</code>这段的包和<code>路由器-C</code>这段的包</p>
@@ -696,14 +700,15 @@
 <p>不相等则不是在一个子网</p>
 <p>例如</p>
 <blockquote>
-<p>A电脑：$192.168.0.1 &amp; 255.255.255.0 = 192.168.0.0$</p>
+<p>A电脑：<span class="math inline">\(192.168.0.1 \&amp; 255.255.255.0 =
+192.168.0.0\)</span></p>
 </blockquote>
 <p>至此，经过物理层、数据链路层、网络层这前三层的协议</p>
 <p>以及根据这些协议设计的各种网络设备</p>
 <p>网线、集线器、交换机、路由器</p>
 <p>理论上只要有对方的IP地址</p>
 <p>就可以将地球上的任意位置的两个节点</p>
-<h3 id="0-4-传输层">0.4 传输层</h3>
+<h3 id="传输层">0.4 传输层</h3>
 <p>前三层协议只能将数据从一台主机传输到另外一台主机</p>
 <p>但是，到了目的地之后</p>
 <p>数据包具体交给哪个程序呢？</p>
@@ -712,7 +717,7 @@
 <p>你给他起了一个响亮的名字:</p>
 <p><strong>端口号</strong></p>
 <p>然后你在需要发送的包上，增加了传输层的头部、源端口号和目标端口号</p>
-<p>![](/images/屏幕截图 2024-08-23 205843.png)</p>
+<p><img src="/images/屏幕截图%202024-08-23%20205843.png" srcset="/img/loading.gif" lazyload /></p>
 <p>这样，你将原本<strong>主机到主机</strong>的通信</p>
 <p>升级为了<strong>进程和进程</strong>之间的通信</p>
 <p>你没有意识到，你不知不觉实现了</p>
@@ -764,7 +769,8 @@
 <p>这种方式叫做</p>
 <p><strong>累计确认</strong>或<strong>累计应答</strong></p>
 <blockquote>
-<p>注意：实际上<code>ack</code>的号是收到的最后一个数据包的序号<code>seq</code> + 1,也就是告诉对方下一个应该发的序号是多少</p>
+<p>注意：实际上<code>ack</code>的号是收到的最后一个数据包的序号<code>seq</code>
++ 1,也就是告诉对方下一个应该发的序号是多少</p>
 </blockquote>
 <p>有的时候，<code>A</code>发送数据包的速度太快，而<code>B</code>的接收能力不够但<code>B</code>却没有告知<code>A</code>这种情况</p>
 <p>那怎么办呢？</p>
@@ -836,236 +842,230 @@
 <p>在TCP传输这里</p>
 <p>就把他当作一个个的字节</p>
 <p>也就是基于字节的含义了</p>
-<p><img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E6%A1%86%E6%9E%B6.png" srcset="/img/loading.gif" lazyload alt="计算机网络知识框架"></p>
-<h2 id="1-计算机网络概述">1. 计算机网络概述</h2>
-<p><img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0.png" srcset="/img/loading.gif" lazyload alt="计算机网络概述知识框架"></p>
-<h3 id="1-1-互联网的构成">1.1 互联网的构成</h3>
+<figure>
+<img src="/images/计算机网络知识框架.png" srcset="/img/loading.gif" lazyload alt="计算机网络知识框架" />
+<figcaption aria-hidden="true">计算机网络知识框架</figcaption>
+</figure>
+<h2 id="计算机网络概述">1. 计算机网络概述</h2>
+<figure>
+<img src="/images/计算机网络概述.png" srcset="/img/loading.gif" lazyload alt="计算机网络概述知识框架" />
+<figcaption aria-hidden="true">计算机网络概述知识框架</figcaption>
+</figure>
+<h3 id="互联网的构成">1.1 互联网的构成</h3>
 <ul>
-<li><strong>网络边缘(Network Edge)</strong>：网络边缘是指直接与终端用户相连接的部分，包括用户的计算机、智能手机、平板电脑等设备，以及家庭网络、办公室网络等。网络边缘的主要功能包括：
+<li><strong>网络边缘(Network
+Edge)</strong>：网络边缘是指直接与终端用户相连接的部分，包括用户的计算机、智能手机、平板电脑等设备，以及家庭网络、办公室网络等。网络边缘的主要功能包括：
 <ul>
-<li><strong>终端设备</strong>：用户使用的各种设备，如计算机、手机、平板等，这些设备通过网络接口（如以太网、Wi-Fi等）连接到互联网。</li>
-<li><strong>接入网络</strong>：用于将终端设备连接到互联网的网络，如家庭宽带、移动网络、企业局域网（LAN）等。接入网络可以是有线的（如DSL、光纤）或无线的（如Wi-Fi、4G、5G）。</li>
-<li><strong>边缘路由器</strong>：位于网络边缘的路由器，负责将用户的流量发送到互联网，并将来自互联网的流量转发给用户设备。</li>
-</ul>
+<li><strong>终端设备</strong>：用户使用的各种设备，如计算机、手机、平板等，这些设备通过网络接口（如以太网、Wi-Fi等）连接到互联网。<br />
 </li>
+<li><strong>接入网络</strong>：用于将终端设备连接到互联网的网络，如家庭宽带、移动网络、企业局域网（LAN）等。接入网络可以是有线的（如DSL、光纤）或无线的（如Wi-Fi、4G、5G）。<br />
+</li>
+<li><strong>边缘路由器</strong>：位于网络边缘的路由器，负责将用户的流量发送到互联网，并将来自互联网的流量转发给用户设备。</li>
+</ul></li>
 </ul>
 <p>​</p>
 <ul>
-<li>
-<p><strong>网络核心(Network Core)</strong>：网络核心是指连接各个网络边缘并提供高速数据传输的部分。它由一组高性能的核心路由器和交换机组成，形成一个高带宽、低延迟的网络骨干。网络核心的主要功能包括：</p>
+<li><strong>网络核心(Network
+Core)</strong>：网络核心是指连接各个网络边缘并提供高速数据传输的部分。它由一组高性能的核心路由器和交换机组成，形成一个高带宽、低延迟的网络骨干。网络核心的主要功能包括：
 <ul>
-<li><strong>高速传输</strong>：核心网络设备通常具有非常高的带宽，能够支持大规模的数据传输，确保不同网络边缘之间的通信高效且可靠。</li>
-<li><strong>路由选择</strong>：核心路由器根据预定义的路由协议，选择最佳路径将数据包从源传送到目的地。</li>
+<li><strong>高速传输</strong>：核心网络设备通常具有非常高的带宽，能够支持大规模的数据传输，确保不同网络边缘之间的通信高效且可靠。<br />
+</li>
+<li><strong>路由选择</strong>：核心路由器根据预定义的路由协议，选择最佳路径将数据包从源传送到目的地。<br />
+</li>
 <li><strong>数据中继</strong>：核心网络设备负责将来自不同边缘网络的数据包中继传输，通过多个中继节点确保数据能够正确到达目的地。</li>
-</ul>
-</li>
-<li>
-<p><strong>二者的差别</strong></p>
+</ul></li>
+<li><strong>二者的差别</strong>
 <ul>
-<li><strong>网络边缘</strong>更关注用户接入和服务质量，通常需要处理较低的带宽需求和较高的服务多样性。</li>
+<li><strong>网络边缘</strong>更关注用户接入和服务质量，通常需要处理较低的带宽需求和较高的服务多样性。<br />
+</li>
 <li><strong>网络核心</strong>更关注高效的数据传输和网络可靠性，通常需要处理巨大的数据流量和复杂的路由决策。</li>
+</ul></li>
 </ul>
+<h3 id="网络分类">1.2 网络分类</h3>
+<ul>
+<li><p><strong>个域网(PAN, Personal Area Network)</strong>:</p>
+<ul>
+<li>能在便携式消费电器与通信设备之间进行短距离通信的网络<br />
 </li>
-</ul>
-<h3 id="1-2-网络分类">1.2 网络分类</h3>
-<ul>
-<li>
-<p><strong>个域网(PAN, Personal Area Network)</strong>:</p>
-<ul>
-<li>能在便携式消费电器与通信设备之间进行短距离通信的网络</li>
 <li>覆盖范围一般在10米半径以内，如蓝牙耳机等</li>
-</ul>
-</li>
-<li>
-<p><strong>局域网(LAN, Local Area Network)</strong>:</p>
+</ul></li>
+<li><p><strong>局域网(LAN, Local Area Network)</strong>:</p>
 <ul>
-<li>局部地区形成的区域网络，如企业网络</li>
-<li>分布地形有限，可大可小，大到一栋建筑，小到办公室内的组网</li>
-<li>电脑WLAN接入，打印机共享等等</li>
-</ul>
+<li>局部地区形成的区域网络，如企业网络<br />
 </li>
-<li>
-<p><strong>城域网(MAN, Metropolitan Area Network)</strong>:</p>
+<li>分布地形有限，可大可小，大到一栋建筑，小到办公室内的组网<br />
+</li>
+<li>电脑WLAN接入，打印机共享等等</li>
+</ul></li>
+<li><p><strong>城域网(MAN, Metropolitan Area Network)</strong>:</p>
 <ul>
 <li>范围覆盖一个城市的网络</li>
-</ul>
-</li>
-<li>
-<p><strong>广域网(WAN, Wide Area Network)</strong>:</p>
+</ul></li>
+<li><p><strong>广域网(WAN, Wide Area Network)</strong>:</p>
 <ul>
 <li>覆盖很大地理区域，乃至覆盖地区和国家</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="1-3-接入网">1.3 接入网</h3>
-<h4 id="1-3-1-接入网的用途">1.3.1 接入网的用途</h4>
+<h3 id="接入网">1.3 接入网</h3>
+<h4 id="接入网的用途">1.3.1 接入网的用途</h4>
 <ul>
-<li>接入网的用途是将主机连接到边缘路由器上</li>
+<li>接入网的用途是将主机连接到边缘路由器上<br />
+</li>
 <li>边缘路由器是端系统Host去往任何其他远程端系统的路径上的第一台路由器</li>
 </ul>
-<h4 id="1-3-2-各种异构网络通过边缘路由器接入">1.3.2 各种异构网络通过边缘路由器接入</h4>
-<p>**异构网络（Heterogeneous Networks）**是指由不同类型的网络组成的整体。这些网络可能在技术标准、传输介质、网络协议、拓扑结构等方面存在差异。常见的异构网络包括：</p>
+<h4 id="各种异构网络通过边缘路由器接入">1.3.2
+各种异构网络通过边缘路由器接入</h4>
+<p><strong>异构网络（Heterogeneous
+Networks）</strong>是指由不同类型的网络组成的整体。这些网络可能在技术标准、传输介质、网络协议、拓扑结构等方面存在差异。常见的异构网络包括：</p>
 <ul>
-<li><strong>有线网络</strong>：如以太网（Ethernet）、光纤网络。</li>
-<li><strong>无线网络</strong>：如Wi-Fi、蜂窝网络（4G、5G）、蓝牙。</li>
-<li><strong>局域网（LAN）</strong>：企业内部或家庭内部的网络。</li>
+<li><strong>有线网络</strong>：如以太网（Ethernet）、光纤网络。<br />
+</li>
+<li><strong>无线网络</strong>：如Wi-Fi、蜂窝网络（4G、5G）、蓝牙。<br />
+</li>
+<li><strong>局域网（LAN）</strong>：企业内部或家庭内部的网络。<br />
+</li>
 <li><strong>广域网（WAN）</strong>：覆盖更大地理范围的网络，如互联网。</li>
 </ul>
-<h4 id="1-3-3-接入网分类">1.3.3 接入网分类</h4>
+<h4 id="接入网分类">1.3.3 接入网分类</h4>
 <ul>
-<li>
-<p><strong>光纤到户(FTTH, Fiber to the Home)</strong>:是一种将光纤直接铺设到用户家庭的接入技术。它的特点和优势包括：</p>
+<li><p><strong>光纤到户(FTTH, Fiber to the
+Home)</strong>:是一种将光纤直接铺设到用户家庭的接入技术。它的特点和优势包括：</p>
 <ul>
-<li><strong>高速宽带</strong>：光纤能够提供极高的带宽，支持数百兆比特甚至数千兆比特的传输速率。</li>
-<li><strong>稳定性和可靠性</strong>：光纤不受电磁干扰，数据传输稳定，可靠性高。</li>
-<li><strong>长距离传输</strong>：光纤信号可以在没有中继的情况下传输更远的距离，适合覆盖广泛的地理区域。</li>
+<li><strong>高速宽带</strong>：光纤能够提供极高的带宽，支持数百兆比特甚至数千兆比特的传输速率。<br />
+</li>
+<li><strong>稳定性和可靠性</strong>：光纤不受电磁干扰，数据传输稳定，可靠性高。<br />
+</li>
+<li><strong>长距离传输</strong>：光纤信号可以在没有中继的情况下传输更远的距离，适合覆盖广泛的地理区域。<br />
+</li>
 <li><strong>未来发展</strong>：随着技术进步，光纤网络能够支持更高的速率和更先进的服务（如4K/8K视频、虚拟现实等）。</li>
-</ul>
-</li>
-<li>
-<p><strong>数字用户线(Digital Subscriber Line, DSL)</strong>:利用现有的电话线提供宽带接入服务。</p>
-</li>
-<li>
-<p><strong>同轴电缆</strong>:广泛用于有线电视（CATV）网络，也可以用于宽带接入。</p>
-</li>
-<li>
-<p><strong>无线接入(Wireless Access)</strong>:包括多种技术，如Wi-Fi、蜂窝网络（4G、5G）和固定无线接入（FWA）。其特点如下：</p>
+</ul></li>
+<li><p><strong>数字用户线(Digital Subscriber Line,
+DSL)</strong>:利用现有的电话线提供宽带接入服务。</p></li>
+<li><p><strong>同轴电缆</strong>:广泛用于有线电视（CATV）网络，也可以用于宽带接入。</p></li>
+<li><p><strong>无线接入(Wireless
+Access)</strong>:包括多种技术，如Wi-Fi、蜂窝网络（4G、5G）和固定无线接入（FWA）。其特点如下：</p>
 <ul>
-<li><strong>灵活性和便捷性</strong>：无线接入无需铺设有线，部署灵活，适合用户移动和临时需求。</li>
-<li><strong>覆盖范围</strong>：Wi-Fi适合家庭和小范围覆盖，蜂窝网络适合广域覆盖（城市、乡村），FWA适合偏远地区固定宽带接入。</li>
-<li><strong>速率</strong>：Wi-Fi和蜂窝网络速率不断提高，5G网络可以提供极高的传输速率，适合高清视频、AR/VR等高带宽应用。</li>
+<li><strong>灵活性和便捷性</strong>：无线接入无需铺设有线，部署灵活，适合用户移动和临时需求。<br />
+</li>
+<li><strong>覆盖范围</strong>：Wi-Fi适合家庭和小范围覆盖，蜂窝网络适合广域覆盖（城市、乡村），FWA适合偏远地区固定宽带接入。<br />
+</li>
+<li><strong>速率</strong>：Wi-Fi和蜂窝网络速率不断提高，5G网络可以提供极高的传输速率，适合高清视频、AR/VR等高带宽应用。<br />
+</li>
 <li><strong>易受干扰</strong>：无线信号易受干扰，传输质量受环境和距离影响较大。</li>
-</ul>
-</li>
-<li>
-<p><strong>企业和家庭网络</strong>:<strong>企业和家庭网络</strong>是指企业内部或家庭内部的局域网（LAN），通过各种接入技术连接到互联网。其特点包括：</p>
+</ul></li>
+<li><p><strong>企业和家庭网络</strong>:<strong>企业和家庭网络</strong>是指企业内部或家庭内部的局域网（LAN），通过各种接入技术连接到互联网。其特点包括：</p>
 <ul>
-<li><strong>局域网（LAN）</strong>：企业和家庭内部通常通过有线（以太网）或无线（Wi-Fi）组成局域网，连接各种终端设备（电脑、手机、打印机等）。</li>
-<li><strong>网络设备</strong>：使用交换机、路由器和无线接入点（AP）等设备构建内部网络，并通过边缘路由器连接到ISP的接入网。</li>
-<li><strong>安全性</strong>：企业网络通常需要更高的安全性，部署防火墙、VPN等安全措施，家庭网络则注重便捷性和易用性。</li>
-<li><strong>管理和维护</strong>：企业网络通常由专业的IT人员管理和维护，家庭网络则由用户自行管理或由ISP提供技术支持。</li>
-</ul>
+<li><strong>局域网（LAN）</strong>：企业和家庭内部通常通过有线（以太网）或无线（Wi-Fi）组成局域网，连接各种终端设备（电脑、手机、打印机等）。<br />
 </li>
+<li><strong>网络设备</strong>：使用交换机、路由器和无线接入点（AP）等设备构建内部网络，并通过边缘路由器连接到ISP的接入网。<br />
+</li>
+<li><strong>安全性</strong>：企业网络通常需要更高的安全性，部署防火墙、VPN等安全措施，家庭网络则注重便捷性和易用性。<br />
+</li>
+<li><strong>管理和维护</strong>：企业网络通常由专业的IT人员管理和维护，家庭网络则由用户自行管理或由ISP提供技术支持。</li>
+</ul></li>
 </ul>
-<h3 id="1-4-网络核心的两大功能">1.4 网络核心的两大功能</h3>
-<ol>
-<li><strong>路由</strong>：确定数据分组从源到目标所使用的路径(全局操作)</li>
+<h3 id="网络核心的两大功能">1.4 网络核心的两大功能</h3>
+<ol type="1">
+<li><strong>路由</strong>：确定数据分组从源到目标所使用的路径(全局操作)<br />
+</li>
 <li><strong>转发</strong>：路由器或交换机将接收到的数据分组转发出去(即移动到该设备的某个输出接口)(本地操作)</li>
 </ol>
-<h3 id="1-5-网络分层">1.5 网络分层</h3>
-<h4 id="1-5-1-OSI-7层模型">1.5.1 OSI 7层模型</h4>
-<p>**OSI七层模型（Open Systems Interconnection Model）**是国际标准化组织（ISO）提出的网络通信参考模型。它将网络通信的功能分成七个层次，从低到高分别是：<code>物理层</code>、<code>数据链路层</code>、<code>网络层</code>、<code>传输层</code>、<code>会话层</code>、<code>表示层</code>和<code>应用层</code>。每一层都有特定的功能和协议</p>
-<ol>
+<h3 id="网络分层">1.5 网络分层</h3>
+<h4 id="osi-7层模型">1.5.1 OSI 7层模型</h4>
+<p><strong>OSI七层模型（Open Systems Interconnection
+Model）</strong>是国际标准化组织（ISO）提出的网络通信参考模型。它将网络通信的功能分成七个层次，从低到高分别是：<code>物理层</code>、<code>数据链路层</code>、<code>网络层</code>、<code>传输层</code>、<code>会话层</code>、<code>表示层</code>和<code>应用层</code>。每一层都有特定的功能和协议</p>
+<ol type="1">
 <li><strong>物理层(Physical Layer)</strong>：
-<ol>
+<ol type="1">
 <li><strong>功能</strong>：
-<ol>
+<ol type="1">
 <li>物理层负责网络设备之间的实际传输介质的连接和数据传输。</li>
 <li>涉及到电缆、光纤、无线电波等传输介质，以及电压、电流、信号频率等传输方式。</li>
-</ol>
-</li>
+</ol></li>
 <li><strong>协议和设备</strong>：
-<ol>
-<li>常见的协议和标准包括：以太网（Ethernet）、USB、光纤（Fiber Optics）。</li>
+<ol type="1">
+<li>常见的协议和标准包括：以太网（Ethernet）、USB、光纤（Fiber
+Optics）。</li>
 <li>相关设备包括：集线器（Hub）、网卡（NIC）、传输介质（电缆、光纤）。</li>
-</ol>
-</li>
-</ol>
-</li>
+</ol></li>
+</ol></li>
 <li><strong>数据链路层(Data Link Layer)</strong>:
-<ol>
+<ol type="1">
 <li><strong>功能</strong>：
-<ol>
+<ol type="1">
 <li>数据链路层负责节点间的可靠传输，包括错误检测、纠正和流量控制。</li>
 <li>它将数据封装成帧（Frame），在同一网络段内进行传输。</li>
-</ol>
-</li>
+</ol></li>
 <li><strong>协议和设备</strong>：
-<ol>
-<li>常见的协议有：以太网（Ethernet）、点对点协议（PPP）、帧中继（Frame Relay）。</li>
+<ol type="1">
+<li>常见的协议有：以太网（Ethernet）、点对点协议（PPP）、帧中继（Frame
+Relay）。</li>
 <li>相关设备包括：交换机（Switch）、网桥（Bridge）。</li>
-</ol>
-</li>
-</ol>
-</li>
+</ol></li>
+</ol></li>
 <li><strong>网络层(Network Layer)</strong>:
-<ol>
+<ol type="1">
 <li><strong>功能</strong>：
-<ol>
+<ol type="1">
 <li>网络层负责数据包（Packet）在不同网络之间的路由选择和转发。</li>
 <li>它处理逻辑地址（如IP地址），并确定数据包的传输路径。</li>
-</ol>
-</li>
+</ol></li>
 <li><strong>协议和设备</strong>：
-<ol>
+<ol type="1">
 <li>常见的协议有：互联网协议（IP）、互联网控制报文协议（ICMP）、路由协议（如OSPF、BGP）。</li>
 <li>相关设备包括：路由器（Router）。</li>
-</ol>
-</li>
-</ol>
-</li>
+</ol></li>
+</ol></li>
 <li><strong>传输层(Transport Layer)</strong>:
-<ol>
+<ol type="1">
 <li><strong>功能</strong>：
-<ol>
+<ol type="1">
 <li>传输层负责端到端的通信，确保数据可靠传输。</li>
 <li>它提供数据分段、传输控制、错误校验和恢复功能。</li>
-</ol>
-</li>
+</ol></li>
 <li><strong>协议和设备</strong>：
-<ol>
+<ol type="1">
 <li>常见的协议有：传输控制协议（TCP）、用户数据报协议（UDP）。</li>
 <li>传输层的功能主要由操作系统的网络栈实现。</li>
-</ol>
-</li>
-</ol>
-</li>
+</ol></li>
+</ol></li>
 <li><strong>会话层(Session Layer)</strong>:
-<ol>
+<ol type="1">
 <li><strong>功能</strong>：
-<ol>
+<ol type="1">
 <li>会话层负责建立、管理和终止应用程序之间的会话。</li>
 <li>它处理会话控制、同步和对话管理。</li>
-</ol>
-</li>
+</ol></li>
 <li><strong>协议和设备</strong>：
-<ol>
+<ol type="1">
 <li>常见的协议有：远程过程调用（RPC）、会话初始协议（SIP）。</li>
-</ol>
-</li>
-</ol>
-</li>
+</ol></li>
+</ol></li>
 <li><strong>表示层(Presentation Layer)</strong>:
-<ol>
+<ol type="1">
 <li><strong>功能</strong>：
-<ol>
+<ol type="1">
 <li>表示层负责数据格式的转换、加密和解密、数据压缩等。</li>
 <li>它确保发送方和接收方以一致的方式解释数据。</li>
-</ol>
-</li>
+</ol></li>
 <li><strong>协议和设备</strong>：
-<ol>
+<ol type="1">
 <li>常见的标准和协议有：数据表示标准（如ASCII、JPEG、MPEG）、加密协议（如SSL/TLS）。</li>
-</ol>
-</li>
-</ol>
-</li>
+</ol></li>
+</ol></li>
 <li><strong>应用层(Application Layer)</strong>:
-<ol>
+<ol type="1">
 <li><strong>功能</strong>：
-<ol>
+<ol type="1">
 <li>应用层是OSI模型的最高层，直接为用户提供各种网络服务。</li>
 <li>它负责处理应用程序的网络功能，如文件传输、电子邮件、远程登录等。</li>
-</ol>
-</li>
+</ol></li>
 <li><strong>协议和设备</strong>：
-<ol>
+<ol type="1">
 <li>常见的协议有：超文本传输协议（HTTP）、文件传输协议（FTP）、简单邮件传输协议（SMTP）、域名系统（DNS）。</li>
 <li>应用程序软件和服务运行在应用层上。</li>
-</ol>
-</li>
-</ol>
-</li>
+</ol></li>
+</ol></li>
 </ol>
 <ul>
 <li>想象你要寄送一个包裹：
@@ -1077,129 +1077,107 @@
 <li><strong>会话层</strong>是确保在电话通话中，你和对方的声音能顺利传输，即使中断也能恢复。</li>
 <li><strong>表示层</strong>是把包裹的内容翻译成收件人能理解的语言，或者加密包裹以保护隐私。</li>
 <li><strong>应用层</strong>是包裹里的实际内容，如信件、礼物，或你在网上购买的商品。</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h4 id="1-5-2-TCP-IP-4层模型">1.5.2 TCP / IP 4层模型</h4>
+<h4 id="tcp-ip-4层模型">1.5.2 TCP / IP 4层模型</h4>
 <p><strong>TCP/IP四层模型</strong>是互联网的核心协议套件模型，它将网络通信功能分为四个层次，从低到高分别是：<code>网络接口层</code>、<code>互联网层</code>、<code>传输层</code>和<code>应用层</code>。每一层都有特定的功能和协议。</p>
-<ol>
+<ol type="1">
 <li><strong>网络接口层(Network Interface Layer)</strong>:
-<ol>
+<ol type="1">
 <li><strong>功能</strong>：
-<ol>
+<ol type="1">
 <li>负责管理设备和物理传输介质之间的通信。</li>
 <li>包括数据链路层和物理层的功能，处理实际的硬件和网络介质。</li>
-</ol>
-</li>
+</ol></li>
 <li><strong>协议和设备</strong>：
-<ol>
+<ol type="1">
 <li>常见的协议有：以太网（Ethernet）、Wi-Fi、点对点协议（PPP）。</li>
 <li>相关设备包括：网卡（NIC）、交换机（Switch）、集线器（Hub）。</li>
-</ol>
-</li>
-</ol>
-</li>
+</ol></li>
+</ol></li>
 <li><strong>互联网层(Internet Layer)</strong>:
-<ol>
+<ol type="1">
 <li><strong>功能</strong>；
-<ol>
+<ol type="1">
 <li>负责数据包的路由和转发，确保数据在不同网络之间的传输。</li>
 <li>提供逻辑寻址和路由选择，处理数据包的封装和解封装。</li>
-</ol>
-</li>
+</ol></li>
 <li><strong>协议和设备</strong>：
-<ol>
+<ol type="1">
 <li>常见的协议有：互联网协议（IP，包括IPv4和IPv6）、互联网控制报文协议（ICMP）、地址解析协议（ARP）。</li>
 <li>相关设备包括：路由器（Router）。</li>
-</ol>
-</li>
-</ol>
-</li>
+</ol></li>
+</ol></li>
 <li><strong>传输层(Transport Layer)</strong>:
-<ol>
+<ol type="1">
 <li><strong>功能</strong>：
-<ol>
+<ol type="1">
 <li>提供端到端的通信服务，确保数据可靠传输。</li>
 <li>负责数据分段、传输控制、错误校验和恢复。</li>
-</ol>
-</li>
+</ol></li>
 <li><strong>协议和设备</strong>：
-<ol>
+<ol type="1">
 <li>常见的协议有：传输控制协议（TCP）、用户数据报协议（UDP）。</li>
 <li>TCP提供可靠的、面向连接的服务，确保数据顺序无误地传输。</li>
 <li>UDP提供不可靠的、无连接的服务，适用于需要快速传输但不需要保证可靠性的应用。</li>
-</ol>
-</li>
-</ol>
-</li>
+</ol></li>
+</ol></li>
 <li><strong>应用层(Application Layer)</strong>:
-<ol>
+<ol type="1">
 <li><strong>功能</strong>：
-<ol>
+<ol type="1">
 <li>直接为用户提供各种网络服务</li>
 <li>处理应用程序的网络功能，如文件传输、电子邮件、远程登录等</li>
-</ol>
-</li>
+</ol></li>
 <li><strong>协议和设备</strong>：
-<ol>
+<ol type="1">
 <li>常见的协议有：超文本传输协议（HTTP）、文件传输协议（FTP）、简单邮件传输协议（SMTP）、域名系统（DNS）、简单网络管理协议（SNMP）、动态主机配置协议（DHCP）。</li>
 <li>应用程序软件和服务运行在应用层上。</li>
+</ol></li>
+</ol></li>
 </ol>
-</li>
-</ol>
-</li>
-</ol>
-<h4 id="1-5-3-两种模型比较">1.5.3 两种模型比较</h4>
+<h4 id="两种模型比较">1.5.3 两种模型比较</h4>
 <ul>
 <li>OSI模型的不足：
 <ul>
 <li>从未真正被实现
 <ul>
 <li>TCP/IP已成为事实标准，OSI缺少厂家支持</li>
-</ul>
-</li>
+</ul></li>
 <li>技术实现糟糕
 <ul>
 <li>OSI分层欠缺技术考虑：会话层、表示层很少内容；数据链路层、网络层内容繁杂。模型和协议过于复杂</li>
 <li>分层间功能重复：差错控制、流量控制等在不同层反复出现</li>
-</ul>
-</li>
+</ul></li>
 <li>非技术因素
 <ul>
 <li>TCP/IP实现为UNIX一部分，免费</li>
 <li>OSI被认为是政府和机构的强加标准</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 <li>TCP/IP模型的不足
 <ul>
 <li>核心概念未能实现
 <ul>
 <li>未明确区分服务、接口和协议等核心概念</li>
-</ul>
-</li>
+</ul></li>
 <li>不具备通用性
 <ul>
 <li>不适于描述TCP/IP之外的其他协议栈</li>
-</ul>
-</li>
+</ul></li>
 <li>混用接口与分层的设计
 <ul>
 <li>链路层和物理层一起被定义为网络接口层，而非真正意义上的分层</li>
-</ul>
-</li>
+</ul></li>
 <li>模型欠缺完整性
 <ul>
 <li>未包含物理层与数据链路层</li>
 <li>物理层与数据链路层是至关重要的部分</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 </ul>
 <p>注意：教材是以下分层来讲述的：<code>物理层</code>、<code>数据链路层</code>、<code>网络层</code>、<code>运输层</code>、<code>应用层</code></p>
-<h2 id="2、物理层">2、物理层</h2>
+<h2 id="物理层-1">2、物理层</h2>
 <ul>
 <li>物理层考虑的是怎样才能<strong>在连接各种计算机的传输媒体上传输数据比特流</strong>，而不是指具体的传输媒体。</li>
 </ul>
@@ -1218,200 +1196,171 @@
 </ul>
 </blockquote>
 <ul>
-<li>用于物理层的协议也常称为<strong>物理层规程</strong> (procedure)。</li>
+<li>用于物理层的协议也常称为<strong>物理层规程</strong>
+(procedure)。</li>
 </ul>
-<blockquote></blockquote>
-<h3 id="2-1-物理介绍">2.1 物理介绍</h3>
-<h3 id="2-1-1-引导型介绍">2.1.1 引导型介绍</h3>
+<blockquote>
+
+</blockquote>
+<h3 id="物理介绍">2.1 物理介绍</h3>
+<h3 id="引导型介绍">2.1.1 引导型介绍</h3>
 <blockquote>
 <p>信号在固体介质中传播，例如铜、光纤、同轴电缆</p>
 </blockquote>
-<ol>
+<ol type="1">
 <li><strong>光纤</strong>
-<ol>
+<ol type="1">
 <li>高速运行：高速点对点运输(10 - 100 Gbps)</li>
 <li>低错误率：中继器相距很远，对电磁噪声免疫</li>
+</ol></li>
 </ol>
-</li>
-</ol>
-<p><img src="/images/%E5%85%89%E7%BA%A4.png" srcset="/img/loading.gif" lazyload alt="光纤"></p>
-<ol start="2">
+<figure>
+<img src="/images/光纤.png" srcset="/img/loading.gif" lazyload alt="光纤" />
+<figcaption aria-hidden="true">光纤</figcaption>
+</figure>
+<ol start="2" type="1">
 <li><strong>双绞线</strong>
-<ol>
+<ol type="1">
 <li>两根绝缘铜线互相缠绕为一对</li>
 <li>电话线为1对双绞线，网线为4对双绞线，广泛用于计算机网络（以太网）双向传输</li>
 <li>第5类：100 Mbps~1 Gbps；第6类：10Gbps</li>
 <li>传输距离一般为为100米</li>
+</ol></li>
 </ol>
-</li>
-</ol>
-<p><img src="/images/%E5%8F%8C%E7%BB%9E%E7%BA%BF.png" srcset="/img/loading.gif" lazyload alt="双绞线"></p>
-<ol start="3">
+<figure>
+<img src="/images/双绞线.png" srcset="/img/loading.gif" lazyload alt="双绞线" />
+<figcaption aria-hidden="true">双绞线</figcaption>
+</figure>
+<ol start="3" type="1">
 <li><strong>同轴电缆</strong>
-<ol>
+<ol type="1">
 <li>两根同心铜导线，双向传输</li>
 <li>电缆上的多个频率通道</li>
 <li>带宽可达100Mbps</li>
 <li>传输距离一般为200米</li>
+</ol></li>
 </ol>
-</li>
-</ol>
-<p><img src="/images/%E5%90%8C%E8%BD%B4%E7%94%B5%E7%BC%86.png" srcset="/img/loading.gif" lazyload alt="同轴电缆"></p>
-<h4 id="2-1-2-非引导型介质">2.1.2 非引导型介质</h4>
+<figure>
+<img src="/images/同轴电缆.png" srcset="/img/loading.gif" lazyload alt="同轴电缆" />
+<figcaption aria-hidden="true">同轴电缆</figcaption>
+</figure>
+<h4 id="非引导型介质">2.1.2 非引导型介质</h4>
 <blockquote>
 <p>信号自由传播，例如无线电(陆地无线电、卫星无线电信道)</p>
 </blockquote>
-<ol>
+<ol type="1">
 <li><strong>无线电</strong>
-<ol>
+<ol type="1">
 <li>电磁频谱中各种“波段”携带的信号</li>
 <li>没有物理“电线”</li>
 <li>不依赖介质的广播</li>
 <li>半双工（发送方到接收方）</li>
-</ol>
-</li>
+</ol></li>
 <li><strong>无线链路类型</strong>：
-<ol>
-<li>无线局域网（WiFi）<br>
-10-100 Mbps；10米</li>
-<li>广域（如3/4/5G蜂窝）<br>
-在~10公里范围内</li>
+<ol type="1">
+<li>无线局域网（WiFi） 10-100 Mbps；10米</li>
+<li>广域（如3/4/5G蜂窝） 在~10公里范围内</li>
 <li>蓝牙：短距离，有限速率</li>
 <li>地面微波：点对点；45 Mbps</li>
 <li>同步卫星：36000km高空， 280毫秒的往返时延</li>
 <li>低轨卫星：近地，但围绕地球高速运动，需要大量卫星才能覆盖地球</li>
+</ol></li>
 </ol>
-</li>
-</ol>
-<h3 id="2-2-数据交换方式">2.2 数据交换方式</h3>
-<h3 id="2-2-1-分组交换">2.2.1 分组交换</h3>
+<h3 id="数据交换方式">2.2 数据交换方式</h3>
+<h3 id="分组交换">2.2.1 分组交换</h3>
 <ul>
-<li>
-<p>分组交换是一种将数据分割成小块（称为分组或包）的传输方式。每个分组包含数据和控制信息（如源地址和目的地址），独立地在网络中传输，最终在目的地重新组装成完整的信息。</p>
-</li>
-<li>
-<p>主要<strong>缺点</strong>：</p>
-<ol>
-<li>
-<p>不具有实时性</p>
-</li>
-<li>
-<p>存在延迟</p>
-</li>
-<li>
-<p>会造成通信阻塞</p>
-</li>
-<li>
-<p>存在无用的重复数据</p>
-</li>
-<li>
-<p>会出现丢包的情况</p>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>优点</strong>：</p>
-<ol>
+<li><p>分组交换是一种将数据分割成小块（称为分组或包）的传输方式。每个分组包含数据和控制信息（如源地址和目的地址），独立地在网络中传输，最终在目的地重新组装成完整的信息。</p></li>
+<li><p>主要<strong>缺点</strong>：</p>
+<ol type="1">
+<li><p>不具有实时性</p></li>
+<li><p>存在延迟</p></li>
+<li><p>会造成通信阻塞</p></li>
+<li><p>存在无用的重复数据</p></li>
+<li><p>会出现丢包的情况</p></li>
+</ol></li>
+<li><p><strong>优点</strong>：</p>
+<ol type="1">
 <li>设计简单</li>
 <li>资源利用率很高</li>
-</ol>
-</li>
+</ol></li>
 </ul>
-<h4 id="2-2-2-电路交换">2.2.2 电路交换</h4>
+<h4 id="电路交换">2.2.2 电路交换</h4>
 <ul>
-<li>
-<p>电路交换是一种在通信前预先建立固定路径（电路）的传输方式。通信双方在通话前通过交换机建立一个专用的通信电路，数据在该电路上传输，通信结束后释放电路。</p>
-</li>
-<li>
-<p>电路连接的<strong>三个阶段</strong></p>
-<ol>
+<li><p>电路交换是一种在通信前预先建立固定路径（电路）的传输方式。通信双方在通话前通过交换机建立一个专用的通信电路，数据在该电路上传输，通信结束后释放电路。</p></li>
+<li><p>电路连接的<strong>三个阶段</strong></p>
+<ol type="1">
 <li>建立连接</li>
 <li>数据传输</li>
 <li>释放连接</li>
-</ol>
-</li>
-<li>
-<p><strong>优点</strong></p>
-<ol>
+</ol></li>
+<li><p><strong>优点</strong></p>
+<ol type="1">
 <li>传输速度快、高效</li>
 <li>实时</li>
-</ol>
-</li>
-<li>
-<p><strong>缺点</strong></p>
-<ol>
+</ol></li>
+<li><p><strong>缺点</strong></p>
+<ol type="1">
 <li>资源利用率低</li>
 <li>新建连接需要占据一定的时间，甚至比通话的时间还长</li>
-</ol>
-</li>
-<li>
-<p>电路交换的多路复用</p>
+</ol></li>
+<li><p>电路交换的多路复用</p>
 <ul>
-<li>
-<p><strong>频分多路复用(FDM, Frequency Division Multiplexing)</strong>:将可用带宽划分为多个互不重叠的频段，每个频段传输一路信号。每个信号在不同的频率上独立传输，避免互相干扰。</p>
+<li><p><strong>频分多路复用(FDM, Frequency Division
+Multiplexing)</strong>:将可用带宽划分为多个互不重叠的频段，每个频段传输一路信号。每个信号在不同的频率上独立传输，避免互相干扰。</p>
 <ul>
-<li>
-<p><strong>特点</strong>：</p>
+<li><p><strong>特点</strong>：</p>
 <ul>
 <li><strong>并行传输</strong>：各信号在不同频率上同时传输，实现并行通信。</li>
 <li><strong>恒定带宽</strong>：每个信号占用固定的频率带宽，不受其他信号的影响。</li>
 <li><strong>硬件复杂度</strong>：需要频率分配和滤波器来确保信号不互相干扰，硬件设计较为复杂。</li>
-</ul>
-</li>
-<li>
-<p><strong>应用</strong>：</p>
+</ul></li>
+<li><p><strong>应用</strong>：</p>
 <ul>
 <li><strong>广播电视</strong>：多个电视台在不同频率上广播信号。</li>
 <li><strong>无线通信</strong>：如传统模拟蜂窝网络（AMPS）。</li>
 <li><strong>有线通信</strong>：如光纤通信中的波分复用（WDM）。</li>
-</ul>
-</li>
-<li>
-<p><strong>示例</strong>：假设有三个信号要通过同一介质传输，频分多路复用会将可用频谱划分为三段，每个信号占用一个频段，例如：</p>
+</ul></li>
+<li><p><strong>示例</strong>：假设有三个信号要通过同一介质传输，频分多路复用会将可用频谱划分为三段，每个信号占用一个频段，例如：</p>
 <ul>
 <li>信号A占用100-200 MHz频段</li>
 <li>信号B占用200-300 MHz频段</li>
 <li>信号C占用300-400 MHz频段</li>
 </ul>
-<p>通过这种方式，三路信号可以同时在各自的频段上传输而互不干扰</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>时分多路复用(Time Division Multiplexing, TDM)</strong>:将时间划分为多个时隙，每个时隙传输一路信号。在一个周期内，每个信号轮流占用时隙进行传输。</p>
+<p>通过这种方式，三路信号可以同时在各自的频段上传输而互不干扰</p></li>
+</ul></li>
+<li><p><strong>时分多路复用(Time Division Multiplexing,
+TDM)</strong>:将时间划分为多个时隙，每个时隙传输一路信号。在一个周期内，每个信号轮流占用时隙进行传输。</p>
 <ul>
-<li>
-<p><strong>特点</strong>：</p>
+<li><p><strong>特点</strong>：</p>
 <ul>
 <li><strong>顺序传输</strong>：各信号在不同时间段轮流传输，实现顺序通信。</li>
 <li><strong>动态带宽</strong>：每个信号的带宽利用率可以根据需要进行动态调整。</li>
 <li><strong>时间同步</strong>：需要严格的时间同步机制，确保各信号在正确的时隙传输。</li>
-</ul>
-</li>
-<li>
-<p><strong>应用</strong>：</p>
+</ul></li>
+<li><p><strong>应用</strong>：</p>
 <ul>
-<li><strong>数字电话网络</strong>：如Plesiochronous Digital Hierarchy（PDH）和Synchronous Digital Hierarchy（SDH）。</li>
-<li><strong>移动通信</strong>：如GSM（Global System for Mobile Communications）。</li>
-</ul>
-</li>
-<li>
-<p><strong>示例</strong>：假设有三个信号要通过同一介质传输，时分多路复用会将传输时间划分为三个时隙，每个信号在一个时隙内传输。例如：</p>
+<li><strong>数字电话网络</strong>：如Plesiochronous Digital
+Hierarchy（PDH）和Synchronous Digital Hierarchy（SDH）。</li>
+<li><strong>移动通信</strong>：如GSM（Global System for Mobile
+Communications）。</li>
+</ul></li>
+<li><p><strong>示例</strong>：假设有三个信号要通过同一介质传输，时分多路复用会将传输时间划分为三个时隙，每个信号在一个时隙内传输。例如：</p>
 <ul>
 <li>在第一个时隙（T1）传输信号A</li>
 <li>在第二个时隙（T2）传输信号B</li>
 <li>在第三个时隙（T3）传输信号C</li>
 </ul>
-<p>通过这种方式，三路信号在不同时间轮流使用同一传输介质</p>
-</li>
+<p>通过这种方式，三路信号在不同时间轮流使用同一传输介质</p></li>
+</ul></li>
 </ul>
-</li>
+<figure>
+<img src="/images/多路复用.png" srcset="/img/loading.gif" lazyload alt="多路复用" />
+<figcaption aria-hidden="true">多路复用</figcaption>
+</figure></li>
 </ul>
-<p><img src="/images/%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.png" srcset="/img/loading.gif" lazyload alt="多路复用"></p>
-</li>
-</ul>
-<h4 id="2-2-3-分组交换和电路交换对比">2.2.3 分组交换和电路交换对比</h4>
+<h4 id="分组交换和电路交换对比">2.2.3 分组交换和电路交换对比</h4>
 <table>
+
 <thead>
 <tr>
 <th>特点</th>
@@ -1457,100 +1406,72 @@
 </tr>
 </tbody>
 </table>
-<h3 id="2-3-信道复用">2.3 信道复用</h3>
+<h3 id="信道复用">2.3 信道复用</h3>
 <blockquote>
-<p>信道复用（Channel Multiplexing）是指在同一传输介质上同时传输多个信号的技术。通过信道复用技术，可以提高传输介质的利用效率，实现多个信号的同时传输。</p>
+<p>信道复用（Channel
+Multiplexing）是指在同一传输介质上同时传输多个信号的技术。通过信道复用技术，可以提高传输介质的利用效率，实现多个信号的同时传输。</p>
 </blockquote>
-<h4 id="2-3-1-频分多路复用（Frequency-Division-Multiplexing-FDM）">2.3.1 频分多路复用（Frequency Division Multiplexing, FDM）</h4>
+<h4 id="频分多路复用frequency-division-multiplexing-fdm">2.3.1
+频分多路复用（Frequency Division Multiplexing, FDM）</h4>
 <ul>
-<li>
-<p><strong>工作原理</strong></p>
+<li><p><strong>工作原理</strong></p>
 <ul>
-<li>
-<p>将可用带宽划分为多个互不重叠的频段，每个频段传输一路信号。</p>
-</li>
-<li>
-<p>每个信号在不同的频率上独立传输，避免互相干扰。</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>特点</strong></p>
+<li><p>将可用带宽划分为多个互不重叠的频段，每个频段传输一路信号。</p></li>
+<li><p>每个信号在不同的频率上独立传输，避免互相干扰。</p></li>
+</ul></li>
+<li><p><strong>特点</strong></p>
 <ul>
-<li>
-<p><strong>并行传输</strong>：各信号在不同频率上同时传输，实现并行通信。</p>
-</li>
-<li>
-<p><strong>恒定带宽</strong>：每个信号占用固定的频率带宽，不受其他信号的影响。</p>
-</li>
-<li>
-<p><strong>硬件复杂度</strong>：需要频率分配和滤波器来确保信号不互相干扰，硬件设计较为复杂。</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>应用</strong></p>
+<li><p><strong>并行传输</strong>：各信号在不同频率上同时传输，实现并行通信。</p></li>
+<li><p><strong>恒定带宽</strong>：每个信号占用固定的频率带宽，不受其他信号的影响。</p></li>
+<li><p><strong>硬件复杂度</strong>：需要频率分配和滤波器来确保信号不互相干扰，硬件设计较为复杂。</p></li>
+</ul></li>
+<li><p><strong>应用</strong></p>
 <ul>
-<li>
-<p>广播电视</p>
-</li>
-<li>
-<p>无线通信</p>
-</li>
-<li>
-<p>有线通信中的波分复用（WDM）</p>
-</li>
+<li><p>广播电视</p></li>
+<li><p>无线通信</p></li>
+<li><p>有线通信中的波分复用（WDM）</p></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h4 id="2-3-2-时分多路复用（Time-Division-Multiplexing-TDM）">2.3.2 时分多路复用（Time Division Multiplexing, TDM）</h4>
+<h4 id="时分多路复用time-division-multiplexing-tdm">2.3.2
+时分多路复用（Time Division Multiplexing, TDM）</h4>
 <ul>
 <li><strong>工作原理</strong>
 <ul>
 <li>将时间划分为多个时隙，每个时隙传输一路信号。</li>
 <li>在一个周期内，每个信号轮流占用时隙进行传输。</li>
-</ul>
-</li>
+</ul></li>
 <li><strong>特点</strong>
 <ul>
 <li><strong>顺序传输</strong>：各信号在不同时间段轮流传输，实现顺序通信。</li>
 <li><strong>动态带宽</strong>：每个信号的带宽利用率可以根据需要进行动态调整。</li>
 <li><strong>时间同步</strong>：需要严格的时间同步机制，确保各信号在正确的时隙传输。</li>
-</ul>
-</li>
+</ul></li>
 <li><strong>应用</strong>
 <ul>
 <li>数字电话网络</li>
 <li>移动通信(如GSM)</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h4 id="2-3-3-码分多路复用（Code-Division-Multiplexing-CDM）">2.3.3 码分多路复用（Code Division Multiplexing, CDM）</h4>
+<h4 id="码分多路复用code-division-multiplexing-cdm">2.3.3
+码分多路复用（Code Division Multiplexing, CDM）</h4>
 <ul>
-<li>
-<p><strong>工作原理</strong></p>
+<li><p><strong>工作原理</strong></p>
 <ul>
 <li>为每个信号分配一个独特的编码序列，所有信号在同一频率范围内同时传输。</li>
 <li>接收端使用相应的编码序列解码所需的信号，其它编码序列的信号被视为噪声。</li>
-</ul>
-</li>
-<li>
-<p><strong>特点</strong></p>
+</ul></li>
+<li><p><strong>特点</strong></p>
 <ul>
 <li><strong>高效利用频谱</strong>：所有信号共享同一频谱，编码序列确保信号独立传输。</li>
 <li><strong>抗干扰能力强</strong>：编码序列提供抗干扰能力，特别适合多径传播环境。</li>
 <li><strong>复杂度高</strong>：编码和解码过程复杂，需要强大的处理能力。</li>
-</ul>
-</li>
-<li>
-<p><strong>应用</strong></p>
+</ul></li>
+<li><p><strong>应用</strong></p>
 <ul>
 <li>蜂窝移动通信（如CDMA）</li>
 <li>卫星通信、</li>
-</ul>
-</li>
-<li>
-<p><strong>具体例子</strong>：假设有四个用户（A、B、C、D）在同一蜂窝网络中通信。每个用户被分配一个独特的编码序列，用于区分不同的信号。这里使用伪随机序列作为编码序列：</p>
+</ul></li>
+<li><p><strong>具体例子</strong>：假设有四个用户（A、B、C、D）在同一蜂窝网络中通信。每个用户被分配一个独特的编码序列，用于区分不同的信号。这里使用伪随机序列作为编码序列：</p>
 <ul>
 <li>用户A的编码序列：1010</li>
 <li>用户B的编码序列：1100</li>
@@ -1563,109 +1484,93 @@
 <ul>
 <li>用户A发送比特1，其编码信号为：1010</li>
 <li>用户B发送比特0，其编码信号为：0000</li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="2-3-4-波分多路复用（Wavelength-Division-Multiplexing-WDM）">2.3.4 波分多路复用（Wavelength Division Multiplexing, WDM）</h4>
+<h4 id="波分多路复用wavelength-division-multiplexing-wdm">2.3.4
+波分多路复用（Wavelength Division Multiplexing, WDM）</h4>
 <ul>
 <li><strong>工作原理</strong>
 <ul>
 <li>将光纤的可用光谱划分为多个波长，每个波长传输一路信号。</li>
 <li>各个波长的信号在同一光纤上独立传输，互不干扰。</li>
-</ul>
-</li>
+</ul></li>
 <li><strong>特点</strong>
 <ul>
 <li><strong>高带宽</strong>：利用光纤的巨大带宽，提供极高的数据传输速率。</li>
 <li><strong>并行传输</strong>：多个波长的信号在同一光纤上同时传输。</li>
 <li><strong>硬件复杂度</strong>：需要精确的波长分配和滤波设备，硬件设计复杂。</li>
-</ul>
-</li>
+</ul></li>
 <li><strong>应用</strong>
 <ul>
 <li>长距离光纤通信</li>
 <li>数据中心互连</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="3、-数据链路层">3、 数据链路层</h2>
-<h3 id="3-1-功能（要解决的问题）">3.1 功能（要解决的问题）</h3>
+<h2 id="数据链路层-1">3、 数据链路层</h2>
+<h3 id="功能要解决的问题">3.1 功能（要解决的问题）</h3>
 <p><strong>成帧（Framing）</strong></p>
 <p>将比特流划分成<strong>帧</strong>的主要目的是为了检测和纠正物理层在比特传输中可能出现的错误，数据链路层功能需借助<strong>帧</strong>的各个域来实现</p>
 <p><strong>差错控制（Error Control）</strong></p>
 <p>处理传输中出现的差错，如位错误、丢失等</p>
 <p><strong>流量控制（Flow Control）</strong></p>
 <p>确保发送方的发送速率，不大于接收方的处理速率，避免接收缓冲区溢出</p>
-<h3 id="3-2-数据链路层提供的服务">3.2 数据链路层提供的服务</h3>
-<ol>
+<h3 id="数据链路层提供的服务">3.2 数据链路层提供的服务</h3>
+<ol type="1">
 <li><strong>无确认、无连接服务(Unacknowledged connections)</strong>
 <ul>
 <li>接收方不对收到的帧进行确认</li>
 <li>适用场景：误码率低的可靠信道；实时通信</li>
 <li>网络实例：以太网</li>
-</ul>
-</li>
+</ul></li>
 <li><strong>有确认、无连接服务(Acknowledged connections)</strong>
 <ul>
 <li>每一帧都得到单独的确认</li>
 <li>适用场景：不可靠的信道(无线信道)</li>
 <li>网络实例：802.11</li>
-</ul>
-</li>
-<li><strong>有确认、有连接服务(Acknowleddge connection-oriented)</strong>
+</ul></li>
+<li><strong>有确认、有连接服务(Acknowleddge
+connection-oriented)</strong>
 <ul>
 <li>适用场景：长延迟的不可靠信道</li>
-</ul>
-</li>
+</ul></li>
 </ol>
-<h3 id="3-3-成帧-Framing">3.3 成帧(Framing)</h3>
-<h4 id="3-3-1-什么是成帧和帧">3.3.1 什么是成帧和帧</h4>
+<h3 id="成帧framing">3.3 成帧(Framing)</h3>
+<h4 id="什么是成帧和帧">3.3.1 什么是成帧和帧</h4>
 <ul>
-<li>
-<p><strong>成帧(Framing)<strong>旨在将网络层传递的数据包(通常称为网络层数据报)封装为数据链路层课传输的单位，称为</strong>帧(Frame)</strong>。每个帧包含了实际的数据以及用于传输控制和错误检测的附加信息</p>
-</li>
-<li>
-<p><strong>帧的结构</strong>：</p>
-<ol>
-<li>**帧头(Header):**包含控制信息，如源地址、目的地址、协议标识、帧序号等。这些信息帮助接收方识别帧并正确处理2.</li>
-<li>**数据字段(Payload/Data):**包含要传输的实际数据，即从网络层传递下来的数据包</li>
-<li>**帧尾(Trailer):**通常包括错误检测信息，如循环冗余校验(CRC)，用于检测帧在传输过程中是否发生错误</li>
-</ol>
-</li>
+<li><p><strong>成帧(Framing)</strong>旨在将网络层传递的数据包(通常称为网络层数据报)封装为数据链路层课传输的单位，称为<strong>帧(Frame)</strong>。每个帧包含了实际的数据以及用于传输控制和错误检测的附加信息</p></li>
+<li><p><strong>帧的结构</strong>：</p>
+<ol type="1">
+<li><strong>帧头(Header):</strong>包含控制信息，如源地址、目的地址、协议标识、帧序号等。这些信息帮助接收方识别帧并正确处理2.</li>
+<li><strong>数据字段(Payload/Data):</strong>包含要传输的实际数据，即从网络层传递下来的数据包</li>
+<li><strong>帧尾(Trailer):</strong>通常包括错误检测信息，如循环冗余校验(CRC)，用于检测帧在传输过程中是否发生错误</li>
+</ol></li>
 </ul>
-<h4 id="3-3-1-要解决的关键问题：如何表示一个帧的开始？">3.3.1 要解决的关键问题：如何表示一个帧的开始？</h4>
+<h4 id="要解决的关键问题如何表示一个帧的开始">3.3.1
+要解决的关键问题：如何表示一个帧的开始？</h4>
 <ul>
 <li>接收方必须能从物理层接收的比特流中明确区分出一帧的开始和结束，这个问题被称为帧同步或帧定界</li>
-<li>**关键：**选择何种定界符？定界符出现在数据部分如何处理？</li>
+<li><strong>关键：</strong>选择何种定界符？定界符出现在数据部分如何处理？</li>
 </ul>
-<h4 id="3-3-2-成帧-framing-的方式">3.3.2 成帧(framing)的方式</h4>
-<ol>
-<li>
-<p><strong>带比特填充的定界符法</strong></p>
-<p>**定界符：**两个0比特之间，连续6个1比特，即<code>01111110</code>,0x7E</p>
-<p><img src="/images/875b471e44a6b0c85370a060308c384d(1)(1).png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h4 id="成帧framing的方式">3.3.2 成帧(framing)的方式</h4>
+<ol type="1">
+<li><p><strong>带比特填充的定界符法</strong></p>
+<p><strong>定界符：</strong>两个0比特之间，连续6个1比特，即<code>01111110</code>,0x7E</p>
+<p><img src="/images/875b471e44a6b0c85370a060308c384d(1)(1).png" srcset="/img/loading.gif" lazyload /></p>
 <p>发送方检查有效载荷：若在有效载荷中出现连续5个1比特，则直接插入1个0比特</p>
-<p><img src="/images/f91c2c9a1ad4ac4232124097737f8162(1)(1).png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="/images/f91c2c9a1ad4ac4232124097737f8162(1)(1).png" srcset="/img/loading.gif" lazyload /></p>
 <p>接收方的处理：</p>
 <ul>
 <li>若出现连续5个1比特</li>
 <li>若下一个比特为0，则为有效载荷，直接丢弃0比特</li>
 <li>若下一个比特为1，则连同后一比特的0，构成定界符，一帧结束</li>
-</ul>
-</li>
-<li>
-<p><strong>物理层编码违例</strong></p>
+</ul></li>
+<li><p><strong>物理层编码违例</strong></p>
 <ul>
-<li>
-<p>**物理层编码违例(Physical Layer Coding Violation)**是物理层的一种信号编码技术，通常用于在数据传输过程中标识特定的控制信息，如帧的开始和结束、错误检测或其他特殊信号</p>
-</li>
-<li>
-<p>核心思想：<strong>选择的定界符不会在数据部分出现</strong></p>
-</li>
-<li>
-<p><strong>4B/5B编码方案：</strong></p>
+<li><p><strong>物理层编码违例(Physical Layer Coding
+Violation)</strong>是物理层的一种信号编码技术，通常用于在数据传输过程中标识特定的控制信息，如帧的开始和结束、错误检测或其他特殊信号</p></li>
+<li><p>核心思想：<strong>选择的定界符不会在数据部分出现</strong></p></li>
+<li><p><strong>4B/5B编码方案：</strong></p>
 <ul>
 <li>4比特数据映射成5比特编码，剩余的一半码字(16个码字)未使用，可以用作帧界定符。</li>
 <li><strong>传统的NRZ(不归零)编码</strong>存在这样的问题：如果数据中有长串的0或1，信号电平会长时间保持不变，导致时钟同步困难</li>
@@ -1748,41 +1653,35 @@
 </table>
 <p><strong>示例说明</strong></p>
 <ul>
-<li>**输入数据：**假设我妈需要传输数据序列<code>0101 1100 0011</code></li>
+<li><strong>输入数据：</strong>假设我妈需要传输数据序列<code>0101 1100 0011</code></li>
 <li><strong>编码过程：</strong>
 <ul>
 <li><code>0101</code> --&gt; <code>01011</code></li>
 <li><code>1100</code> --&gt; <code>11010</code></li>
 <li><code>0011</code> --&gt; <code>10101</code></li>
-</ul>
-</li>
-<li>**传输信号：**编码后的数据序列为<code>01011 11010 10101</code></li>
+</ul></li>
+<li><strong>传输信号：</strong>编码后的数据序列为<code>01011 11010 10101</code></li>
 <li><strong>解码过程：</strong>
 <ul>
 <li>接收<code>01011</code>，查表还原为<code>0101</code></li>
 <li>接收<code>11010</code>，查表还原为<code>1100</code></li>
 <li>接收<code>10101</code>，查表还原为<code>0011</code></li>
-</ul>
-</li>
-<li>**最终数据：**成功还原为原始数据序列<code>0101 1100 0011</code></li>
-</ul>
-</li>
-<li>
-<p><strong>前导码：</strong></p>
+</ul></li>
+<li><strong>最终数据：</strong>成功还原为原始数据序列<code>0101 1100 0011</code></li>
+</ul></li>
+<li><p><strong>前导码：</strong></p>
 <ul>
-<li>**前导码(Preamble)**是网络通信中用于信号同步的一个特殊序列，通常位于数据帧的最前端</li>
-<li>例如：在<strong>以太网协议(如IEEE 802.3)中</strong>，前导码通常由7个字节组成，每个字节为<code>10101010</code>(十六进制为<code>0xAA</code>)，紧接着是一个<strong>帧起始定界符(Start Frame Delimiter)</strong></li>
-</ul>
-</li>
-<li>
-<p><strong>曼切斯特编码/差分曼切斯特编码：</strong></p>
+<li><strong>前导码(Preamble)</strong>是网络通信中用于信号同步的一个特殊序列，通常位于数据帧的最前端</li>
+<li>例如：在<strong>以太网协议(如IEEE
+802.3)中</strong>，前导码通常由7个字节组成，每个字节为<code>10101010</code>(十六进制为<code>0xAA</code>)，紧接着是一个<strong>帧起始定界符(Start
+Frame Delimiter)</strong></li>
+</ul></li>
+<li><p><strong>曼切斯特编码/差分曼切斯特编码：</strong></p>
 <ul>
 <li>正常的信号在周期中间有跳变，持续的高电平(或低电平)为违例码，可以用作定界符</li>
 <li>例如：802.5令牌环网</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 </ol>
 
                 

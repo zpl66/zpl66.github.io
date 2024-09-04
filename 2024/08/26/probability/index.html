@@ -18,19 +18,19 @@
   <meta name="author" content="饺子">
   <meta name="keywords" content="">
   
-    <meta name="description" content="第一章 随机事件及其概率 第一节 随机试验与随机事件 1. 随机试验  可重复性：试验可以在相同的条件下重复进行 多结果性：每次试验都有多个可能的结果（不唯一），并且在试验之前能够明确所有可能的结果 不确定性（随机性）：每次实验之前不能确定哪一个结果会出现  满足上诉三个特点的试验称为随机试验（简称试验），用E表示 2. 样本空间 试验E的所有可能结果组成的集合称为E的样本空间，记为$\Omega">
+    <meta name="description" content="第一章 随机事件及其概率 第一节 随机试验与随机事件 1. 随机试验  可重复性：试验可以在相同的条件下重复进行 多结果性：每次试验都有多个可能的结果（不唯一），并且在试验之前能够明确所有可能的结果 不确定性（随机性）：每次实验之前不能确定哪一个结果会出现  满足上诉三个特点的试验称为随机试验（简称试验），用E表示 2. 样本空间 试验E的所有可能结果组成的集合称为E的样本空间">
 <meta property="og:type" content="article">
 <meta property="og:title" content="概率论与数理统计">
 <meta property="og:url" content="http://crazythursdayv50tome.cn/2024/08/26/probability/index.html">
 <meta property="og:site_name" content="Dumpling">
-<meta property="og:description" content="第一章 随机事件及其概率 第一节 随机试验与随机事件 1. 随机试验  可重复性：试验可以在相同的条件下重复进行 多结果性：每次试验都有多个可能的结果（不唯一），并且在试验之前能够明确所有可能的结果 不确定性（随机性）：每次实验之前不能确定哪一个结果会出现  满足上诉三个特点的试验称为随机试验（简称试验），用E表示 2. 样本空间 试验E的所有可能结果组成的集合称为E的样本空间，记为$\Omega">
+<meta property="og:description" content="第一章 随机事件及其概率 第一节 随机试验与随机事件 1. 随机试验  可重复性：试验可以在相同的条件下重复进行 多结果性：每次试验都有多个可能的结果（不唯一），并且在试验之前能够明确所有可能的结果 不确定性（随机性）：每次实验之前不能确定哪一个结果会出现  满足上诉三个特点的试验称为随机试验（简称试验），用E表示 2. 样本空间 试验E的所有可能结果组成的集合称为E的样本空间">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://crazythursdayv50tome.cn/%5Cimages%5C%E7%9F%A2%E9%87%8F%E5%A4%8D%E5%8F%A4%E5%AE%87%E8%88%AA%E5%91%98%E5%9C%A8%E7%A9%BA%E9%97%B4%E5%BA%93%E5%AD%98%E6%8F%92%E5%9B%BE.jpg">
+<meta property="og:image" content="http://crazythursdayv50tome.cn/images/%E7%9F%A2%E9%87%8F%E5%A4%8D%E5%8F%A4%E5%AE%87%E8%88%AA%E5%91%98%E5%9C%A8%E7%A9%BA%E9%97%B4%E5%BA%93%E5%AD%98%E6%8F%92%E5%9B%BE.jpg">
 <meta property="article:published_time" content="2024-08-26T09:15:10.000Z">
-<meta property="article:modified_time" content="2024-08-30T13:56:41.565Z">
+<meta property="article:modified_time" content="2024-09-04T08:51:33.098Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://crazythursdayv50tome.cn/%5Cimages%5C%E7%9F%A2%E9%87%8F%E5%A4%8D%E5%8F%A4%E5%AE%87%E8%88%AA%E5%91%98%E5%9C%A8%E7%A9%BA%E9%97%B4%E5%BA%93%E5%AD%98%E6%8F%92%E5%9B%BE.jpg">
+<meta name="twitter:image" content="http://crazythursdayv50tome.cn/images/%E7%9F%A2%E9%87%8F%E5%A4%8D%E5%8F%A4%E5%AE%87%E8%88%AA%E5%91%98%E5%9C%A8%E7%A9%BA%E9%97%B4%E5%BA%93%E5%AD%98%E6%8F%92%E5%9B%BE.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -340,172 +340,252 @@
                 
                 <h2 id="第一章-随机事件及其概率">第一章 随机事件及其概率</h2>
 <h3 id="第一节-随机试验与随机事件">第一节 随机试验与随机事件</h3>
-<h4 id="1-随机试验">1. 随机试验</h4>
+<h4 id="随机试验">1. 随机试验</h4>
 <ul>
 <li><strong>可重复性</strong>：试验可以在相同的条件下重复进行</li>
 <li><strong>多结果性</strong>：每次试验都有多个可能的结果（不唯一），并且在试验之前能够明确所有可能的结果</li>
 <li><strong>不确定性（随机性）</strong>：每次实验之前不能确定哪一个结果会出现</li>
 </ul>
 <p>满足上诉三个特点的试验称为<code>随机试验</code>（简称<code>试验</code>），用<code>E</code>表示</p>
-<h4 id="2-样本空间">2. 样本空间</h4>
-<p>试验E的所有可能结果组成的集合称为E的<code>样本空间</code>，记为$\Omega$（或S），样本空间的元素（即E的每个结果），称为<code>样本点</code>，记作$\omega$。</p>
-<h4 id="3-随机事件">3. 随机事件</h4>
+<h4 id="样本空间">2. 样本空间</h4>
+<p>试验E的所有可能结果组成的集合称为E的<code>样本空间</code>，记为<span
+class="math inline">\(\Omega\)</span>（或S），样本空间的元素（即E的每个结果），称为<code>样本点</code>，记作<span
+class="math inline">\(\omega\)</span>。</p>
+<h4 id="随机事件">3. 随机事件</h4>
 <ul>
-<li><code>随机事件（简称事件）</code>：试验E的样本空间$\Omega$的子集称为E的随机事件，通常用A，B，C等表示</li>
-<li><code>事件A发生</code>：属于事件A的任一样本点出现</li>
-<li><code>基本事件</code>：由一个样本点组成的单点集$\Leftrightarrow$试验E的最基本可能的结果</li>
-<li><code>必然事件</code>：样本空间$\Omega$（全集）$\Leftrightarrow$ 每次试验都必然发生的事件</li>
-<li><code>不可能事件</code>：空集$\Phi$（不包含任何样本点）$\Leftrightarrow$每次试验都不发生</li>
+<li><code>随机事件（简称事件）</code>：试验E的样本空间<span
+class="math inline">\(\Omega\)</span>的子集称为E的随机事件，通常用A，B，C等表示<br />
+</li>
+<li><code>事件A发生</code>：属于事件A的任一样本点出现<br />
+</li>
+<li><code>基本事件</code>：由一个样本点组成的单点集<span
+class="math inline">\(\Leftrightarrow\)</span>试验E的最基本可能的结果<br />
+</li>
+<li><code>必然事件</code>：样本空间<span
+class="math inline">\(\Omega\)</span>（全集）<span
+class="math inline">\(\Leftrightarrow\)</span>
+每次试验都必然发生的事件<br />
+</li>
+<li><code>不可能事件</code>：空集<span
+class="math inline">\(\Phi\)</span>（不包含任何样本点）<span
+class="math inline">\(\Leftrightarrow\)</span>每次试验都不发生</li>
 </ul>
-<p>且$\Phi$$\subset$A$\subset$$\Omega$</p>
-<h4 id="4-事件之间的关系与事件的运算">4. 事件之间的关系与事件的运算</h4>
+<p>且<span class="math inline">\(\Phi\)</span><span
+class="math inline">\(\subset\)</span>A<span
+class="math inline">\(\subset\)</span><span
+class="math inline">\(\Omega\)</span></p>
+<h4 id="事件之间的关系与事件的运算">4. 事件之间的关系与事件的运算</h4>
 <p>必然事件与集合的对应关系如下：</p>
 <ul>
-<li>必然事件$\leftrightarrow$样本空间$\Omega$（全集）；</li>
-<li>基本事件$\leftrightarrow$样本事件$\omega$（单点集）；</li>
-<li>随机事件$\leftrightarrow$$\Omega$的子集；</li>
-<li>不可能事件$\leftrightarrow$空集$\Phi$​</li>
+<li>必然事件<span
+class="math inline">\(\leftrightarrow\)</span>样本空间<span
+class="math inline">\(\Omega\)</span>（全集）；</li>
+<li>基本事件<span
+class="math inline">\(\leftrightarrow\)</span>样本事件<span
+class="math inline">\(\omega\)</span>（单点集）；</li>
+<li>随机事件<span class="math inline">\(\leftrightarrow\)</span><span
+class="math inline">\(\Omega\)</span>的子集；</li>
+<li>不可能事件<span
+class="math inline">\(\leftrightarrow\)</span>空集<span
+class="math inline">\(\Phi\)</span>​</li>
 </ul>
 <p><strong>定义</strong></p>
-<ol>
-<li>
-<p><code>包含</code>：A$\subset$B$\Leftrightarrow$事件A发生必然导致B发生</p>
-</li>
-<li>
-<p><code>事件的并（和）</code>：A$\cup$B(A+B)$\Leftrightarrow$​A,B至少发生一个</p>
-</li>
-<li>
-<p><code>事件的交（积）</code>：A$\cap$B(AB)$\Leftrightarrow$A,B同时发生</p>
-</li>
-<li>
-<p><code>事件的差</code>A-B$\Leftrightarrow$A发生而B不发生</p>
+<ol type="1">
+<li><p><code>包含</code>：A<span
+class="math inline">\(\subset\)</span>B<span
+class="math inline">\(\Leftrightarrow\)</span>事件A发生必然导致B发生</p></li>
+<li><p><code>事件的并（和）</code>：A<span
+class="math inline">\(\cup\)</span>B(A+B)<span
+class="math inline">\(\Leftrightarrow\)</span>​A,B至少发生一个</p></li>
+<li><p><code>事件的交（积）</code>：A<span
+class="math inline">\(\cap\)</span>B(AB)<span
+class="math inline">\(\Leftrightarrow\)</span>A,B同时发生</p></li>
+<li><p><code>事件的差</code>A-B<span
+class="math inline">\(\Leftrightarrow\)</span>A发生而B不发生</p>
 <ul>
-<li>$A-B=A-AB=A\overline{B}$</li>
-</ul>
-</li>
-<li>
-<p><code>互不相容（或互斥）</code>：AB=$\Phi$$\Leftrightarrow$A与B不能同时发生</p>
-</li>
-<li>
-<p><code>对立事件（或逆事件）</code>：A$\cup$B=$\Omega$且A$\cap$B=$\Phi$$\Leftrightarrow$A与B护卫对立事件</p>
-</li>
-<li>
-<p><code>完备事件组</code>：$A_1$,$A_2$,$\dots$,$A_n$满足<br>
-$$<br>
-\begin{cases}<br>
-A_i\cap A_j=\Phi,\forall i \neq j,\<br>
-\sum_{i=1}^n A_i=\Omega<br>
-\end{cases}<br>
-$$</p>
-</li>
+<li><span class="math inline">\(A-B=A-AB=A\overline{B}\)</span></li>
+</ul></li>
+<li><p><code>互不相容（或互斥）</code>：AB=<span
+class="math inline">\(\Phi\)</span><span
+class="math inline">\(\Leftrightarrow\)</span>A与B不能同时发生</p></li>
+<li><p><code>对立事件（或逆事件）</code>：A<span
+class="math inline">\(\cup\)</span>B=<span
+class="math inline">\(\Omega\)</span>且A<span
+class="math inline">\(\cap\)</span>B=<span
+class="math inline">\(\Phi\)</span><span
+class="math inline">\(\Leftrightarrow\)</span>A与B护卫对立事件</p></li>
+<li><p><code>完备事件组</code>：<span
+class="math inline">\(A_1\)</span>,<span
+class="math inline">\(A_2\)</span>,<span
+class="math inline">\(\dots\)</span>,<span
+class="math inline">\(A_n\)</span>满足 <span class="math display">\[
+\begin{cases}
+A_i\cap A_j=\Phi,\forall i \neq j,\\
+\sum_{i=1}^n A_i=\Omega
+\end{cases}
+\]</span></p></li>
 </ol>
-<p>则称$A_1,A_2,\dots,A_n$构成完备事件组，也称$A_1$,$A_2$,$\dots$,$A_n$是样本空间的一个划分</p>
+<p>则称<span
+class="math inline">\(A_1,A_2,\dots,A_n\)</span>构成完备事件组，也称<span
+class="math inline">\(A_1\)</span>,<span
+class="math inline">\(A_2\)</span>,<span
+class="math inline">\(\dots\)</span>,<span
+class="math inline">\(A_n\)</span>是样本空间的一个划分</p>
 <p><strong>事件的交换律</strong></p>
-<ol>
-<li><strong>交换律</strong>：$A\cup B=B\cup A$;$A\cap B=B\cap A$</li>
-<li><strong>结合律</strong>：$(A\cup B)\cup C=A\cup (B\cup C)$;$(A\cap B)\cap C=A\cap (B\cap C)$</li>
-<li><strong>分配律</strong>：$(A\cup B)\cap C = (A\cap C)\cup (B\cap C)$;$(A\cap B)\cup C=(A\cup C)\cap (B\cup C)$</li>
-<li><strong>自反律</strong>：$\overline{\overline{A}}=A$</li>
-<li><strong>对偶律</strong>：$\overline{A\cup B}=\overline{A}\cap \overline{B}$;$\overline{A\cap B}=\overline{A}\cup\overline{B}$</li>
+<ol type="1">
+<li><strong>交换律</strong>：<span class="math inline">\(A\cup B=B\cup
+A\)</span>;<span class="math inline">\(A\cap B=B\cap A\)</span></li>
+<li><strong>结合律</strong>：<span class="math inline">\((A\cup B)\cup
+C=A\cup (B\cup C)\)</span>;<span class="math inline">\((A\cap B)\cap
+C=A\cap (B\cap C)\)</span></li>
+<li><strong>分配律</strong>：<span class="math inline">\((A\cup B)\cap C
+= (A\cap C)\cup (B\cap C)\)</span>;<span class="math inline">\((A\cap
+B)\cup C=(A\cup C)\cap (B\cup C)\)</span></li>
+<li><strong>自反律</strong>：<span
+class="math inline">\(\overline{\overline{A}}=A\)</span></li>
+<li><strong>对偶律</strong>：<span class="math inline">\(\overline{A\cup
+B}=\overline{A}\cap \overline{B}\)</span>;<span
+class="math inline">\(\overline{A\cap
+B}=\overline{A}\cup\overline{B}\)</span></li>
 </ol>
 <h3 id="第二节-频率与概率">第二节 频率与概率</h3>
-<h4 id="1-频率">1. 频率</h4>
-<p><strong>定义</strong>：在相同的条件下，进行$n$次试验，其中事件$A$发生了$n_A$次，则$A$发生的频率定义为：<br>
-$$<br>
-f_n(A)=\frac{n_A}{n}<br>
-$$<br>
-<strong>性质</strong>：<br>
-$$<br>
-\begin{cases}<br>
-(1) 0\leq f_n(A)\leq 1;\<br>
-(2) f_n(\Omega)=1;\<br>
-(3)A_1,A_2,\dots ,A_k两两互斥\Rightarrow f_n(\sum\limits_{i=1}^{k}A_i)=\sum\limits_{i=1}^kf_n(A_i)<br>
-\end{cases}<br>
-$$<br>
-<strong>频率的稳定性</strong>：随着试验次数$n$增大，频率$f_n(A)$逐渐稳定于某个常数$p$，这种“频率的稳定性”，即通常所说的统计规律性，频率的稳定值$p$为事件$A$的概率，此即概率的统计定义</p>
-<h4 id="2-概率">2. 概率</h4>
-<p><strong>定义</strong>：设E是随机事件，，$\Omega$是其样本空间，对于E的每一事件$A$赋予一个实数，记作$P(A)$，称为事件A的概率，且集合函数$P(·)$满足 以下条件：<br>
-$$<br>
-三公理\begin{cases}<br>
-(1)非负性：对于每一个事件A，P(A)\geq 0;\<br>
-(2)规范性：对于必然事件\Omega ,P(\Omega)=1;\<br>
-(3)可列可加性：A_1,A_2,\dots ,A_n,\dots两两互不相容，有P(\sum\limits_{i=1}^{\infty}A_i)=\sum\limits_{i=1}^{\infty}P(A_i)\<br>
-\end{cases}<br>
-$$<br>
-<strong>性质</strong>：</p>
-<ol>
-<li>
-<p>$P(\Phi)=0$.反之不成立，即$P(A)=0\nRightarrow A=\Phi$</p>
-</li>
-<li>
-<p>（有限可加性）$A_1,A_2,\dots ,A_n,\dots两两互不相容\Rightarrow P(\sum\limits_{i=1}^{\infty}A_i)=\sum\limits_{i=1}^{\infty}P(A_i)$</p>
-<p>$A$与$B$互不相容$\Rightarrow$$P(A+B)=P(A)+P(B)$</p>
-</li>
-<li>
-<p>对于任一事件A，有$P(\overline{A})=1-p(A)$或$P(A)+P(\overline{A})=1$</p>
-</li>
-<li>
-<p>$P(A-B)=P(A)-P(AB)$</p>
-</li>
-<li>
-<p>$P(A\cup B)=P(A)+P(B)-P(AB)$</p>
-</li>
-<li>
-<p>$P(\overline{A}\cup\overline{B})=P(\overline{AB})$</p>
-</li>
-<li>
-<p>$C_n^m=\frac{P_n^m}{m!}=\frac{n!}{m!(n-m)!}$</p>
-</li>
-<li>
-<p>$C_n^m=C_n^{n-m}$</p>
-</li>
+<h4 id="频率">1. 频率</h4>
+<p><strong>定义</strong>：在相同的条件下，进行<span
+class="math inline">\(n\)</span>次试验，其中事件<span
+class="math inline">\(A\)</span>发生了<span
+class="math inline">\(n_A\)</span>次，则<span
+class="math inline">\(A\)</span>发生的频率定义为： <span
+class="math display">\[
+f_n(A)=\frac{n_A}{n}
+\]</span> <strong>性质</strong>： <span class="math display">\[
+\begin{cases}
+(1) 0\leq f_n(A)\leq 1;\\
+(2) f_n(\Omega)=1;\\
+(3)A_1,A_2,\dots ,A_k两两互斥\Rightarrow
+f_n(\sum\limits_{i=1}^{k}A_i)=\sum\limits_{i=1}^kf_n(A_i)
+\end{cases}
+\]</span> <strong>频率的稳定性</strong>：随着试验次数<span
+class="math inline">\(n\)</span>增大，频率<span
+class="math inline">\(f_n(A)\)</span>逐渐稳定于某个常数<span
+class="math inline">\(p\)</span>，这种“频率的稳定性”，即通常所说的统计规律性，频率的稳定值<span
+class="math inline">\(p\)</span>为事件<span
+class="math inline">\(A\)</span>的概率，此即概率的统计定义</p>
+<h4 id="概率">2. 概率</h4>
+<p><strong>定义</strong>：设E是随机事件，，<span
+class="math inline">\(\Omega\)</span>是其样本空间，对于E的每一事件<span
+class="math inline">\(A\)</span>赋予一个实数，记作<span
+class="math inline">\(P(A)\)</span>，称为事件A的概率，且集合函数<span
+class="math inline">\(P(·)\)</span>满足 以下条件： <span
+class="math display">\[
+三公理\begin{cases}
+(1)非负性：对于每一个事件A，P(A)\geq 0;\\
+(2)规范性：对于必然事件\Omega ,P(\Omega)=1;\\
+(3)可列可加性：A_1,A_2,\dots
+,A_n,\dots两两互不相容，有P(\sum\limits_{i=1}^{\infty}A_i)=\sum\limits_{i=1}^{\infty}P(A_i)\\
+\end{cases}
+\]</span> <strong>性质</strong>：</p>
+<ol type="1">
+<li><p><span
+class="math inline">\(P(\Phi)=0\)</span>.反之不成立，即<span
+class="math inline">\(P(A)=0\nRightarrow A=\Phi\)</span></p></li>
+<li><p>（有限可加性）<span class="math inline">\(A_1,A_2,\dots
+,A_n,\dots两两互不相容\Rightarrow
+P(\sum\limits_{i=1}^{\infty}A_i)=\sum\limits_{i=1}^{\infty}P(A_i)\)</span></p>
+<p><span class="math inline">\(A\)</span>与<span
+class="math inline">\(B\)</span>互不相容<span
+class="math inline">\(\Rightarrow\)</span><span
+class="math inline">\(P(A+B)=P(A)+P(B)\)</span></p></li>
+<li><p>对于任一事件A，有<span
+class="math inline">\(P(\overline{A})=1-p(A)\)</span>或<span
+class="math inline">\(P(A)+P(\overline{A})=1\)</span></p></li>
+<li><p><span class="math inline">\(P(A-B)=P(A)-P(AB)\)</span></p></li>
+<li><p><span class="math inline">\(P(A\cup
+B)=P(A)+P(B)-P(AB)\)</span></p></li>
+<li><p><span
+class="math inline">\(P(\overline{A}\cup\overline{B})=P(\overline{AB})\)</span></p></li>
+<li><p><span
+class="math inline">\(C_n^m=\frac{P_n^m}{m!}=\frac{n!}{m!(n-m)!}\)</span></p></li>
+<li><p><span class="math inline">\(C_n^m=C_n^{n-m}\)</span></p></li>
 </ol>
 <h3 id="第三节-古典概型和几何概型">第三节 古典概型和几何概型</h3>
-<h4 id="1-古典概型（等可能模型）">1. 古典概型（等可能模型）</h4>
-<p>$$<br>
-特征=\begin{cases}<br>
-有限性\<br>
-等可能性\<br>
-\end{cases}<br>
-$$</p>
-<p>$P(A)=\frac{m}{n}$</p>
-<h4 id="2-几何概型">2. 几何概型</h4>
-<p>$$<br>
-\mu (\Omega)=\begin{cases}<br>
-长度(一维线段)\<br>
-面积(二维平面区域)\<br>
-体积(三维空间立体)\<br>
-\end{cases}<br>
-$$</p>
+<h4 id="古典概型等可能模型">1. 古典概型（等可能模型）</h4>
+<p><span class="math display">\[
+特征=\begin{cases}
+有限性\\
+等可能性\\
+\end{cases}
+\]</span></p>
+<p><span class="math inline">\(P(A)=\frac{m}{n}\)</span></p>
+<h4 id="几何概型">2. 几何概型</h4>
+<p><span class="math display">\[
+\mu (\Omega)=\begin{cases}
+长度(一维线段)\\
+面积(二维平面区域)\\
+体积(三维空间立体)\\
+\end{cases}
+\]</span></p>
 <h3 id="第四节-条件概率与乘法公式">第四节 条件概率与乘法公式</h3>
-<h4 id="1-条件概率">1. 条件概率</h4>
-<p><strong>定义1</strong>：$A$发生时$B$再发生：$P(B\mid A)$</p>
-<p><strong>定义2</strong>：$P(B\mid A)=\frac{P(AB)}{P(A)}$</p>
-<p><strong>性质1</strong>：$P(\Phi\mid A)=0$</p>
-<p><strong>性质2</strong>：$P(B_1\cup B_2\mid A)=P(B_1\mid A)+P(B_2\mid A)-P(B_1B_2\mid A)$​</p>
-<p><strong>性质3</strong>：$P(B\mid A)+P(\overline{B}\mid A)=1$</p>
-<h4 id="2-乘法公式">2. 乘法公式</h4>
-<p><strong>定理</strong>：设$A$、$B$为两事件，则$P(AB)=P(A)P(B\mid A) P(A&gt;0)$或$P(AB)=P(B)P(A\mid B)$</p>
-<h3 id="第五节-全概率公式与贝叶斯公式">第五节 全概率公式与贝叶斯公式</h3>
-<h4 id="1-全概率公式">1. 全概率公式</h4>
-<p>$$<br>
-\boxed{P(B)=P(A_1)P(B|A_1)+P(A_2)P(B|A_2)+P(A_3)(B|A_3)+\dots +P(A_n)P(B|A_n)}<br>
-$$</p>
-<p><strong>定理1</strong>：设事件$A_1,A_2,\dots ,A_n$是试验E的一个完备事件组（也叫样本空间$\Omega$的一个划分），且$P(A_i)&gt;0(i=1,2,\dots ,n)$​,则对于E的任意事件B，有：<br>
-$$<br>
-P(B)=P(A_1)P(B|A_1)+P(A_2)P(B|A_2)+P(A_3)(B|A_3)+\dots +P(A_n)P(B|A_n) \<br>
-=\sum\limits_{i=1}^n A_iP(B|A_i)<br>
-$$</p>
-<h4 id="2-贝叶斯公式">2. 贝叶斯公式</h4>
-<p><strong>定理2</strong>：设$A_1,A_2,\dots ,A_n$为试验E的一个完备事件组，B为E的任一事件，且$P(A_i)&gt;0(i=1,2,\dots ,n)$，$P(B)&gt;0$，则<br>
-$$<br>
-P(A_k|B)=\frac{P(A_k)P(B|A_k)}{\sum\limits_{i=1}^{n}P(A_i)P(B|A_i)}=\frac{P(A_kB)}{P(B)} ,k=1,2,\dots,n<br>
-$$</p>
-<h3 id="第六节-事件的独立性与伯努利概型">第六节 事件的独立性与伯努利概型</h3>
-<h4 id="1-事件的独立性">1. 事件的独立性</h4>
-<p><strong>定义1</strong>：设$A,B$是试验E的两个事件，若$P(B|A)=P(B) (P(A)&gt;0)$，则称事件B对于事件A独立 $\stackrel{若P(B)&gt;0)}{\Rightarrow}$ 事件A对于事件B独立$\Leftrightarrow$ $P(A|B)=P(A)$</p>
-<p>由$P(B|A)=P(B)\stackrel{P(A)&gt;0}\Leftrightarrow \frac{P(AB)}{P(A)}=P(B)\Leftrightarrow P(AB)=P(A)*P(B)$</p>
-<p><strong>定义2</strong>：设$A,B$是两事件，若$P(A|B)=P(A)P(B)$，则称事件A与事件B相互独立</p>
+<h4 id="条件概率">1. 条件概率</h4>
+<p><strong>定义1</strong>：<span
+class="math inline">\(A\)</span>发生时<span
+class="math inline">\(B\)</span>再发生：<span
+class="math inline">\(P(B\mid A)\)</span></p>
+<p><strong>定义2</strong>：<span class="math inline">\(P(B\mid
+A)=\frac{P(AB)}{P(A)}\)</span></p>
+<p><strong>性质1</strong>：<span class="math inline">\(P(\Phi\mid
+A)=0\)</span></p>
+<p><strong>性质2</strong>：<span class="math inline">\(P(B_1\cup B_2\mid
+A)=P(B_1\mid A)+P(B_2\mid A)-P(B_1B_2\mid A)\)</span>​</p>
+<p><strong>性质3</strong>：<span class="math inline">\(P(B\mid
+A)+P(\overline{B}\mid A)=1\)</span></p>
+<h4 id="乘法公式">2. 乘法公式</h4>
+<p><strong>定理</strong>：设<span
+class="math inline">\(A\)</span>、<span
+class="math inline">\(B\)</span>为两事件，则<span
+class="math inline">\(P(AB)=P(A)P(B\mid A) P(A&gt;0)\)</span>或<span
+class="math inline">\(P(AB)=P(B)P(A\mid B)\)</span></p>
+<h3 id="第五节-全概率公式与贝叶斯公式">第五节
+全概率公式与贝叶斯公式</h3>
+<h4 id="全概率公式">1. 全概率公式</h4>
+<p><span class="math display">\[
+\boxed{P(B)=P(A_1)P(B|A_1)+P(A_2)P(B|A_2)+P(A_3)(B|A_3)+\dots
++P(A_n)P(B|A_n)}
+\]</span></p>
+<p><strong>定理1</strong>：设事件<span
+class="math inline">\(A_1,A_2,\dots
+,A_n\)</span>是试验E的一个完备事件组（也叫样本空间<span
+class="math inline">\(\Omega\)</span>的一个划分），且<span
+class="math inline">\(P(A_i)&gt;0(i=1,2,\dots
+,n)\)</span>​,则对于E的任意事件B，有： <span class="math display">\[
+P(B)=P(A_1)P(B|A_1)+P(A_2)P(B|A_2)+P(A_3)(B|A_3)+\dots +P(A_n)P(B|A_n)
+\\
+    =\sum\limits_{i=1}^n A_iP(B|A_i)
+\]</span></p>
+<h4 id="贝叶斯公式">2. 贝叶斯公式</h4>
+<p><strong>定理2</strong>：设<span class="math inline">\(A_1,A_2,\dots
+,A_n\)</span>为试验E的一个完备事件组，B为E的任一事件，且<span
+class="math inline">\(P(A_i)&gt;0(i=1,2,\dots ,n)\)</span>，<span
+class="math inline">\(P(B)&gt;0\)</span>，则 <span
+class="math display">\[
+P(A_k|B)=\frac{P(A_k)P(B|A_k)}{\sum\limits_{i=1}^{n}P(A_i)P(B|A_i)}=\frac{P(A_kB)}{P(B)}
+,k=1,2,\dots,n
+\]</span></p>
+<h3 id="第六节-事件的独立性与伯努利概型">第六节
+事件的独立性与伯努利概型</h3>
+<h4 id="事件的独立性">1. 事件的独立性</h4>
+<p><strong>定义1</strong>：设<span
+class="math inline">\(A,B\)</span>是试验E的两个事件，若<span
+class="math inline">\(P(B|A)=P(B)
+(P(A)&gt;0)\)</span>，则称事件B对于事件A独立 <span
+class="math inline">\(\stackrel{若P(B)&gt;0)}{\Rightarrow}\)</span>
+事件A对于事件B独立<span class="math inline">\(\Leftrightarrow\)</span>
+<span class="math inline">\(P(A|B)=P(A)\)</span></p>
+<p>由<span
+class="math inline">\(P(B|A)=P(B)\stackrel{P(A)&gt;0}\Leftrightarrow
+\frac{P(AB)}{P(A)}=P(B)\Leftrightarrow P(AB)=P(A)*P(B)\)</span></p>
+<p><strong>定义2</strong>：设<span
+class="math inline">\(A,B\)</span>是两事件，若<span
+class="math inline">\(P(A|B)=P(A)P(B)\)</span>，则称事件A与事件B相互独立</p>
 
                 
               </div>
